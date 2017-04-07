@@ -52,6 +52,7 @@ In this section we give an integration to a symplectic groupoid $\cG(\Sigma)$ of
 \section{Totally Positive Cluster Manifolds}
 In this section we show that the totally nonnegative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{Joyce?}.  
 Moreover, we show that the nonnegative cluster manifold is a union of symplectic leaves for any compatible Poisson structure on $\cA(\Sigma)$.  
+The symplectic leaves of $M_{\ge0}(\Sigma)$ are naturally labelled by compatible subsets of cluster variables, where the number of cluster variables in the labeling set determines the corank of the symplectic leaf.
 Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigma)$ is again a union of symplectic leaves of lower dimension where the Poisson structure degenerates.
 
 \begin{theorem}
@@ -59,6 +60,13 @@ Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigm
   The 1-skeleton of $M_{\ge0}(\Sigma)$ given by 0-dimensional and 1-dimensional symplectic leaves identifies with the exchange graph of $\cA(\Sigma)$.  
   Moreover, if $\Sigma$ is a seed of finite-type, then $M_{\ge0}(\Sigma)$ provides a realization of the generalized associahedron with the same Cartan type as $\Sigma$.
 \end{theorem}
+\begin{proof}
+  The 0-dimensional symplectic leaves correspond to the vanishing of all cluster variables from a seed mutation equivalent to $\Sigma$.  
+  Then a 1-dimensional symplectic leaf whose boundaries correspond to seeds $\Sigma'$ and $\Sigma''$ exactly corresponds to the non-vanishing of exchangable cluster variables $x'_k$ and $x''_k$.
+  But this is exactly the exchange graph of $\cA(\Sigma)$.
+
+  When $\Sigma$ is of finite-type, the realization of $M_{\ge0}(\Sigma)$ as a simplicial complex, given by taking symplectic leaves as cells, is naturally dual to the cluster complex of $\cA(\Sigma)$, i.e. $M_{\ge0}(\Sigma)$ identifies with the associated generalized associahedron.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic Topology of the Nonnegative Cluster Groupoid}
