@@ -1,0 +1,19 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{MR2900786}
+M.~Crainic and I.~M\u{a}rcu\c{t}, \emph{On the existence of symplectic
+  realizations}, J. Symplectic Geom. \textbf{9} (2011), no.~4, 435--444.
+
+\bibitem{MR3077259}
+D.~Joyce, \emph{On manifolds with corners}, Advances in geometric analysis,
+  Adv. Lect. Math. (ALM), vol.~21, Int. Press, Somerville, MA, 2012,
+  pp.~225--258.
+
+\end{thebibliography}

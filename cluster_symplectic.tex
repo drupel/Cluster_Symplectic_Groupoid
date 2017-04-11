@@ -1,5 +1,5 @@
 \documentclass{amsart}
-\usepackage{amsmath,amssymb,latexsym}
+\usepackage{amsmath,amsfonts,amssymb,latexsym}
 \usepackage[margin=1in]{geometry}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -38,6 +38,19 @@ Outline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Poisson Geometry}
+In this section we recall the various incarnations of Poisson manifolds and the construction of symplectic groupoids from the Poisson spray \cite{MR2900786}.
+
+\begin{definition}
+A smooth Poisson manifold is a smooth manifold $M$ with Lie bracket
+$$
+	\{\cdot, \cdot\}: C^\infty(M) \times C^\infty(M) \to C^\infty(M)
+$$
+such that the Leibniz rule
+$$
+	\{fg, h\} = f\{g,h\} + g\{f,h\}
+$$
+is satisfied. A holomorphic Poisson manifold is analogous in that $M$ is a holomorphic manifold and we replace $C^\infty(M)$ with the space of holomorphic functions $\mathcal{O}(M)$.
+\end{definition}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,7 +63,7 @@ In this section we give an integration to a symplectic groupoid $\cG(\Sigma)$ of
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Totally Positive Cluster Manifolds}
-In this section we show that the totally nonnegative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{Joyce?}.  
+In this section we show that the totally nonnegative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{MR3077259}.  
 Moreover, we show that the nonnegative cluster manifold is a union of symplectic leaves for any compatible Poisson structure on $\cA(\Sigma)$.  
 The symplectic leaves of $M_{\ge0}(\Sigma)$ are naturally labelled by compatible subsets of cluster variables, where the number of cluster variables in the labeling set determines the corank of the symplectic leaf.
 Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigma)$ is again a union of symplectic leaves of lower dimension where the Poisson structure degenerates.
@@ -73,5 +86,7 @@ Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigm
 Let $\cG_{\ge0}(\Sigma)$ denote the symplectic groupoid over $M_{\ge0}(\Sigma)$.  
 In this section we introduce a Poisson spray which may be used to construct $\cG_{\ge0}(\Sigma)$ and apply a Moser argument to show that up to symplectomorphism $\cG_{\ge0}(\Sigma)$ can be identified with $T^*M_{\ge0}(\Sigma)$.
 
+\bibliographystyle{hyperamsplain}
+\bibliography{cluster_symplectic}
 
 \end{document}
