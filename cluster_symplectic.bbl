@@ -5,15 +5,63 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{CMS17}
+A.~Cabrera, I.~Marcut, and M.~A. Salazar, \emph{A construction of local Lie
+  groupoids using Lie algebroid sprays}, Preprint (2017).
+
+\bibitem{MR1938552}
+A.~S. Cattaneo and G.~Felder, \emph{Poisson sigma models and symplectic
+  groupoids}, Quantization of singular symplectic quotients, Progr. Math., vol.
+  198, Birkh\"auser, Basel, 2001, pp.~61--93.
+
+\bibitem{MR1973056}
+M.~Crainic and R.~L. Fernandes, \emph{Integrability of {L}ie brackets},
+  \href{http://dx.doi.org/10.4007/annals.2003.157.575}{Ann. of Math. (2)
+  \textbf{157} (2003)}, no.~2, 575--620.
+
+\bibitem{MR2128714}
+\bysame, \emph{Integrability of {P}oisson brackets}, J. Differential Geom.
+  \textbf{66} (2004), no.~1, 71--137.
 
 \bibitem{MR2900786}
 M.~Crainic and I.~M\u{a}rcu\c{t}, \emph{On the existence of symplectic
   realizations}, J. Symplectic Geom. \textbf{9} (2011), no.~4, 435--444.
 
+\bibitem{MR3214314}
+M.~Gualtieri and S.~Li, \emph{Symplectic groupoids of log symplectic
+  manifolds}, Int. Math. Res. Not. IMRN (2014), no.~11, 3022--3074.
+
+\bibitem{MR2417440}
+E.~Hawkins, \emph{A groupoid approach to quantization}, J. Symplectic Geom.
+  \textbf{6} (2008), no.~1, 61--125.
+
 \bibitem{MR3077259}
 D.~Joyce, \emph{On manifolds with corners}, Advances in geometric analysis,
   Adv. Lect. Math. (ALM), vol.~21, Int. Press, Somerville, MA, 2012,
   pp.~225--258.
+
+\bibitem{MR1008479}
+M.~V. Karas\"ev, \emph{The {M}aslov quantization conditions in higher
+  cohomology and analogs of notions developed in {L}ie theory for canonical
+  fibre bundles of symplectic manifolds. {I}, {II}}, Selecta Math. Soviet.
+  \textbf{8} (1989), no.~3, 213--234, 235--258. Translated from the Russian by
+  Pavel Buzytsky, Selected translations.
+
+\bibitem{MR866024}
+A.~Weinstein, \emph{Symplectic groupoids and {P}oisson manifolds},
+  \href{http://dx.doi.org/10.1090/S0273-0979-1987-15473-5}{Bull. Amer. Math.
+  Soc. (N.S.) \textbf{16} (1987)}, no.~1, 101--104.
+
+\bibitem{MR1081010}
+S.~Zakrzewski, \emph{Quantum and classical pseudogroups. {I}. {U}nion
+  pseudogroups and their quantization}, Comm. Math. Phys. \textbf{134} (1990),
+  no.~2, 347--370.
+
+\bibitem{MR1081011}
+\bysame, \emph{Quantum and classical pseudogroups. {II}. {D}ifferential and
+  symplectic pseudogroups}, Comm. Math. Phys. \textbf{134} (1990), no.~2,
+  371--395.
 
 \end{thebibliography}

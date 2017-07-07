@@ -8,6 +8,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{question}[theorem]{Question}
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
 
 
 \newcommand{\bfx}{\mathbf{x}}
@@ -49,19 +50,140 @@ Outline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Poisson Geometry}
-In this section we recall the various incarnations of Poisson manifolds and the construction of symplectic groupoids from the Poisson spray \cite{MR2900786}.
+In this section we recall the various definitions of Poisson manifolds and the construction of symplectic groupoids from the Poisson spray \cite{MR2900786}.
 
 \begin{definition}
-A smooth Poisson manifold is a smooth manifold $M$ with Lie bracket
-$$
-	\{\cdot, \cdot\}: C^\infty(M) \times C^\infty(M) \to C^\infty(M)
-$$
-such that the Leibniz rule
-$$
-	\{fg, h\} = f\{g,h\} + g\{f,h\}
-$$
-is satisfied. A holomorphic Poisson manifold is analogous in that $M$ is a holomorphic manifold and we replace the space of smooth functions $C^\infty(M)$ with the space of holomorphic functions $\mathcal{O}(M)$.
+A smooth Poisson manifold is a smooth manifold $M$ equipped with one of the following three equivalent structures:
+	\begin{enumerate}
+		\item A Lie bracket (called a Poisson bracket)
+			$$
+				\{\cdot, \cdot\}: C^\infty(M) \times C^\infty(M) \to C^\infty(M)
+			$$
+				satisfying the Leibniz rule
+			$$
+				\{fg, h\} = f\{g,h\} + g\{f,h\}
+			$$
+			is satisfied. 
+		\item A Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where
+			$$
+				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
+			$$
+			is the Schouten-Nijenhuis bracket.
+		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
+\end{enumerate}	
+	A holomorphic Poisson manifold is analogous where $M$ is a holomorphic manifold.
 \end{definition}
+
+\begin{remark}
+	We shall denote a Poisson manifold by either $(M, \pi)$ or $(M, \{,\})$.
+	\begin{enumerate}
+		\item The Poisson bivector is related to the Poisson bracket by the following formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
+		\item The Poisson differential operator is related to the Poisson bivector by the following formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
+	\end{enumerate}
+\end{remark}
+
+The notion of the symplectic groupoid of a Poisson manifold was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and quantization \cite{MR2417440}. As a Lie groupoid, the symplectic groupoid integrates the Poisson Lie algebroid $\pi^\sharp: T^*M \to TM$ \cite{MR866024}.
+
+\begin{definition}
+A groupoid $G \rightrightarrows M$ consists of two sets $G$ and $M$ with the following maps:
+	\begin{enumerate}
+		\item a surjective source map $\alpha: G \to M$ and a surjective target map $\beta: G \to M$;
+		\item an injective identity map $\mathtt{1}: M \to G, \enskip x \mapsto \mathtt{1}_x$;
+		\item a multiplication map $m: G {_\beta \times_\alpha} G \to G, \enskip (g, h) \mapsto gh$;
+		\item and an involutive inversion map $i: G \to G, \enskip g \mapsto g^{-1}$
+	\end{enumerate}
+that satisfies the following properties:
+	\begin{enumerate}
+		\item $\alpha(\mathtt{1}_x) = \beta(\mathtt{1}_x) = x$;
+		\item $\alpha(gh) = \alpha(g), \enskip \beta(gh) = \beta(h)$;
+		\item $\alpha(g^{-1}) = \beta(g), \enskip \beta(g^{-1}) = \alpha(g)$;
+		\item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$.
+	\end{enumerate}
+A Lie groupoid $G \rightrightarrows M$ has the addtional properties as follows:
+	\begin{enumerate}
+		\item $G$ and $M$ are smooth manifolds;
+		\item the source $\alpha: G \to M$ and the target $\beta: G \to M$ are surjective submersions;
+		\item the multiplication map $m: G {_\beta \times_\alpha} G \to G$ is smooth;
+		\item the inversion map $i: G \to G$ is smooth.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+For a Poisson manifold $(M, \pi)$, a symplectic groupoid is a symplectic manifold $(G, \omega)$ with a Lie groupoid structure $G \rightrightarrows M$ such that
+	\begin{enumerate}
+		\item the source $\alpha: (G, \omega) \to (M, \pi)$ and the target $\beta: (G, \omega) \to (M, \pi)$ are Poisson maps;
+		\item the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in G \times G \times G\}$ is a Lagrangian submanifold of $(G \times G \times G, \omega \oplus \omega \oplus -\omega)$.
+	\end{enumerate}
+\end{definition}
+
+The problem of existence of symplectic groupoids given a Poisson manifold, or more generally the existence of Lie groupoids given a Lie algebroid, was solved by Crainic-Fernandes \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double of Poisson Lie groups \cite{MR2128714} and the blow-up construction of log symplectic manifolds \cite{MR3214314}, but in general it is difficult to find explicit examples of symplectic groupoids. There is, however, a local construction of symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17}, which utilizing the notion of Poisson sprays.
+
+\begin{definition}
+For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \mathfrak{X}(T^*M)$ is a Poisson spray if
+	\begin{enumerate}
+		\item for $(x,p) \in T^*M$,
+			$$
+				(\tau_M)_*\left(X_{(x,p)} \right) = \pi^\flat(p)
+			$$
+			where $(\tau_M): T^*M \to M$ is the projection;
+		\item
+			$X$ is homogeneous of degree 1, i.e.
+			$$
+				(m_\lambda)_*(X) = \lambda X 
+			$$
+			where $m_\lambda: T^*M \to T^*M, \enskip (x,p) \mapsto (x,\lambda p)$ is the fiberwise scaling map.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem} \cite{MR2900786, CMS17} \label{thm:poissp}
+For a Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \mathfrak{X}(T^*M)$, a neighbourhood $U$ of the zero section of $T^*M$ is a local symplectic groupoid over $(M, \pi)$ with the following structures:
+	\begin{enumerate}
+		\item the source map $\alpha = \tau_M: U \to M$ is the bundle projection ;
+		\item the target map is
+			$$
+				\beta: U \to M, \qquad \beta = \tau_M \circ \varphi_X^1
+			$$
+		where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$-flow of the Poisson spray $X$;
+		\item the multiplication is the concatenation of the flow of $X$; and
+		\item the symplectic form on $U$ is
+			$$
+				\overline{\omega} = \int_{0}^{1} (\varphi_X^s)^*\omega_0 ds.
+			$$
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	By local symplectic groupoid $G \rightrightarrows M$, we mean that the multiplication $m: G {_\beta \times_\alpha} G \to G$ may not be defined on the entirety of its domain, e.g. in this particular case the time-$1$-flow of the Poisson spray $X$ may be outside the neighbourhood $U$.
+\end{remark}
+
+
+\begin{remark}
+	Given a Poisson spray $X \in \mathfrak{X}(T^*M)$ on a Poisson manifold $(M, \pi)$, there is actually a 1-parameter family of local symplectic groupoid structure on a neighourhood $U$ of the zero section of $T^*M$ with the following structures:
+	\begin{enumerate}
+		\item the source map $\alpha = \tau_M: U \to M$ is the bundle projection ;
+		\item the target map is
+			$$
+				\beta: U \to M, \qquad \beta = \tau_M \circ \varphi_X^t
+			$$
+		where $\varphi_X^t: T^*M \to T^*M$ is the time-$t$-flow of the Poisson spray $X$;
+		\item the multiplication is the concatenation of the time-$t$-flow of $X$; and
+		\item the symplectic form on $U$ is
+			$$
+				\overline{\omega}_t = \frac{1}{t}\int_{0}^{t} (\varphi_X^s)^*\omega_0 ds.
+			$$
+	\end{enumerate}
+The local symplectic groupoid $(U, \overline{\omega}_t)$ integrates the Poisson manifold $(M, t\pi)$ for $0 \leq t\leq 1$. In particular, the local symplectic groupoid in Theorem~\ref{thm:poissp} is the case $t = 1$.
+\end{remark}
+
+In local coordinates $T^*\mathbb{R}^n = \{(x_1, \ldots, x_n, p_1, \ldots, p_n)\}$, if the Poisson structure
+$$
+	\pi = \sum_{i > j} \pi_{ij} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
+$$
+then a Poisson spray is of the form
+$$
+	X = \sum_{i > j} \pi_{ij} p_i \frac{\partial}{\partial x_j} - \sum_{i > j} \pi_{ij} p_j \frac{\partial}{\partial x_i} + \sum_i f_i \frac{\partial}{\partial p_i}
+$$
+where $f_i$'s are fiberwise quadratic functions on $T^*\mathbb{R}^n$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
