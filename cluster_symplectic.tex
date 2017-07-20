@@ -11,6 +11,7 @@
 \newtheorem{remark}[theorem]{Remark}
 
 
+\newcommand{\bfp}{\mathbf{p}}
 \newcommand{\bfx}{\mathbf{x}}
 
 \newcommand{\cA}{\mathcal{A}}
@@ -91,7 +92,7 @@ A groupoid $G \rightrightarrows M$ consists of two sets $G$ and $M$ with the fol
 	\begin{enumerate}
 		\item a surjective source map $\alpha: G \to M$ and a surjective target map $\beta: G \to M$;
 		\item an injective identity map $\mathtt{1}: M \to G, \enskip x \mapsto \mathtt{1}_x$;
-		\item a multiplication map $m: G {_\beta \times_\alpha} G \to G, \enskip (g, h) \mapsto gh$;
+		\item an associative multiplication map $m: G {_\beta \times_\alpha} G \to G, \enskip (g, h) \mapsto gh$;
 		\item and an involutive inversion map $i: G \to G, \enskip g \mapsto g^{-1}$
 	\end{enumerate}
 that satisfies the following properties:
@@ -101,7 +102,7 @@ that satisfies the following properties:
 		\item $\alpha(g^{-1}) = \beta(g), \enskip \beta(g^{-1}) = \alpha(g)$;
 		\item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$.
 	\end{enumerate}
-A Lie groupoid $G \rightrightarrows M$ has the addtional properties as follows:
+A Lie groupoid $G \rightrightarrows M$ has the following additional properties:
 	\begin{enumerate}
 		\item $G$ and $M$ are smooth manifolds;
 		\item the source $\alpha: G \to M$ and the target $\beta: G \to M$ are surjective submersions;
@@ -191,20 +192,20 @@ where $f_i$'s are fiberwise quadratic functions on $T^*\mathbb{R}^n$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cluster Algebras}
 
-Let $\tilde B=(b_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
+Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists an integer diagonal matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
 We call such a matrix $\tilde B$ an $m\times n$ \emph{exchange matrix}.
 
-For $1\le k\le n$, define the \emph{mutation of $\tilde B$ in direction $k$} by $\mu_k\tilde B=(b'_{ij})$, where
-\[b'_{ij}=\begin{cases}-b_{ij} & \text{if $i=k$ or $j=k$;}\\ b_{ij}+[b_{ik}]_+b_{kj}+b_{ik}[-b_{kj}]_+ & \text{otherwise.}\end{cases}\]
-Above we used the notation $[b]_+=\max\{b,0\}$.
+For $1\le k\le n$, define the \emph{mutation of $\tilde B$ in direction $k$} by $\mu_k\tilde B=(B'_{ij})$, where
+\[B'_{ij}=\begin{cases}-B_{ij} & \text{if $i=k$ or $j=k$;}\\ B_{ij}+[B_{ik}]_+B_{kj}+B_{ik}[-B_{kj}]_+ & \text{otherwise.}\end{cases}\]
+Above we used the notation $[a]_+=\max\{a,0\}$.
 
 Let $\cF$ be an extension field of $\QQ$ of transcendence degree $m$.   
 A \emph{seed} in $\cF$ is a pair $\Sigma=(\bfx,\tilde B)$, where $\bfx=(x_1,\ldots,x_m)$ is a transendence basis of $\cF$ over $\QQ$ called the \emph{cluster} with entries called \emph{cluster variables} and $\tilde B$ is an $m\times n$ exchange matrix.
 For $1\le k\le n$, define the \emph{mutation of $\Sigma$ in direction $k$} by $\mu_k\Sigma=(\bfx',\mu_k\tilde B)$, where $\bfx'=(x'_1,\ldots,x'_m)$ given by the \emph{exchange relations}
 \begin{equation}
   \label{eq:exchange relations}
-  x'_i=\begin{cases} x_i & \text{if $i\ne k$;}\\ \frac{1}{x_k}\left(\prod\limits_{i=1}^m x_i^{[b_{ik}]_+}+\prod\limits_{i=1}^m x_i^{[-b_{ik}]_+}\right) & \text{if $i=k$.}\end{cases}
+  x'_i=\begin{cases} x_i & \text{if $i\ne k$;}\\ \frac{1}{x_k}\left(\prod\limits_{i=1}^m x_i^{[B_{ik}]_+}+\prod\limits_{i=1}^m x_i^{[-B_{ik}]_+}\right) & \text{if $i=k$.}\end{cases}
 \end{equation}
 Observe that seed mutation is involutive, i.e. $\mu_k(\mu_k\Sigma)=\Sigma$.
 A seed $\Sigma'$ is \emph{mutation equivalent} to $\Sigma$ if there exists a sequence of mutations which transforms $\Sigma$ into $\Sigma'$, in this case we write $\Sigma'\sim\Sigma$.
@@ -216,21 +217,21 @@ The following result of Fomin and Zelevinsky known as ``the Laurent phenomenon''
 \begin{theorem}\cite{fomin-zelevinsky1}
   Let $\Sigma$ be a seed in $\cF$ and $\Sigma'\sim\Sigma$.  Each cluster variable $x'_i$ of $\Sigma'$ is an element of the subring $\ZZ[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$.
 \end{theorem}
-For $x'_i$ a cluster variable from a seed $\Sigma'\sim\Sigma$, we write $x'_i(x_1,\ldots,x_m)$ when we wish to emphasize that $x'_i$ should be thought of as a function of $x_1,\ldots,x_m$.
 
 In fact, the situtation is even better:\ the initial cluster Laurent expansions of all cluster variables have positive integer coefficients.
 \begin{theorem}\cite{lee-schiffler, gross-hacking-keel-kontsevich}
   Let $\Sigma$ be a seed in $\cF$ and $\Sigma'\sim\Sigma$.  Each cluster variable $x'_i$ of $\Sigma'$ is an element of the subsemiring $\ZZ_{\ge0}[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$. 
 \end{theorem}
+For $x'_i$ a cluster variable from a seed $\Sigma'\sim\Sigma$, we write $x'_i(x_1,\ldots,x_m)$ when we wish to emphasize that $x'_i$ should be thought of as a function of $x_1,\ldots,x_m$.
 
 \subsection{The Cluster Manifold and Compatible Poisson Structures}
 Fix the field $\FF=\RR$ or $\FF=\CC$.
-For an $m\times n$ exchange matrix $\tilde B$, define the \emph{cluster toric chart} $\Spec(\FF[x_1^{\pm1},\ldots,x_m^{\pm1}])$.
-Observe that $\Sigma=(\bfx,\tilde B)$ is a seed in the field of rational functions on this cluster torus and thus we denote it by $T(\Sigma)$.
-Then the exchange relation \eqref{eq:exchange relation} provides a birational transformation between the toric charts $T(\Sigma)$ and $T(\mu_k\Sigma)$ for $1\le k\le n$.
-By composing these \emph{elementary transition maps} for neighboring seeds we get a birational transformation between $T(\Sigma)$ and $T(\Sigma')$ for any seeds $\Sigma\sim\Sigma'$.
+For an $m\times n$ exchange matrix $\tilde B$, define the \emph{cluster chart} $\Spec(\FF[x_1^{\pm1},\ldots,x_m^{\pm1}])$.
+Observe that $\Sigma=(\bfx,\tilde B)$ is a seed in the field of rational functions on this cluster chart and thus we denote it by $L_\Sigma$.
+Then the exchange relation \eqref{eq:exchange relations} provides a birational transformation between the cluster charts $\varphi_{\Sigma,\mu_k\Sigma}:L_\Sigma\to L_{\mu_k\Sigma}$ for $1\le k\le n$.
+By composing these \emph{elementary transition maps} for neighboring seeds we get a birational transformation between $\varphi_{\Sigma,\Sigma'}:L_\Sigma\to L_{\Sigma'}$ for any seeds $\Sigma\sim\Sigma'$.
 
-Given any seed $\Sigma$, the transition maps above define the \emph{cluster manifold} $M=M(\Sigma)=\bigcup\limits_{\Sigma'\sim\Sigma}T(\Sigma')$.
+Given any seed $\Sigma$, the transition maps above define the \emph{cluster manifold} $M=M(\Sigma)=\bigcup\limits_{\Sigma'\sim\Sigma}L_{\Sigma'}$.
 %Note that we have $M(\Sigma)=M(\Sigma')$ whenever $\Sigma\sim\Sigma'$.
 By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structure on $\cA(\Sigma)$ naturally extends to give a Poisson structure on $C^\infty(M)$.
 
@@ -244,7 +245,7 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 \end{definition}
 \begin{remark}
   Suppose the cluster variables of a seed $\Sigma=(\bfx,\tilde B)$ are log-canonical with respect to a Poisson bracket $\{\cdot,\cdot\}:\cA(\Sigma)\times\cA(\Sigma)\to\cA(\Sigma)$ with coefficient matrix $\Omega$.
-  Then the compatibility of $\{\cdot,\cdot\}$ imposes the condition $\tilde B^T\Omega=[D\ 0]$, where $D$ is a skew-symmetrizing matrix for the upper $n\times n$ submatrix $B$ of $\tilde B$.
+  Then the compatibility of $\{\cdot,\cdot\}$, together with the exchange relations, imposes the condition $\tilde B^T\Omega=[D\ 0]$, where $D$ is a skew-symmetrizing matrix for the upper $n\times n$ submatrix $B$ of $\tilde B$ (see \cite{berenstein-zelevinsky,gekhtman-shapiro-vainshtein} for details).
 \end{remark}
 
 \begin{theorem}
@@ -256,10 +257,49 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cluster Symplectic Groupoids}
 In this section we give an integration to a symplectic groupoid $G$ of the Poisson structure on a cluster manifold $M(\Sigma)$.  
-We build the cluster symplectic groupoid $G\rightrightarrows M$ by gluing together local groupoid charts $G(\Sigma')\rightrightarrows T(\Sigma')$, $\Sigma'\sim\Sigma$, along transition maps which lift the cluster mutations used to glue toric charts of $M$.
+We build the cluster symplectic groupoid $G\rightrightarrows M$ by gluing together local groupoid charts $G_{\Sigma'}\rightrightarrows L_{\Sigma'}$, $\Sigma'\sim\Sigma$, along transition maps which lift the cluster mutations used to glue cluster charts of $M$.
 
-Let $\Sigma=(\bfx,\tilde B)$ be a seed and assume there exists a compatible Poisson structure on $T(\Sigma)$ with coefficient matrix $\Omega=(\omega_{ij})$.  
-Consider the manifold $G(\Sigma)=(\RR^\times)^n\times $  
+Let $\Sigma=(\bfx,\tilde B)$ be a seed and assume there exists a compatible Poisson structure on $L_\Sigma$ with coefficient matrix $\Omega=(\Omega_{ij})$.  
+Write $\pi$ for the corresponding Poisson bivector on the cluster manifold $M$, i.e.\ in local coordinates on $L_\Sigma$ we have $\pi=\sum\limits_{i>j}\Omega_{ij}x_ix_j\frac{\partial}{\partial x_i}\wedge\frac{\partial}{\partial x_j}$.
+
+Consider the manifold $G_\Sigma=T^*L_\Sigma$, the cotangent bundle of $L_\Sigma$.
+Let $\bfp=(p_1,\ldots,p_n)$ denote the cotangent coordinates of $G_\Sigma$.
+Define the map $\beta:G_\Sigma\to L_\Sigma$ by 
+\begin{equation}
+  \label{eq:cluster groupoid target map}
+  \beta(\bfx,\bfp)=(s_1x_1,\ldots,s_nx_n),\quad\text{where}\quad s_i:=e^{\sum_j\Omega_{ij}x_jp_j}.
+\end{equation}
+\begin{theorem}
+  \label{th:cluster groupoid}
+  The manifold $G_\Sigma$ is a groupoid over $L_\Sigma$ with source map the natural projection, target map $\beta$, multiplication given by
+  \[(\bfx,\bfp)\cdot\big(\beta(\bfx,\bfp),\bfp'\big)=(\bfx,\bfp''),\quad p''_i=s_ip'_i+p_i,\]
+  inversion given by
+  \[(\bfx,\bfp)^{-1}=\big(\beta(\bfx,\bfp),\bfp'),\quad p'_i=-s_i^{-1}p_i,\]
+  and identity map given by $1_\bfx=(\bfx,\boldsymbol{0})$.
+  %Moreover, the 2-form $\omega=\alpha^*(\pi^{-1})-\beta^*(\pi^{-1})$ defines a symplectic structure on $G_\Sigma$.
+\end{theorem}
+\begin{proof}
+  It is clear that $1_\bfx$ gives the identity map for this multiplication and that the inversion map satisfies 
+  \[(\bfx,\bfp)\cdot(\bfx,\bfp)^{-1}=1_\bfx=(\bfx,\bfp)^{-1}\cdot(\bfx,\bfp)\]
+  for all $(\bfx,\bfp)\in G_\Sigma$.
+
+  It remains to check associativity of the multiplication.
+  Fix an element $(\bfx,\bfp)\in G_\Sigma$.
+  Consider $(\bfx',\bfp'),(\bfx'',\bfp'')\in G_\Sigma$ with $\bfx'=\beta(\bfx,\bfp)$ and $\bfx''=\beta(\bfx',\bfp')$.
+  Then we have
+  \[\big((\bfx,\bfp)\cdot(\bfx',\bfp')\big)\cdot(\bfx'',\bfp'')=(\bfx,\bfp'''),\quad p'''_i=e^{\sum_j\Omega_{ij}x_j(s_jp'_j+p_j)}p''_i+e^{\sum_j\Omega_{ij}x_jp_j}p'_i+p_i.\]
+  On the other hand we have
+  \[(\bfx,\bfp)\cdot\big((\bfx',\bfp')\cdot(\bfx'',\bfp'')\big)=(\bfx,\bfp'''),\quad p'''_i=e^{\sum_j\Omega_{ij}x_jp_j}(e^{\sum_j\Omega_{ij}x'_jp'_j}p''_i+p'_i)+p_i\]
+  and thus associativity holds.
+\end{proof}
+
+Write $\mu_k\Sigma=(\bfx',\tilde B')$.  
+%Let $\bfp'=(p'_1,\ldots,p'_n)$ denote the cotangent coordinates of $G_{\mu_k\Sigma}$.
+Define a map from $G_\Sigma$ to $G_{\mu_k\Sigma}$, which by a slight abuse of notation we also denote $\varphi_{\Sigma,\mu_k\Sigma}$, as follows:
+\begin{equation}
+  \label{eq:groupoid gluing map}
+  \varphi_{\Sigma,\mu_k\Sigma}(\bfx,\bfp)=(\bfx',\bfp'),\quad \bfp'=(p'_1,\ldots,p'_n),\quad p'_i=
+\end{equation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
