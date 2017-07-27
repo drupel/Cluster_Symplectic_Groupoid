@@ -64,9 +64,8 @@ A smooth Poisson manifold is a smooth manifold $M$ equipped with one of the foll
 			$$
 				satisfying the Leibniz rule
 			$$
-				\{fg, h\} = f\{g,h\} + g\{f,h\}
+				\{fg, h\} = f\{g,h\} + g\{f,h\}.
 			$$
-			is satisfied. 
 		\item A Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where
 			$$
 				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
@@ -74,14 +73,14 @@ A smooth Poisson manifold is a smooth manifold $M$ equipped with one of the foll
 			is the Schouten-Nijenhuis bracket.
 		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
 \end{enumerate}	
-	A holomorphic Poisson manifold is analogous where $M$ is a holomorphic manifold.
+	A holomorphic Poisson manifold is analogous where $M$ is a complex manifold.
 \end{definition}
 
 \begin{remark}
 	We shall denote a Poisson manifold by either $(M, \pi)$ or $(M, \{,\})$.
 	\begin{enumerate}
-		\item The Poisson bivector is related to the Poisson bracket by the following formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
-		\item The Poisson differential operator is related to the Poisson bivector by the following formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
+		\item The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
+		\item The Poisson differential operator is related to the Poisson bivector by the formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
 	\end{enumerate}
 \end{remark}
 
@@ -119,7 +118,7 @@ For a Poisson manifold $(M, \pi)$, a symplectic groupoid is a symplectic manifol
 	\end{enumerate}
 \end{definition}
 
-The problem of existence of symplectic groupoids given a Poisson manifold, or more generally the existence of Lie groupoids given a Lie algebroid, was solved by Crainic-Fernandes \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double of Poisson Lie groups \cite{MR2128714} and the blow-up construction of log symplectic manifolds \cite{MR3214314}, but in general it is difficult to find explicit examples of symplectic groupoids. There is, however, a local construction of symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17}, which utilizing the notion of Poisson sprays.
+The problem of existence of symplectic groupoids integrating a given Poisson manifold, or more generally the existence of Lie groupoids integrating a given Lie algebroid, was solved by Crainic-Fernandes \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double groupoid of Poisson Lie groups \cite{MR1054741} and the blow-up construction of log symplectic manifolds \cite{MR3214314}, but in general it is difficult to find examples of symplectic groupoids. There is, however, a local construction of symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17}, which utilizing the notion of Poisson sprays.
 
 \begin{definition}
 For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \mathfrak{X}(T^*M)$ is a Poisson spray if
@@ -156,7 +155,7 @@ For a Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \mathfrak{X}(T^*M)
 \end{theorem}
 
 \begin{remark}
-	By local symplectic groupoid $G \rightrightarrows M$, we mean that the multiplication $m: G {_\beta \times_\alpha} G \to G$ may not be defined on the entirety of its domain, e.g. in this particular case the time-$1$-flow of the Poisson spray $X$ may be outside the neighbourhood $U$.
+	By a local symplectic groupoid $G \rightrightarrows M$, we mean that the multiplication $m: G {_\beta \times_\alpha} G \to G$ may not be defined on the entirety of its domain. In this particular case, the time-$1$-flow of the Poisson spray $X$ may be outside the neighbourhood $U$ of the zero section.
 \end{remark}
 
 
@@ -178,6 +177,7 @@ For a Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \mathfrak{X}(T^*M)
 The local symplectic groupoid $(U, \overline{\omega}_t)$ integrates the Poisson manifold $(M, t\pi)$ for $0 \leq t\leq 1$. In particular, the local symplectic groupoid in Theorem~\ref{thm:poissp} is the case $t = 1$.
 \end{remark}
 
+\begin{remark} \label{remark:PoiSpLoc}
 In local coordinates $T^*\mathbb{R}^n = \{(x_1, \ldots, x_n, p_1, \ldots, p_n)\}$, if the Poisson structure
 $$
 	\pi = \sum_{i > j} \pi_{ij} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
@@ -187,6 +187,7 @@ $$
 	X = \sum_{i > j} \pi_{ij} p_i \frac{\partial}{\partial x_j} - \sum_{i > j} \pi_{ij} p_j \frac{\partial}{\partial x_i} + \sum_i f_i \frac{\partial}{\partial p_i}
 $$
 where $f_i$'s are fiberwise quadratic functions on $T^*\mathbb{R}^n$.
+\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -325,7 +326,16 @@ Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic Topology of the Nonnegative Cluster Groupoid}
 Let $\cG_{\ge0}(\Sigma)$ denote the symplectic groupoid over $M_{\ge0}(\Sigma)$.  
-In this section we introduce a Poisson spray which may be used to construct $\cG_{\ge0}(\Sigma)$ and apply a Moser argument to show that up to symplectomorphism $\cG_{\ge0}(\Sigma)$ can be identified with $T^*M_{\ge0}(\Sigma)$.
+In this section we introduce a Poisson spray which may be used to construct $\cG_{\ge0}(\Sigma)$ and apply a Moser argument to show that up to symplectomorphism $\cG_{\ge0}(\Sigma)$ can be identified with the natural symplectic structure on the cotangent bundle $T^*M_{\ge0}(\Sigma)$.
+
+Let $\cA(\Sigma)$ be a cluster algebra of rank $n$ generated by the seed $\Sigma=(\bfx,\tilde B)$, and we assume there exists a compatible Poisson structure on $L_\Sigma$ with coefficient matrix $\Omega=(\Omega_{ij})$. That is,  $\tilde B^T\Omega=[D\ 0]$, where $D$ is a skew-symmetrizing matrix for the upper $n\times n$ submatrix $B$ of $\tilde B$, and $L_\Sigma$ is equipped with the Poisson structure
+\begin{equation}
+	\pi=\sum\limits_{1 \leq j \leq n, j < i \leq n}\Omega_{ij}x_ix_j\frac{\partial}{\partial x_i}\wedge\frac{\partial}{\partial x_j}.
+\end{equation}
+By Remark~\ref{remark:PoiSpLoc}, we may choose the Poisson spray $X$ on $L_\Sigma$:
+\begin{equation}
+	X = \sum\limits_{1 \leq j \leq n, j < i \leq n}\Omega_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} \quad - \sum\limits_{1 \leq j \leq n, j < i \leq n}\Omega_{ij}p_ix_i p_j\frac{\partial}{\partial p_j}.
+\end{equation}
 
 \bibliographystyle{hyperamsplain}
 \bibliography{cluster_symplectic}
