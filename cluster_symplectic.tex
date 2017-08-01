@@ -9,6 +9,7 @@
 \newtheorem{question}[theorem]{Question}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
 
 
 \newcommand{\bfp}{\mathbf{p}}
@@ -28,6 +29,8 @@
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\Spec}{\operatorname{Spec}}
 \renewcommand{\max}{\operatorname{max}}
+
+\newcommand{\rra}{\rightrightarrows}
 
 \title{Symplectic Groupoids for Cluster Manifolds}
 
@@ -108,6 +111,7 @@ A Lie groupoid $G \rightrightarrows M$ has the following additional properties:
 		\item the multiplication map $m: G {_\beta \times_\alpha} G \to G$ is smooth;
 		\item the inversion map $i: G \to G$ is smooth.
 	\end{enumerate}
+A holomorphic groupoid $G \rightrightarrows M$ is analogous where $G$ and $M$ is a complex manifold and the struture maps are holomorphic.
 \end{definition}
 
 \begin{definition}
@@ -118,7 +122,7 @@ For a Poisson manifold $(M, \pi)$, a symplectic groupoid is a symplectic manifol
 	\end{enumerate}
 \end{definition}
 
-The problem of existence of symplectic groupoids integrating a given Poisson manifold, or more generally the existence of Lie groupoids integrating a given Lie algebroid, was solved by Crainic-Fernandes \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double groupoid of Poisson Lie groups \cite{MR1054741} and the blow-up construction of log symplectic manifolds \cite{MR3214314}, but in general it is difficult to find examples of symplectic groupoids. There is, however, a local construction of symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17}, which utilizing the notion of Poisson sprays.
+The conditions for the existence of symplectic groupoids integrating a given Poisson manifold, and more generally the existence of Lie groupoids integrating a given Lie algebroid, were found by Crainic and Fernandes \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double groupoid of Poisson Lie groups \cite{MR1054741} and the blow-up construction of log symplectic manifolds \cite{MR3214314}, but in general it is difficult to find examples of symplectic groupoids. There is, however, a local construction of symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17}, which utilizes the notion of a Poisson spray.
 
 \begin{definition}
 For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \mathfrak{X}(T^*M)$ is a Poisson spray if
@@ -156,16 +160,17 @@ For a Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \mathfrak{X}(T^*M)
 
 \begin{remark}
 	By a local symplectic groupoid $G \rightrightarrows M$, we mean that the multiplication $m: G {_\beta \times_\alpha} G \to G$ may not be defined on the entirety of its domain. In this particular case, the time-$1$-flow of the Poisson spray $X$ may be outside the neighbourhood $U$ of the zero section.
+	
+	In general, the local symplectic groupoid structure cannot be extended to the total space of $T^*M$. First of all, the Poisson spray $X$ may not be complete; secondly, the flow of the Poisson spray $X$ may loops; and finally, the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $T^*M$, may not be non-degenerate on the total space of $T^*M$.
 \end{remark}
 
-
-\begin{remark}
+\begin{corollary}
 	Given a Poisson spray $X \in \mathfrak{X}(T^*M)$ on a Poisson manifold $(M, \pi)$, there is actually a 1-parameter family of local symplectic groupoid structure on a neighourhood $U$ of the zero section of $T^*M$ with the following structures:
 	\begin{enumerate}
-		\item the source map $\alpha = \tau_M: U \to M$ is the bundle projection ;
+		\item the source map $\alpha_t = \tau_M: U \to M$ is the bundle projection;
 		\item the target map is
 			$$
-				\beta: U \to M, \qquad \beta = \tau_M \circ \varphi_X^t
+				\beta: U \to M, \qquad \beta_t = \tau_M \circ \varphi_X^t
 			$$
 		where $\varphi_X^t: T^*M \to T^*M$ is the time-$t$-flow of the Poisson spray $X$;
 		\item the multiplication is the concatenation of the time-$t$-flow of $X$; and
@@ -175,7 +180,7 @@ For a Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \mathfrak{X}(T^*M)
 			$$
 	\end{enumerate}
 The local symplectic groupoid $(U, \overline{\omega}_t)$ integrates the Poisson manifold $(M, t\pi)$ for $0 \leq t\leq 1$. In particular, the local symplectic groupoid in Theorem~\ref{thm:poissp} is the case $t = 1$.
-\end{remark}
+\end{corollary}
 
 \begin{remark} \label{remark:PoiSpLoc}
 In local coordinates $T^*\mathbb{R}^n = \{(x_1, \ldots, x_n, p_1, \ldots, p_n)\}$, if the Poisson structure
@@ -188,6 +193,50 @@ $$
 $$
 where $f_i$'s are fiberwise quadratic functions on $T^*\mathbb{R}^n$.
 \end{remark}
+
+\begin{example} \label{ex:PoiSpLogC}
+Let $\cF$ be either $\RR$ or $\CC$, and let $\Omega_{ij}$ be a skew-symmetric matrix over $\cF$. For the 1-parameter family of Poisson structures on $\cF^n$:
+$$
+	\pi_t = t\sum_{i > j} \Omega_{ij} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}, \qquad 0\leq t \leq 1,
+$$
+there is a 1-parameter family of symplectic groupoid $G_t \rra \cF^n$, for $0 \leq t \leq 1$ with the following structures:
+	\begin{enumerate}
+		\item $G_t = T^*\cF^n$;
+		\item the source map is the bundle projection
+			$$
+				\alpha_t: T^*\cF^n \to \cF^n, \qquad (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto (x_1, \ldots, x_n);
+			$$
+		\item the target map
+			$$
+				\begin{aligned}
+				\beta_t: & T^*\cF^n \to \cF^n, \\
+				& (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(\exp\left(t\sum\limits_{1 < i \leq n} B_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} B_{in} x_ip_i \right)x_n\right);
+				\end{aligned}
+			$$
+		\item the multiplication map
+			$$
+				\begin{aligned}
+				m_t: & T^*\cF^n {_{\beta_t}\times_{\alpha_t}} T^*\cF^n \to T^*\cF^n, \\
+				& \left(\left(p_1, \ldots, p_n, x_1, \ldots, x_n\right), \left(p'_1, \ldots, p'_n, \exp\left(t\sum\limits_{1 < i \leq n} B_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} B_{in} x_ip_i \right)x_n\right)\right) \\
+				& \mapsto \left(\exp\left(t \sum\limits_{1\leq i\leq n}B_{i1}x_i p_i\right) p'_1 + p_1, \ldots, \exp\left(t \sum\limits_{1\leq i\leq n}B_{in}x_i p_i\right) p'_n + p_n, x_1, \ldots, x_n \right);
+				\end{aligned}
+			$$
+		\item and the symplectic form $\overline{\omega}_t$ is
+		$$
+			\sum_{1\leq i \leq n} dp_i \wedge dx_i
+			- t \left(
+			\sum_{1 \leq i, j \leq n} B_{ij}x_i p_j d p_i \wedge d x_j 
+			+ \sum_{1 \leq j \leq n, j < i \leq n} B_{ij}p_ip_j d x_i \wedge d x_j
+			+ \sum_{1 \leq j \leq n, j < i \leq n} B_{ij}x_ix_j d p_i \wedge d p_j
+			\right).
+		$$
+	\end{enumerate}
+	In the case of $\cF = \RR$, this symplectic groupoid is realized by choosing the Poisson spray
+	$$
+		X = \sum_{1 \leq j \leq n, 1 < i \leq n}B_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}B_{ij}p_ix_i p_j\frac{\partial}{\partial p_j}.
+	$$
+	Note that the Poisson spray $X$ is complete and its flow has no loops. Moreover, $\overline{\omega}_t$ is non-degenerate since $\overline{\omega}_t^n = n \bigwedge\limits_{1\leq i\leq n} dp_i \wedge dx_i$ is a volume form.
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
