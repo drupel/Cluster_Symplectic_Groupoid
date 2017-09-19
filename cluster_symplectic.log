@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 JUL 2017 00:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 SEP 2017 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,29 +150,29 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (./cluster_symplectic.aux)
 \openout1 = `cluster_symplectic.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 34.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 38.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -211,65 +211,72 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 70.
+LaTeX Font Info:    Try loading font information for U+euf on input line 73.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 
-
-LaTeX Warning: Citation `fomin-zelevinsky1' on page 3 undefined on input line 2
-17.
-
-
-LaTeX Warning: Citation `lee-schiffler' on page 3 undefined on input line 222.
-
-
-LaTeX Warning: Citation `gross-hacking-keel-kontsevich' on page 3 undefined on 
-input line 222.
+Overfull \hbox (6.63412pt too wide) detected at line 233
+[] \OML/cmm/m/it/10 dp[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 dx[] \OMS/cmsy/m/n
+/10 ^^@ \OML/cmm/m/it/10 t [] :
+ []
 
 [3]
 
+LaTeX Warning: Citation `fomin-zelevinsky1' on page 4 undefined on input line 2
+68.
+
+
+LaTeX Warning: Citation `lee-schiffler' on page 4 undefined on input line 274.
+
+
+LaTeX Warning: Citation `gross-hacking-keel-kontsevich' on page 4 undefined on 
+input line 274.
+
+
 LaTeX Warning: Citation `berenstein-zelevinsky' on page 4 undefined on input li
-ne 248.
+ne 300.
 
 
 LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 4 undefined on in
-put line 248.
+put line 300.
 
+[4]
 
-LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 4 undefined on in
-put line 252.
+LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 5 undefined on in
+put line 304.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 278.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 351.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 278.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 351.
 
-Overfull \hbox (18.36697pt too wide) in paragraph at lines 286--290
-[]\OT1/cmr/m/n/10 It re-mains to check as-so-cia-tiv-ity of the mul-ti-pli-ca-t
-ion. Fix an el-e-ment $(\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 G[]$\OT1/cmr/m/n/10 . Con
--sider $(\OT1/cmr/bx/n/10 x[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/
-n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x[]\OML/cmm/m/it/10 
-; \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
+Overfull \hbox (19.82709pt too wide) detected at line 375
+\OML/cmm/m/it/10 ^^V[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT
+1/cmr/bx/n/10 p\OT1/cmr/m/n/10 ) = (\OT1/cmr/bx/n/10 x[]\OT1/cmr/m/n/10 (\OT1/c
+mr/bx/n/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/
+n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n/10 ))
+\OML/cmm/m/it/10 ;  \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML
+/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 p[]\OT1/
+cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n
+/10 )\OML/cmm/m/it/10 ; [] ; p[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/i
+t/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 ;  p[] \OT1/cmr/m/n
+/10 = []
  []
 
-[4] (./cluster_symplectic.bbl) [5] (./cluster_symplectic.aux)
+[5] (./cluster_symplectic.bbl) [6] (./cluster_symplectic.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 2235 strings out of 493089
- 27071 string characters out of 6134842
- 95279 words of memory out of 5000000
- 5547 multiletter control sequences out of 15000+600000
+ 2244 strings out of 493089
+ 27131 string characters out of 6134842
+ 96336 words of memory out of 5000000
+ 5556 multiletter control sequences out of 15000+600000
  14653 words of font info for 60 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 34i,12n,32p,714b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,32p,751b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
@@ -292,10 +299,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cluster_symplectic.pdf (5 pages, 269252 bytes).
+Output written on cluster_symplectic.pdf (6 pages, 279831 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
