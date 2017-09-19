@@ -1,38 +1,34 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 SEP 2017 14:29
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.2.28)  19 SEP 2017 17:48
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 SEP 2017 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./cluster_symplectic.tex
+**cluster_symplectic.tex
 (./cluster_symplectic.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
-(c:/texlive/2015/texmf-dist/tex/latex/amscls/amsart.cls
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsart.cls
 Document Class: amsart 2015/03/04 v2.20.2
 \linespacing=\dimen102
 \normalparindent=\dimen103
 \normaltopskip=\skip41
-(c:/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip42
 
 For additional information on amsmath, use the `?' option.
-(c:/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(c:/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen104
 ))
-(c:/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-(c:/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count79
@@ -75,17 +71,17 @@ LaTeX Info: Redefining \] on input line 2666.
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 388.
 
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-\copyins=\insert199
+\copyins=\insert233
 \abstractbox=\box28
 \listisep=\skip45
 \c@part=\count91
@@ -109,31 +105,31 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \thm@headsep=\skip50
 \dth@everypar=\toks24
 )
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(c:/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-(c:/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(c:/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks25
 )
-(c:/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(c:/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(c:/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count99
@@ -154,7 +150,6 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 (./cluster_symplectic.aux)
 \openout1 = `cluster_symplectic.aux'.
 
-<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
@@ -168,41 +163,18 @@ LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Try loading font information for U+msa on input line 38.
-=======
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Try loading font information for U+msa on input line 37.
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
 
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for U+msb on input line 38.
-=======
-LaTeX Font Info:    Try loading font information for U+msb on input line 37.
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
 
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for U+lasy on input line 38.
-=======
-LaTeX Font Info:    Try loading font information for U+lasy on input line 37.
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
 
-(c:/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 *geometry* driver: auto-detecting
@@ -239,21 +211,60 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<<<<<<< HEAD
+
+LaTeX Warning: Citation `MR2900786' on page 1 undefined on input line 60.
+
 LaTeX Font Info:    Try loading font information for U+euf on input line 73.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
-=======
-LaTeX Font Info:    Try loading font information for U+euf on input line 72.
-(c:/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [1{c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (6.63412pt too wide) detected at line 232
-[] \OML/cmm/m/it/10 dp[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 dx[] \OMS/cmsy/m/n
-/10 ^^@ \OML/cmm/m/it/10 t [] :
- []
+)
 
-<<<<<<< HEAD
+LaTeX Warning: Citation `MR866024' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR1008479' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR1081010' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR1081011' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR1938552' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR2417440' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Citation `MR866024' on page 1 undefined on input line 91.
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `MR1973056' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `MR2128714' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `MR1054741' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `MR3214314' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `MR2900786' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `CMS17' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `MR2900786' on page 2 undefined on input line 145.
+
+
+LaTeX Warning: Citation `CMS17' on page 2 undefined on input line 145.
+
+[2]
 Overfull \hbox (6.63412pt too wide) detected at line 233
 [] \OML/cmm/m/it/10 dp[] \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 dx[] \OMS/cmsy/m/n
 /10 ^^@ \OML/cmm/m/it/10 t [] :
@@ -278,32 +289,10 @@ ne 300.
 
 LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 4 undefined on in
 put line 300.
-=======
-[3]
-
-LaTeX Warning: Citation `fomin-zelevinsky1' on page 4 undefined on input line 2
-67.
-
-
-LaTeX Warning: Citation `lee-schiffler' on page 4 undefined on input line 272.
-
-
-LaTeX Warning: Citation `gross-hacking-keel-kontsevich' on page 4 undefined on 
-input line 272.
-
-
-LaTeX Warning: Citation `berenstein-zelevinsky' on page 4 undefined on input li
-ne 298.
-
-
-LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 4 undefined on in
-put line 298.
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
 
 [4]
 
 LaTeX Warning: Citation `gekhtman-shapiro-vainshtein' on page 5 undefined on in
-<<<<<<< HEAD
 put line 304.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
@@ -322,94 +311,50 @@ cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n
 /10 )\OML/cmm/m/it/10 ; [] ; p[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OML/cmm/m/i
 t/10 ; \OT1/cmr/bx/n/10 p\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 ;  p[] \OT1/cmr/m/n
 /10 = []
-=======
-put line 302.
-
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 328.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 328.
-
-Overfull \hbox (18.36697pt too wide) in paragraph at lines 336--340
-[]\OT1/cmr/m/n/10 It re-mains to check as-so-cia-tiv-ity of the mul-ti-pli-ca-t
-ion. Fix an el-e-ment $(\OT1/cmr/bx/n/10 x\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p
-\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 G[]$\OT1/cmr/m/n/10 . Con
--sider $(\OT1/cmr/bx/n/10 x[]\OML/cmm/m/it/10 ; \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/
-n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x[]\OML/cmm/m/it/10 
-; \OT1/cmr/bx/n/10 p[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
  []
 
-[5] (./cluster_symplectic.bbl) [6] (./cluster_symplectic.aux)
+
+LaTeX Warning: Citation `MR3077259' on page 5 undefined on input line 380.
+
+[5]
+No file cluster_symplectic.bbl.
+[6] (./cluster_symplectic.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 2244 strings out of 493089
- 27131 string characters out of 6134842
- 96336 words of memory out of 5000000
- 5556 multiletter control sequences out of 15000+600000
- 14653 words of font info for 60 fonts, out of 8000000 for 9000
+ 2234 strings out of 493089
+ 27018 string characters out of 6134842
+ 96287 words of memory out of 5000000
+ 5550 multiletter control sequences out of 15000+600000
+ 13992 words of font info for 58 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 34i,12n,32p,751b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,32p,752b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cluster_symplectic.pdf (6 pages, 279831 bytes).
-=======
- 2244 strings out of 493033
- 26809 string characters out of 6137748
- 95628 words of memory out of 5000000
- 5607 multiletter control sequences out of 15000+600000
- 14653 words of font info for 60 fonts, out of 8000000 for 9000
- 1302 hyphenation exceptions out of 8191
- 34i,12n,32p,753b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2015/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cmextra/cmex7.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
-><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy5.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-c:/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cluster_symplectic.pdf (6 pages, 276794 bytes).
->>>>>>> 2d600320f70acbabd07f4d12544187db7c241856
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cluster_symplectic.pdf (6 pages, 244700 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
