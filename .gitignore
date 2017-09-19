@@ -219,12 +219,12 @@ pip-log.txt
 ## Latex
 #################
 
-.pdf
-.aux
-.log
-.gz
-.bst
-.bcf
-.bbl
-.blg
-.bst
+*.pdf
+*.aux
+*.log
+*.gz
+*.bst
+*.bcf
+*.bbl
+*.blg
+*.bst
