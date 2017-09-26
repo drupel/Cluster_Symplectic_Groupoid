@@ -214,30 +214,30 @@ there is a 1-parameter family of symplectic groupoid $G_t \rra \cF^n$, for $0 \l
 			$$
 				\begin{aligned}
 				\beta_t: & T^*\cF^n \to \cF^n, \\
-				& (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(\exp\left(t\sum\limits_{1 < i \leq n} B_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} B_{in} x_ip_i \right)x_n\right);
+				& (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(\exp\left(t\sum\limits_{1 < i \leq n} \Omega_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} \Omega_{in} x_ip_i \right)x_n\right);
 				\end{aligned}
 			$$
 		\item the multiplication map
 			$$
 				\begin{aligned}
 				m_t: & T^*\cF^n {_{\beta_t}\times_{\alpha_t}} T^*\cF^n \to T^*\cF^n, \\
-				& \left(\left(p_1, \ldots, p_n, x_1, \ldots, x_n\right), \left(p'_1, \ldots, p'_n, \exp\left(t\sum\limits_{1 < i \leq n} B_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} B_{in} x_ip_i \right)x_n\right)\right) \\
-				& \mapsto \left(\exp\left(t \sum\limits_{1\leq i\leq n}B_{i1}x_i p_i\right) p'_1 + p_1, \ldots, \exp\left(t \sum\limits_{1\leq i\leq n}B_{in}x_i p_i\right) p'_n + p_n, x_1, \ldots, x_n \right);
+				& \left(\left(p_1, \ldots, p_n, x_1, \ldots, x_n\right), \left(p'_1, \ldots, p'_n, \exp\left(t\sum\limits_{1 < i \leq n} \Omega_{i1} x_ip_i \right)x_1, \ldots, \exp\left(t\sum\limits_{1 < i \leq n} \Omega_{in} x_ip_i \right)x_n\right)\right) \\
+				& \mapsto \left(\exp\left(t \sum\limits_{1\leq i\leq n}\Omega_{i1}x_i p_i\right) p'_1 + p_1, \ldots, \exp\left(t \sum\limits_{1\leq i\leq n}\Omega_{in}x_i p_i\right) p'_n + p_n, x_1, \ldots, x_n \right);
 				\end{aligned}
 			$$
 		\item and the symplectic form $\overline{\omega}_t$
 		$$
 			\sum_{1\leq i \leq n} dp_i \wedge dx_i
 			- t \left(
-			\sum_{1 \leq i, j \leq n} B_{ij}x_i p_j d p_i \wedge d x_j 
-			+ \sum_{1 \leq j \leq n, j < i \leq n} B_{ij}p_ip_j d x_i \wedge d x_j
-			+ \sum_{1 \leq j \leq n, j < i \leq n} B_{ij}x_ix_j d p_i \wedge d p_j
+			\sum_{1 \leq i, j \leq n} \Omega_{ij}x_i p_j d p_i \wedge d x_j 
+			+ \sum_{1 \leq j \leq n, j < i \leq n} \Omega_{ij}p_ip_j d x_i \wedge d x_j
+			+ \sum_{1 \leq j \leq n, j < i \leq n} \Omega_{ij}x_ix_j d p_i \wedge d p_j
 			\right).
 		$$
 	\end{enumerate}
 	In the case of $\cF = \RR$, this symplectic groupoid is realized by choosing the Poisson spray
 	$$
-		X = \sum_{1 \leq j \leq n, 1 < i \leq n}B_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}B_{ij}p_ix_i p_j\frac{\partial}{\partial p_j}.
+		X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}p_ix_i p_j\frac{\partial}{\partial p_j}.
 	$$
 	Note that the Poisson spray $X$ is complete and its flow has no loops. Moreover, $\overline{\omega}_t$ is non-degenerate since $\overline{\omega}_t^n = n \bigwedge\limits_{1\leq i\leq n} dp_i \wedge dx_i$ is a volume form.
 \end{example}
