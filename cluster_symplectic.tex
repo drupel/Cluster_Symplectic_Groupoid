@@ -12,6 +12,9 @@
 \newtheorem{example}[theorem]{Example}
 
 
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfe}{\mathbf{e}}
 \newcommand{\bfp}{\mathbf{p}}
 \newcommand{\bfs}{\mathbf{s}}
 \newcommand{\bfx}{\mathbf{x}}
@@ -25,6 +28,7 @@
 \newcommand{\kk}{\Bbbk}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
 \newcommand{\diag}{\operatorname{diag}}
@@ -408,25 +412,25 @@ where $\varepsilon_k$ denotes the tropical sign for the seed $\Sigma$.
 
 \begin{lemma}
   Let $\bfx',\bfp',\Omega'$ be obtained from $\bfx,\bfp,\Omega$ by mutation in direction $k$.
-  For any index $1\le i\le m$ with $i\ne k$, we have $\sum\limits_{j=1}^m \Omega'_{ij} x'_j p'_j = \sum\limts_{j=1}^m \Omega_{ij} x_j p_j$ and $\sum\limits_{j=1}^m \Omega'_{kj} x'_j p'_j=\ln\left\frac{x'_k(\bfs\circ\bfx)}{x'_k(\bfx)}$.
+  For any index $1\le i\le m$ with $i\ne k$, we have $\sum\limits_{j=1}^m \Omega'_{ij} x'_j p'_j = \sum\limits_{j=1}^m \Omega_{ij} x_j p_j$ and $\sum\limits_{j=1}^m \Omega'_{kj} x'_j p'_j=\ln\left(\frac{x'_k(\bfs\circ\bfx)}{x'_k(\bfx)}\right)$.
 \end{lemma}
 \begin{proof}
   The mutation operation for groupoid charts is more naturally written in vector form as
-  \[\bfx'\circ\bfp'=E_{k,\varepsion_k}(\bfx\circ\bfp)+\frac{1}{d_k}\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\bfb_k.\]
+  \[\bfx'\circ\bfp'=E_{k,\varepsilon_k}(\bfx\circ\bfp)+\frac{1}{d_k}\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\right)\bfb_k.\]
   This gives rise to the identity
   \begin{align}
     \Omega'(\bfx'\circ\bfp')
-    \nonumber &=\Omega' E_{k,\varepsion_k}(\bfx\circ\bfp)+\frac{1}{d_k}\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\Omega'\bfb_k\\
-    \label{eq:groupoid transition} &=E_{k,\varepsion_k}^T\Omega (\bfx\circ\bfp)+\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\bfe_k.
+    \nonumber &=\Omega' E_{k,\varepsilon_k}(\bfx\circ\bfp)+\frac{1}{d_k}\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\right)\Omega'\bfb_k\\
+    \label{eq:groupoid transition} &=E_{k,\varepsilon_k}^T\Omega (\bfx\circ\bfp)+\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\right)\bfe_k.
   \end{align}
-  By the structure of $E_{k,\varepsilon_k}$, the euqality $\sum\limits_{j=1}^m \Omega'_{ij} x'_j p'_j = \sum\limts_{j=1}^m \Omega_{ij} x_j p_j$ for $i\ne k$ immediately follows.
+  By the structure of $E_{k,\varepsilon_k}$, the euqality $\sum\limits_{j=1}^m \Omega'_{ij} x'_j p'_j = \sum\limits_{j=1}^m \Omega_{ij} x_j p_j$ for $i\ne k$ immediately follows.
 
   Equation~\ref{eq:groupoid transition} also gives the identity
   \begin{align*}
     \sum\limits_{j=1}^m \Omega'_{kj} x'_j p'_j
-    &=-\sum\limits_{j=1}^m \Omega_{kj} x_j p_j+\ln\left(\bfs^{\bfb_k^+}\right)+\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\\
-    &=-\sum\limits_{j=1}^m \Omega_{kj} x_j p_j+\ln\left(\frac{x'_k(\bfs\circ\bfx)x_k(\bfs\circ\bfx)}{x'_k(\bfx)x_k(\bfx)}\\
-    \ln\left\frac{x'_k(\bfs\circ\bfx)}{x'_k(\bfx)}.
+    &=-\sum\limits_{j=1}^m \Omega_{kj} x_j p_j+\ln\left(\bfs^{\bfb_k^+}\right)+\ln\left(\frac{Q_k(\bfs\circ\bfx)}{Q_k(\bfx)}\right)\\
+    &=-\sum\limits_{j=1}^m \Omega_{kj} x_j p_j+\ln\left(\frac{x'_k(\bfs\circ\bfx)x_k(\bfs\circ\bfx)}{x'_k(\bfx)x_k(\bfx)}\right)\\
+    \ln\left(\frac{x'_k(\bfs\circ\bfx)}{x'_k(\bfx)}\right).
   \end{align*}
 \end{proof}
 
