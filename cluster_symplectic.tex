@@ -26,6 +26,7 @@
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cX}{\mathcal{X}}
+\newcommand{\cT}{\mathcal{T}}
 
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
@@ -190,60 +191,36 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoid of log canonical Poisson structure}
 
-In this section, we use the notion of Poisson spray to construct the source-simply-conncted sympletic groupoid of a log canonical Poisson structure \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double in \cite{MR2470108} is a source-connected symplectic groupoid of the log canonical Poisson structure in that chart. We give an explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure as in  \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure. We give the explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
 
 To introduce the notions of symplectic groupoids and Poisson sprays, we switch to the Poisson bi-vectors, which is equivalent to the Poisson brackets.
 
 \begin{definition}
-A smooth Poisson manifold is a smooth manifold $\cX$ equipped with one of the following two equivalent structures:
+Let $\cX$ be either a smooth manifold or a complex manifold. A Poisson structure on $\cX$ is one of the two following equivalent structures:
   \begin{enumerate}
-    \item a Lie bracket (called a Poisson bracket)
+    \item a Poisson bracket
       $$
-				\{\cdot, \cdot\}: \cO_\cX \times \cO_\cX \to C^\infty(M)
+				\{\cdot, \cdot\}: \cO_\cX \times \cO_\cX \to \cO_\cX
 			$$
-				satisfying the Leibniz rule
+			which is a Lie bracket satisfying the Leibniz rule
 			$$
 				\{fg, h\} = f\{g,h\} + g\{f,h\};
 			$$
-		\item a Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where
-			$$
-				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
-			$$
-			is the Schouten-Nijenhuis bracket.
+		\item a Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
+%			$$
+%				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
+%			$$
+%			is the Schouten-Nijenhuis bracket.
+%		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
 \end{enumerate}	
-	A holomorphic Poisson manifold is analogous where $M$ is a complex manifold.
 \end{definition}
 
-\begin{definition}
-A smooth Poisson manifold is a smooth manifold $M$ equipped with one of the following three equivalent structures:
-  \begin{enumerate}
-    \item A Lie bracket (called a Poisson bracket)
-      $$
-				\{\cdot, \cdot\}: C^\infty(M) \times C^\infty(M) \to C^\infty(M)
-			$$
-				satisfying the Leibniz rule
-			$$
-				\{fg, h\} = f\{g,h\} + g\{f,h\}.
-			$$
-		\item A Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where
-			$$
-				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
-			$$
-			is the Schouten-Nijenhuis bracket.
-		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
-\end{enumerate}	
-	A holomorphic Poisson manifold is analogous where $M$ is a complex manifold.
-\end{definition}
-
-\begin{remark}
-	We shall denote a Poisson manifold by either $(M, \pi)$ or $(M, \{,\})$.
-	\begin{enumerate}
-		\item The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
-		\item The Poisson differential operator is related to the Poisson bivector by the formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
-	\end{enumerate}
-\end{remark}
-
-The notion of the symplectic groupoid of a Poisson manifold was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and quantization \cite{MR2417440}. As a Lie groupoid, the symplectic groupoid integrates the Poisson Lie algebroid $\pi^\sharp: T^*M \to TM$ \cite{MR866024}.
+We denote a Poisson manifold by either $(\cX, \pi)$ or $(\cX, \{,\})$. The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$.
+%	\begin{enumerate}
+%		\item The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
+%		\item The Poisson differential operator is related to the Poisson bivector by the formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
+%	\end{enumerate}
+As a Lie groupoid, the symplectic groupoid integrates the Poisson Lie algebroid $\pi^\flat: \cT^*_\cX \to \cT_\cX$ \cite{MR866024}; and as a Poisson groupoid, the symplectic groupoid integrates the Lie bialgebroid $(\cT^*_\cX, \cT_\cX)$ where the cotangent bundle $\cT^*_\cX$ carries Poisson Lie algebroid structure and the tangent bundle $\cT_\cX$ carries the standard the Lie algebroid structure \cite{MR1262213}.
 
 \begin{definition}
 A groupoid $G \rightrightarrows M$ consists of two sets $G$ and $M$ with the following maps:

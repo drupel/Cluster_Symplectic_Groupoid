@@ -1,0 +1,415 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@ARTICLE{MR2925830,
+  author = {Bonechi, F. and Ciccoli, N. and Staffolani, N. and Tarlini, M.},
+  title = {The quantization of the symplectic groupoid of the standard {P}odle\'s
+	sphere},
+  journal = {J. Geom. Phys.},
+  year = {2012},
+  volume = {62},
+  pages = {1851--1865},
+  number = {8},
+  fjournal = {Journal of Geometry and Physics},
+  issn = {0393-0440},
+  mrclass = {46L87 (81R50)},
+  mrnumber = {2925830},
+  mrreviewer = {Albert Jeu-Liang Sheu},
+  url = {https://doi.org/10.1016/j.geomphys.2012.04.001}
+}
+
+@ARTICLE{CMS17,
+  author = {Cabrera, Alejandro and Marcut, Ioan and Salazar, Maria Amelia},
+  title = {A construction of local Lie groupoids using Lie algebroid sprays},
+  journal = {Preprint},
+  year = {2017},
+  url = {arXiv:1703.04411}
+}
+
+@INCOLLECTION{MR1938552,
+  author = {Cattaneo, Alberto S. and Felder, Giovanni},
+  title = {Poisson sigma models and symplectic groupoids},
+  booktitle = {Quantization of singular symplectic quotients},
+  publisher = {Birkh\"auser, Basel},
+  year = {2001},
+  volume = {198},
+  series = {Progr. Math.},
+  pages = {61--93},
+  mrclass = {53D17 (53C80 58H05)},
+  mrnumber = {1938552},
+  mrreviewer = {Stefan Waldmann}
+}
+
+@ARTICLE{MR2128714,
+  author = {Crainic, Marius and Fernandes, Rui Loja},
+  title = {Integrability of {P}oisson brackets},
+  journal = {J. Differential Geom.},
+  year = {2004},
+  volume = {66},
+  pages = {71--137},
+  number = {1},
+  fjournal = {Journal of Differential Geometry},
+  issn = {0022-040X},
+  mrclass = {53D17 (22A22 37J05 58H05)},
+  mrnumber = {2128714},
+  mrreviewer = {Olga V. Radko},
+  url = {http://projecteuclid.org/euclid.jdg/1090415030}
+}
+
+@ARTICLE{MR1973056,
+  author = {Crainic, Marius and Fernandes, Rui Loja},
+  title = {Integrability of {L}ie brackets},
+  journal = {Ann. of Math. (2)},
+  year = {2003},
+  volume = {157},
+  pages = {575--620},
+  number = {2},
+  doi = {10.4007/annals.2003.157.575},
+  fjournal = {Annals of Mathematics. Second Series},
+  issn = {0003-486X},
+  mrclass = {58H05 (17B37 17B99 22A22 53D17)},
+  mrnumber = {1973056},
+  mrreviewer = {Johannes Huebschmann},
+  url = {http://dx.doi.org/10.4007/annals.2003.157.575}
+}
+
+@ARTICLE{MR2900786,
+  author = {Crainic, Marius and M\u{a}rcu\c{t}, Ioan},
+  title = {On the existence of symplectic realizations},
+  journal = {J. Symplectic Geom.},
+  year = {2011},
+  volume = {9},
+  pages = {435--444},
+  number = {4},
+  fjournal = {The Journal of Symplectic Geometry},
+  issn = {1527-5256},
+  mrclass = {53D17 (53D05)},
+  mrnumber = {2900786},
+  mrreviewer = {Jeffrey K. Lawson},
+  url = {http://projecteuclid.org/euclid.jsg/1330441079}
+}
+
+@ARTICLE{MR3534840,
+  author = {Fock, V. V. and Goncharov, A. B.},
+  title = {Symplectic double for moduli spaces of {G}-local systems on surfaces},
+  journal = {Adv. Math.},
+  year = {2016},
+  volume = {300},
+  pages = {505--543},
+  fjournal = {Advances in Mathematics},
+  issn = {0001-8708},
+  mrclass = {53D30 (13F60 32G15)},
+  mrnumber = {3534840},
+  url = {https://doi.org/10.1016/j.aim.2016.03.026}
+}
+
+@ARTICLE{MR2470108,
+  author = {Fock, V. V. and Goncharov, A. B.},
+  title = {The quantum dilogarithm and representations of quantum cluster varieties},
+  journal = {Invent. Math.},
+  year = {2009},
+  volume = {175},
+  pages = {223--286},
+  number = {2},
+  fjournal = {Inventiones Mathematicae},
+  issn = {0020-9910},
+  mrclass = {14G40 (13F60 16G10 17B37 33B30 53D17)},
+  mrnumber = {2470108},
+  mrreviewer = {Jerzy Browkin},
+  url = {https://doi.org/10.1007/s00222-008-0149-3}
+}
+
+@ARTICLE{MR2567745,
+  author = {Fock, Vladimir V. and Goncharov, Alexander B.},
+  title = {Cluster ensembles, quantization and the dilogarithm},
+  journal = {Ann. Sci. \'Ec. Norm. Sup\'er. (4)},
+  year = {2009},
+  volume = {42},
+  pages = {865--930},
+  number = {6},
+  fjournal = {Annales Scientifiques de l'\'Ecole Normale Sup\'erieure. Quatri\`eme
+	S\'erie},
+  issn = {0012-9593},
+  mrclass = {53D30 (13F60 30F60 32G15 33B30 53D55)},
+  mrnumber = {2567745},
+  mrreviewer = {Athanase Papadopoulos},
+  url = {https://doi.org/10.1007/978-0-8176-4745-2_15}
+}
+
+@INCOLLECTION{MR2641183,
+  author = {Fock, V. V. and Goncharov, A. B.},
+  title = {Cluster ensembles, quantization and the dilogarithm. {II}. {T}he
+	intertwiner},
+  booktitle = {Algebra, arithmetic, and geometry: in honor of {Y}u. {I}. {M}anin.
+	{V}ol. {I}},
+  publisher = {Birkh\"auser Boston, Inc., Boston, MA},
+  year = {2009},
+  volume = {269},
+  series = {Progr. Math.},
+  pages = {655--673},
+  mrclass = {11G55 (13F60 14G40 53D55)},
+  mrnumber = {2641183},
+  mrreviewer = {Athanase Papadopoulos},
+  url = {https://doi.org/10.1007/978-0-8176-4745-2_15}
+}
+
+@ARTICLE{MR2295199,
+  author = {Fomin, Sergey and Zelevinsky, Andrei},
+  title = {Cluster algebras. {IV}. {C}oefficients},
+  journal = {Compos. Math.},
+  year = {2007},
+  volume = {143},
+  pages = {112--164},
+  number = {1},
+  fjournal = {Compositio Mathematica},
+  issn = {0010-437X},
+  mrclass = {16S99 (05E15 14M17 22E46)},
+  mrnumber = {2295199},
+  mrreviewer = {Christof Gei\ss },
+  url = {https://doi.org/10.1112/S0010437X06002521}
+}
+
+@ARTICLE{MR1887642,
+  author = {Fomin, Sergey and Zelevinsky, Andrei},
+  title = {Cluster algebras. {I}. {F}oundations},
+  journal = {J. Amer. Math. Soc.},
+  year = {2002},
+  volume = {15},
+  pages = {497--529},
+  number = {2},
+  fjournal = {Journal of the American Mathematical Society},
+  issn = {0894-0347},
+  mrclass = {16S99 (14M99 17B99)},
+  mrnumber = {1887642},
+  mrreviewer = {Eric N. Sommers},
+  url = {https://doi.org/10.1090/S0894-0347-01-00385-X}
+}
+
+@ARTICLE{MR3691969,
+  author = {Gekhtman, Michael and Nakanishi, Tomoki and Rupel, Dylan},
+  title = {Hamiltonian and {L}agrangian formalisms of mutations in cluster algebras
+	and application to dilogarithm identities},
+  journal = {J. Integrable Syst.},
+  year = {2017},
+  volume = {2},
+  pages = {xyx005, 35},
+  number = {1},
+  fjournal = {Journal of Integrable Systems},
+  issn = {2058-5985},
+  mrclass = {70S05 (13F60)},
+  mrnumber = {3691969}
+}
+
+@BOOK{MR2683456,
+  title = {Cluster algebras and {P}oisson geometry},
+  publisher = {American Mathematical Society, Providence, RI},
+  year = {2010},
+  author = {Gekhtman, Michael and Shapiro, Michael and Vainshtein, Alek},
+  volume = {167},
+  pages = {xvi+246},
+  series = {Mathematical Surveys and Monographs},
+  isbn = {978-0-8218-4972-9},
+  mrclass = {13F60 (37K20 37K25 53D17)},
+  mrnumber = {2683456},
+  mrreviewer = {Gregoire Dupont},
+  url = {https://doi.org/10.1090/surv/167}
+}
+
+@ARTICLE{MR2078567,
+  author = {Gekhtman, Michael and Shapiro, Michael and Vainshtein, Alek},
+  title = {Cluster algebras and {P}oisson geometry},
+  journal = {Mosc. Math. J.},
+  year = {2003},
+  volume = {3},
+  pages = {899--934, 1199},
+  number = {3},
+  note = {\{Dedicated to Vladimir Igorevich Arnold on the occasion of his 65th
+	birthday\}},
+  fjournal = {Moscow Mathematical Journal},
+  issn = {1609-3321},
+  mrclass = {53D17 (05E15 14M15)},
+  mrnumber = {2078567}
+}
+
+@ARTICLE{GHKK14,
+  author = {Gross, Mark and Hacking, Paul and Keel, Sean and Kontsevich, Maxim},
+  title = {Canonical bases for cluster algebras},
+  journal = {Preprint},
+  year = {2014},
+  url = {arXiv:1411.1394}
+}
+
+@ARTICLE{MR3214314,
+  author = {Gualtieri, Marco and Li, Songhao},
+  title = {Symplectic groupoids of log symplectic manifolds},
+  journal = {Int. Math. Res. Not. IMRN},
+  year = {2014},
+  pages = {3022--3074},
+  number = {11},
+  fjournal = {International Mathematics Research Notices. IMRN},
+  issn = {1073-7928},
+  mrclass = {53D17 (58H05)},
+  mrnumber = {3214314},
+  mrreviewer = {David Iglesias Ponte}
+}
+
+@ARTICLE{MR2417440,
+  author = {Hawkins, Eli},
+  title = {A groupoid approach to quantization},
+  journal = {J. Symplectic Geom.},
+  year = {2008},
+  volume = {6},
+  pages = {61--125},
+  number = {1},
+  fjournal = {The Journal of Symplectic Geometry},
+  issn = {1527-5256},
+  mrclass = {46L65 (22A22 53D17 53D50)},
+  mrnumber = {2417440},
+  mrreviewer = {Xiang Tang},
+  url = {http://projecteuclid.org/euclid.jsg/1215032733}
+}
+
+@INCOLLECTION{MR3077259,
+  author = {Joyce, Dominic},
+  title = {On manifolds with corners},
+  booktitle = {Advances in geometric analysis},
+  publisher = {Int. Press, Somerville, MA},
+  year = {2012},
+  volume = {21},
+  series = {Adv. Lect. Math. (ALM)},
+  pages = {225--258},
+  mrclass = {58A05},
+  mrnumber = {3077259},
+  mrreviewer = {Hirokazu Nishimura}
+}
+
+@ARTICLE{MR1008479,
+  author = {Karas\"ev, M. V.},
+  title = {The {M}aslov quantization conditions in higher cohomology and analogs
+	of notions developed in {L}ie theory for canonical fibre bundles
+	of symplectic manifolds. {I}, {II}},
+  journal = {Selecta Math. Soviet.},
+  year = {1989},
+  volume = {8},
+  pages = {213--234, 235--258},
+  number = {3},
+  note = {Translated from the Russian by Pavel Buzytsky, Selected translations},
+  fjournal = {Selecta Mathematica Sovietica},
+  issn = {0272-9903},
+  mrclass = {58F05 (58F06)},
+  mrnumber = {1008479},
+  mrreviewer = {Alan Weinstein}
+}
+
+@ARTICLE{MR3374957,
+  author = {Lee, Kyungyong and Schiffler, Ralf},
+  title = {Positivity for cluster algebras},
+  journal = {Ann. of Math. (2)},
+  year = {2015},
+  volume = {182},
+  pages = {73--125},
+  number = {1},
+  fjournal = {Annals of Mathematics. Second Series},
+  issn = {0003-486X},
+  mrclass = {13F60 (05E15)},
+  mrnumber = {3374957},
+  mrreviewer = {Alfredo N\'ajera Ch\'avez},
+  url = {https://doi.org/10.4007/annals.2015.182.1.2}
+}
+
+@ARTICLE{MR1054741,
+  author = {Lu, Jiang-Hua and Weinstein, Alan},
+  title = {Groupo\"\i des symplectiques doubles des groupes de {L}ie-{P}oisson},
+  journal = {C. R. Acad. Sci. Paris S\'er. I Math.},
+  year = {1989},
+  volume = {309},
+  pages = {951--954},
+  number = {18},
+  fjournal = {Comptes Rendus de l'Acad\'emie des Sciences. S\'erie I. Math\'ematique},
+  issn = {0764-4442},
+  mrclass = {58F05 (53C15 58H05)},
+  mrnumber = {1054741},
+  mrreviewer = {Yvette Kosmann-Schwarzbach}
+}
+
+@ARTICLE{MR1262213,
+  author = {Mackenzie, Kirill C. H. and Xu, Ping},
+  title = {Lie bialgebroids and {P}oisson groupoids},
+  journal = {Duke Math. J.},
+  year = {1994},
+  volume = {73},
+  pages = {415--452},
+  number = {2},
+  fjournal = {Duke Mathematical Journal},
+  issn = {0012-7094},
+  mrclass = {58H05 (17B99 22E99 58F05 58F07)},
+  mrnumber = {1262213},
+  mrreviewer = {Johannes Huebschmann},
+  url = {https://doi.org/10.1215/S0012-7094-94-07318-3}
+}
+
+@INCOLLECTION{MR2932428,
+  author = {Nakanishi, Tomoki and Zelevinsky, Andrei},
+  title = {On tropical dualities in cluster algebras},
+  booktitle = {Algebraic groups and quantum groups},
+  publisher = {Amer. Math. Soc., Providence, RI},
+  year = {2012},
+  volume = {565},
+  series = {Contemp. Math.},
+  pages = {217--226},
+  mrclass = {13F60},
+  mrnumber = {2932428},
+  mrreviewer = {Yu Zhou},
+  url = {https://doi.org/10.1090/conm/565/11159}
+}
+
+@ARTICLE{MR866024,
+  author = {Weinstein, Alan},
+  title = {Symplectic groupoids and {P}oisson manifolds},
+  journal = {Bull. Amer. Math. Soc. (N.S.)},
+  year = {1987},
+  volume = {16},
+  pages = {101--104},
+  number = {1},
+  doi = {10.1090/S0273-0979-1987-15473-5},
+  fjournal = {American Mathematical Society. Bulletin. New Series},
+  issn = {0273-0979},
+  mrclass = {58F05 (20L15 58H05)},
+  mrnumber = {866024},
+  url = {http://dx.doi.org/10.1090/S0273-0979-1987-15473-5}
+}
+
+@ARTICLE{MR1081010,
+  author = {Zakrzewski, S.},
+  title = {Quantum and classical pseudogroups. {I}. {U}nion pseudogroups and
+	their quantization},
+  journal = {Comm. Math. Phys.},
+  year = {1990},
+  volume = {134},
+  pages = {347--370},
+  number = {2},
+  fjournal = {Communications in Mathematical Physics},
+  issn = {0010-3616},
+  mrclass = {58B30 (16W30 46L85 46L89 58H05)},
+  mrnumber = {1081010},
+  mrreviewer = {Palle E. T. Jorgensen},
+  url = {http://projecteuclid.org/euclid.cmp/1104201734}
+}
+
+@ARTICLE{MR1081011,
+  author = {Zakrzewski, S.},
+  title = {Quantum and classical pseudogroups. {II}. {D}ifferential and symplectic
+	pseudogroups},
+  journal = {Comm. Math. Phys.},
+  year = {1990},
+  volume = {134},
+  pages = {371--395},
+  number = {2},
+  fjournal = {Communications in Mathematical Physics},
+  issn = {0010-3616},
+  mrclass = {58B30 (16W30 46L85 46L89 58H05)},
+  mrnumber = {1081011},
+  mrreviewer = {Palle E. T. Jorgensen},
+  url = {http://projecteuclid.org/euclid.cmp/1104201735}
+}
+
