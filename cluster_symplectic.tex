@@ -57,7 +57,7 @@ Outline
 	\item Intro to Poisson manifolds, symplectic groupoid and Poisson spray
 	\item Cluster symplectic groupoid
 	\item Totally positive cluster manifolds (definition of manifolds with corners [check D Joyce], associahedron of type A and generalized associahedron)
-	\item Symplectic topology of the groupoid, and examples
+	\item Examples
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -188,8 +188,31 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Poisson Geometry}
-In this section we recall the various definitions of Poisson manifolds and the construction of symplectic groupoids from the Poisson spray \cite{MR2900786}.
+\section{Symplectic groupoid of log canonical Poisson structure}
+
+In this section, we use the notion of Poisson spray to construct the source-simply-conncted sympletic groupoid of a log canonical Poisson structure \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double in \cite{MR2470108} is a source-connected symplectic groupoid of the log canonical Poisson structure in that chart. We give an explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
+
+To introduce the notions of symplectic groupoids and Poisson sprays, we switch to the Poisson bi-vectors, which is equivalent to the Poisson brackets.
+
+\begin{definition}
+A smooth Poisson manifold is a smooth manifold $\cX$ equipped with one of the following two equivalent structures:
+  \begin{enumerate}
+    \item a Lie bracket (called a Poisson bracket)
+      $$
+				\{\cdot, \cdot\}: \cO_\cX \times \cO_\cX \to C^\infty(M)
+			$$
+				satisfying the Leibniz rule
+			$$
+				\{fg, h\} = f\{g,h\} + g\{f,h\};
+			$$
+		\item a Poisson bivector $\pi \in \mathfrak{X}^2(M)$ such that $[\pi, \pi] = 0$ where
+			$$
+				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
+			$$
+			is the Schouten-Nijenhuis bracket.
+\end{enumerate}	
+	A holomorphic Poisson manifold is analogous where $M$ is a complex manifold.
+\end{definition}
 
 \begin{definition}
 A smooth Poisson manifold is a smooth manifold $M$ equipped with one of the following three equivalent structures:
