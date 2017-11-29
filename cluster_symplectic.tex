@@ -208,7 +208,7 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoid of log canonical Poisson structure}
 
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure as in  \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure. We give the explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure. We give the explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
 
 To introduce the notions of symplectic groupoids and Poisson sprays, we switch to the Poisson bi-vectors, which is equivalent to the Poisson brackets.
 
@@ -268,34 +268,34 @@ A Lie groupoid $\cG \rightrightarrows \cX$ is source-connected if $\alpha^{-1}(x
 A symplectic groupoid is a Lie groupoid structure $\cG \rra \cX$ with a symplectic structure $\omega \in \Omega^2(\cG)$ such that the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is a Lagrangian submanifold of $(\cG \times \cG \times \cG, \omega \oplus \omega \oplus -\omega)$.
 \end{definition}
 
-For a symplectic groupoid $(\cG, \omega) \rra \cX$, there is a natural Poisson structure $\pi$ on $\cX$ such that $\alpha: (\cG, \omega) \to (\cX, \pi)$ and $\beta: (\cG, \omega) \to (\cX, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra \cX$ integrates the Poisson Lie algebroid $\pi^\flat: \cT^*_\cX \to \cT_\cX$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (\cX, \pi)$ integrates the Lie bialgebroid $(\cT^*_\cX, \cT_\cX)$ where the cotangent bundle $\cT^*_\cX$ carries Poisson Lie algebroid structure and the tangent bundle $\cT_\cX$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. There are a few notable examples of symplectic groupoids, e.g. the symplectic double groupoid of Poisson Lie groups \cite{MR1054741}, the blow-up construction of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108}. We recall the construction of local symplectic groupoids by Crainic-Marcut \cite{MR2900786} and Cabrera-Marcut-Salazar \cite{CMS17} by Poisson sprays.
+For a symplectic groupoid $(\cG, \omega) \rra \cX$, there is a natural Poisson structure $\pi$ on $\cX$ such that $\alpha: (\cG, \omega) \to (\cX, \pi)$ and $\beta: (\cG, \omega) \to (\cX, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra \cX$ integrates the Poisson Lie algebroid $T^*\cX$ with the anchor map $\pi^\flat: \cT^*_\cX \to \cT_\cX$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (\cX, \pi)$ integrates the Lie bialgebroid $(\cT^*\cX, \cT\cX)$ where the cotangent bundle $\cT^*\cX$ carries Poisson Lie algebroid structure and the tangent bundle $\cT\cX$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108}. We recall the construction of local symplectic groupoids in\cite{MR2900786, CMS17} by Poisson sprays.
 
 \begin{definition}
-For a Poisson manifold $(\cX, \pi)$, a Poisson spray is a vector field $X \in \cT(\cT^*_\cX)$ such that
+For a Poisson manifold $(\cX, \pi)$, a Poisson spray is a vector field $X \in \cT_{\cT^*\cX}$ such that
 	\begin{enumerate}
-		\item for $(x,p) \in \cT^*_\cX$,
+		\item for $(x,p) \in \cT^*\cX$,
 			$$
 				\tau_* X|_{(x,p)} = \pi^\flat(p)
 			$$
-			where $\tau: \cT^*_\cX \to \cX$ is the bundle projection;
+			where $\tau: \cT^*\cX \to \cX$ is the bundle projection;
 		\item
 			$X$ is homogeneous of degree 1, i.e.
 			$$
 				(m_\lambda)_*(X) = \lambda X 
 			$$
-			where $m_\lambda: \cT^*_\cX \to \cT^*_\cX, \enskip (x,p) \mapsto (x,\lambda p)$ is the fiberwise scaling map.
+			where $m_\lambda: \cT^*\cX \to \cT^*\cX, \enskip (x,p) \mapsto (x,\lambda p)$ is the fiberwise scaling map.
 	\end{enumerate}
 \end{definition}
 
 \begin{theorem} \cite{MR2900786, CMS17} \label{thm:poissp}
-For a Poisson manifold $(\cX, \pi)$ with a Poisson spray $X \in \cT(\cT^*_\cX)$, a neighbourhood $\cU$ of the zero section of $\cT^*_\cX$ is a local symplectic groupoid over $(\cX, \pi)$ with the following structures:
+For a smooth Poisson manifold $(\cX, \pi)$ with a Poisson spray $X \in \cT_{\cT^*\cX}$, a neighbourhood $\cU$ of the zero section of $\cT^*\cX$ is a local symplectic groupoid over $(\cX, \pi)$ with the following structures:
 	\begin{enumerate}
 		\item the source map $\alpha = \tau: \cU \to \cX$ is the bundle projection ;
 		\item the target map is
 			$$
 				\beta: \cU \to \cX, \qquad \beta = \tau \circ \varphi_X^1
 			$$
-		where $\varphi_X^1: \cT^*_\cX \to \cT^*_\cX$ is the time-$1$-flow of the Poisson spray $X$;
+		where $\varphi_X^1: \cT^*\cX \to \cT^*\cX$ is the time-$1$-flow of $X$;
 		\item the multiplication is the concatenation of the flow of $X$; and
 		\item the symplectic form on $U$ is
 			$$
@@ -306,17 +306,16 @@ For a Poisson manifold $(\cX, \pi)$ with a Poisson spray $X \in \cT(\cT^*_\cX)$,
 
 \begin{remark}
 	By a local symplectic groupoid $(\cG, \omega) \to (\cX, \pi)$, we mean that the multiplication $m: \cG {_\beta \times_\alpha} \cG \to \cG$ may not be defined on all of its domain. In this case, the time-$1$-flow of the Poisson spray $X$ may be outside $\cU$.
-	
-	In general, the local symplectic groupoid structure cannot be extended to the total space $\cT^*_\cX$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may loop; and the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $\cT^*_\cX$, may be degenerate in general.
+In general, the local symplectic groupoid structure cannot be extended to the total space $\cT^*\cX$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may loop; and the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $\cT^*\cX$, may be degenerate in general.
 \end{remark}
 
-Let $\cX$ be either $\RR^m$ or $\CC^m$ and $\{(x_1, \ldots, x_n\}$ be coordinates on $\cX$, and let $\Omega_{ij}, 1 \leq i,j \leq m$ be a skew-symmetric matrix. For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently $\sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}$, the vector field $X \in \cT(\cT^*_\cX)$:
+Let $\cX$ be either $\RR^m$ or $\CC^m$ and $\{(x_1, \ldots, x_n\}$ be coordinates on $\cX$, and let $\Omega_{ij}, 1 \leq i,j \leq m$ be a skew-symmetric matrix. For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently $\sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}$, the vector field $X \in \cT_{\cT^*\cX}$:
 \begin{equation} \label{eq: PoisSp}
 		X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}.
 \end{equation}
 is a Poisson spray. This Poisson spray $X$ gives rise to the following symplectic groupoid structure.
 
-\begin{theorem} \label{ex:PoiSpLogC}
+\begin{theorem} \label{thm:PoiSpLogC}
 For the log-canonical Poisson structure on $\cX$:
 $$
 	\pi = \sum_{i > j} \Omega_{ij} x_i x_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
@@ -360,7 +359,7 @@ there is a source-simply-connected symplectic groupoid $(\cG, \omega) \rra (\cX,
 	$$ \varphi_X^t: (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(e^{-t\sum\limits_{i} \Omega_{i1} x_ip_i} p_1, \ldots, e^{-t\sum\limits_{i} \Omega_{im} x_ip_i} p_m, e^{t\sum\limits_{i} \Omega_{i1} x_ip_i} x_1, \ldots, e^{t\sum\limits_{i} \Omega_{im} x_ip_i} x_m\right)
 	$$
 	exists for all time $t \in \RR$ and has no loops. Moreover, $\omega$ is non-degenerate since $\omega^m = m \bigwedge\limits_{1\leq i\leq m} dp_i \wedge dx_i$ is a volume form.
-	It is straightforward to check that the Poisson spray $X$ in equation~\eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structure.
+	It is straightforward to check that the Poisson spray $X$ as in \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structure as in Theorem~\ref{thm:poissp}.
 \end{proof}
 
 {\color{red} Continue with symplectic double from \cite{MR2470108}.}
