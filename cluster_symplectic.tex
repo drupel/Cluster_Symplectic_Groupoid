@@ -24,6 +24,8 @@
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cX}{\mathcal{X}}
@@ -206,7 +208,7 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Symplectic groupoid of log canonical Poisson structure}
+\section{Symplectic groupoids of log canonical Poisson structures}
 
 The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure. We give the explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
 
@@ -320,9 +322,9 @@ For the log-canonical Poisson structure on $\cX$:
 $$
 	\pi = \sum_{i > j} \Omega_{ij} x_i x_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
 $$
-there is a source-simply-connected symplectic groupoid $(\cG, \omega) \rra (\cX, \pi)$ with the following structures:
+there is a source-simply-connected symplectic groupoid $(\cG_\cX, \omega) \rra (\cX, \pi)$ with the following structures:
 	\begin{enumerate}
-		\item $\cG \cong \cT^*\cX$;
+		\item $\cG_\cX \cong \cT^*\cX$;
 		\item the source map is the bundle projection
 			$$
 				\alpha: \cT^*\cX \to \cX, \qquad (p_1, \ldots, p_m, x_1, \ldots, x_m) \mapsto (x_1, \ldots, x_m);
@@ -362,7 +364,14 @@ there is a source-simply-connected symplectic groupoid $(\cG, \omega) \rra (\cX,
 	It is straightforward to check that the Poisson spray $X$ as in \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structure as in Theorem~\ref{thm:poissp}.
 \end{proof}
 
-{\color{red} Continue with symplectic double from \cite{MR2470108}.}
+There is another interesting symplectic groupoid of the log canonical Poisson space $(\cX, \pi)$, the symplectic double in \cite{MR2470108}. We denote this symplectic groupoid by $\cD_\cX \rra \cX$.
+
+{\color{red} Introduce the symplectic double from \cite{MR2470108} in local charts.}
+
+The symplectic groupoid $\cG_\cX \rra \cX$, being source-simply-connected, is the covering of $\cD_\cX \rra \cX$ such that each source fiber of $\cG_\cX \rra \cX$ is the universal cover of the corresponding source fiber of $\cD_\cX \rra \cX$.
+
+
+{\color{red} Give the explicit covering map $\cG \to \cD$.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
