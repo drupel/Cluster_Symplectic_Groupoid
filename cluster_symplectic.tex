@@ -247,7 +247,7 @@ A groupoid $\cG \rightrightarrows M$ consists of two sets $\cG$ and $M$ with the
 		\item a surjective source map $\alpha: \cG \to M$ and a surjective target map $\beta: \cG \to M$;
 		\item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$;
 		\item an associative multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG, \enskip (g, h) \mapsto gh$;
-		\item and an involutive inversion map $i: \cG \to \cG, \enskip g \mapsto g^{-1}$
+		\item and an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$
 	\end{enumerate}
 that satisfies the following properties:
 	\begin{enumerate}
@@ -270,7 +270,7 @@ A Lie groupoid $\cG \rightrightarrows M$ is source-connected if $\alpha^{-1}(x)$
 A symplectic groupoid is a Lie groupoid structure $\cG \rra M$ with a symplectic structure $\omega \in \Omega^2(\cG)$ such that the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is a Lagrangian submanifold of $(\cG \times \cG \times \cG, \omega \oplus \omega \oplus -\omega)$.
 \end{definition}
 
-For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $\cT^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108}. We recall the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
+For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $T^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108}. We recall the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
 
 \begin{definition}
 For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \cT_{T^*M}$ such that
@@ -292,14 +292,18 @@ For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \cT_
 \begin{theorem} \cite{MR2900786, CMS17} \label{thm:poissp}
 For a smooth Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \cT_{T^*M}$, a neighbourhood $U$ of the zero section of $T^*X$ is a local symplectic groupoid over $(M, \pi)$ with the following structures:
 	\begin{enumerate}
-		\item the source map $\alpha = \tau: U \to M$ is the bundle projection ;
+		\item the source map $\alpha: U \to M$ is the bundle projection ;
 		\item the target map is
 			$$
 				\beta: U \to M, \qquad \beta = \tau \circ \varphi_X^1
 			$$
 		where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$-flow of $X$;
-		\item the multiplication is the concatenation of the flow of $X$; and
-		\item the symplectic form on $U$ is
+		\item the inverse map is
+			$$
+				\iota: U \to U, \qquad \iota = -\varphi_X^1;
+			$$
+		\item the multiplication $m: U {_\beta \times_\alpha} U \to U$ is defined as the solution of an ODE (see \cite{CMS17} for details);
+		\item  and the symplectic form on $U$ is
 			$$
 				\overline{\omega} = \int_{0}^{1} (\varphi_X^s)^*\omega_0 ds.
 			$$
@@ -307,13 +311,13 @@ For a smooth Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \cT_{T^*M}$
 \end{theorem}
 
 \begin{remark}
-	By a local symplectic groupoid $(\cG, \omega) \to (M, \pi)$, we mean that the multiplication $m: \cG {_\beta \times_\alpha} \cG \to \cG$ may not be defined on all of its domain. In this case, the time-$1$-flow of the Poisson spray $X$ may be outside $U$.
+	By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we mean that the multiplication $m: \cG {_\beta \times_\alpha} \cG \to \cG$ may not be defined on all of its domain. In this case, the time-$1$-flow of the Poisson spray $X$ may be outside $U$.
 In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may loop; and the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
 \end{remark}
 
-Let $L$ be either $\RR^m$ or $\CC^m$ and $\{(x_1, \ldots, x_n\}$ be coordinates on $L$, and let $\Omega_{ij}, 1 \leq i,j \leq m$ be a skew-symmetric matrix. For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently $\pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}$, the vector field $X \in \cT_{T^*L}$:
+Let $L$ be either $\RR^m$ or $\CC^m$ and $ \bfx = (x_1, \ldots, x_n\}$ be coordinates on $L$, and let $\Omega_{ij}, 1 \leq i,j \leq m$ be a skew-symmetric matrix. For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently $\pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}$, the vector field $X \in \cT_{T^*L}$:
 \begin{equation} \label{eq: PoisSp}
-		X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}.
+		X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_i p_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}.
 \end{equation}
 is a Poisson spray. This Poisson spray $X$ gives rise to the following symplectic groupoid structure.
 
@@ -324,24 +328,31 @@ $$
 $$
 there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L, \pi)$ with the following structures:
 	\begin{enumerate}
-		\item $\cG_L \cong \cT^*L$;
+		\item $\cG_L \cong T^*L = \{(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)\}$;
 		\item the source map is the bundle projection
 			$$
-				\alpha: \cT^*L \to L, \qquad (p_1, \ldots, p_m, x_1, \ldots, x_m) \mapsto (x_1, \ldots, x_m);
+				\alpha: T^*L \to L, \qquad (\bfp, \bfx) \mapsto \bfx;
 			$$
 		\item the target map is
 			$$
 				\begin{aligned}
-				\beta: & \cT^*L \to L, \\
-				& (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(e^{\sum\limits_{i} \Omega_{i1} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{im} x_ip_i} x_m\right);
+				\beta:~ & T^*L \to L, \\
+				& (\bfp, \bfx) \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
 				\end{aligned}
 			$$
+		\item the inverse map is
+			$$
+				\begin{aligned}
+				\iota:~ & T^*L \to T^*L, \\
+				& (\bfp, \bfx) \mapsto \left(-e^{-\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, -e^{-\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
+				\end{aligned}
+			$$ 
 		\item the multiplication map is
 			$$
 				\begin{aligned}
-				m_t: & \cT^*L {_\beta \times_\alpha} \cT^*L \to \cT^*L, \\
-				& \left(\left(p_1, \ldots, p_m, x_1, \ldots, x_n\right), \left(p'_1, \ldots, p'_m, e^{\sum\limits_{i} \Omega_{i1} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{im} x_ip_i} x_m\right)\right) \\
-				& \mapsto \left(e^{\sum\limits_{i} \Omega_{i1} x_ip_i} p'_1 + p_1, \ldots, e^{\sum\limits_{i} \Omega_{im} x_ip_i} p'_m + p_m, x_1, \ldots, x_m \right);
+				m:~ & T^*L {_\beta \times_\alpha} T^*L \to T^*L, \\
+				& \left( (\bfp, \bfx), \left(\bfp', e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)\right) \\
+				& \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} p'_1 + p_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} p'_m + p_m, \bfx \right);
 				\end{aligned}
 			$$
 		\item and the symplectic form $\omega$ is
@@ -358,7 +369,7 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 
 \begin{proof}
 	The flow $\varphi_X^t: T^*L \to T^*L$ of the Poisson spray $X$ as in \eqref{eq: PoisSp} is as follows:
-	$$ \varphi_X^t: (p_1, \ldots, p_n, x_1, \ldots, x_n) \mapsto \left(e^{-t\sum\limits_{i} \Omega_{i1} x_ip_i} p_1, \ldots, e^{-t\sum\limits_{i} \Omega_{im} x_ip_i} p_m, e^{t\sum\limits_{i} \Omega_{i1} x_ip_i} x_1, \ldots, e^{t\sum\limits_{i} \Omega_{im} x_ip_i} x_m\right)
+	$$ \varphi_X^t: (\bfp, \bfx) \mapsto \left(e^{-t\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, e^{-t\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{t\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{t\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)
 	$$
 	The flow exists for all time $t \in \RR$ and has no loops. Moreover, $\omega$ is non-degenerate since
 	$$
@@ -368,14 +379,54 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 	It is straightforward to check that the Poisson spray $X$ as in \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structure as in Theorem~\ref{thm:poissp}.
 \end{proof}
 
-There is another interesting symplectic groupoid of the log canonical Poisson space $(L, \pi)$, the symplectic double in \cite{MR2470108}. We denote this symplectic groupoid by $\cD_L \rra L$.
+If we restrict $L$ to be either $\RR_+^m$ or $(\CC^*)^m$ where $\RR_+ = (0, \infty)$ and $\CC^* = \CC \setminus \{0\}$, then there is another interesting source-connected symplectic groupoid of the log canonical Poisson space $(L, \pi)$, called the symplectic double \cite{MR2470108}.
 
-{\color{red} Introduce the symplectic double from \cite{MR2470108} in local charts.}
+\begin{theorem} \cite{MR2470108}
+For the log-canonical Poisson structure on $L$ (which is either $\RR_+^m$ or $(\CC^*)^m$):
+$$
+	\pi = \sum_{i > j} \Omega_{ij} x_i x_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
+$$
+the symplectic double $(\cD_L, \omega) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
+	\begin{enumerate}
+		\item $\cG_L \cong L \times L = \{(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)\}$;
+		\item the source map is
+			$$
+				\alpha: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;
+			$$
+		\item the target map is
+			$$
+				\begin{aligned}
+				\beta:  L \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right);
+				\end{aligned}
+			$$
+		\item the inverse map is
+			$$
+				\begin{aligned}
+				\iota:  L \times L \to L \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right);
+				\end{aligned}
+			$$
+		\item the multiplication map is
+			$$
+				\begin{aligned}
+				m: & \left(L \times L\right) {_\beta \times_\alpha} \left(L \times L\right) \to L \times L, \\
+				& \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right)\right) \\
+				& \mapsto (\bfs' \circ \bfs, \bfx );
+				\end{aligned}
+			$$
+		\item and the symplectic form $\omega$ is
+		$$
+			\omega = \sum_{i} \frac{d s_i}{s_i} \wedge \frac{d x_i}{x_i} + \sum_{i < j} \Omega_{ij} \frac{d s_i}{s_i} \wedge \frac{d s_j}{s_j}.
+		$$
+	\end{enumerate}
+\end{theorem}
 
-The symplectic groupoid $\cG_L \rra L$, being source-simply-connected, is the covering of $\cD_L \rra L$ such that each source fiber of $\cG_L \rra L$ is the universal cover of the corresponding source fiber of $\cD_L \rra L$.
+{\color{red} double-check the groupoid structures. Also expend the remark on the notations.}
 
+Comparing to \cite{MR2470108}, we have chosen different notations so that the groupoid covering map from the source-simply-connected $\cG_L \rra L$ to the symplectic double $\cD_L \rra L$ has a simple expression.
 
-{\color{red} Give the explicit covering map $\cG \to \cD$.}
+\begin{proposition}
+The covering map $\varphi: \cG_L \to \cD_L$ given by $\varphi (\bfp, \bfx) = (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)$ is a groupoid morphism.
+\end{proposition}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
