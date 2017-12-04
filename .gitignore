@@ -229,3 +229,4 @@ pip-log.txt
 *.blg
 *.bst
 cluster_symplectic.aux
+*.aux

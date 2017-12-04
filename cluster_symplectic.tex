@@ -12,7 +12,7 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
 
-
+\newcommand{\bfa}{\mathbf{a}}
 \newcommand{\bfb}{\mathbf{b}}
 \newcommand{\bfc}{\mathbf{c}}
 \newcommand{\bfe}{\mathbf{e}}
@@ -85,6 +85,15 @@ Our goal in this note is to construct symplectic groupoids integrating such log-
 
 The paper is organized as follows.
 In section~\ref{sec:cluster} we introduce the basic constructions related to cluster algebras and cluster manifolds.
+
+We use the following notations:
+\begin{itemize}
+	\item boldface letters denote vectors, e.g. $\bfx = (x_1, \ldots, x_m)$;
+	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
+	\item for a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, x_m^t)$;
+	\item for two vector $\bfx$ and $\bfy$, $\bfx^\bfy = (x_1^{y_1}, x_m^{y_m})$;
+	\item for a matrix $B = B_{ij}$, $\bfb_k$ denotes the kth column vector of $B$.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,9 +219,9 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoids of log canonical Poisson structures}
 
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. There is another construction of a source-connected symplectic groupoid of a log-canonical Poisson structure, called the symplectic double \cite{MR2470108}. The two constructions are related by a groupoid covering map.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. There is the construction of a source-connected symplectic groupoid of a log-canonical Poisson structure, called the symplectic double \cite{MR2470108}. We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
 
-To introduce the notions of symplectic groupoids and Poisson sprays, it is natural to think of the Poisson structure as the Poisson bi-vectors, equivalent to the Poisson brackets.
+To introduce the notions of symplectic groupoids and Poisson sprays, we recall the equivalent notion of Poisson bi-vectors.
 
 \begin{definition}
 Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure on $M$ is one of the two following equivalent structures:
@@ -315,11 +324,21 @@ For a smooth Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \cT_{T^*M}$
 In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may loop; and the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
 \end{remark}
 
-Let $L$ be either $\RR^m$ or $\CC^m$ and $ \bfx = (x_1, \ldots, x_n\}$ be coordinates on $L$, and let $\Omega_{ij}, 1 \leq i,j \leq m$ be a skew-symmetric matrix. For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently $\pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}$, the vector field $X \in \cT_{T^*L}$:
+Let $L$ be either $\RR^m$ or $\CC^m$ and $ \bfx = (x_1, \ldots, x_n)$ be coordinates on $L$, and let $\Omega = (\Omega_{ij}), 1 \leq i,j \leq m$ be a skew-symmetric matrix.
+
+\begin{lemma}
+For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$, or equivalently
+$$
+	\pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
+$$
+the vector field $X \in \cT_{T^*L}$:
 \begin{equation} \label{eq: PoisSp}
 		X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_i p_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}.
 \end{equation}
-is a Poisson spray. This Poisson spray $X$ gives rise to the following symplectic groupoid structure.
+is a Poisson spray.
+\end{lemma}
+
+In the case when $L = \RR^m$, this Poisson spray $X$ gives rise to the symplectic groupoid structure in the following Theorem~\ref{thm:PoiSpLogC}, because the averaging technique used in Theroem~\ref{thm:poissp} to obtain the symplectic form works only when the underlying field is $\RR$. However, the statements in Theorem~\ref{thm:PoiSpLogC} is also true if the underlying field is $\CC$.
 
 \begin{theorem} \label{thm:PoiSpLogC}
 For the log-canonical Poisson structure on $L$ (which is either $\RR^m$ or $\CC^m$):
@@ -337,22 +356,26 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 			$$
 				\begin{aligned}
 				\beta:~ & T^*L \to L, \\
-				& (\bfp, \bfx) \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
+				& (\bfp, \bfx) \mapsto \bfa \circ \bfx,
+%				& (\bfp, \bfx) \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right),
 				\end{aligned}
 			$$
+			where $a_i = e^{\sum\limits_{j} \Omega_{ij} x_jp_j}$;
 		\item the inverse map is
 			$$
 				\begin{aligned}
 				\iota:~ & T^*L \to T^*L, \\
-				& (\bfp, \bfx) \mapsto \left(-e^{-\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, -e^{-\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
+				& (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx;
+%				& (\bfp, \bfx) \mapsto \left(-e^{-\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, -e^{-\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
 				\end{aligned}
 			$$ 
 		\item the multiplication map is
 			$$
 				\begin{aligned}
 				m:~ & T^*L {_\beta \times_\alpha} T^*L \to T^*L, \\
-				& \left( (\bfp, \bfx), \left(\bfp', e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)\right) \\
-				& \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} p'_1 + p_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} p'_m + p_m, \bfx \right);
+				& ((\bfp, \bfx), (\bfp', \bfa \circ \bfx)) \mapsto (\bfa \circ \bfp' + \bfp, \bfx );
+%				& \left( (\bfp, \bfx), \left(\bfp', e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)\right) \\
+%				& \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} p'_1 + p_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} p'_m + p_m, \bfx \right);
 				\end{aligned}
 			$$
 		\item and the symplectic form $\omega$ is
@@ -368,18 +391,22 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 \end{theorem}
 
 \begin{proof}
-	The flow $\varphi_X^t: T^*L \to T^*L$ of the Poisson spray $X$ as in \eqref{eq: PoisSp} is as follows:
-	$$ \varphi_X^t: (\bfp, \bfx) \mapsto \left(e^{-t\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, e^{-t\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{t\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{t\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)
+	In the case when the underlying field is $\RR$, the flow $\varphi_X^t: T^*L \to T^*L$ of the Poisson spray \eqref{eq: PoisSp} is as follows:
 	$$
-	The flow exists for all time $t \in \RR$ and has no loops. Moreover, $\omega$ is non-degenerate since
+		\varphi_X^t: (\bfp, \bfx) \mapsto (\bfa^{-t} \circ \bfp, \bfa^t \circ \bfx)
+%		\varphi_X^t: (\bfp, \bfx) \mapsto \left(e^{-t\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, e^{-t\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{t\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{t\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)
+	$$
+The flow exists for all time $t \in \RR$ and has no loops. Moreover, $\omega$ is non-degenerate since
 	$$
 		\omega^m = m \bigwedge\limits_{1\leq i\leq m} dp_i \wedge dx_i
 	$$
 	is a volume form.
 	It is straightforward to check that the Poisson spray $X$ as in \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structure as in Theorem~\ref{thm:poissp}.
+	
+	In the case when the underlying field is $\CC$, one can verify the symplectic groupoid directly.
 \end{proof}
 
-If we restrict $L$ to be either $\RR_+^m$ or $(\CC^*)^m$ where $\RR_+ = (0, \infty)$ and $\CC^* = \CC \setminus \{0\}$, then there is another interesting source-connected symplectic groupoid of the log canonical Poisson space $(L, \pi)$, called the symplectic double \cite{MR2470108}.
+If we restrict $L$ to be either $\RR_+^m$ or $(\CC^*)^m$ where $\RR_+ = (0, \infty)$ and $\CC^* = \CC \setminus \{0\}$, then there is the source-connected symplectic groupoid of the log canonical Poisson space $(L, \pi)$, called the symplectic double \cite{MR2470108}.
 
 \begin{theorem} \cite{MR2470108}
 For the log-canonical Poisson structure on $L$ (which is either $\RR_+^m$ or $(\CC^*)^m$):
@@ -420,12 +447,16 @@ the symplectic double $(\cD_L, \omega) \rra (L, \pi)$ is a source-connected symp
 	\end{enumerate}
 \end{theorem}
 
-{\color{red} double-check the groupoid structures. Also expend the remark on the notations.}
+{\color{red} double-check the groupoid structures. Also expend the remark on the notations. Compare it to the notations in \cite{MR2470108}.}
 
-Comparing to \cite{MR2470108}, we have chosen different notations so that the groupoid covering map from the source-simply-connected $\cG_L \rra L$ to the symplectic double $\cD_L \rra L$ has a simple expression.
+Similar to the Lie groups, for an integrable Lie algebroid, there is a groupoid morphism from the source-simply-connected groupoid to another integration. With the chosen notations, we have a simple expression for the groupoid morphism $\kappa: \cG_L \to \cD_L$.
 
 \begin{proposition}
-The covering map $\varphi: \cG_L \to \cD_L$ given by $\varphi (\bfp, \bfx) = (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)$ is a groupoid morphism.
+The covering map
+$$
+	\kappa: \cG_L \to \cD_L, \qquad (\bfp, \bfx) \mapsto (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)
+$$
+is a groupoid morphism.
 \end{proposition}
 
 
