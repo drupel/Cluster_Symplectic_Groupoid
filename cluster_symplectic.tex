@@ -22,15 +22,15 @@
 \newcommand{\bfy}{\mathbf{y}}
 
 \newcommand{\cA}{\mathcal{A}}
+\newcommand{\cD}{\mathcal{D}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cG}{\mathcal{G}}
 \newcommand{\cH}{\mathcal{H}}
-\newcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
-\newcommand{\cX}{\mathcal{X}}
 \newcommand{\cT}{\mathcal{T}}
 \newcommand{\cU}{\mathcal{U}}
+\newcommand{\cX}{\mathcal{X}}
 
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\FF}{\mathbb{F}}
@@ -61,6 +61,7 @@
 \begin{document}
 \begin{abstract}
   We construct a source simply-connected symplectic groupoid integrating a log-canonical Poisson structure on a cluster manifold.
+  This construction is related to the symplectic double of Fock-Goncharov and the Hamiltonian approach to cluster mutations of Gekhtman-Nakanishi-Rupel.
 \end{abstract}
 \maketitle
 Outline
@@ -96,18 +97,19 @@ Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is sk
 Such an $m\times n$ matrix $\tilde B$ with skew-symmetrizable principal submatrix $B$ is called an \emph{exchange matrix}.
 We fix a skew-symmetrizing matrix $D$.
 An $m\times m$ matrix $\Omega=(\Omega_{ij})$ is \emph{$D$-compatible} with $\tilde B$ if $\tilde B^T\Omega=[D\ \boldsymbol{0}]$, where $\boldsymbol{0}$ denotes an $n\times(m-n)$ matrix with all zero entries.
-In this case, we call $(\tilde B,\Omega)$ a \emph{compatible pair}.
+%In this case, we call $(\tilde B,\Omega)$ a \emph{Poisson pair}, this terminology is motivated by Definition~\ref{def:compatible Poisson} below.
 
 In what follows we use the notation $[a]_+=\max\{a,0\}$.
-For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{k,\varepsilon}(\tilde B,\Omega)=\big((B'_{ij}),\Omega'\big)$, where
+For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{k,\varepsilon}(\tilde B,\Omega)=\big(\mu_k\tilde B,\mu_k\Omega\big)$, where
 \begin{itemize}
   \item $\mu_{k,\varepsilon}\tilde B=(B'_{ij})$ is given by
     \[B'_{ij}=\begin{cases}-B_{ij} & \text{if $i=k$ or $j=k$;}\\ B_{ij}+[-\varepsilon B_{ik}]_+B_{kj}+B_{ik}[\varepsilon B_{kj}]_+ & \text{otherwise;}\end{cases}\]
-  \item $\Omega'=E_{k,\varepsilon}^T\Omega E_{k,\varepsilon}$ for $E_{k,\varepsilon}$ the $m\times m$ matrix with entries
+  \item $\mu_k\Omega=E_{k,\varepsilon}^T\Omega E_{k,\varepsilon}$ for $E_{k,\varepsilon}$ the $m\times m$ matrix with entries
     \[E_{ij}=\begin{cases}\delta_{ij} & \text{if $j\ne k$;}\\ -1 & \text{if $i=j=k$;}\\ [-\varepsilon B_{ik}]_+ & \text{if $i\ne j=k$.}\end{cases}\]
 \end{itemize}
-It is an easy exercise to check that matrix mutation is an involution, i.e.\ $\mu_{k,\varepsilon}\mu_{k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
-In particular, the mutation $\mu_{k,\varepsilon}$ acting on compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the sign does not matter.
+It is an easy exercise to check that this mutation is an involution, i.e.\ $\mu_{k,\varepsilon}\mu_{k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
+In particular, the mutation $\mu_{k,\varepsilon}$ is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the sign does not matter.
+Moreover, a small computation shows that the new pair $(\mu_k\tilde B,\mu_k\Omega)$ will again be compatible.
 
 To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
 In particular, each vertex $t$ of $\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
@@ -130,7 +132,7 @@ The mutation pattern gives rise to the following important combinatorial constru
 
 The mutation of exchange matrices is accompanied by two notions of mutation on rational functions.
 Let $\cF$ and $\cP$ be extension fields of $\QQ$ with transcendence degrees $m$ and $n$ respectively.   
-A \emph{compatible seed} is a quadruple $\Sigma=(\bfx,\bfy,\tilde B,\Omega)$, where
+A \emph{Poisson seed} is a quadruple $\Sigma=(\bfx,\bfy,\tilde B,\Omega)$, where
 \begin{itemize}
   \item $\bfx=(x_1,\ldots,x_m)$ is a transcendence basis of $\cF$ over $\QQ$ with entries called \emph{cluster variables};
   \item $\bfy=(y_1,\ldots,y_n)$ is a transcendence basis of $\cP$ over $\QQ$ with entries called \emph{coefficient variables};
@@ -210,29 +212,24 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoids of log canonical Poisson structures}
 
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure. We give the explicit covering map from the source-simply-connected sympletic groupiod to the symplectic double.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}.
+It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}.
+In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}.
+In each cluster chart, the symplectic double \cite{MR2470108} is a source-connected symplectic groupoid of the log-canonical Poisson structure.
+We give the explicit covering map from the source-simply-connected sympletic groupoid to the symplectic double.
 
-To introduce the notions of symplectic groupoids and Poisson sprays, we switch to the Poisson bi-vectors, which is equivalent to the Poisson brackets.
-
+To introduce the notions of symplectic groupoids and Poisson sprays, we switch to Poisson bi-vectors which are equivalent to the Poisson brackets.
 \begin{definition}
-Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure on $M$ is one of the two following equivalent structures:
+  Let $M$ be either a smooth manifold or a complex manifold.
+  A Poisson structure on $M$ is one of the two following equivalent structures:
   \begin{enumerate}
     \item a Poisson bracket
-      $$
-				\{\cdot, \cdot\}: \cO_M \times \cO_M \to \cO_M
-			$$
-			which is a Lie bracket satisfying the Leibniz rule
-			$$
-				\{fg, h\} = f\{g,h\} + g\{f,h\};
-			$$
-		\item a Poisson bivector $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$ where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
-%			$$
-%				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
-%			$$
-%			is the Schouten-Nijenhuis bracket.
-%		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
-\end{enumerate}	
-The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
+      \[\{\cdot, \cdot\}: \cO_M \times \cO_M \to \cO_M\]
+      which is a Lie bracket satisfying the Leibniz rule
+      \[\{fg, h\} = f\{g,h\} + g\{f,h\};\]
+    \item a Poisson bivector $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$ where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
+  \end{enumerate}	
+  The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
 \end{definition}
 
 The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$.
