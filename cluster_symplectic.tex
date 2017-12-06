@@ -219,9 +219,9 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoids of log canonical Poisson structures}
 
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and the geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. There is the construction of a source-connected symplectic groupoid of a log-canonical Poisson structure, called the symplectic double \cite{MR2470108}. We give an explicit formula of the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. It is closely related to Poisson sigma models \cite{MR1938552} and geometric quantization of Poisson manifolds \cite{MR2417440, MR2925830}. In this section, we use the notion of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure \eqref{eq:log-canonical bracket}. There is the construction of a source-connected symplectic groupoid of a log-canonical Poisson structure, called the symplectic double \cite{MR2470108}. We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
 
-To introduce the notions of symplectic groupoids and Poisson sprays, we recall the definition of Poisson structures.
+To introduce the notions of symplectic groupoids and Poisson sprays, we recall the equivalent notion of Poisson bi-vectors.
 
 \begin{definition}
 Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure on $M$ is one of the two following equivalent structures:
@@ -241,22 +241,22 @@ Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure o
 %			is the Schouten-Nijenhuis bracket.
 %		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
 \end{enumerate}	
-The pair $(M, \{,\})$, or equivalently $(M, \pi)$, is called a Poisson manifold.
+The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
 \end{definition}
 
-The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_M$.
+The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$.
 %	\begin{enumerate}
 %		\item The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
 %		\item The Poisson differential operator is related to the Poisson bivector by the formula: $d_\pi X = [\pi, X]$ for $X \in \mathfrak{X}^p(M)$.
 %	\end{enumerate}
 
 \begin{definition}
-A groupoid $\cG \rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps
+A groupoid $\cG \rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
 	\begin{enumerate}
-		\item a surjective source map $\alpha: \cG \to M$ and a surjective target map $\beta: \cG \to M$,
-		\item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$,
-		\item an associative multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG, \enskip (g, h) \mapsto gh$, and
-		\item an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$,
+		\item a surjective source map $\alpha: \cG \to M$ and a surjective target map $\beta: \cG \to M$;
+		\item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$;
+		\item an associative multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG, \enskip (g, h) \mapsto gh$;
+		\item and an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$
 	\end{enumerate}
 that satisfies the following properties:
 	\begin{enumerate}
@@ -279,7 +279,7 @@ A Lie groupoid $\cG \rightrightarrows M$ is source-connected if $\alpha^{-1}(x)$
 A symplectic groupoid is a Lie groupoid structure $\cG \rra M$ with a symplectic structure $\omega \in \Omega^2(\cG)$ such that the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is a Lagrangian submanifold of $(\cG \times \cG \times \cG, \omega \oplus \omega \oplus -\omega)$.
 \end{definition}
 
-For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $T^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108} (also see Theorem~\ref{thm: SympDb}). We recall the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
+For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. That is, the source $\alpha$ is Poisson and the target $\beta$ is anti-Poisson. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $T^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, were characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of cluster $\cX$-variety \cite{MR2470108}. We recall the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
 
 \begin{definition}
 For a Poisson manifold $(M, \pi)$, a Poisson spray is a vector field $X \in \cT_{T^*M}$ such that
@@ -408,7 +408,7 @@ The flow exists for all time $t \in \RR$ and has no loops. Moreover, $\omega$ is
 
 If we restrict $L$ to be either $\RR_+^m$ or $(\CC^*)^m$ where $\RR_+ = (0, \infty)$ and $\CC^* = \CC \setminus \{0\}$, then there is the source-connected symplectic groupoid of the log canonical Poisson space $(L, \pi)$, called the symplectic double \cite{MR2470108}.
 
-\begin{theorem} \cite{MR2470108} \label{thm: SympDb}
+\begin{theorem} \cite{MR2470108}
 For the log-canonical Poisson structure on $L$ (which is either $\RR_+^m$ or $(\CC^*)^m$):
 $$
 	\pi = \sum_{i > j} \Omega_{ij} x_i x_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
