@@ -91,7 +91,7 @@ We use the following notations:
 	\item boldface letters denote vectors, e.g. $\bfx = (x_1, \ldots, x_m)$;
 	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
 	\item for a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, x_m^t)$;
-	\item for two vector $\bfx$ and $\bfy$, $\bfx^\bfy = \prod_{i=1}^m x_i^{y_i}$;
+	\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
 	\item for a matrix $B = (B_{ij})$, $B_{[k]}$ denotes the kth column vector of $B$.
 \end{itemize}
 
@@ -330,8 +330,35 @@ is a groupoid morphism.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Cluster Algebras and Cluster Varieties}
+\section{Hamiltonian Perspective on Mutations}
 \label{sec:cluster}
+
+In this section we study mutations of cluster seeds from the Hamiltonian viewpoint.
+This perspective was introduced in \cite{MR2470108} and is the foundation for the main results of \cite{MR3691969}.
+
+The \emph{Euler dilogarithm} is the function of one variable defined by
+\[Li_2(z)=\sum\limits_{n=1}^\infty\frac{z^n}{n^2}=-\int_0^z \frac{\log(1-y)}{y}dy.\]
+We will see below that from the Poisson perspective the Euler dilogarithm lies at the heart of cluster algebra theory.
+
+Consider a compatible pair of matrices $(\tilde B,\Omega)$ with $\tilde B^T\Omega=[D\ 0]$.
+Let $L_\cX=\FF^n$ and $L_\cA=\FF^m$ with $\FF$ equal to either $\RR$ or $\CC$.
+Write $\bfy=(y_1,\ldots,y_n)$ be coordinates on $L_\cX$ and $\bfx=(x_1,\ldots,x_m)$ coordinates on $L_\cA$.
+Denote by $\{\cdot,\cdot\}_\cX$ and $\{\cdot,\cdot\}_\cA$ the log-canonical Poisson brackets on $L_\cX$ and $L_\cA$ given by
+\begin{equation}
+  \label{eq:brackets}
+  \{y_k,y_\ell\}=d_kB_{k\ell}y_ky_\ell\qquad\text{and}\qquad\{x_i,x_j\}=\Omega_{ij}x_ix_j.
+\end{equation}
+An easy calculation shows that the map
+\[\rho:L_\cA\to L_\cX,\qquad \bfx\mapsto\hat\bfy,\qquad \hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
+is a Poisson morphism, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$.
+
+Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions
+\begin{equation}
+  \label{eq:hamiltonians}
+  H_{\cX,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_{\cA,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-\hat y_k^\varepsilon).
+\end{equation}
+Clearly we have $\rho^*(H_{\cX,k,\varepsilon})=H_{\cA,k,\varepsilon}$.
+
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
