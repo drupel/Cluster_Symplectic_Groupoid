@@ -42,6 +42,7 @@
 
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Li}{\operatorname{Li}}
 \renewcommand{\max}{\operatorname{max}}
 \newcommand{\Spec}{\operatorname{Spec}}
 
@@ -336,40 +337,54 @@ is a groupoid map.
 In this section we introduce mutations of cluster seeds from the Hamiltonian viewpoint.
 This perspective was first given in \cite{MR2470108} and is the foundation for the main results of \cite{MR3691969}.
 
-The \emph{Euler dilogarithm} is the function of a single complex variable defined by
-\[Li_2(z)=\sum\limits_{n=1}^\infty\frac{z^n}{n^2}=-\int_0^z \frac{\log(1-y)}{y}dy,\qquad z\in\CC\setminus[1,\infty).\]\]
-We will see below that from the Poisson perspective the Euler dilogarithm lies at the heart of cluster algebra theory.
+Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
+Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
+Such an $m\times n$ matrix $\tilde B$ with skew-symmetrizable principal submatrix $B$ is called an \emph{exchange matrix}.
+We fix a skew-symmetrizing matrix $D$.
+An $m\times m$ matrix $\Omega=(\Omega_{ij})$ is \emph{$D$-compatible} with $\tilde B$ if $\tilde B^T\Omega=[D\ \boldsymbol{0}]$, where $\boldsymbol{0}$ denotes an $n\times(m-n)$ matrix with all zero entries.
+In this case, we call $(\tilde B,\Omega)$ a \emph{$D$-compatible pair}.
 
-Consider a compatible pair of matrices $(\tilde B,\Omega)$ with $\tilde B$ an $m\times n$ matrix and satisfying $\tilde B^T\Omega=[D\ 0]$.
 Let $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$.
 Write $\bfy=(y_1,\ldots,y_n)$ for a set of coordinates on $L_\cX$ and $\bfx=(x_1,\ldots,x_m)$ for a set of coordinates on $L_\cA$.
-Denote by $\{\cdot,\cdot\}_\cX$ and $\{\cdot,\cdot\}_\cA$ the log-canonical Poisson brackets on $L_\cX$ and $L_\cA$ given by
+Given a $D$-compatible pair of matrices $(\tilde B,\Omega)$, denote by $\{\cdot,\cdot\}_\cX$ and $\{\cdot,\cdot\}_\cA$ the log-canonical Poisson brackets on $L_\cX$ and $L_\cA$ given by
 \begin{equation}
   \label{eq:brackets}
-  \{y_k,y_\ell\}=d_kB_{k\ell}y_ky_\ell\qquad\text{and}\qquad\{x_i,x_j\}=\Omega_{ij}x_ix_j.
+  \{y_k,y_\ell\}_\cX=d_kB_{k\ell}y_ky_\ell\qquad\text{and}\qquad\{x_i,x_j\}_\cA=\Omega_{ij}x_ix_j.
 \end{equation}
 An easy calculation shows that the map
 \[\rho:L_\cA\to L_\cX,\qquad \bfx\mapsto\hat\bfy,\qquad \hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
 is a Poisson morphism, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$ for $1\le k,\ell\le n$.
+Motivated by the terminology of Fock and Goncharov \cite{???}, we will refer to the pair of Poisson manifolds $L_\cX$ and $L_\cA$ together with the Poisson morhism $\rho$ as a \emph{Poisson ensemble} associated to the $D$-compatible pair $(\tilde B,\Omega)$.
 
-Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions $H_{\cX,k,\varepsilon}\in\cO_{L_\cX}$ and $H_{\cA,k,\varepsilon}\in\cO_{L_\cA}$ by
+The \emph{Euler dilogarithm} is the function of a single complex variable defined by
+\[\Li_2(z)=\sum\limits_{n=1}^\infty\frac{z^n}{n^2}=-\int_0^z \frac{\log(1-y)}{y}dy,\qquad z\in\CC\setminus[1,\infty).\]
+We will see below that, from the Poisson perspective, the Euler dilogarithm lies at the heart of cluster algebra theory.
+
+Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions $H_\cX=H^{k,\varepsilon}_\cX\in\cO_{L_\cX}$ and $H_\cA=H^{k,\varepsilon}_\cA\in\cO_{L_\cA}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
-  H_{\cX,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_{\cA,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-\hat y_k^\varepsilon).
+  H_\cX^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_\cA^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon).
 \end{equation}
-Clearly we have $\rho^*(H_{\cX,k,\varepsilon})=H_{\cA,k,\varepsilon}$.
-Write $X_\cX\in\cT_\cX$ and $X_\cA\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_{\cX,k,\varepsilon}$ and $H_{\cA,k,\varepsilon}$ respectively, i.e.\ the vector fields associated to the derivations $\{H_{\cX,k,\varepsilon},\cdot\}_\cX$ and $\{H_{\cA,k,\varepsilon},\cdot\}_\cA$.
+Clearly we have $\rho^*(H_\cX^{k,\varepsilon})=H_\cA^{k,\varepsilon}$.
+Write $X_\cX\in\cT_\cX$ and $X_\cA\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_\cX^{k,\varepsilon}$ and $H_\cA^{k,\varepsilon}$ respectively, i.e.\ the vector fields associated to the derivations $\{H_\cX^{k,\varepsilon},\cdot\}_\cX$ and $\{H_\cA^{k,\varepsilon},\cdot\}_\cA$.
 \begin{lemma}
-  \cite{MR3691969}
   \label{le:hamiltonian dynamics}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_\cX$ and $X_\cA$ determine the following dynamics on $L_\cX$ and $L_\cA$:
   \begin{align}
     \label{eq:X dynamics}
-    \dot y_\ell&:=\{H_{\cX,k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log(1+y_k^\varepsilon)y_\ell;\\
+    \dot y_\ell&:=\{H_\cX^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log(1+y_k^\varepsilon)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
-    \dot x_j&:=\{H_{\cA,k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j.
+    \dot x_j&:=\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j\quad\text{for}\quad 1\le j\le m.
   \end{align}
 \end{lemma}
+\begin{proof}
+  Equation~\eqref{eq:X dynamics} was essentially proven in \cite{MR3691969}.
+  Since equation~\eqref{eq:A dynamics} seems to be new, we will indicate the key steps in the computation here:
+  \[\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\frac{\log(1+\hat y_k^\varepsilon)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j.\]
+\end{proof}
+
+
+\newpage
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
