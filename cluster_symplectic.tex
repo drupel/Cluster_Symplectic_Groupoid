@@ -366,7 +366,7 @@ Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions
   H_\cX^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_\cA^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon).
 \end{equation}
 Clearly we have $\rho^*(H_\cX^{k,\varepsilon})=H_\cA^{k,\varepsilon}$.
-Write $X_\cX\in\cT_\cX$ and $X_\cA\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_\cX^{k,\varepsilon}$ and $H_\cA^{k,\varepsilon}$ respectively, i.e.\ the vector fields associated to the derivations $\{H_\cX^{k,\varepsilon},\cdot\}_\cX$ and $\{H_\cA^{k,\varepsilon},\cdot\}_\cA$.
+Write $X_\cX=X_\cX^{k,\varepsilon}\in\cT_\cX$ and $X_\cA=X_\cA^{k,\varepsilon}\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_\cX^{k,\varepsilon}$ and $H_\cA^{k,\varepsilon}$ respectively, i.e.\ the vector fields associated to the derivations $\{H_\cX^{k,\varepsilon},\cdot\}_\cX$ and $\{H_\cA^{k,\varepsilon},\cdot\}_\cA$.
 \begin{lemma}
   \label{le:hamiltonian dynamics}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_\cX$ and $X_\cA$ determine the following dynamics on $L_\cX$ and $L_\cA$:
@@ -383,15 +383,21 @@ Write $X_\cX\in\cT_\cX$ and $X_\cA\in\cT_\cA$ for the Hamiltonian vector fields 
   \[\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\frac{\log(1+\hat y_k^\varepsilon)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j.\]
 \end{proof}
 
-
-\newpage
-
-Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
-Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
-Such an $m\times n$ matrix $\tilde B$ with skew-symmetrizable principal submatrix $B$ is called an \emph{exchange matrix}.
-We fix a skew-symmetrizing matrix $D$.
-An $m\times m$ matrix $\Omega=(\Omega_{ij})$ is \emph{$D$-compatible} with $\tilde B$ if $\tilde B^T\Omega=[D\ \boldsymbol{0}]$, where $\boldsymbol{0}$ denotes an $n\times(m-n)$ matrix with all zero entries.
-In this case, we call $(\tilde B,\Omega)$ a \emph{compatible pair}.
+It immediately follows that $y_k$ is a conserved quantity of the flow of $L_\cX$ by the vector field $X_\cX$.
+Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity of the flow of $L_\cA$ by the vector field $X_\cA$.
+Write $\varphi_\cX^1:L_\cX\to L_\cX$ for the time-one flow of the vector field $X_\cX^{k,\varepsilon}$.
+Similarly, we denote by $\varphi_{X_\cA}^1:L_\cA\to L_\cA$ the time-one flow of the vector field $X_\cA^{k,\varepsilon}$.
+\begin{corollary}
+  \label{cor:time-one flows}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, we have
+  \begin{align*}
+    (\varphi_\cX^1)^*(y_\ell)&=(1+y_k^\varepsilon)^{-B_{k\ell}}y_\ell;\\
+    (\varphi_\cA^1)^*(x_j)&=(1+\hat y_k^\varepsilon)^{-\delta_{jk}}x_j.\\
+  \end{align*}
+\end{corollary}
+\begin{proof}
+  This is immediate from the preceding discussion.
+\end{proof}
 
 In what follows we use the notation $[a]_+=\max\{a,0\}$.
 For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{k,\varepsilon}(\tilde B,\Omega)=\big((B'_{ij}),\Omega'\big)$, where
@@ -401,8 +407,49 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation
   \item $\Omega'=E_{k,\varepsilon}^T\Omega E_{k,\varepsilon}$ for $E_{k,\varepsilon}$ the $m\times m$ matrix with entries
     \[E_{ij}=\begin{cases}\delta_{ij} & \text{if $j\ne k$;}\\ -1 & \text{if $i=j=k$;}\\ [-\varepsilon B_{ik}]_+ & \text{if $i\ne j=k$.}\end{cases}\]
 \end{itemize}
-It is an easy exercise to check that matrix mutation is an involution, i.e.\ $\mu_{k,\varepsilon}\mu_{k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
-In particular, the mutation $\mu_{k,\varepsilon}$ acting on compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the sign does not matter.
+It is an easy exercise to check that matrix mutation is an involution, more precisely $\mu_{k,\varepsilon}\mu_{k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
+In particular, the mutation $\mu_{k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the sign does not matter.
+
+Let $L'_\cX=\RR_+^n$ and $L'_\cA=\RR_+^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively.
+For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=\mu_{k,\varepsilon}(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}'_\cX$ and $\{\cdot,\cdot\}'_\cA$ on $L'_\cX$ and $L'_\cA$ given by
+\begin{equation}
+  \label{eq:brackets}
+  \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
+\end{equation}
+\begin{lemma}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
+  \begin{align}
+    \label{eq:tropical X transformation}
+    (\tau_\cX^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}\end{cases}\\
+    \label{eq:tropical A transformation}
+    (\tau_\cA^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
+  \end{align}
+\end{lemma}
+\begin{proof}
+  By skew-symmetry of the Poisson brackets, there are essentially only two cases to check.
+  For $\ell,\ell'\ne k$, we have
+  \begin{align*}
+    \{(\tau_\cX^{k,\varepsilon})^*(y'_\ell),(\tau_\cX^{k,\varepsilon})^*(y'_{\ell'})\}_\cX
+    &=\{y_\ell y_k^{[\varepsilon B_{k\ell}]_+},y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\}_\cX\\
+    &=(d_\ell B_{\ell\ell'}+d_k[\varepsilon B_{k\ell}]_+B_{k\ell'}+d_\ell B_{\ell k}[\varepsilon B_{k\ell'}]_+) y_\ell y_k^{[\varepsilon B_{k\ell}]_+} y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\\
+    &=d_\ell B'_{\ell\ell'} (\tau_\cX^{k,\varepsilon})^*(y'_\ell) (\tau_\cX^{k,\varepsilon})^*(y'_{\ell'}),
+  \end{align*}
+  where the last equality uses the identity $d_kB_{k\ell}=-d_\ell B_{\ell k}$.
+  The case where $\ell$ or $\ell'$ are equal to $k$ is immediate and we omit the details.
+
+  For $\tau_\cA^{k,\varepsilon}$, we only check the brackets of $x'_k$ and $x'_j$ for $j\ne k$:
+  \begin{align*}
+    \{(\tau_\cA^{k,\varepsilon})^*(x'_k),(\tau_\cA^{k,\varepsilon})^*(x'_j)\}_\cA
+    &=\{x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right),x_j\}_\cA\\
+    &=(-\Omega_{kj}+\sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+\Omega_{ij})x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right)x_j\\
+    &=\Omega'_{kj} (\tau_\cA^{k,\varepsilon})^*(x'_k) (\tau_\cA^{k,\varepsilon})^*(x'_j).
+  \end{align*}
+\end{proof}
+
+
+
+
+\newpage
 
 To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
 In particular, each vertex $t$ of $\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
