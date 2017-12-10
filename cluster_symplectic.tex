@@ -337,12 +337,12 @@ In this section we introduce mutations of cluster seeds from the Hamiltonian vie
 This perspective was first given in \cite{MR2470108} and is the foundation for the main results of \cite{MR3691969}.
 
 The \emph{Euler dilogarithm} is the function of a single complex variable defined by
-\[Li_2(z)=\sum\limits_{n=1}^\infty\frac{z^n}{n^2}=-\int_0^z \frac{\log(1-y)}{y}dy,\qquad z\in\CC\setminus[1,\infty).\]
+\[Li_2(z)=\sum\limits_{n=1}^\infty\frac{z^n}{n^2}=-\int_0^z \frac{\log(1-y)}{y}dy,\qquad z\in\CC\setminus[1,\infty).\]\]
 We will see below that from the Poisson perspective the Euler dilogarithm lies at the heart of cluster algebra theory.
 
-Consider a compatible pair of matrices $(\tilde B,\Omega)$ with $\tilde B^T\Omega=[D\ 0]$.
-Let $L_\cX=\FF^n$ and $L_\cA=\FF^m$ with $\FF$ equal to either $\RR$ or $\CC$.
-Write $\bfy=(y_1,\ldots,y_n)$ be coordinates on $L_\cX$ and $\bfx=(x_1,\ldots,x_m)$ coordinates on $L_\cA$.
+Consider a compatible pair of matrices $(\tilde B,\Omega)$ with $\tilde B$ an $m\times n$ matrix and satisfying $\tilde B^T\Omega=[D\ 0]$.
+Let $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$.
+Write $\bfy=(y_1,\ldots,y_n)$ for a set of coordinates on $L_\cX$ and $\bfx=(x_1,\ldots,x_m)$ for a set of coordinates on $L_\cA$.
 Denote by $\{\cdot,\cdot\}_\cX$ and $\{\cdot,\cdot\}_\cA$ the log-canonical Poisson brackets on $L_\cX$ and $L_\cA$ given by
 \begin{equation}
   \label{eq:brackets}
@@ -350,15 +350,26 @@ Denote by $\{\cdot,\cdot\}_\cX$ and $\{\cdot,\cdot\}_\cA$ the log-canonical Pois
 \end{equation}
 An easy calculation shows that the map
 \[\rho:L_\cA\to L_\cX,\qquad \bfx\mapsto\hat\bfy,\qquad \hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
-is a Poisson morphism, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$.
+is a Poisson morphism, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$ for $1\le k,\ell\le n$.
 
-Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions
+Given a choice of sign $\varepsilon\in\{\pm1\}$, we define Hamiltonian functions $H_{\cX,k,\varepsilon}\in\cO_{L_\cX}$ and $H_{\cA,k,\varepsilon}\in\cO_{L_\cA}$ by
 \begin{equation}
   \label{eq:hamiltonians}
   H_{\cX,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_{\cA,k,\varepsilon}:=\frac{\varepsilon}{d_k}Li_2(-\hat y_k^\varepsilon).
 \end{equation}
 Clearly we have $\rho^*(H_{\cX,k,\varepsilon})=H_{\cA,k,\varepsilon}$.
-
+Write $X_\cX\in\cT_\cX$ and $X_\cA\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_{\cX,k,\varepsilon}$ and $H_{\cA,k,\varepsilon}$ respectively, i.e.\ the vector fields associated to the derivations $\{H_{\cX,k,\varepsilon},\cdot\}_\cX$ and $\{H_{\cA,k,\varepsilon},\cdot\}_\cA$.
+\begin{lemma}
+  \cite{MR3691969}
+  \label{le:hamiltonian dynamics}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_\cX$ and $X_\cA$ determine the following dynamics on $L_\cX$ and $L_\cA$:
+  \begin{align}
+    \label{eq:X dynamics}
+    \dot y_\ell&:=\{H_{\cX,k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log(1+y_k^\varepsilon)y_\ell;\\
+    \label{eq:A dynamics}
+    \dot x_j&:=\{H_{\cA,k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j.
+  \end{align}
+\end{lemma}
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
