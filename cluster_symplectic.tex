@@ -171,7 +171,7 @@ A symplectic groupoid is a Lie groupoid $\cG \rra M$ with a multiplicative sympl
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $T^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, are characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
 
 \begin{definition}
-	Let $L$ be the vector space $\RR^m$ or $\CC^m$ and $\bfx = (x_1, \ldots, x_m)$ be coordinates on $L$. A Poisson structure on $L$ is log-canonical if
+	Let $L$ be either $\RR^m$ or $\CC^m$ and $\bfx = (x_1, \ldots, x_m)$ be coordinates on $L$. A Poisson structure on $L$ is log-canonical if
 $$
 	\{x_i, x_j\} = \Omega_{ij} x_ix_j, \quad 1 \leq i,j \leq m \qquad \text{or equavalently} \quad
 	\pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
@@ -246,36 +246,36 @@ For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on 
 there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L, \pi)$ with the following structures:
 	\begin{enumerate}
 		\item $\cG_L \cong T^*L = \{(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)\}$;
-		\item the source map is the bundle projection
-			\[
-				\alpha: T^*L \to L, \qquad (\bfp, \bfx) \mapsto \bfx;
-			\]
-		\item the target map is
-			\[
-				\begin{aligned}
-				\beta:~ & T^*L \to L, \\
-				& (\bfp, \bfx) \mapsto \bfa \circ \bfx,
+		\item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
+%			\[
+%				\alpha: T^*L \to L, \qquad (\bfp, \bfx) \mapsto \bfx;
+%			\]
+		\item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$,
+%			\[
+%				\begin{aligned}
+%				\beta:~ & T^*L \to L, \\
+%				& (\bfp, \bfx) \mapsto \bfa \circ \bfx,
 %				& (\bfp, \bfx) \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right),
-				\end{aligned}
-			\]
+%				\end{aligned}
+%			\]
 			where $a_i = e^{\sum\limits_{j} \Omega_{ij} x_jp_j}$, 
-		\item the inverse map is
-			\[
-				\begin{aligned}
-				\iota:~ & T^*L \to T^*L, \\
-				& (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx;
+		\item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
+%			\[
+%				\begin{aligned}
+%				\iota:~ & T^*L \to T^*L, \\
+%				& (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx;
 %				& (\bfp, \bfx) \mapsto \left(-e^{-\sum\limits_{i} \Omega_{1i} x_ip_i} p_1, \ldots, -e^{-\sum\limits_{i} \Omega_{mi} x_ip_i} p_m, e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right);
-				\end{aligned}
-			\] 
-		\item the multiplication map is
-			\[
-				\begin{aligned}
-				m:~ & T^*L {_\alpha \times_\beta} T^*L \to T^*L, \\
-				& ((\bfp, \bfx), (\bfp', \bfa \circ \bfx)) \mapsto (\bfa \circ \bfp' + \bfp, \bfx );
+%				\end{aligned}
+%			\] 
+		\item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad ((\bfp, \bfx), (\bfp', \bfa \circ \bfx)) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
+%			\[
+%				\begin{aligned}
+%				m:~ & T^*L {_\alpha \times_\beta} T^*L \to T^*L, \\
+%				& ((\bfp, \bfx), (\bfp', \bfa \circ \bfx)) \mapsto (\bfa \circ \bfp' + \bfp, \bfx );
 %				& \left( (\bfp, \bfx), \left(\bfp', e^{\sum\limits_{i} \Omega_{1i} x_ip_i} x_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} x_m\right)\right) \\
 %				& \mapsto \left(e^{\sum\limits_{i} \Omega_{1i} x_ip_i} p'_1 + p_1, \ldots, e^{\sum\limits_{i} \Omega_{mi} x_ip_i} p'_m + p_m, \bfx \right);
-				\end{aligned}
-			\]
+%				\end{aligned}
+%			\]
 		\item and the symplectic form $\omega$ is
 		\[
 			\omega = \sum_{i} dp_i \wedge dx_i
@@ -318,8 +318,7 @@ We restrict $L$ to be either $\RR_+^m$ or $(\CC^\times)^m$, where $\RR_+ = (0, \
     \item the multiplication map is
       \[\begin{aligned}
 	  m: & \left(L \times L\right) {_\alpha \times_\beta} \left(L \times L\right) \to L \times L, \\
-	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right)\right) \\
-	     & \mapsto (\bfs' \circ \bfs, \bfx );
+	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right)\right) \mapsto (\bfs' \circ \bfs, \bfx );
         \end{aligned}\]
     \item the symplectic form $\omega$ is
       \[\omega = \sum_{i} \frac{d s_i}{s_i} \wedge \frac{d x_i}{x_i} + \sum_{i < j} \Omega_{ij} \frac{d s_i}{s_i} \wedge \frac{d s_j}{s_j}.\]
