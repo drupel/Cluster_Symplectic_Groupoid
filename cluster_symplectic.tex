@@ -125,9 +125,10 @@ Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure o
 %			is the Schouten-Nijenhuis bracket.
 %		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
 \end{enumerate}	
-The notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$. The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
+The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$. The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
 \end{definition}
 
+{\color{red} Define Poisson and symplectic groupoid maps.}
 
 %	\begin{enumerate}
 %		\item The Poisson bivector is related to the Poisson bracket by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in C^\infty(M)$.
@@ -198,13 +199,13 @@ For a smooth Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \cT_{T^*M}$
 		\item the multiplication $m: U {_\alpha \times_\beta} U \to U$ is defined as the solution of an ODE (see \cite{CMS17} for details);
 		\item  and the symplectic form on $U$ is
 			$$
-				\overline{\omega} = \int_{0}^{1} (\varphi_X^s)^*\omega_0 ds.
+				\omega = \int_{0}^{1} (\varphi_X^s)^*\omega_0 ds.
 			$$
 	\end{enumerate}
 \end{theorem}
 
 \begin{remark}
-	By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we meant that the multiplication $m: \cG {_\alpha \times_\beta} \cG \to \cG$ may not be defined on all of its domain. In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may loop; and the 2-form $\overline{\omega}$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
+	By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we meant that the multiplication $m: \cG {_\alpha \times_\beta} \cG \to \cG$ may not be defined on all of its domain. In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$. The Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may contain loops; and the 2-form $\omega$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
 \end{remark}
 
 Let $L$ be either $\RR^m$ or $\CC^m$ and $ \bfx = (x_1, \ldots, x_n)$ be coordinates on $L$, and let $\Omega = (\Omega_{ij}), 1 \leq i,j \leq m$ be a skew-symmetric matrix.
