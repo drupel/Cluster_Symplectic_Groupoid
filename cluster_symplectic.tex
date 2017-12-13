@@ -483,13 +483,17 @@ The first step will be to have an explicit computation of the Poisson structures
     \pi_{\cD_\cX}&:=\omega_{\cD_\cX}^{-1}=\\
     \pi_{\cG_\cA}&:=\omega_{\cG_\cA}^{-1}=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i}
 			- \left(
-			\sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_j} \wedge \frac{\partial}{\partial p_i}
-			+ \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-			+ \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
+			  \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_j} \wedge \frac{\partial}{\partial p_i}
+			  + \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
+			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
 			\right).\\
     \pi_{\cD_\cA}&:=\omega_{\cD_\cA}^{-1}=
   \end{align}
 \end{lemma}
+\begin{proof}
+  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
+
+\end{proof}
 
 Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the covering maps from the source-simply connected symplectic groupoids to the symplectic doubles.
 For simplicity of notation we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion.
