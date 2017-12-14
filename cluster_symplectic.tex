@@ -21,7 +21,9 @@
 \newcommand{\bfc}{\mathbf{c}}
 \newcommand{\bfe}{\mathbf{e}}
 \newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
 \newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
 \newcommand{\bfx}{\mathbf{x}}
 \newcommand{\bfy}{\mathbf{y}}
 
@@ -475,19 +477,38 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
 \subsection{Mutation of Groupoid Charts}
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
 Our goal now is to apply the groupoid formalism to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the standard Poisson structures on $L_\cX$ and $L_\cA$ respectively.
-The first step will be to have an explicit computation of the Poisson structures on each of these symplectic groupoids.
+These groupoids have coordinates given as follows:
+\begin{itemize}
+  \item $\cG_\cX$ has coordinates $(\bfq,\bfy)=(q_1,\ldots,q_n,y_1,\ldots,y_n)$; 
+  \item $\cD_\cX$ has coordinates $(\bft,\bfy)=(t_1,\ldots,t_n,y_1,\ldots,y_n)$; 
+  \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
+  \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
+\end{itemize}
+For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion.
+Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
+\[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
+\begin{lemma}
+  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to morphisms of symplectic groupoids $\tilde\rho:\cG_\cA\to\cG_\cX$ and $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  \footnote{These seem like awful formulas that don't really work outside the positive real setting.}
+  \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{\ell j}x_jp_j\quad\text{and}\quad\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
+\end{lemma}
+
+A crucial observation will be the follow explicit computation of the Poisson structures on each of these symplectic groupoids.
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
-    \pi_{\cG_\cX}&:=\omega_{\cG_\cX}^{-1}=\\
-    \pi_{\cD_\cX}&:=\omega_{\cD_\cX}^{-1}=\\
-    \pi_{\cG_\cA}&:=\omega_{\cG_\cA}^{-1}=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i}
-			- \left(
-			  \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_j} \wedge \frac{\partial}{\partial p_i}
-			  + \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
+    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} + \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
+			\nonumber &\quad- \left(
+			  \sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
+			  + \sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell}
+			\right);\\
+    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} y_kt_k\frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial t_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
+    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} + \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
+			\nonumber &\quad- \left(
+			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
 			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
-			\right).\\
-    \pi_{\cD_\cA}&:=\omega_{\cD_\cA}^{-1}=
+			\right);\\
+    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} x_is_i\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial s_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -495,25 +516,24 @@ The first step will be to have an explicit computation of the Poisson structures
 
 \end{proof}
 
-Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the covering maps from the source-simply connected symplectic groupoids to the symplectic doubles.
-For simplicity of notation we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion.
 Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. 
 Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
-These functions are given by
+More explicitly, these Hamiltonian functions are given by
 \begin{align*}
-  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)
-  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)
-  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)
-  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)
+  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_\ell d_kB_{k\ell}q_\ell y_\ell}\right);\\
+  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_\ell t_\ell^{\varepsilon d_kB_{k\ell}}\right);\\
+  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{\varepsilon\sum_j\Omega_{kj}p_jx_j}\right);\\
+  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon\prod_j s_j^{\varepsilon \Omega_{kj}}\right).
 \end{align*}
+Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
-
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
     \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=\\
-    \dot b_\ell&=\{\bar H_\cX^{k,\varepsilon},b_\ell\}_{\cD_\cX}=\\
+    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=\\
     \dot p_\ell&=\{\tilde H_\cA^{k,\varepsilon},p_\ell\}_{\cG_\cA}=\\
-    \dot a_\ell&=\{\bar H_\cA^{k,\varepsilon},a_\ell\}_{\cD_\cA}=
+    \dot s_\ell&=\{\bar H_\cA^{k,\varepsilon},s_\ell\}_{\cD_\cA}=
   \end{align}
 \end{lemma}
 
