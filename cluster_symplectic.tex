@@ -293,7 +293,7 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 \begin{proof}
 	When the underlying field is $\RR$, it is straightforward to check that the Poisson spray \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structures. Note that the multiplicative 2-form $\omega$ is non-degenerate since
 	\[
-		\omega^m = m \bigwedge\limits_{1\leq i\leq m} dp_i \wedge dx_i
+		\omega^m = m! \bigwedge\limits_{1\leq i\leq m} dp_i \wedge dx_i
 	\]
 is a volume form.
 
@@ -516,7 +516,7 @@ A crucial observation will be the follow explicit computation of the Poisson str
 
 \end{proof}
 
-Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. 
+Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. \footnote{Elaborate on these being multiplicative.}
 Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
 More explicitly, these Hamiltonian functions are given by
@@ -538,6 +538,14 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
 \end{lemma}
 
 \newpage
+
+\begin{itemize}
+\item Record the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.
+\item Lift the canonical change of variables to groupoids
+\item Composition of the two groupoid maps give us the groupoid mutations.
+\end{itemize}
+
+\newpage 
 
 To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
 In particular, each vertex $t$ of $\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
