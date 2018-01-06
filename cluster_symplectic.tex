@@ -316,7 +316,9 @@ We restrict $L$ to be either $\RR_+^m$ or $(\CC^\times)^m$, where $\RR_+ = (0, \
 	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right)\right) \mapsto (\bfs' \circ \bfs, \bfx );
         \end{aligned}\]
     \item the symplectic form $\omega$ is
-      \[\omega = \sum_{i} \frac{d s_i}{s_i} \wedge \frac{d x_i}{x_i} + \sum_{i < j} \Omega_{ij} \frac{d s_i}{s_i} \wedge \frac{d s_j}{s_j}.\]
+      \begin{equation} \label{eq:2-formG_X}
+		\omega = \sum_{i} \frac{d s_i}{s_i} \wedge \frac{d x_i}{x_i} + \sum_{i < j} \Omega_{ij} \frac{d s_i}{s_i} \wedge \frac{d s_j}{s_j}.
+	\end{equation}
   \end{enumerate}
 \end{theorem}
 
@@ -493,13 +495,13 @@ A crucial observation will be the following explicit computation of the Poisson 
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
-    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} + \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
+    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} + \sum_{k, \ell} d_kB_{k\ell}y_k q_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
 			\nonumber &\quad- \left(
 			  \sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
 			  + \sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell}
 			\right);\\
     \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} y_kt_k\frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial t_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} + \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
+    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} + \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
 			\nonumber &\quad- \left(
 			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
 			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
@@ -510,29 +512,31 @@ A crucial observation will be the following explicit computation of the Poisson 
 \begin{proof}
   We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
 
-{\color{red} proposed change:
-\begin{align}
-\pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} + \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
-			\nonumber &\quad- \left(
-			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
-			\right)
-\end{align}
-}
-
-Choosing the standard frames: $\{dx_i, dp_i\}$ for $T^*\cG_\cA$ and $\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\}$ for $T\cG_\cA$, the bundle map ${\pi_{\cG_\cA}}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map ${\pi_{\cG_\cA}}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
 \begin{align*}
 	{\pi_{\cG_\cA}}^\flat: &~ dx_i \mapsto \frac{\partial}{\partial p_i} + \sum_{j} \Omega_{ij}x_i p_j \frac{\partial}{\partial p_j}- \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
 	&~ dp_i \mapsto - \frac{\partial}{\partial x_i} + \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial x_j}- \sum_{j} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_j},
 \end{align*}
-and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map ${\omega_{\cG_\cA}}^\sharp: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map ${\omega_{\cG_\cA}}^\sharp: T^*\cG_\cA \to T\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
 \begin{align*}
 	{\omega_{\cG_\cA}}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - dp_i
 			- \sum_{j} \Omega_{ij}x_j p_i d p_j 	- \sum_{j} \Omega_{ij}p_ip_j d x_j, \\
 	&~ \frac{\partial}{\partial p_i} \mapsto dx_i - \sum_{j} \Omega_{ij}x_i p_j d x_j 
 			- \sum_{j} \Omega_{ij}x_ix_j d p_j.
 \end{align*}
-We will leave it to the reader to check that ${\pi_{\cG_\cA}}^\flat$ and ${\omega_{\cG_\cA}}^\sharp$ are inverse to each other.
+
+Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cG_\cX$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cG_\cX$, the bundle map ${\pi_{\cG_\cX}}^\flat: T^*\cG_\cX \to T\cG_\cX, \quad \alpha \mapsto \pi_{\cG_\cX}(\alpha, \cdot)$ is given by
+\begin{align*}
+	{\pi_{\cG_\cX}}^\flat: &~ dx_i \mapsto x_i s_i\frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij}x_i x_j \frac{\partial}{\partial x_j}, \\
+	&~ ds_i \mapsto - x_i s_i \frac{\partial}{\partial x_i},
+\end{align*}
+and for the symplectic structure $\omega_{\cG_\cX}$ as in \eqref{eq:2-formG_X}, the bundle map ${\omega_{\cG_\cX}}^\sharp: T^*\cG_\cX \to T\cG_\cX, \quad v \mapsto \omega_{\cG_\cX}(v, \cdot)$ is given by
+\begin{align*}
+	{\omega_{\cG_\cA}}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - \frac{1}{x_i s_i} ds_i, \\
+	&~ \frac{\partial}{\partial s_i} \mapsto \frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} d s_j.
+\end{align*}
+
+We leave it to the reader to check that ${\pi_{\cG_\cA}}^\flat$ (resp. ${\pi_{\cG_\cX}}^\flat$) and ${\omega_{\cG_\cA}}^\sharp$ (resp. ${\omega_{\cG_\cX}}^\sharp$) are inverse to each other.
 \end{proof}
 
 Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. \footnote{Elaborate on these being multiplicative.}
