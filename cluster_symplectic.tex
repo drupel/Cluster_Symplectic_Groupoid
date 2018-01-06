@@ -107,31 +107,23 @@ We use the following notations:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoids of log canonical Poisson structures}
 
-In this section, we we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure. There is also another construction of a source-connected symplectic groupoid, called the symplectic double \cite{MR2470108}. We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double. We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
+In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-conncted sympletic groupoid of a log-canonical Poisson structure. There is also another construction of a source-connected symplectic groupoid, called the symplectic double \cite{MR2470108}. We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double. We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
 
 %\eqref{eq:log-canonical bracket}
 
 To introduce the notion of symplectic groupoids and Poisson sprays, we recall the equivalent notions of Poisson brackets and Poisson bi-vectors.
 
 \begin{definition}
-Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure on $M$ is one of the two following equivalent structures:
+  Let $M$ be either a smooth manifold or a complex manifold. A Poisson structure on $M$ is one of the two following equivalent structures:
   \begin{enumerate}
     \item a Poisson bracket
-      $$
-				\{\cdot, \cdot\}: \cO_M \times \cO_M \to \cO_M
-			$$
-			which is a Lie bracket satisfying the Leibniz rule
-			$$
-				\{fg, h\} = f\{g,h\} + g\{f,h\};
-			$$
-		\item a Poisson bivector $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$ where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
-%			$$
-%				[\cdot, \cdot]: \mathfrak{X}^p(M) \times \mathfrak{X}^q(M) \to \mathfrak{X}^{p+q-1}(M)
-%			$$
-%			is the Schouten-Nijenhuis bracket.
-%		\item A Poisson differental operator $d_\pi: \mathfrak{X}^p(M) \to \mathfrak{X}^{p+1}(M)$ with $d_\pi^2 = 0$.
-\end{enumerate}	
-The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$, for $f, g\in \cO_\cX$. The pair $(M, \pi)$, or equivalently $(M, \{,\})$, is called a Poisson manifold.
+      $$\{\cdot, \cdot\}: \cO_M \times \cO_M \to \cO_M$$
+      which is a Lie bracket satisfying the Leibniz rule
+      $$\{fg, h\} = f\{g,h\} + g\{f,h\};$$
+    \item a Poisson bivector $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$, where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
+  \end{enumerate}	
+  The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_\cX$.
+  The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a Poisson manifold.
 \end{definition}
 
 {\color{red} Define Poisson and symplectic groupoid maps.}
@@ -142,32 +134,33 @@ The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$, fo
 %	\end{enumerate}
 
 \begin{definition}
-A groupoid $\cG \rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
-	\begin{enumerate}
-		\item a surjective source map $\alpha: \cG \to M$ and a surjective target map $\beta: \cG \to M$;
-		\item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$;
-		\item an associative multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG, \enskip (g, h) \mapsto gh$;
-		\item and an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$
-	\end{enumerate}
-that satisfies the following properties:
-	\begin{enumerate}
-		\item $\alpha(\mathtt{1}_x) = \beta(\mathtt{1}_x) = x$;
-		\item $\alpha(gh) = \alpha(h), \enskip \beta(gh) = \beta(g)$;
-		\item $\alpha(g^{-1}) = \beta(g), \enskip \beta(g^{-1}) = \alpha(g)$;
-		\item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$.
-	\end{enumerate}
-A Lie groupoid $\cG \rightrightarrows M$ has the following additional properties:
-	\begin{enumerate}
-		\item $\cG$ and $M$ are either smooth manifolds or holomorphic manifolds;
-		\item the source $\alpha: \cG \to M$ and the target $\beta: \cG \to M$ are surjective submersions;
-		\item the multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG$ is smooth;
-		\item the inversion map $i: \cG \to \cG$ is smooth.
-	\end{enumerate}
-A Lie groupoid $\cG \rightrightarrows M$ is source-connected if $\alpha^{-1}(x)$ is connected for every $x \in M$; it is source-simply-connected if $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
+  A groupoid $\cG \rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
+  \begin{enumerate}
+    \item a surjective source map $\alpha: \cG \to M$ and a surjective target map $\beta: \cG \to M$;
+    \item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$;
+    \item an associative multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG, \enskip (g, h) \mapsto gh$;
+    \item and an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$
+  \end{enumerate}
+  that satisfies the following properties:
+  \begin{enumerate}
+    \item $\alpha(\mathtt{1}_x) = \beta(\mathtt{1}_x) = x$;
+    \item $\alpha(gh) = \alpha(h), \enskip \beta(gh) = \beta(g)$;
+    \item $\alpha(g^{-1}) = \beta(g), \enskip \beta(g^{-1}) = \alpha(g)$;
+    \item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$.
+  \end{enumerate}
+  A Lie groupoid $\cG \rightrightarrows M$ has the following additional properties:
+  \begin{enumerate}
+    \item $\cG$ and $M$ are either smooth manifolds or holomorphic manifolds\footnote{we say ``complex manifold'' above};
+    \item the source $\alpha: \cG \to M$ and the target $\beta: \cG \to M$ are surjective submersions;
+    \item the multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG$ is smooth;
+    \item the inversion map $i: \cG \to \cG$ is smooth.
+  \end{enumerate}
+  A Lie groupoid $\cG \rightrightarrows M$ is source-connected if $\alpha^{-1}(x)$ is connected for every $x \in M$; it is source-simply-connected if $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
 \end{definition}
 
 \begin{definition}
-A symplectic groupoid is a Lie groupoid $\cG \rra M$ with a multiplicative symplectic structure $\omega \in \Omega^2(\cG)$. That is, the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
+  A symplectic groupoid is a Lie groupoid $\cG \rra M$ with a multiplicative symplectic structure $\omega \in \Omega^2(\cG)$.
+  That is, the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
 \end{definition}
 
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps. Poisson manifolds that arise this way are called integrable. As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$ where the cotangent bundle $T^*M$ carries Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard the Lie algebroid structure \cite{MR1262213}. The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, are characterized in \cite{MR1973056, MR2128714}. Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314} and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
@@ -488,12 +481,15 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
 Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 \[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
 \begin{lemma}
-  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to morphisms of symplectic groupoids $\tilde\rho:\cG_\cA\to\cG_\cX$ and $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
-  \footnote{These seem like awful formulas that don't really work outside the positive real setting.}
-  \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{\ell j}x_jp_j\quad\text{and}\quad\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
+  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to a morphism of symplectic groupoids $\tilde\rho:\cG_\cA\to\cG_\cX$ given on fiber coordinates by 
+  \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{\ell j}x_jp_j.\]
 \end{lemma}
+\begin{remark}
+  When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
+\end{remark}
 
-A crucial observation will be the follow explicit computation of the Poisson structures on each of these symplectic groupoids.
+A crucial observation will be the following explicit computation of the Poisson structures on each of these symplectic groupoids.
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
