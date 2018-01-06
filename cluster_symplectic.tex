@@ -272,14 +272,14 @@ there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L,
 %				\end{aligned}
 %			\]
 		\item and the symplectic form $\omega$ is
-		\[
+		\begin{equation}\label{eq:2-formG_A}
 			\omega = \sum_{i} dp_i \wedge dx_i
 			- \left(
 			\sum_{i, j} \Omega_{ij}x_i p_j d p_i \wedge d x_j 
 			+ \sum_{j < i} \Omega_{ij}p_ip_j d x_i \wedge d x_j
 			+ \sum_{j < i} \Omega_{ij}x_ix_j d p_i \wedge d p_j
 			\right).
-		\]
+		\end{equation}
 	\end{enumerate}
 \end{theorem}
 
@@ -508,12 +508,31 @@ A crucial observation will be the following explicit computation of the Poisson 
   \end{align}
 \end{lemma}
 \begin{proof}
-  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation. Choosing the standard frames: $\{dx_i, dp_i\}$ for $T^*\cG_\cA$ and $\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\}$ for $T\cG_\cA$, the bundle map ${\pi_{\cG_\cA}}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
+
+{\color{red} proposed change:
+\begin{align}
+\pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} + \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
+			\nonumber &\quad- \left(
+			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
+			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
+			\right)
+\end{align}
+}
+
+Choosing the standard frames: $\{dx_i, dp_i\}$ for $T^*\cG_\cA$ and $\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\}$ for $T\cG_\cA$, the bundle map ${\pi_{\cG_\cA}}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
 \begin{align*}
-	{\pi_{\cG_\cA}}^\flat: &~ dx_i \mapsto \frac{\partial}{\partial p_i} + \sum_{j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_j}- \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
-	&~ dp_i
+	{\pi_{\cG_\cA}}^\flat: &~ dx_i \mapsto \frac{\partial}{\partial p_i} + \sum_{j} \Omega_{ij}x_i p_j \frac{\partial}{\partial p_j}- \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
+	&~ dp_i \mapsto - \frac{\partial}{\partial x_i} + \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial x_j}- \sum_{j} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_j},
 \end{align*}
-and the bundle map ${\omega_{\cG_\cA}}^\sharp: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map ${\omega_{\cG_\cA}}^\sharp: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+\begin{align*}
+	{\omega_{\cG_\cA}}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - dp_i
+			- \sum_{j} \Omega_{ij}x_j p_i d p_j 	- \sum_{j} \Omega_{ij}p_ip_j d x_j, \\
+	&~ \frac{\partial}{\partial p_i} \mapsto dx_i - \sum_{j} \Omega_{ij}x_i p_j d x_j 
+			- \sum_{j} \Omega_{ij}x_ix_j d p_j.
+\end{align*}
+We will leave it to the reader to check that ${\pi_{\cG_\cA}}^\flat$ and ${\omega_{\cG_\cA}}^\sharp$ are inverse to each other.
 \end{proof}
 
 Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. \footnote{Elaborate on these being multiplicative.}
