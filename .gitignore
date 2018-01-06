@@ -229,6 +229,5 @@ pip-log.txt
 *.blg
 *.bst
 cluster_symplectic.aux
-*.aux
 cluster_symplectic.brf
 cluster_symplectic.out
