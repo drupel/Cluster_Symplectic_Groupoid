@@ -172,7 +172,7 @@ Here are a few notable examples of symplectic groupoids: the Drinfeld double of 
   A Poisson structure on $L$ is \emph{log-canonical} if
   $$
     \{x_i, x_j\} = \Omega_{ij} x_ix_j, \quad 1 \leq i,j \leq m \qquad \text{or equavalently} \quad
-    \pi = \sum_{i > j} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
+    \pi = \sum_{j < i} \Omega_{ij} x_ix_j\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
   $$
   for some skew-symmetric $m\times m$ matrix $\Omega = (\Omega_{ij})$.
 \end{definition}
@@ -221,7 +221,7 @@ In the next results, we introduce a Poisson spray whose local symplectic groupoi
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $\RR^m$, the vector field $X \in \cT_{T^*L}$ given by
   \begin{equation} 
     \label{eq: PoisSp}
-    X = \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_i p_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq j \leq n, 1 < i \leq n}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}
+    X = \sum_{1 \leq i,j \leq m}\Omega_{ij}x_i p_i x_j\frac{\partial}{\partial x_j} - \sum_{1 \leq i,j \leq m}\Omega_{ij}x_ip_i p_j\frac{\partial}{\partial p_j}
   \end{equation}
   is a Poisson spray.
   Its flow is given by
@@ -239,7 +239,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
     \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_i = e^{\sum_j \Omega_{ij} x_jp_j}$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
-    \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad ((\bfp, \bfx), (\bfp', \bfa \circ \bfx)) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
+    \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the symplectic form $\omega$ is
       \begin{equation}
         \label{eq:2-formG_A}
@@ -459,16 +459,14 @@ A crucial observation will be the following explicit computation of the Poisson 
   \label{le:groupoid Poisson structures}
   \begin{align}
     \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} - \sum_{k, \ell} d_kB_{k\ell}y_k q_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
-			\nonumber &\quad+ \left(
+			\nonumber &\quad+ 
 			  \sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
-			  + \sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell}
-			\right);\\
+			  + \sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
     \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} y_kt_k\frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial t_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
     \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} - \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
-			\nonumber &\quad+ \left(
+			\nonumber &\quad+
 			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
-			\right);\\
+			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
     \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} x_is_i\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial s_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
   \end{align}
 \end{lemma}
