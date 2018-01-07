@@ -459,45 +459,41 @@ A crucial observation will be the following explicit computation of the Poisson 
   \label{le:groupoid Poisson structures}
   \begin{align}
     \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} - \sum_{k, \ell} d_kB_{k\ell}y_k q_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
-			\nonumber &\quad+ 
-			  \sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
-			  + \sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
+    \nonumber &\quad+\sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
+		    +\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
     \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} y_kt_k\frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial t_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
     \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_i} - \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
-			\nonumber &\quad+
-			  \sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-			  + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
+    \nonumber &\quad+\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
+		    +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
     \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} x_is_i\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial s_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
   \end{align}
 \end{lemma}
 \begin{proof}
   We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
 
-Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map ${\pi_{\cG_\cA}}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
-\begin{align*}
-	{\pi_{\cG_\cA}}^\flat: &~ dx_i \mapsto \frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij}x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
-	&~ dp_i \mapsto - \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_j},
-\end{align*}
-and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map ${\omega_{\cG_\cA}}^\sharp: T^*\cG_\cA \to T\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
-\begin{align*}
-	{\omega_{\cG_\cA}}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - dp_i
-			+ \sum_{j} \Omega_{ij}x_j p_i d p_j + \sum_{j} \Omega_{ij}p_ip_j d x_j, \\
-	&~ \frac{\partial}{\partial p_i} \mapsto dx_i + \sum_{j} \Omega_{ij}x_i p_j d x_j 
-			+ \sum_{j} \Omega_{ij}x_ix_j d p_j.
-\end{align*}
+  Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map $\pi_{\cG_\cA}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+  \begin{align*}
+    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto \frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij}x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
+    &~ dp_i \mapsto - \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_j},
+  \end{align*}
+  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
+  \begin{align*}
+    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - dp_i + \sum_{j} \Omega_{ij}x_j p_i d p_j + \sum_{j} \Omega_{ij}p_ip_j d x_j, \\
+    &~ \frac{\partial}{\partial p_i} \mapsto dx_i + \sum_{j} \Omega_{ij}x_i p_j d x_j + \sum_{j} \Omega_{ij}x_ix_j d p_j.
+  \end{align*}
 
-Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cG_\cX$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cG_\cX$, the bundle map ${\pi_{\cG_\cX}}^\flat: T^*\cG_\cX \to T\cG_\cX, \quad \alpha \mapsto \pi_{\cG_\cX}(\alpha, \cdot)$ is given by
-\begin{align*}
-	{\pi_{\cG_\cX}}^\flat: &~ dx_i \mapsto x_i s_i\frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij}x_i x_j \frac{\partial}{\partial x_j}, \\
-	&~ ds_i \mapsto - x_i s_i \frac{\partial}{\partial x_i},
-\end{align*}
-and for the symplectic structure $\omega_{\cG_\cX}$ as in \eqref{eq:2-formG_X}, the bundle map ${\omega_{\cG_\cX}}^\sharp: T^*\cG_\cX \to T\cG_\cX, \quad v \mapsto \omega_{\cG_\cX}(v, \cdot)$ is given by
-\begin{align*}
-	{\omega_{\cG_\cA}}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - \frac{1}{x_i s_i} ds_i, \\
-	&~ \frac{\partial}{\partial s_i} \mapsto \frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} d s_j.
-\end{align*}
+  Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cD_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cD_\cA$, the bundle map $\pi_{\cD_\cA}^\flat: T^*\cD_\cA \to T\cD_\cA, \quad \alpha \mapsto \pi_{\cD_\cA}(\alpha, \cdot)$ is given by
+  \begin{align*}
+    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto x_i s_i\frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij}x_i x_j \frac{\partial}{\partial x_j}, \\
+    &~ ds_i \mapsto - x_i s_i \frac{\partial}{\partial x_i},
+  \end{align*}
+  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formG_X}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
+  \begin{align*}
+    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - \frac{1}{x_i s_i} ds_i, \\
+    &~ \frac{\partial}{\partial s_i} \mapsto \frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} d s_j.
+  \end{align*}
 
-We leave it to the reader to check that ${\pi_{\cG_\cA}}^\flat$ (resp. ${\pi_{\cG_\cX}}^\flat$) and ${\omega_{\cG_\cA}}^\sharp$ (resp. ${\omega_{\cG_\cX}}^\sharp$) are inverse to each other.
+  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 \end{proof}
 
 Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. \footnote{Elaborate on these being multiplicative.}
