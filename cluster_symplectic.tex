@@ -526,6 +526,23 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
 \end{proof}
 
+Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$:
+\[
+  \tilde\varphi_\cX^1:\cG_\cX\to\cG_\cX;\qquad
+  \bar\varphi_\cX^1:\cD_\cX\to\cD_\cX;\qquad
+  \tilde\varphi_\cA^1:\cG_\cA\to\cG_\cA;\qquad
+  \bar\varphi_\cA^1:\cD_\cA\to\cD_\cA.
+\]
+\begin{corollary}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, we have
+  \begin{align*}
+    (\tilde\varphi_\cX^1)^*(q_\ell y_\ell)&=q_\ell y_\ell+\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'} d_k B_{k\ell'}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right);\\
+    (\bar\varphi_\cX^1)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'}t_{\ell'}^{\varepsilon d_k B_{k\ell'}}}{1+y_k^\varepsilon}\right)^{\delta_{k\ell}/d_k}t_\ell;\\
+    (\tilde\varphi_\cA^1)^*(p_jx_j)&=p_jx_j+\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right);\\
+    (\bar\varphi_\cA^1)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{B_{jk}/d_k}s_j.\\
+  \end{align*}
+\end{corollary}
+
 \newpage
 
 \begin{itemize}
