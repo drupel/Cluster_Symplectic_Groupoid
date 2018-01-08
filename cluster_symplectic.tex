@@ -344,7 +344,7 @@ Write $X_\cX=X_\cX^{k,\varepsilon}\in\cT_\cX$ and $X_\cA=X_\cA^{k,\varepsilon}\i
     \label{eq:X dynamics}
     \dot y_\ell&:=\{H_\cX^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log(1+y_k^\varepsilon)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
-    \dot x_j&:=\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_j\quad\text{for}\quad 1\le j\le m.
+    \dot x_j&:=\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log(1+\hat y_k^\varepsilon)x_k\quad\text{for}\quad 1\le j\le m.
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -451,6 +451,7 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
 \end{lemma}
 \begin{remark}
   When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  \footnote{This might actually require $m=n$.}
   \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
 \end{remark}
 
@@ -510,21 +511,19 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
-    \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=\\
-    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=\\
-    \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)-\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k\\
-    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=
+    \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'} d_k B_{k\ell'}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
+    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'}t_{\ell'}^{\varepsilon d_k B_{k\ell'}}}{1+y_k^\varepsilon}\right)t_k;\\
+    \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)+\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k;\\
+    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon s_k^{\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)s_j.
   \end{align}
 \end{lemma}
 \begin{proof}
-  We prove equations \eqref{eq:p dot} and \eqref{eq:s dot}, leaving the others as an exercise for the reader.
+  We prove equation \eqref{eq:p dot}, leaving the others as an exercise for the reader.
   By Lemma~\ref{le:groupoid Poisson structures}, we have $\{x_i,p_j\}_{\cG_\cA}=\delta_{ij}-\Omega_{ij}x_ip_j$ and $\{p_i,p_j\}_{\cG_\cA}=\Omega_{ij}p_ip_j$ so that
   \[\{\hat y_k,p_j\}_{\cG_\cA}=\sum_{i=1}^m B_{ik}\frac{\hat y_k}{x_i}\{x_i,p_j\}_{\cG_\cA}=B_{jk}\frac{\hat y_k}{x_j}-\delta_{jk}d_k\hat y_kp_k\]
   and
   \[\{e^{d_kp_kx_k},p_j\}_{\cG_\cA}=\delta_{jk}d_kp_ke^{d_kp_kx_k}.\]
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
-
-
 \end{proof}
 
 \newpage
