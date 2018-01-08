@@ -503,8 +503,8 @@ More explicitly, these Hamiltonian functions are given by
 \begin{align*}
   \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_\ell d_kB_{k\ell}q_\ell y_\ell}\right);\\
   \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_\ell t_\ell^{\varepsilon d_kB_{k\ell}}\right);\\
-  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{\varepsilon\sum_j\Omega_{kj}p_jx_j}\right);\\
-  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon\prod_j s_j^{\varepsilon \Omega_{kj}}\right).
+  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{d_kp_kx_k}\right);\\
+  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon s_k^{\varepsilon d_k}\right).
 \end{align*}
 Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
@@ -512,10 +512,20 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
   \begin{align}
     \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=\\
     \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=\\
-    \dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=\\
-    \dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=
+    \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)-\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k\\
+    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=
   \end{align}
 \end{lemma}
+\begin{proof}
+  We prove equations \eqref{eq:p dot} and \eqref{eq:s dot}, leaving the others as an exercise for the reader.
+  By Lemma~\ref{le:groupoid Poisson structures}, we have $\{x_i,p_j\}_{\cG_\cA}=\delta_{ij}-\Omega_{ij}x_ip_j$ and $\{p_i,p_j\}_{\cG_\cA}=\Omega_{ij}p_ip_j$ so that
+  \[\{\hat y_k,p_j\}_{\cG_\cA}=\sum_{i=1}^m B_{ik}\frac{\hat y_k}{x_i}\{x_i,p_j\}_{\cG_\cA}=B_{jk}\frac{\hat y_k}{x_j}-\delta_{jk}d_k\hat y_kp_k\]
+  and
+  \[\{e^{d_kp_kx_k},p_j\}_{\cG_\cA}=\delta_{jk}d_kp_ke^{d_kp_kx_k}.\]
+  Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
+
+
+\end{proof}
 
 \newpage
 
