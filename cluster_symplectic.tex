@@ -245,7 +245,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
         \label{eq:2-formG_A}
 	\omega = \sum_{i} dx_i \wedge dp_i
 	  + \left(
-	    \sum_{i, j} \Omega_{ij}x_i p_j d x_i \wedge d p_j 
+	    \sum_{i, j} \Omega_{ij}x_j p_i d x_i \wedge d p_j 
 	    + \sum_{j < i} \Omega_{ij}p_ip_j d x_i \wedge d x_j
 	    + \sum_{j < i} \Omega_{ij}x_ix_j d p_i \wedge d p_j
 	  \right).
@@ -459,14 +459,14 @@ A crucial observation will be the following explicit computation of the Poisson 
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
-    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_k} - \sum_{k, \ell} d_kB_{k\ell}y_k q_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial q_\ell}\\
+    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_k} - \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_\ell}\\
     \nonumber &\quad+\sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
 		    +\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} y_kt_k\frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial t_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}x_i p_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial p_j}\\
+    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} t_ky_k\frac{\partial}{\partial t_k} \wedge \frac{\partial}{\partial y_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
+    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j}\\
     \nonumber &\quad+\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
 		    +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
-    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} x_is_i\frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial s_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
+    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -474,24 +474,24 @@ A crucial observation will be the following explicit computation of the Poisson 
 
   Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map $\pi_{\cG_\cA}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
   \begin{align*}
-    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_j}, \\
-    &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij}x_j p_i \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_j},
+    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij} x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
+    &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij} p_i x_j \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij} p_i p_j \frac{\partial}{\partial p_j},
   \end{align*}
   and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
   \begin{align*}
-    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij}x_i p_j d p_j + \sum_{j} \Omega_{ij}p_ip_j d x_j, \\
-    &~ \frac{\partial}{\partial p_i} \mapsto - dx_i + \sum_{j} \Omega_{ij}p_i x_j d x_j + \sum_{j} \Omega_{ij}x_ix_j d p_j.
+    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij} p_i x_j dp_j + \sum_{j} \Omega_{ij} p_i p_j dx_j, \\
+    &~ \frac{\partial}{\partial p_i} \mapsto -dx_i + \sum_{j} \Omega_{ij} x_i p_j dx_j + \sum_{j} \Omega_{ij} x_i x_j dp_j.
   \end{align*}
 
   Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cD_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cD_\cA$, the bundle map $\pi_{\cD_\cA}^\flat: T^*\cD_\cA \to T\cD_\cA, \quad \alpha \mapsto \pi_{\cD_\cA}(\alpha, \cdot)$ is given by
   \begin{align*}
-    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto x_i s_i\frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij}x_i x_j \frac{\partial}{\partial x_j}, \\
-    &~ ds_i \mapsto - x_i s_i \frac{\partial}{\partial x_i},
+    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto -x_i s_i \frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
+    &~ ds_i \mapsto s_i x_i \frac{\partial}{\partial x_i},
   \end{align*}
   and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formG_X}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
   \begin{align*}
-    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto - \frac{1}{x_i s_i} ds_i, \\
-    &~ \frac{\partial}{\partial s_i} \mapsto \frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} d s_j.
+    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto \frac{1}{x_i s_i} ds_i, \\
+    &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
   \end{align*}
 
   We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
