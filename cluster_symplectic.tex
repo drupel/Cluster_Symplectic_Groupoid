@@ -226,7 +226,7 @@ In the next results, we introduce a Poisson spray whose local symplectic groupoi
   is a Poisson spray.
   Its flow is given by
   \[\varphi_X^t: T^*L \to T^*L, \qquad (\bfp, \bfx) \mapsto (\bfa^{-t} \circ \bfp, \bfa^t \circ \bfx),\]
-  where $a_i = e^{\sum_j \Omega_{ij} x_jp_j}$.
+  where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$.
   This flow exists for all time $t \in \RR$ and contains no loops.
 \end{lemma}
 
@@ -237,7 +237,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
   \begin{enumerate}
     \item $\cG_L \cong T^*L$ with coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$;
     \item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
-    \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_i = e^{\sum_j \Omega_{ij} x_jp_j}$;
+    \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
     \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the symplectic form $\omega$ is
@@ -245,9 +245,9 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
         \label{eq:2-formG_A}
 	\omega = \sum_{i} dx_i \wedge dp_i
 	  + \left(
-	    \sum_{i, j} \Omega_{ij}x_j p_i d x_i \wedge d p_j 
-	    + \sum_{j < i} \Omega_{ij}p_ip_j d x_i \wedge d x_j
-	    + \sum_{j < i} \Omega_{ij}x_ix_j d p_i \wedge d p_j
+	    \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
+	    + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
+	    + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
 	  \right).
       \end{equation}
   \end{enumerate}
@@ -255,7 +255,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
 \begin{proof}
   When the underlying field is $\RR$, it is straightforward to check that the Poisson spray \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structures.
   Note that the multiplicative 2-form $\omega$ is non-degenerate since
-  \[\omega^m = m! \bigwedge\limits_{1\leq i\leq m} dp_i \wedge dx_i\]
+  \[\omega^m = m! \bigwedge\limits_{1\leq i\leq m} dx_i \wedge dp_i\]
   is a volume form.
 
   In the case when the underlying field is $\CC$, the symplectic groupoid structures can be directly verified.
@@ -271,18 +271,18 @@ Motiviated by \cite{MR2470108}, we make the following definition of the symplect
     \item the source map is
       \[\alpha: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;\]
     \item the target map is
-      \[\beta: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right);\]
+      \[\beta: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
     \item the inverse map is
-      \[\iota: L \times L \to L \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right);\]
+      \[\iota: L \times L \to L \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
     \item the multiplication map is
       \[\begin{aligned}
 	  m: & \left(L \times L\right) {_\alpha \times_\beta} \left(L \times L\right) \to L \times L, \\
-	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{1i}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{mi}}\right)\right) \mapsto (\bfs' \circ \bfs, \bfx );
+	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right)\right) \mapsto (\bfs' \circ \bfs, \bfx );
         \end{aligned}\]
     \item the symplectic form $\omega$ is
       \begin{equation} 
         \label{eq:2-formG_X}
-	\omega = \sum_{i} \frac{d x_i}{x_i} \wedge \frac{d s_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{d s_i}{s_i} \wedge \frac{d s_j}{s_j}.
+	\omega = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
       \end{equation}
   \end{enumerate}
 \end{theorem}
@@ -446,6 +446,7 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
 Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 \[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
 \begin{lemma}
+  \footnote{Check this again}
   The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to a morphism of symplectic groupoids $\tilde\rho:\cG_\cA\to\cG_\cX$ given on fiber coordinates by 
   \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{\ell j}x_jp_j.\]
 \end{lemma}
@@ -502,10 +503,10 @@ Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
 More explicitly, these Hamiltonian functions are given by
 \begin{align*}
-  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_\ell d_kB_{k\ell}q_\ell y_\ell}\right);\\
-  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_\ell t_\ell^{\varepsilon d_kB_{k\ell}}\right);\\
-  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{d_kp_kx_k}\right);\\
-  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon s_k^{\varepsilon d_k}\right).
+  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_\ell d_\ell B_{\ell k}q_\ell y_\ell}\right);\\
+  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_\ell t_\ell^{\varepsilon d_\ell B_{\ell k}}\right);\\
+  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right);\\
+  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right).
 \end{align*}
 Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
@@ -514,7 +515,7 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
     \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'} d_k B_{k\ell'}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
     \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'}t_{\ell'}^{\varepsilon d_k B_{k\ell'}}}{1+y_k^\varepsilon}\right)t_k;\\
     \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)+\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k;\\
-    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon s_k^{\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)s_j.
+    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon s_k^{\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)s_j.
   \end{align}
 \end{lemma}
 \begin{proof}
