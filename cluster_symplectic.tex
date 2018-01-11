@@ -161,13 +161,13 @@ Given a Lie groupoid $\cG \rra M$, its $k$-nerve
 \]
 is the set of $k$ composable elements. In particular, $\cG^{(2)} = \cG {_\alpha \times_\beta} \cG$, $\cG^{(1)} = \cG$ and $\cG^{(0)} = M$. The nerve of a Lie groupoid is naturally a simplicial manifold which carries a coboundary operator $\partial: \Omega^\bullet(\cG^{(k-1)}) \to \Omega^\bullet(\cG^{(k)})$. The first two operators are given as below:
 \begin{align}
-	& \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad \mu \mapsto \alpha^*\mu - \beta^*\mu \\
-	& \partial: \Omega^\bullet(\cG) \to \Omega^\bullet(\cG^{(2)}), \qquad \mu \mapsto \mathrm{pr}_1^*\mu - m^*\mu + \mathrm{pr}_2^*\mu
+	& \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad \mu \mapsto \alpha^*(\mu) - \beta^*(\mu) \\
+	& \partial: \Omega^\bullet(\cG) \to \Omega^\bullet(\cG^{(2)}), \qquad \mu \mapsto \mathrm{pr}_1^*(\mu) - m^*(\mu) + \mathrm{pr}_2^*(\mu)
 \end{align}
 where $\mathrm{pr}_1: \cG^{(2)} \to \cG$ and $\mathrm{pr}_2: \cG^{(2)} \to \cG$ are the first and second projections. A differential form $\mu \in \Omega^\bullet(G)$ is called multiplicative if $\partial \mu = 0$. Our main interest will be with Lie groupoids equipped with a multiplicative symplectic structure.
 \begin{definition}
   A \emph{symplectic groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative symplectic structure $\omega \in \Omega^2(\cG)$.
-  That is, $\mathrm{pr}_1^*\omega+\mathrm{pr}_2^*\omega = m^*\omega$ or equivalently the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
+  That is, $\mathrm{pr}_1^*(\omega)+\mathrm{pr}_2^*(\omega) = m^*(\omega)$ or equivalently the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
 \end{definition}
 
 
