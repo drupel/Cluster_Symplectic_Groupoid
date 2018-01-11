@@ -153,15 +153,24 @@ To introduce the notion of symplectic groupoids and Poisson sprays, we recall th
     \item the inversion map $i: \cG \to \cG$ is smooth.
   \end{enumerate}
   A Lie groupoid $\cG \rightrightarrows M$ is \emph{source-connected} if $\alpha^{-1}(x)$ is connected for every $x \in M$; it is \emph{source-simply-connected} if $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
-\end{definition}
+\end{definition}\footnote{Elaborate on multiplicative forms}
 
-Our main interest will be with Lie groupoids having the following additional structure.
+Given a Lie groupoid $\cG \rra M$, its $k$-nerve 
+\[
+	\cG^{(k)} = \{(g_1, g_2, \ldots, g_k) \in \cG^k ~|~ \beta(g_i) = \alpha(g_{i+1})\}
+\]
+is the set of $k$ composable elements. In particular, $\cG^{(2)} = \cG {_\alpha \times_\beta} \cG$, $\cG^{(1)} = \cG$ and $\cG^{(0)} = M$. The nerve of a Lie groupoid is naturally a simplicial manifold which carries a coboundary operator $\partial: \Omega^\bullet(\cG^{(k-1)}) \to \Omega^\bullet(\cG^{(k)})$. The first two operators are given as below:
+\begin{align}
+	& \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad \mu \mapsto \alpha^*\mu - \beta^*\mu \\
+	& \partial: \Omega^\bullet(\cG) \to \Omega^\bullet(\cG^{(2)}), \qquad \mu \mapsto \mathrm{pr}_1^*\mu - m^*\mu + \mathrm{pr}_2^*\mu
+\end{align}
+where $\mathrm{pr}_1: \cG^{(2)} \to \cG$ and $\mathrm{pr}_2: \cG^{(2)} \to \cG$ are the first and second projections. A differential form $\mu \in \Omega^\bullet(G)$ is called multiplicative if $\partial \mu = 0$. Our main interest will be with Lie groupoids equipped with a multiplicative symplectic structure.
 \begin{definition}
   A \emph{symplectic groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative symplectic structure $\omega \in \Omega^2(\cG)$.
-  That is, the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
+  That is, $\mathrm{pr}_1^*\omega+\mathrm{pr}_2^*\omega = m^*\omega$ or equivalently the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
 \end{definition}
 
-\footnote{Elaborate on multiplicative forms}
+
 
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps.
 Poisson manifolds that arise this way are called \emph{integrable}.
