@@ -398,7 +398,7 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=
   \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
 \end{equation}
 \begin{lemma}
-  \label{le:tropical transformations}
+  \label{le:tropical cluster transformations}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
   \begin{align}
     \label{eq:tropical X transformation}
@@ -555,11 +555,21 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \end{align*}
 \end{corollary}
 
+\begin{lemma}
+  \label{le:tropical groupoid transformations}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$ given on coordinates by
+  \begin{align}
+    \label{eq:tropical X transformation}
+    (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)&=\begin{cases} -q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}\end{cases}\\
+    \label{eq:tropical A transformation}
+    (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=\begin{cases} -p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) & \text{if $j=k$;}\\ p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j} & \text{if $j\ne k$.}\end{cases}
+  \end{align}
+\end{lemma}
 \newpage
 
 \begin{itemize}
-\item Find the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.
-\item Lift the canonical change of variables to groupoids
+\item Find the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.  Done.
+\item Lift the canonical change of variables to groupoids.
 \item Composition of the two groupoid maps give us the groupoid mutations.
 \end{itemize}
 
