@@ -522,8 +522,8 @@ Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
 More explicitly, these Hamiltonian functions are given by
 \begin{align*}
-  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_\ell d_\ell B_{\ell k}q_\ell y_\ell}\right);\\
-  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_\ell t_\ell^{\varepsilon d_\ell B_{\ell k}}\right);\\
+  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_{\ell=1}^n d_\ell B_{\ell k}q_\ell y_\ell}\right);\\
+  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_{\ell=1}^n t_\ell^{\varepsilon d_\ell B_{\ell k}}\right);\\
   \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right);\\
   \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right).
 \end{align*}
@@ -531,8 +531,8 @@ Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
-    \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'} d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
-    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'}t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)t_k;\\
+    \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
+    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)t_k;\\
     \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)+\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k;\\
     \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)s_j.
   \end{align}
@@ -556,8 +556,8 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 \begin{corollary}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, we have
   \begin{align*}
-    (\tilde\varphi_\cX^1)^*(q_\ell y_\ell)&=q_\ell y_\ell-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'} d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right);\\
-    (\bar\varphi_\cX^1)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'}t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{-\delta_{k\ell}/d_k}t_\ell;\\
+    (\tilde\varphi_\cX^1)^*(q_\ell y_\ell)&=q_\ell y_\ell-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right);\\
+    (\bar\varphi_\cX^1)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{-\delta_{k\ell}/d_k}t_\ell;\\
     (\tilde\varphi_\cA^1)^*(p_jx_j)&=p_jx_j-\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right);\\
     (\bar\varphi_\cA^1)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-B_{jk}/d_k}s_j.\\
   \end{align*}
