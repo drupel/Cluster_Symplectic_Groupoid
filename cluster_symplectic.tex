@@ -402,9 +402,17 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
   \begin{align}
     \label{eq:tropical X transformation}
-    (\tau_\cX^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}\end{cases}\\
+    (\tau_\cX^{k,\varepsilon})^*(y'_\ell)
+    &=\begin{cases} 
+      y_k^{-1} & \text{if $\ell=k$;}\\ 
+      y_\ell y_k^{[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
+    \end{cases}\\
     \label{eq:tropical A transformation}
-    (\tau_\cA^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
+    (\tau_\cA^{k,\varepsilon})^*(x'_j)
+    &=\begin{cases} 
+      x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\
+      x_j & \text{if $j\ne k$.}
+    \end{cases}
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -422,8 +430,8 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=
   For $\tau_\cA^{k,\varepsilon}$, we only check the brackets of $x'_k$ and $x'_j$ for $j\ne k$:
   \begin{align*}
     \{(\tau_\cA^{k,\varepsilon})^*(x'_k),(\tau_\cA^{k,\varepsilon})^*(x'_j)\}_\cA
-    &=\left\{x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right),x_j\right\}_\cA\\
-    &=\left(-\Omega_{kj}+\sum_{i=1}^m [-\varepsilon B_{ik}]_+\Omega_{ij}\right)x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right)x_j\\
+    &=\left\{x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+},x_j\right\}_\cA\\
+    &=\left(-\Omega_{kj}+\sum_{i=1}^m [-\varepsilon B_{ik}]_+\Omega_{ij}\right) \left(x_k^{-1} \prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right)x_j\\
     &=\Omega'_{kj} (\tau_\cA^{k,\varepsilon})^*(x'_k) (\tau_\cA^{k,\varepsilon})^*(x'_j).
   \end{align*}
 \end{proof}
@@ -440,7 +448,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   \end{align}
 \end{lemma}
 \begin{proof}
-  Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^{k,\varepsilon})^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical transformations}.
+  Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^{k,\varepsilon})^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
 \end{proof}
 
 \subsection{Mutation of Groupoid Charts}
@@ -557,12 +565,20 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 
 \begin{lemma}
   \label{le:tropical groupoid transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$ given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, lifting the Poisson morphisms of Lemma~\ref{le:tropical cluster transformations}, given on coordinates by
   \begin{align}
     \label{eq:tropical X transformation}
-    (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)&=\begin{cases} -q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}\end{cases}\\
+    (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
+    &=\begin{cases} 
+      -q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ 
+      q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
+    \end{cases}\\
     \label{eq:tropical A transformation}
-    (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=\begin{cases} -p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) & \text{if $j=k$;}\\ p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j} & \text{if $j\ne k$.}\end{cases}
+    (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=
+    \begin{cases} 
+      -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
+      p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j} & \text{if $j\ne k$.}
+    \end{cases}
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -570,7 +586,7 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   For $\ell,\ell'\ne k$, we have
   \begin{align*}
     \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell),(\tilde\tau_\cX^{k,\varepsilon})^*(q'_{\ell'})\}_{\cG_\cX}
-    &=\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\}_{\cG_\cX}\\
+    &=\left\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\right\}_{\cG_\cX}\\
     &=(d_\ell B_{\ell\ell'} + d_\ell B_{\ell k} [\varepsilon B_{k\ell'}]_+ + [\varepsilon B_{k\ell}]_+ d_k B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\\
     &=(d_\ell B_{\ell\ell'} + d_\ell B_{\ell k} [\varepsilon B_{k\ell'}]_+ + d_\ell [-\varepsilon B_{\ell k}]_+ B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\\
     &=d_\ell B'_{\ell\ell'} (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell) (\tilde\tau_\cX^{k,\varepsilon})^*(q'_{\ell'})
@@ -578,7 +594,7 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   and
   \begin{align*}
     \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell),(\tilde\tau_\cX^{k,\varepsilon})^*(y'_{\ell'})\}_{\cG_\cX}
-    &=\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\}_{\cG_\cX}\\
+    &=\left\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\right\}_{\cG_\cX}\\
     &=\delta_{\ell\ell'} + (-d_\ell B_{\ell\ell'} - d_\ell B_{\ell k}[\varepsilon B_{k\ell'}]_+ - [\varepsilon B_{k\ell}]_+d_k B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\\
     &=\delta_{\ell\ell'} - (d_\ell B_{\ell\ell'} + d_\ell B_{\ell k}[\varepsilon B_{k\ell'}]_+ + d_\ell [-\varepsilon B_{\ell k}]_+ B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\\
     &=\delta_{\ell\ell'} - d_\ell B'_{\ell\ell'} (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell) (\tilde\tau_\cX^{k,\varepsilon})^*(y'_{\ell'}).
@@ -588,27 +604,80 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   For $\ell\ne k$, we have
   \begin{align*}
     \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k),(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)\}_{\cG_\cX}
-    &=\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,q_\ell y_k^{-[\varepsilon B_{k\ell}]_+}\}_{\cG_\cX}\\
+    &=\left\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,q_\ell y_k^{-[\varepsilon B_{k\ell}]_+}\right\}_{\cG_\cX}\\
     &=-(d_k B_{k\ell}-2 d_k B_{k\ell}) q_k q_\ell y_k^{2-[\varepsilon B_{k\ell}]_+} + [\varepsilon B_{k\ell}]_+ q_\ell y_k^{1-[\varepsilon B_{k\ell}]_+}\\
     &\quad + \sum\limits_{\ell'\ne\ell} [\varepsilon B_{k\ell'}]_+\Big(d_{\ell'} B_{\ell' \ell} - d_{\ell'} B_{\ell' \ell} -d_k B_{k\ell}\\[-13pt]
     &\hspace{1.5in}+ d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ - d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ \Big) q_{\ell'} q_\ell y_{\ell'} y_k^{1-[\varepsilon B_{k\ell}]_+}\\
     &\quad + [\varepsilon B_{k\ell}]_+ \bigg(-q_\ell y_k^{1-[\varepsilon B_{k\ell}]_+} + \Big( -d_k B_{k\ell} + d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\\[-11pt]
     &\hspace{2.53in}- d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\Big) q_\ell^2 y_\ell y_k^{1-[\varepsilon B_{k\ell}]_+}\bigg)\\
     &=-d_k B_{k\ell} (-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k)(q_\ell y_k^{-[\varepsilon B_{k\ell}]_+})\\
-    &=d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k)(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
+    &=d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k) (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
   \end{align*}
   and
   \begin{align*}
     \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k),(\tilde\tau_\cX^{k,\varepsilon})^*(y'_\ell)\}_{\cG_\cX}
-    &=\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,y_\ell y_k^{[\varepsilon B_{k\ell}]_+}\}_{\cG_\cX}\\
+    &=\left\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,y_\ell y_k^{[\varepsilon B_{k\ell}]_+}\right\}_{\cG_\cX}\\
     &=-(-d_k B_{k\ell} + 2 d_k B_{k\ell}) q_k y_\ell y_k^{2+[\varepsilon B_{k\ell}]_+} - [\varepsilon B_{k\ell}]_+ y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+}\\
     &\quad + \sum\limits_{\ell'\ne\ell} [\varepsilon B_{k\ell'}]_+ \Big(-d_{\ell'} B_{\ell' \ell} + d_{\ell'} B_{\ell' \ell} + d_k B_{k\ell}\\[-13pt]
     &\hspace{1.67in}- d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ + d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ \Big) q_{\ell'} y_{\ell'} y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+}\\
     &\quad + [\varepsilon B_{k\ell}]_+ \bigg(y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+} + \Big( d_k B_{k\ell} + d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\\[-11pt]
     &\hspace{2.20in}- d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\Big) q_\ell y_\ell^2 y_k^{1+[\varepsilon B_{k\ell}]_+}\bigg)\\
     &=d_k B_{k\ell} (-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k) (y_\ell y_k^{[\varepsilon B_{k\ell}]_+})\\
-    &=-d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k)(\tilde\tau_\cX^{k,\varepsilon})^*(y'_\ell).
+    &=-d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k) (\tilde\tau_\cX^{k,\varepsilon})^*(y'_\ell).
   \end{align*}
+  This completes the proof for $\tilde\tau_\cX^{k,\varepsilon}$.
+
+  For $j,j'\ne k$, we have
+  \begin{align*}
+    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_{j'})\}_{\cG_\cA}
+    &=\left\{p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j},p_{j'}+[-\varepsilon B_{j'k}]_+\frac{p_k x_k}{x_{j'}}\right\}_{\cG_\cA}\\
+    &=\Omega_{jj'} p_j p_{j'} + [-\varepsilon B_{jk}]_+ (\Omega_{kj'} - \Omega_{kj'} + \Omega_{jj'}) \frac{p_k x_k}{x_j} p_{j'}\\
+    &\hspace{0.725in} + [-\varepsilon B_{j'k}]_+ (\Omega_{jk} - \Omega_{jk} + \Omega_{jj'}) p_j \frac{p_k x_k}{x_{j'}}\\
+    &\hspace{0.725in} + [-\varepsilon B_{jk}]_+ [-\varepsilon B_{j'k}]_+ (\Omega_{kj'} - \Omega_{kj'} + \Omega_{jk} - \Omega_{jk} + \Omega_{jj'}) \frac{p_k x_k}{x_j} \frac{p_k x_k}{x_{j'}}\\
+    &=\Omega_{jj'} (p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}) (p_{j'}+[-\varepsilon B_{j'k}]_+\frac{p_k x_k}{x_{j'}})\\
+    &=\Omega'_{jj'} (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_{j'}).
+  \end{align*}
+  The analogous computation with $p'_j$ replaced by $x'_j$ is straightforward and left to the reader.
+
+  For $j\ne k$, we have
+  \begin{align*}
+    \{(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)\}_{\cG_\cA}
+    &=\left\{x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+},p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}\right\}_{\cG_\cA}\\
+    &=(\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} p_j - [-\varepsilon B_{jk}]_+ x_k^{-1} x_j^{-1} \prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
+    &\quad + x_k^{-2}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} [-\varepsilon B_{jk}]_+\frac{x_k}{x_j}\\
+    &\quad + \bigg(\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ (-\Omega_{ik} + \Omega_{ik} - \Omega_{ij}) \bigg) x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} [-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}\\
+    &=(\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) (x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}) (p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j})\\
+    &= -\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)
+  \end{align*}
+  and
+  \begin{align*}
+    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)\}_{\cG_\cA}
+    &=\left\{-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+},p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j}\right\}_{\cG_\cA}\\
+    &=-(\Omega_{kj} - 2\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} p_j\\
+    &\quad - [-\varepsilon B_{jk}]_+ p_k x_k^2 x_j^{-1} \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} - x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) [-\varepsilon B_{jk}]_+ \frac{p_k}{x_j}\\
+    &\quad - \bigg(\Omega_{kj} - 2\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ (-\Omega_{ik} + \Omega_{ik} - \Omega_{ij}) \bigg) p_k x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)\times\\
+    &\hspace{3.9in} \times[-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j}\\
+    &\quad + 2 p_k x_k \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) [-\varepsilon B_{jk}]_+ \frac{x_k}{x_j}\\
+    &=(-\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) (-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}) (p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j})\\
+    &=\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)
+  \end{align*}
+  and
+  \begin{align*}
+    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(x'_j)\}_{\cG_\cA}
+    &=\left\{-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+},x_j\right\}_{\cG_\cA}\\
+    &= -(-\Omega_{kj} + 2\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)x_j\\
+    &= -\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(x'_j).
+  \end{align*}
+  Finally, we have
+  \begin{align*}
+    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k)\}_{\cG_\cA}
+    &=\left\{-p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right),x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right\}_{\cG_\cA}\\
+    &=x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)x_k^{-2}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
+    &\quad -\bigg(\sum\limits_{i=1}^m \Big([-\varepsilon B_{ik}]_+ (-\Omega_{ki} + 2\Omega_{ki}) + [-\varepsilon B_{ik}]_+ \Omega_{ik}\Big) \bigg) p_k x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)\times\\
+    &\hspace{3.7in}\times x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
+    &=1.
+  \end{align*}
+  This completes the proof for $\tilde\tau_\cA^{k,\varepsilon}$.
 \end{proof}
 \newpage
 
