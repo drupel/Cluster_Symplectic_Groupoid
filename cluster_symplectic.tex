@@ -83,11 +83,11 @@ Outline
 \section{Introduction}
 This is the first of a series of papers whose aim is to implement Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures. In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
-The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{MR1887642} as the culmination of their study of total positivity and canonical bases for algebraic groups. Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}. The cluster $\cA$-varieties are often endowed with a class of Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{MR2683456}.
+The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{MR1887642} as the culmination of their study of total positivity and canonical bases for algebraic groups. Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}. The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{MR2683456}.
 
 The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{MR2470108}\footnote{Find earlier reference} in their study of higher Teichmuller space. The $\cX$-varieties are always endowed with a canonical Poisson structure. If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 
-On the other hand, quantization have different meanings. In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
+On the other hand, quantization have different meanings. In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
 The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
@@ -113,10 +113,10 @@ We use the following notations:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Symplectic groupoids of log canonical Poisson structures} \label{sec: local}
 
-In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
-There is another construction of a source-connected symplectic groupoid, called the symplectic double \cite{MR2470108}.
-We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
-We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
+%In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
+%There is another construction of a source-connected symplectic groupoid, called the symplectic double \cite{MR2470108}.
+%We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
+%We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
 
 To introduce the notion of symplectic groupoids and Poisson sprays, we recall the equivalent notions of Poisson brackets and Poisson bi-vectors.
 \begin{definition}
@@ -129,11 +129,21 @@ To introduce the notion of symplectic groupoids and Poisson sprays, we recall th
       $$\{fg, h\} = f\{g,h\} + g\{f,h\};$$
     \item a \emph{Poisson bi-vector} $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$, where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
   \end{enumerate}	
-  The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_\cX$.
-  The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
 \end{definition}
 
-{\color{red} Define Poisson and symplectic groupoid maps.}
+The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_\cX$.
+The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
+A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
+	\[
+		\pi^\flat: \cT^*_M \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi
+	\]
+is invertible. The inverse of the bundle map defines a non-degenerate 2-form $\omega \in \Omega^2(M)$. That is, the bundle map
+	\[
+		\omega^\sharp: \cT_M \to \cT^*_M, \qquad v \mapsto \iota_v \omega
+	\]
+is the inverse of $\pi^\flat$.
+
+\footnote{Define Poisson and symplectic groupoid maps.}
 
 \begin{definition}
   A \emph{groupoid} $\cG\rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
@@ -152,13 +162,13 @@ To introduce the notion of symplectic groupoids and Poisson sprays, we recall th
   \end{enumerate}
   A \emph{Lie groupoid} $\cG \rightrightarrows M$ has the following additional properties:
   \begin{enumerate}
-    \item $\cG$ and $M$ are either smooth manifolds or holomorphic manifolds\footnote{we say ``complex manifold'' above};
+    \item $\cG$ and $M$ are either smooth manifolds or complex manifolds;
     \item the source $\alpha: \cG \to M$ and the target $\beta: \cG \to M$ are surjective submersions;
     \item the multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG$ is smooth;
     \item the inversion map $i: \cG \to \cG$ is smooth.
   \end{enumerate}
   A Lie groupoid $\cG \rightrightarrows M$ is \emph{source-connected} if $\alpha^{-1}(x)$ is connected for every $x \in M$; it is \emph{source-simply-connected} if $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
-\end{definition}\footnote{Elaborate on multiplicative forms}
+\end{definition}
 
 Given a Lie groupoid $\cG \rra M$, its $k$-nerve 
 \[
