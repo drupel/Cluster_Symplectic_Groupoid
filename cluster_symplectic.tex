@@ -88,7 +88,9 @@ The cluster $\cA$-varieties are the geometric realization of cluster algebras de
 The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{MR2470108}\footnote{Find earlier reference} in their study of higher Teichmuller space. The $\cX$-varieties are always endowed with a canonical Poisson structure. If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 
 On the other hand, quantization have different meanings. In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
+The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. We list some important examples of symplectic groupoids: the Lie-Poisson structures \cite{MR996653}, the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the cluster $\cX$-varieties \cite{MR2470108}.
+
+Weinstein's original motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}. This has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
 
@@ -100,13 +102,18 @@ In this paper, we take the first step towards the groupoid quantization for both
 \bigskip
 
 
-We use the following notations:
+We use the following notations. For vectors and matrices,
 \begin{itemize}
 	\item boldface letters denote vectors, e.g. $\bfx = (x_1, \ldots, x_m)$;
-	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
-	\item for a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, x_m^t)$;
+	\item (Hadamard product) for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
+	\item for a vector $\bfx$ and a scalar $t$, $\bfx^t = (x_1^t, x_m^t)$;
 	\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
-	\item for a matrix $B = (B_{ij})$, $B_{[k]}$ denotes the kth column vector of $B$.
+	\item for a matrix $B = (B_{ij})$, $B_{k}$ denotes the kth column vector of $B$.
+\end{itemize}
+For a manifold $M$,
+\begin{itemize}
+	\item we denote the tangent bundle by $TM$, the sheaf of vector fields by $\cT_M$, and the sheaf of bi-vectors by $\cT^2_M$;
+	\item we denote the cotangent bundle by $T^*M$, the k-forms by $\Omega^k(M)$.
 \end{itemize}
 
 
@@ -135,13 +142,13 @@ The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for
 The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
 	\[
-		\pi^\flat: \cT^*_M \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi
+		\pi^\flat: T^*M \to TM, \qquad \alpha \mapsto \iota_\alpha \pi
 	\]
 is invertible. The inverse of the bundle map defines a non-degenerate 2-form $\omega \in \Omega^2(M)$. That is, the bundle map
 	\[
-		\omega^\sharp: \cT_M \to \cT^*_M, \qquad v \mapsto \iota_v \omega
+		\omega^\sharp: TM \to T^*M, \qquad v \mapsto \iota_v \omega
 	\]
-is the inverse of $\pi^\flat$.
+is the inverse of $\pi^\flat$. In this case, we say $\omega^{-1} = \pi$. Note that non-degenerate Poisson structures are the same as symplectic structures, since $[\pi, \pi] = 0$ if and only if $d\omega = 0$.
 
 \footnote{Define Poisson and symplectic groupoid maps.}
 
@@ -189,9 +196,8 @@ where $\mathrm{pr}_1: \cG^{(2)} \to \cG$ and $\mathrm{pr}_2: \cG^{(2)} \to \cG$ 
 
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps.
 Poisson manifolds that arise this way are called \emph{integrable}.
-As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$, where the cotangent bundle $T^*M$ carries a Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard Lie algebroid structure \cite{MR1262213}.
-The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
-Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
+As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: T^*M \to TM$ and the Koszul bracket \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$, where the tangent bundle $TM$ carries the standard Lie bracket on vector fields \cite{MR1262213}.
+The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized by Crainic and Fernandes \cite{MR1973056, MR2128714}.
 
 \begin{definition}
   Let $L$ be either $\RR^m$ or $\CC^m$ and write $\bfx = (x_1, \ldots, x_m)$ for a system of coordinates on $L$.
@@ -239,7 +245,11 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
 \begin{remark}
   By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we mean that the multiplication $m: \cG {_\alpha \times_\beta} \cG \to \cG$ may not be defined on all of its domain.
   In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$.
-  Indeed: the Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may contain loops; or the 2-form $\omega$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
+  Indeed, the Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may contain loops; or the 2-form $\omega$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
+\end{remark}
+
+\begin{remark}
+  There are different sign conventions for the natural symplectic structure $\omega_0$ on $T^*M$. We follow the convention of \cite{MR2900786, CMS17}: $\omega_0 = - d \theta_0$ where $\theta_0$ is the tautological 1-form. In local coordinates $(\mathbf{x}, \mathbf{p})$, we have $\omega_0 = \sum_i dx_i \wedge dp_i$. This sign convention ensures that the source map $\alpha: (U, \omega) \to (M, \pi)$ is Poisson.
 \end{remark}
 
 In the next results, we introduce a Poisson spray whose local symplectic groupoid provides an integration of a log-canonical Poisson structure.
@@ -255,6 +265,22 @@ In the next results, we introduce a Poisson spray whose local symplectic groupoi
   where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$.
   This flow exists for all time $t \in \RR$ and contains no loops.
 \end{lemma}
+
+\begin{proof}
+	For the co-vector $\alpha = p_1 dx_1 + \ldots + p_m dx_m$ and the point $(\mathbf{x}, \mathbf{p})$, we have
+	\[
+		\tau_* X|_{(\mathbf{x},\mathbf{p})} = \sum_{i, j}\Omega_{ij} x_i p_i x_j \frac{\partial}{\partial x_j} = \iota_\alpha \pi.
+	\]
+	To see the flow of $X$, we note that $x_i p_i$ is a constant under the flow of $X$, since
+	\[
+		\frac{d}{dt}(x_j p_j) = \dot{x}_j p_j - x_j \dot{p}_j = \sum_{1 \leq i,j \leq m}\Omega_{ij}x_i p_i x_j p_j - \sum_{1 \leq i,j \leq m}\Omega_{ij}x_ip_i p_j x_j = 0.
+	\]
+	Therefore, $\sum_{i}\Omega_{ij}x_i p_i x_j$ is constant, and
+	\begin{align*}
+		x_j(t) & = e^{t \sum_i \Omega_{ij} x_ip_i} x_j(0) = a_j^t x_j(0), \\
+		p_j(t) & = e^{-t \sum_i \Omega_{ij} x_ip_i} p_j(0) = a_j^{-t} p_j(0).
+	\end{align*}
+\end{proof}
 
 This Poisson spray $X$ induces the symplectic groupoid structure below.
 \begin{theorem} 
@@ -313,7 +339,7 @@ Motiviated by \cite{MR2470108}, we make the following definition of the symplect
   \end{enumerate}
 \end{theorem}
 
-{\color{red} double-check the groupoid structures. Also expend the remark on the notations. Compare it to the notations in \cite{MR2470108}.}
+\footnote{double-check the groupoid structures. Also expend the remark on the notations. Compare it to the notations in \cite{MR2470108}.}
 
 Similar to the case of Lie groups, for an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
 With our chosen conventions, we have a simple expression for the map $\kappa: \cG_L \to \cD_L$.
