@@ -94,26 +94,23 @@ Weinstein's original motivation was to find a geometric quantization schema for 
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
 
-\begin{itemize}
-	\item In Section~\ref{sec: local}, we build the symplectic groupoid in each local chart of a cluster variety. This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}, but for a log-canonical Poisson structure, there is a clever choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$. We also recall the symplectic double $\cD$ as in \cite{MR2470108}, albeit with slightly different notations to accommodate the fact that we consider the non-square exchange matrices in this paper. The symplectic double is a source-connected symplectic groupoid of the log-canonical Poisson structure and admits a groupoid covering $\kappa: \cG \to \cD$.
-	\item In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\tilde{\mu}: \cG \to \cG'$. The first step is to decompose the cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$, where $\varphi^1$ is the time-$1$-flow of the Euler dilogarithm function and $\tau$ is a natural transformation of log-canonical coordinates. See \cite{MR2567745} for the case of $\cX$-varieties and \cite{MR3691969} for the case of $\cA$-varieties. We then lift $\varphi^1$ and $\tau$ to groupoid maps $\tilde{\varphi}^1$ and $\tilde{\tau}$, and the composition $\tilde{\mu} = \tilde{\tau} \circ \tilde{\varphi}^1$ is the cluster groupoid mutation.
-\end{itemize}
+In Section~\ref{sec: local}, we build the symplectic groupoid in each local chart of a cluster variety. This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}, but for a log-canonical Poisson structure, there is a clever choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$. While this construction by Poisson spray only makes sense if the underlying field is $\mathbb{R}$, the formulae for the groupoid structures still work if the underlying field is $\mathbb{C}$. We also recall the symplectic double $\cD$ as in \cite{MR2470108}, albeit with slightly different notations to accommodate the fact that we consider the non-square exchange matrices in this paper. The symplectic double is a source-connected symplectic groupoid of the log-canonical Poisson structure and admits a groupoid covering $\kappa: \cG \to \cD$.
 
-\bigskip
-
+In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\tilde{\mu}: \cG \to \cG'$. The first step is to decompose the cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$, where $\varphi^1$ is the time-$1$-flow of the Euler dilogarithm function and $\tau$ is a natural transformation of log-canonical coordinates. See \cite{MR2567745} for the case of $\cX$-varieties and \cite{MR3691969} for the case of $\cA$-varieties. We then lift $\varphi^1$ and $\tau$ to groupoid maps $\tilde{\varphi}^1$ and $\tilde{\tau}$, and the composition $\tilde{\mu} = \tilde{\tau} \circ \tilde{\varphi}^1$ is the cluster groupoid mutation.
 
 We use the following notations. For vectors and matrices,
 \begin{itemize}
 	\item boldface letters denote vectors, e.g. $\bfx = (x_1, \ldots, x_m)$;
-	\item (Hadamard product) for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
+	\item for two vector $\bfx$ and $\bfy$, the Hadamard product $\bfx$ and $\bfy$ is $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$;
 	\item for a vector $\bfx$ and a scalar $t$, $\bfx^t = (x_1^t, x_m^t)$;
 	\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
 	\item for a matrix $B = (B_{ij})$, $B_{k}$ denotes the kth column vector of $B$.
 \end{itemize}
-For a manifold $M$,
+For a smooth manifold (resp. a complex manifold) $M$,
 \begin{itemize}
-	\item we denote the tangent bundle by $TM$, the sheaf of vector fields by $\cT_M$, and the sheaf of bi-vectors by $\cT^2_M$;
-	\item we denote the cotangent bundle by $T^*M$, the k-forms by $\Omega^k(M)$.
+	\item we denote the sheaf of smooth functions (resp. holomorphic functions) by $\cO_M$;
+	\item we denote the tangent bundle by $TM$, the sheaf of smooth vector fields (resp. holomorphic) by $\cT_M$, and the sheaf of bi-vectors by $\cT^2_M$;
+	\item we denote the cotangent bundle by $T^*M$, and the smooth k-forms (resp. holomorhic k-forms) by $\Omega^k(M)$.
 \end{itemize}
 
 
@@ -339,14 +336,13 @@ Motiviated by \cite{MR2470108}, we make the following definition of the symplect
   \end{enumerate}
 \end{theorem}
 
-\footnote{double-check the groupoid structures. Also expend the remark on the notations. Compare it to the notations in \cite{MR2470108}.}
 
-Similar to the case of Lie groups, for an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
-With our chosen conventions, we have a simple expression for the map $\kappa: \cG_L \to \cD_L$.
+Like the Lie groups, for an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
+With our chosen conventions, we have a simple expression for the groupoid covering map $\kappa: \cG_L \to \cD_L$.
 \begin{proposition}
   The covering map
   $$\kappa: \cG_L \to \cD_L, \qquad (\bfp, \bfx) \mapsto (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)$$
-  is a groupoid morphism.
+  is a groupoid morphism for $\bfx \in \RR_+^m$.
 \end{proposition}
 
 
@@ -502,6 +498,19 @@ These groupoids have coordinates given as follows:
   \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
   \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
 \end{itemize}
+
+
+%\begin{remark}
+%	Comparing our notations with that in \S2.2 of \cite{MR2470108}, we have
+%	\[
+%		X_i = x_i, \quad B_i = s_i^{d_i}
+%	\]
+%	where $\begin{bmatrix}d_i\end{bmatrix}$ is the diagonal matrix obtained from the skew-symmetrization of the exchange matrix. Indeed, Fock and Goncharov works
+%\end{remark}
+
+
+\footnote{Comment on the differences in notations in \cite{MR2470108}.}
+
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion.
 Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 \[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
