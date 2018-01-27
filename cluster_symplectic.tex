@@ -87,8 +87,8 @@ The cluster $\cA$-varieties are the geometric realization of cluster algebras de
 
 The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{MR2470108}\footnote{Find earlier reference} in their study of higher Teichmuller space. The $\cX$-varieties are always endowed with a canonical Poisson structure. If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 
-On the other hand, quantization have different meanings. In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
-The notion of symplectic groupoids was introduced independently by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
+In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
+The notion of symplectic groupoids was introduced by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
 
@@ -190,9 +190,9 @@ For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson str
 Poisson manifolds that arise this way are called \emph{integrable}.
 As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$, where the cotangent bundle $T^*M$ carries a Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard Lie algebroid structure \cite{MR1262213}.
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
-Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
+We list some important examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
 
-If $(\cG_1, \omega_1) \to (M_1, \pi_1)$ is the source-simply-connected symplectic groupoid of $(M_1, \pi_1)$ and $(\cG_2, \omega_2) \to (M_2, \pi_2)$ is any symplectic groupoid of $(M_2, \pi_2)$, then a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. The map $\tilde{\varphi}$ is surjective if $\varphi$ is surjective and $\cG_2$ is source-connected. However in general Poisson maps do necessarily lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
+If $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ is the source-simply-connected symplectic groupoid of $(M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ is any symplectic groupoid of $(M_2, \pi_2)$, then a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. The map $\tilde{\varphi}$ is surjective if $\varphi$ is surjective and $\cG_2$ is source-connected. However in general Poisson maps do necessarily lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
 
 \begin{definition}
   Let $L$ be either $\RR^m$ or $\CC^m$ and write $\bfx = (x_1, \ldots, x_m)$ for a system of coordinates on $L$.
@@ -228,6 +228,7 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
     \item the target map is
       \[\beta: U \to M, \qquad \beta = \tau \circ \varphi_X^1,\]
       where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$-flow of $X$;
+	\item the identity map $\mathtt{1}: M \to U$ is the zero section;
     \item the inverse map is
       \[\iota: U \to U, \qquad \iota = -\varphi_X^1;\]
     \item the multiplication $m: U {_\alpha \times_\beta} U \to U$ is defined as the solution of an ODE (see \cite{CMS17} for details);
