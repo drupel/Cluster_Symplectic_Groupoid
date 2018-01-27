@@ -174,7 +174,7 @@ Given a Lie groupoid $\cG \rra M$, its $k$-nerve
 	\cG^{(k)} = \{(g_1, g_2, \ldots, g_k) \in \cG^k ~|~ \beta(g_i) = \alpha(g_{i+1})\}
 \]
 is the set of $k$ composable elements. In particular, $\cG^{(2)} = \cG {_\alpha \times_\beta} \cG$, $\cG^{(1)} = \cG$ and $\cG^{(0)} = M$. The nerve of a Lie groupoid is naturally a simplicial manifold which carries a coboundary operator $\partial: \Omega^\bullet(\cG^{(k-1)}) \to \Omega^\bullet(\cG^{(k)})$. The first two operators are given as below:
-\begin{align}
+\begin{align} \label{eq:gpdcob}
 	& \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad \mu \mapsto \alpha^*(\mu) - \beta^*(\mu) \\
 	& \partial: \Omega^\bullet(\cG) \to \Omega^\bullet(\cG^{(2)}), \qquad \mu \mapsto \mathrm{pr}_1^*(\mu) - m^*(\mu) + \mathrm{pr}_2^*(\mu)
 \end{align}
@@ -267,6 +267,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item $\cG_L \cong T^*L$ has the coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$;
     \item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
     \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$;
+	\item the identity map $\mathtt{1}: L \to T^*L, \quad \bfx \mapsto (0, \bfx)$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
     \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the symplectic form $\omega$ is
@@ -282,8 +283,23 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
   \end{enumerate}
 \end{theorem}
 \begin{proof}
-  When the underlying field is $\RR$, it is straightforward to check that the Poisson spray \eqref{eq: PoisSp} induces the given source-simply-connected symplectic groupoid structures.
-  Note that the multiplicative 2-form $\omega$ is non-degenerate since
+  When the underlying field is $\RR$, it is straightforward to check that the Poisson spray \eqref{eq: PoisSp} induces the given source-simply-connected groupoid structures. To find the sympletic structure $\omega$, we have
+\begin{align*}
+		\left(\varphi_X^s\right)^*\omega_0 & = \sum_{j} d \left(e^{ s \sum_{i} \Omega_{ij} x_ip_i}x_j \right) \wedge d \left(e^{- s \sum_{i} \Omega_{ij} x_ip_i}p_j \right) \\
+		& = \sum_{j} \left(s x_j \sum_{i} \Omega_{ij} x_i dp_i + s x_j \sum_{i} \Omega_{ij} p_i dx_i + d x_j \right) \wedge \left(- s p_j \sum_{i} \Omega_{ij} x_i dp_i - s p_j \sum_{i} \Omega_{ij} p_i dx_i + d p_j \right) \\
+		& = \sum_{j} dx_j \wedge dp_j + 2s \left( \sum_{i, j} \Omega_{ij}p_i x_j d x_i \wedge d p_j  + \sum_{j < i} \Omega_{ij}p_ip_j d x_i \wedge d x_j + \sum_{j < i} \Omega_{ij}x_ix_j d p_i \wedge d p_j \right),
+\end{align*}
+so it follows that
+\begin{align*}
+		\omega & = \frac{1}{t}\int_{0}^{t} (\varphi_X^s)^*\omega_0 ds \\
+		& = \sum_{i} dx_i \wedge dp_i
+	  + \left(
+	    \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
+	    + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
+	    + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
+	  \right).
+	\end{align*}
+Note that $\omega$ is non-degenerate since
   \[\omega^m = m! \bigwedge\limits_{1\leq i\leq m} dx_i \wedge dp_i\]
   is a volume form.
 
@@ -301,6 +317,7 @@ Motiviated by \cite{MR2470108}, we make the following definition of the symplect
       \[\alpha: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;\]
     \item the target map is
       \[\beta: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
+	\item the identity map $\mathtt{1}: L \to L \times L, \quad \bfx \mapsto (1, \ldots, 1, \bfx)$;
     \item the inverse map is
       \[\iota: L \times L \to L \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
     \item the multiplication map is
@@ -467,12 +484,12 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^{k,\varepsilon})^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
 \end{proof}
 
-While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian nature of $\tau_\cX^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^*)^n$ and $L_\cA= (\CC^*)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
+While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian nature of $\tau_\cX^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^\times)^n$ and $L_\cA= (\CC^\times)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
 
-\begin{equation}
+\begin{equation} \label{eq:PoisCD}
 	\xymatrix{
-	L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} \ar@/^1.2pc/[rr]^{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} & L'_\cA \ar[d]^{\rho} \\
-	L_\cX \ar[r]^{\tau_\cX} \ar@/_1.2pc/[rr]_{\mu_\cX} & L_\cX \ar[r]^{\varphi_\cX} & L'_\cX
+	L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} \ar@/^1pc/[rr]|-{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} & L'_\cA \ar[d]^{\rho} \\
+	L_\cX \ar[r]^{\tau_\cX} \ar@/_1pc/[rr]|-{\mu_\cX} & L_\cX \ar[r]^{\varphi_\cX} & L'_\cX
 	}
 \end{equation}
 
@@ -500,10 +517,10 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
   When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
   \footnote{This might actually require $m=n$.}
   \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
-Indeed when $L_\cX=(\CC^*)^n$ and $L_\cA=(\CC^*)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
+Indeed when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
 \end{remark}
 
-To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we utilize their Hamiltonian natures. In general if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$. Meanwhile $\omega$ is also multiplicative, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ preserves the groupoid structures.
+To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we utilize their Hamiltonian natures. In general if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}. On the other hand $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures.
 
 As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 \begin{lemma}
@@ -711,6 +728,15 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   This completes the proof for $\tilde\tau_\cA^{k,\varepsilon}$.
 \end{proof}
 \newpage
+
+\begin{equation} \label{eq:GpdCD}
+	\xymatrix{
+		& \cD_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} && \cD'_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \\
+	\cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
+		& \cD_\cX \ar[rr]|-{\bar{\tau}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-{\bar{\varphi}_\cX} && \cD'_\cX \\
+	\cG_\cX \ar[rr]|-{\tilde{\tau}_\cX} \ar[ur]|-{\kappa_\cX} \ar@/_1.2pc/[rrrr]|-{\tilde{\mu}_\cX} && \cG_\cX \ar[rr]|-{\tilde{\varphi}_\cX} \ar[ur]|-{\kappa_\cX} && \cG'_\cX \ar[ur]|-{\kappa_\cX}
+	}
+\end{equation}
 
 \begin{itemize}
 \item Find the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.  Done.
