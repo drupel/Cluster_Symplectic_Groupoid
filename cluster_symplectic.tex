@@ -3,7 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage[pagebackref, bookmarks=true, bookmarksopen=true, bookmarksdepth=3,bookmarksopenlevel=2, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, menucolor=blue, urlcolor=blue]{hyperref}
-
+\usepackage{xypic}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
@@ -30,8 +30,8 @@
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cG}{\mathcal{G}}
-\newcommand{\cH}{\mathcal{H}}
-\newcommand{\cD}{\mathcal{D}}
+%\newcommand{\cH}{\mathcal{H}}
+\renewcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cX}{\mathcal{X}}
@@ -132,7 +132,8 @@ To introduce the notion of symplectic groupoids and Poisson sprays, we recall th
 \end{definition}
 
 The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_\cX$.
-The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
+The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}. A Poisson map from $(M_1, \pi_1)$ to $(M_2, \pi_2)$ is a map $\varphi: M_1\to M_2$ such that $\varphi_*\pi_1 = \pi_2$ or equivalently $\{\varphi^*f, \varphi^*g\} = \varphi^*(\{f, g\})$ for $f, g \in \cO_{M_2}$.
+
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
 	\[
 		\pi^\flat: \cT^*_M \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi
@@ -142,8 +143,6 @@ is invertible. The inverse of the bundle map defines a non-degenerate 2-form $\o
 		\omega^\sharp: \cT_M \to \cT^*_M, \qquad v \mapsto \iota_v \omega
 	\]
 is the inverse of $\pi^\flat$.
-
-\footnote{Define Poisson and symplectic groupoid maps.}
 
 \begin{definition}
   A \emph{groupoid} $\cG\rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
@@ -185,13 +184,15 @@ where $\mathrm{pr}_1: \cG^{(2)} \to \cG$ and $\mathrm{pr}_2: \cG^{(2)} \to \cG$ 
   That is, $\mathrm{pr}_1^*(\omega)+\mathrm{pr}_2^*(\omega) = m^*(\omega)$ or equivalently the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
 \end{definition}
 
-
+A symplectic groupoid map from $(\cG_1, \omega_1) \rra M_1$ to $(\cG_2, \omega_2) \rra M_2$ is a Lie groupoid map $\tilde{\varphi}: \cG_1 \rra \cG_2$ which is also a symplectomorphism.
 
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps.
 Poisson manifolds that arise this way are called \emph{integrable}.
 As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with the anchor map $\pi^\flat: \cT^*_M \to \cT_M$ \cite{MR866024}; and as a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$, where the cotangent bundle $T^*M$ carries a Poisson Lie algebroid structure and the tangent bundle $TM$ carries the standard Lie algebroid structure \cite{MR1262213}.
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
 Here are a few notable examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
+
+If $(\cG_1, \omega_1) \to (M_1, \pi_1)$ is the source-simply-connected symplectic groupoid of $(M_1, \pi_1)$ and $(\cG_2, \omega_2) \to (M_2, \pi_2)$ is any symplectic groupoid of $(M_2, \pi_2)$, then a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. The map $\tilde{\varphi}$ is surjective if $\varphi$ is surjective and $\cG_2$ is source-connected. However in general Poisson maps do necessarily lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
 
 \begin{definition}
   Let $L$ be either $\RR^m$ or $\CC^m$ and write $\bfx = (x_1, \ldots, x_m)$ for a system of coordinates on $L$.
@@ -237,7 +238,7 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
 \end{theorem}
 
 \begin{remark}
-For the standard symplectic structure $\omega_0$ in Theorem~\ref{thm:poissp}, we use the sign convention that $\omega_0 = - d \theta_0$ where $\theta_0$ is the tautological 1-form on $T^*M$. This choice ensures that the source map $\alpha$ is Poisson and the target map $\beta$ is anti-Poisson, instead of the other way around. In coordinates, we have $\omega_0 = \sum_i d x_i \wedge d p_i$.
+For the standard symplectic structure $\omega_0$ in Theorem~\ref{thm:poissp}, we use the sign convention that $\omega_0 = - d \theta_0$ where $\theta_0$ is the tautological 1-form on $T^*M$. This choice ensures that the source map $\alpha$ is Poisson. In coordinates, we have $\omega_0 = \sum_i d x_i \wedge d p_i$.
 \end{remark}
 
 \begin{remark}
@@ -263,7 +264,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
   \label{thm:PoiSpLogC}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), there is a source-simply-connected symplectic groupoid $(\cG_L, \omega) \rra (L, \pi)$ with the following structures:
   \begin{enumerate}
-    \item $\cG_L \cong T^*L$ with coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$;
+    \item $\cG_L \cong T^*L$ has the coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$;
     \item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
     \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
@@ -291,11 +292,11 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
 
 For the next construction we restrict $L$ to be either $\RR_+^m$ or $(\CC^\times)^m$, where $\RR_+ = (0, \infty)$ and $\CC^\times = \CC \setminus \{0\}$.
 Motiviated by \cite{MR2470108}, we make the following definition of the symplectic double, which is a source-connected symplectic groupoid of the log-canonical Poisson structure on $L$.
-\begin{theorem} 
+\begin{theorem} \label{thm:SymDBLoc}
   \cite{MR2470108}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR_+^m$ or $(\CC^*)^m$), the \emph{symplectic double} $(\cD_L, \omega) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
   \begin{enumerate}
-    \item $\cG_L \cong L \times L$ with coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
+    \item $\cG_L \cong L \times L$ has the coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
     \item the source map is
       \[\alpha: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;\]
     \item the target map is
@@ -315,9 +316,7 @@ Motiviated by \cite{MR2470108}, we make the following definition of the symplect
   \end{enumerate}
 \end{theorem}
 
-{\color{red} double-check the groupoid structures. Also expend the remark on the notations. Compare it to the notations in \cite{MR2470108}.}
-
-Similar to the case of Lie groups, for an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
+For an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
 With our chosen conventions, we have a simple expression for the map $\kappa: \cG_L \to \cD_L$.
 \begin{proposition}
   The covering map
@@ -332,7 +331,7 @@ With our chosen conventions, we have a simple expression for the map $\kappa: \c
 
 In this section we introduce mutations of cluster seeds from the Hamiltonian viewpoint.
 This perspective was first given in \cite{MR2470108} and is the foundation for the main results of \cite{MR3691969}.
-We demonstrate how the Hamiltonian perspective provides a canonical choice of mutations for groupoid charts which glue to give a symplectic groupoid integrating various log-canonical Poisson structure on cluster varieties.
+We demonstrate how the Hamiltonian perspective provides a canonical choice of mutations for groupoid charts which glue to give a symplectic groupoid integrating various log-canonical Poisson structures on cluster varieties.
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e. there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
@@ -351,8 +350,8 @@ Given a $D$-compatible pair of matrices $(\tilde B,\Omega)$, denote by $\{\cdot,
 \end{equation}
 An easy calculation shows that the map
 \[\rho:L_\cA\to L_\cX,\qquad \bfx\mapsto\hat\bfy,\qquad \hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
-is a Poisson morphism, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$ for $1\le k,\ell\le n$.
-Motivated by the terminology of Fock and Goncharov \cite{???}, we will refer to the pair of Poisson manifolds $L_\cX$ and $L_\cA$ together with the Poisson morphism $\rho$ as a \emph{Poisson ensemble} associated to the $D$-compatible pair $(\tilde B,\Omega)$.
+is Poisson, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$ for $1\le k,\ell\le n$.
+Motivated by the terminology of Fock and Goncharov \cite{???}, we will refer to the pair of Poisson manifolds $L_\cX$ and $L_\cA$ together with the Poisson map $\rho$ as a \emph{Poisson ensemble} associated to the $D$-compatible pair $(\tilde B,\Omega)$.
 
 The \emph{Euler dilogarithm} is the function of a single real variable defined by
 \[\Li_2(y)=-\int_0^y \frac{\log(1-u)}{u}du,\qquad y<1.\]
@@ -416,7 +415,7 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=
 \end{equation}
 \begin{lemma}
   \label{le:tropical cluster transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
   \begin{align}
     \label{eq:tropical X transformation}
     (\tau_\cX^{k,\varepsilon})^*(y'_\ell)
@@ -468,9 +467,18 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^{k,\varepsilon})^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
 \end{proof}
 
+While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian nature of $\tau_\cX^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^*)^n$ and $L_\cA= (\CC^*)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
+
+\begin{equation}
+	\xymatrix{
+	L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} \ar@/^1.2pc/[rr]^{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} & L'_\cA \ar[d]^{\rho} \\
+	L_\cX \ar[r]^{\tau_\cX} \ar@/_1.2pc/[rr]_{\mu_\cX} & L_\cX \ar[r]^{\varphi_\cX} & L'_\cX
+	}
+\end{equation}
+
 \subsection{Mutation of Groupoid Charts}
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
-Our goal now is to apply the groupoid formalism to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the standard Poisson structures on $L_\cX$ and $L_\cA$ respectively.
+Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the standard Poisson structures on $L_\cX$ and $L_\cA$ respectively.
 These groupoids have coordinates given as follows:
 \begin{itemize}
   \item $\cG_\cX$ has coordinates $(\bfq,\bfy)=(q_1,\ldots,q_n,y_1,\ldots,y_n)$; 
@@ -478,7 +486,9 @@ These groupoids have coordinates given as follows:
   \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
   \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
 \end{itemize}
-For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion.
+
+For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion. The symplectic groupoid structures on $\cG_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, and the symplectic groupoid structures on $\cD_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}. The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:PoiSpLogC} by replacing $x_i$ with $y_k$, $p_j$ with $q_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$, and the symplectic groupoid structures on $\cD_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:SymDBLoc} by replacing $x_i$ with $y_k$, $s_j$ with $t_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$.
+
 Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 \[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
 \begin{lemma}
@@ -490,9 +500,12 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
   When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
   \footnote{This might actually require $m=n$.}
   \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
+Indeed when $L_\cX=(\CC^*)^n$ and $L_\cA=(\CC^*)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
 \end{remark}
 
-A crucial observation will be the following explicit computation of the Poisson structures on each of these symplectic groupoids.
+To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we utilize their Hamiltonian natures. In general if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$. Meanwhile $\omega$ is also multiplicative, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ preserves the groupoid structures.
+
+As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
@@ -534,7 +547,7 @@ A crucial observation will be the following explicit computation of the Poisson 
   We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 \end{proof}
 
-Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. \footnote{Elaborate on these being multiplicative.}
+Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. 
 Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
 More explicitly, these Hamiltonian functions are given by
@@ -579,6 +592,7 @@ Consider the time-one flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
     (\bar\varphi_\cA^1)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-B_{jk}/d_k}s_j.\\
   \end{align*}
 \end{corollary}
+\footnote{time-$1$ flow}
 
 \begin{lemma}
   \label{le:tropical groupoid transformations}
