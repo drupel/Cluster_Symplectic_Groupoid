@@ -416,15 +416,19 @@ Write $X_\cX=X_\cX^{k,\varepsilon}\in\cT_\cX$ and $X_\cA=X_\cA^{k,\varepsilon}\i
 
 It immediately follows that $y_k$ is a conserved quantity of the flow of $L_\cX$ by the vector field $X_\cX$.
 Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity of the flow of $L_\cA$ by the vector field $X_\cA$.
-Write $\varphi_\cX^1:L_\cX\to L_\cX$ for the time-one flow of the vector field $X_\cX^{k,\varepsilon}$.
-Similarly, we denote by $\varphi_{X_\cA}^1:L_\cA\to L_\cA$ the time-one flow of the vector field $X_\cA^{k,\varepsilon}$. \footnote{time-$t$ flow.}
+%Write $\varphi_\cX^t:L_\cX\to L_\cX$ for the time-$t$ flow of the vector field $X_\cX^{k,\varepsilon}$.
+%Similarly, we denote by $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ the time-$t$ flow of the vector field $X_\cA^{k,\varepsilon}$. \footnote{time-$t$ flow.}
 \begin{corollary}
   \label{cor:time-one flows}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, we have
-  \begin{align*}
-    (\varphi_\cX^1)^*(y_\ell)&=(1+y_k^\varepsilon)^{-B_{k\ell}}y_\ell;\\
-    (\varphi_\cA^1)^*(x_j)&=(1+\hat y_k^\varepsilon)^{-\delta_{jk}}x_j.
-  \end{align*}
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the vector field $X_\cX^{k,\varepsilon}$ given on coordiates by
+\[
+	 (\varphi_\cX^t)^*(y_\ell)=(1+y_k^\varepsilon)^{-tB_{k\ell}}y_\ell
+\]
+and the time-$t$ flow $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ of the vector field $X_\cA^{k,\varepsilon}$ given on coordiates by
+\[
+    (\varphi_\cA^t)^*(x_j)=(1+\hat y_k^\varepsilon)^{-t\delta_{jk}}x_j.
+\]
+preserves the respective Poisson structures.
 \end{corollary}
 \begin{proof}
   This is immediate from the preceding discussion.
@@ -537,7 +541,7 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
 Indeed when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
 \end{remark}
 
-To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature. In general if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}. On the other hand $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures on $(\cG, \omega)$.
+To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature. In general Poisson symmetries are lifted to symplectic groupoid symmetries and Hamiltonian symmetries are lifted to Hamiltonian groupoid symmetries \cite{MR2504211}. More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures on $(\cG, \omega)$.
 
 As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 \begin{lemma}
@@ -629,7 +633,7 @@ and the Poisson autmorphism $\varphi_\cA^1: L_\cX \to L_\cX$ Corollary~\ref{cor:
     (\bar\varphi_\cA^1)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-B_{jk}/d_k}s_j.
   \end{align*}
 \end{corollary}
-\footnote{time-$t$ flow}
+\footnote{time-$t$ flow and lifting the flow of the vector field on the base.}
 
 \begin{lemma}
   \label{le:tropical groupoid transformations}
