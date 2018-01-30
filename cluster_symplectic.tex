@@ -360,6 +360,28 @@ With our chosen conventions, we have a simple expression for the map $\kappa: \c
   is a symplectic groupoid morphism.
 \end{proposition}
 
+\begin{proof}
+We show that $\kappa$ is compatible with the target maps, and leave the compatibility with other structure maps to the readers.
+	\begin{align*}
+		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
+		& = \left(x_1 \prod_{i=1}^m e^{\Omega_{i1}x_ip_i}, \ldots, x_m \prod_{i=1}^m e^{\Omega_{im}x_ip_i}\right) \\
+		& = \left(x_1 e^{\sum_i \Omega_{i1}x_ip_i}, \ldots, x_m  e^{\sum_i \Omega_{im}x_ip_i}\right) \\
+		& = \beta_\cG (\bfp, \bfx).
+	\end{align*}
+To show that $\kappa$ preserves the symplectic structures, we have
+	\begin{align*}
+		\kappa^*\omega_\cD & = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{d(e^{x_ip_i})}{e^{x_ip_i}} + \sum_{j < i} \Omega_{ij} \frac{d(e^{x_ip_i})}{e^{x_ip_i}} \wedge \frac{d(e^{x_jp_j})}{e^{x_jp_j}} \\
+		& = \sum_{i} \frac{dx_i}{x_i} \wedge (x_i dp_i + p_i dx_i) + \sum_{j < i} \Omega_{ij} (x_i dp_i + p_i dx_i) \wedge (x_j dp_j + p_j dx_j) \\
+		& = \sum_{i} dx_i \wedge dp_i
+	  	+ \left(
+	    	\sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
+	    	+ \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
+	    	+ \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
+	  	\right) \\
+		& = \omega_\cG.
+	\end{align*}
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hamiltonian Perspective on Mutations}
@@ -765,9 +787,9 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 
 \begin{equation} \label{eq:GpdCD}
 	\xymatrix{
-		& \cD_\cA \ar@/_1pc/[dd]|-(.2){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} && \cD'_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \\
-	\cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
-		& \cD_\cX \ar[rr]|-{\bar{\tau}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-{\bar{\varphi}_\cX} && \cD'_\cX \\
+		& \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} && \cD'_\cA \ar[dd]|-{\bar{\rho}} \\
+	\cG_\cA \ar[dd]|-{\tilde{\rho}} \ar[rr]|-(.65){\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[rr]|-(.65){\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
+		& \cD_\cX \ar[rr]|-(.35){\bar{\tau}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-(.35){\bar{\varphi}_\cX} && \cD'_\cX \\
 	\cG_\cX \ar[rr]|-{\tilde{\tau}_\cX} \ar[ur]|-{\kappa_\cX} \ar@/_1.2pc/[rrrr]|-{\tilde{\mu}_\cX} && \cG_\cX \ar[rr]|-{\tilde{\varphi}_\cX} \ar[ur]|-{\kappa_\cX} && \cG'_\cX \ar[ur]|-{\kappa_\cX}
 	}
 \end{equation}
