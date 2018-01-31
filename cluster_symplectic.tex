@@ -444,7 +444,7 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 %Similarly, we denote by $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ the time-$t$ flow of the vector field $X_\cA^{k,\varepsilon}$. \footnote{time-$t$ flow.}
 \begin{corollary}
   \label{cor:time-one flows}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the vector field $X_\cX^{k,\varepsilon}$ given on coordiates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the Hamiltonian vector field $X_\cX^{k,\varepsilon}$ given on coordiates by
 \[
 	 (\varphi_\cX^t)^*(y_\ell)=(1+y_k^\varepsilon)^{-tB_{k\ell}}y_\ell
 \]
@@ -621,7 +621,7 @@ More explicitly, these Hamiltonian functions are given by
 \end{align*}
 Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
     \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
     \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)t_k;\\
@@ -646,12 +646,12 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \bar\varphi_\cA^t:\cD_\cA\to\cD_\cA.
 \]
 \begin{corollary}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Poisson autmorphism $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the symplectic groupoid automorphisms $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
   \begin{align*}
     (\tilde\varphi_\cX^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right),\\
     (\bar\varphi_\cX^t)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
-  and the Poisson autmorphism $\varphi_\cA^t: L_\cX \to L_\cX$ Corollary~\ref{cor:time-one flows} is lifted  to the symplectic groupoid automorphisms $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
+  and the Hamiltonian flow $\varphi_\cA^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted  to the multiplicative Hamiltonian flows $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
   \begin{align*}
     (\tilde\varphi_\cA^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right), \\
     (\bar\varphi_\cA^t)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-tB_{jk}/d_k}s_j.
