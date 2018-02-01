@@ -192,7 +192,7 @@ As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
 We list some important examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{MR2470108}.
 
-If $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ is the source-simply-connected symplectic groupoid of $(M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ is any symplectic groupoid of $(M_2, \pi_2)$, then a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. The map $\tilde{\varphi}$ is surjective if $\varphi$ is surjective and $\cG_2$ is source-connected. However in general Poisson maps do necessarily lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
+Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids. In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. In fact, $\varphi$ is Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrates to Lagrangian subgroupoids \cite{MR2104442}, so a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$. However, the Poisson maps occuring in cluster algebras always lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
 
 \begin{definition}
   Let $L$ be either $\RR^m$ or $\CC^m$ and write $\bfx = (x_1, \ldots, x_m)$ for a system of coordinates on $L$.
@@ -360,6 +360,28 @@ With our chosen conventions, we have a simple expression for the map $\kappa: \c
   is a symplectic groupoid morphism.
 \end{proposition}
 
+\begin{proof}
+We show that $\kappa$ is compatible with the target maps, and leave the compatibility with other structure maps to the readers.
+	\begin{align*}
+		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
+		& = \left(x_1 \prod_{i=1}^m e^{\Omega_{i1}x_ip_i}, \ldots, x_m \prod_{i=1}^m e^{\Omega_{im}x_ip_i}\right) \\
+		& = \left(x_1 e^{\sum_i \Omega_{i1}x_ip_i}, \ldots, x_m  e^{\sum_i \Omega_{im}x_ip_i}\right) \\
+		& = \beta_\cG (\bfp, \bfx).
+	\end{align*}
+To show that $\kappa$ preserves the symplectic structures, we have
+	\begin{align*}
+		\kappa^*\omega_\cD & = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{d(e^{x_ip_i})}{e^{x_ip_i}} + \sum_{j < i} \Omega_{ij} \frac{d(e^{x_ip_i})}{e^{x_ip_i}} \wedge \frac{d(e^{x_jp_j})}{e^{x_jp_j}} \\
+		& = \sum_{i} \frac{dx_i}{x_i} \wedge (x_i dp_i + p_i dx_i) + \sum_{j < i} \Omega_{ij} (x_i dp_i + p_i dx_i) \wedge (x_j dp_j + p_j dx_j) \\
+		& = \sum_{i} dx_i \wedge dp_i
+	  	+ \left(
+	    	\sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
+	    	+ \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
+	    	+ \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
+	  	\right) \\
+		& = \omega_\cG.
+	\end{align*}
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Hamiltonian Perspective on Mutations}
@@ -422,9 +444,9 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 %Similarly, we denote by $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ the time-$t$ flow of the vector field $X_\cA^{k,\varepsilon}$. \footnote{time-$t$ flow.}
 \begin{corollary}
   \label{cor:time-one flows}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the Hamiltonian vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
   \[(\varphi_\cX^t)^*(y_\ell)=(1+y_k^\varepsilon)^{-tB_{k\ell}}y_\ell,\]
-  and the time-$t$ flow $\varphi_\cA^t:L_\cA\to L_\cA$ of the vector field $X_\cA^{k,\varepsilon}$, given on coordiates by
+  and the time-$t$ flow $\varphi_\cA^t:L_\cA\to L_\cA$ of the Hamiltonian vector field $X_\cA^{k,\varepsilon}$, given on coordiates by
   \[(\varphi_\cA^t)^*(x_j)=(1+\hat y_k^\varepsilon)^{-t\delta_{jk}}x_j,\]
   preserve the respective Poisson structures.
 \end{corollary}
@@ -539,7 +561,11 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
 Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
 \end{remark}
 
-To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature. In general Poisson symmetries are lifted to symplectic groupoid symmetries and Hamiltonian symmetries are lifted to Hamiltonian groupoid symmetries \cite{MR2504211}. More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures on $(\cG, \omega)$.
+To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature.
+In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{MR2504211}.
+More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} = \alpha^*f - \beta^*f$.
+Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures.
+That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
 
 As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 \begin{lemma}
@@ -595,7 +621,7 @@ More explicitly, these Hamiltonian functions are given by
 \end{align*}
 Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
     \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
     \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)t_k;\\
@@ -620,12 +646,12 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \bar\varphi_\cA^t:\cD_\cA\to\cD_\cA.
 \]
 \begin{corollary}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Poisson autmorphism $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the symplectic groupoid automorphisms $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
   \begin{align*}
     (\tilde\varphi_\cX^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right),\\
     (\bar\varphi_\cX^t)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
-  and the Poisson autmorphism $\varphi_\cA^t: L_\cX \to L_\cX$ Corollary~\ref{cor:time-one flows} is lifted  to the symplectic groupoid automorphisms $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
+  and the Hamiltonian flow $\varphi_\cA^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted  to the multiplicative Hamiltonian flows $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
   \begin{align*}
     (\tilde\varphi_\cA^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right), \\
     (\bar\varphi_\cA^t)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-tB_{jk}/d_k}s_j.
@@ -773,9 +799,9 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 
 \begin{equation} \label{eq:GpdCD}
 	\xymatrix{
-		& \cD_\cA \ar@/_1pc/[dd]|-(.2){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} && \cD'_\cA \ar@/_1pc/[dd]|-{\bar{\rho}} \\
-	\cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[rr]|-{\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar@/_1pc/[dd]|-{\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
-		& \cD_\cX \ar[rr]|-{\bar{\tau}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-{\bar{\varphi}_\cX} && \cD'_\cX \\
+		& \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} && \cD'_\cA \ar[dd]|-{\bar{\rho}} \\
+	\cG_\cA \ar[dd]|-{\tilde{\rho}} \ar[rr]|-(.65){\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[rr]|-(.65){\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
+		& \cD_\cX \ar[rr]|-(.35){\bar{\tau}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-(.35){\bar{\varphi}_\cX} && \cD'_\cX \\
 	\cG_\cX \ar[rr]|-{\tilde{\tau}_\cX} \ar[ur]|-{\kappa_\cX} \ar@/_1.2pc/[rrrr]|-{\tilde{\mu}_\cX} && \cG_\cX \ar[rr]|-{\tilde{\varphi}_\cX} \ar[ur]|-{\kappa_\cX} && \cG'_\cX \ar[ur]|-{\kappa_\cX}
 	}
 \end{equation}
