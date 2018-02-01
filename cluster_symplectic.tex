@@ -422,15 +422,11 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 %Similarly, we denote by $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ the time-$t$ flow of the vector field $X_\cA^{k,\varepsilon}$. \footnote{time-$t$ flow.}
 \begin{corollary}
   \label{cor:time-one flows}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the vector field $X_\cX^{k,\varepsilon}$ given on coordiates by
-\[
-	 (\varphi_\cX^t)^*(y_\ell)=(1+y_k^\varepsilon)^{-tB_{k\ell}}y_\ell
-\]
-and the time-$t$ flow $\varphi_{X_\cA}^t:L_\cA\to L_\cA$ of the vector field $X_\cA^{k,\varepsilon}$ given on coordiates by
-\[
-    (\varphi_\cA^t)^*(x_j)=(1+\hat y_k^\varepsilon)^{-t\delta_{jk}}x_j.
-\]
-preserves the respective Poisson structures.
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
+  \[(\varphi_\cX^t)^*(y_\ell)=(1+y_k^\varepsilon)^{-tB_{k\ell}}y_\ell,\]
+  and the time-$t$ flow $\varphi_\cA^t:L_\cA\to L_\cA$ of the vector field $X_\cA^{k,\varepsilon}$, given on coordiates by
+  \[(\varphi_\cA^t)^*(x_j)=(1+\hat y_k^\varepsilon)^{-t\delta_{jk}}x_j,\]
+  preserve the respective Poisson structures.
 \end{corollary}
 \begin{proof}
   This is immediate from the preceding discussion.
@@ -504,7 +500,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   \end{align}
 \end{lemma}
 \begin{proof}
-  Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^{k,\varepsilon})^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
+  Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^1)^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
 \end{proof}
 
 While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian nature of $\tau_\cX^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^\times)^n$ and $L_\cA= (\CC^\times)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
@@ -540,10 +536,10 @@ Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the 
   When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
   \footnote{This might actually require $m=n$.}
   \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
-Indeed when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
+Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{MR2470108} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
 \end{remark}
 
-To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature. In general Poisson symmetries are lifted to symplectic groupoid symmetries and Hamiltonian symmetries are lifted to Hamiltonian groupoid symmetries \cite{MR2504211}. More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures on $(\cG, \omega)$.
+To lift the Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ to groupoid maps, we use their Hamiltonian nature. In general Poisson symmetries are lifted to symplectic groupoid symmetries and Hamiltonian symmetries are lifted to Hamiltonian groupoid symmetries \cite{MR2504211}. More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to a Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$ where $\tilde{f} = \alpha^*f - \beta^*f$. Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is compatible with the groupoid structures. That is, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structures on $(\cG, \omega)$.
 
 As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 \begin{lemma}
@@ -649,17 +645,29 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \label{le:tropical groupoid transformations}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, lifting the Poisson morphisms of Lemma~\ref{le:tropical cluster transformations}, given on coordinates by
   \begin{align}
-    \label{eq:tropical X transformation}
+    \label{eq:tropical GX transformation}
     (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
-      -q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ 
+      -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ 
       q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:tropical A transformation}
+    \label{eq:tropical GA transformation}
     (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=
     \begin{cases} 
       -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
       p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j} & \text{if $j\ne k$.}
+    \end{cases}\\
+    \label{eq:tropical DX transformation}
+    (\bar\tau_\cX^{k,\varepsilon})^*(t'_\ell)
+    &=\begin{cases} 
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+} & \text{if $\ell=k$;}\\
+      t_\ell & \text{if $\ell\ne k$.}
+    \end{cases}\\
+    \label{eq:tropical DA transformation}
+    (\bar\tau_\cA^{k,\varepsilon})^*(s'_j)
+    &=\begin{cases} 
+      s_k^{-1} & \text{if $j=k$;}\\ 
+      s_j s_k^{[-\varepsilon B_{jk}]_+} & \text{if $j\ne k$;}
     \end{cases}
   \end{align}
 \end{lemma}
