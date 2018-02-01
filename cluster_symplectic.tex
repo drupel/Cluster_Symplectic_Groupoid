@@ -681,19 +681,19 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
     (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=
     \begin{cases} 
       -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
-      p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j} & \text{if $j\ne k$.}
+      p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j} & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:tropical DX transformation}
     (\bar\tau_\cX^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+} & \text{if $\ell=k$;}\\
-      t_\ell & \text{if $\ell\ne k$.}
+      t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:tropical DA transformation}
     (\bar\tau_\cA^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
-      s_j s_k^{[-\varepsilon B_{jk}]_+} & \text{if $j\ne k$;}
+      s_j s_k^{[-\varepsilon B_{jk}]_+} & \text{if $j\ne k$.}
     \end{cases}
   \end{align}
 \end{lemma}
@@ -795,6 +795,44 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \end{align*}
   This completes the proof for $\tilde\tau_\cA^{k,\varepsilon}$.
 \end{proof}
+
+\begin{proposition}
+  \label{prop:groupoid mutation}
+  \[\tilde\mu_{\cX}^{k,\varepsilon}=\tilde\tau_{\cX}^{k,\varepsilon}\circ\tilde\varphi_{\cX}^1:\cG_\cX\to\cG_\cX\]
+  \[\tilde\mu_{\cA}^{k,\varepsilon}=\tilde\tau_{\cA}^{k,\varepsilon}\circ\tilde\varphi_{\cA}^1:\cG_\cA\to\cG_\cA\]
+  \[\bar\mu_{\cX}^{k,\varepsilon}=\bar\tau_{\cX}^{k,\varepsilon}\circ\bar\varphi_{\cX}^1:\cD_\cX\to\cD_\cX\]
+  \[\bar\mu_{\cA}^{k,\varepsilon}=\bar\tau_{\cA}^{k,\varepsilon}\circ\bar\varphi_{\cA}^1:\cD_\cA\to\cD_\cA\]
+  \begin{align}
+    \label{eq:GX mutation}
+    (\tilde\mu_\cX^{k,\varepsilon})^*(q'_\ell y'_\ell)
+    &=\begin{cases} 
+      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right) & \text{if $\ell=k$;}\\ 
+      q_\ell y_\ell & \text{if $\ell\ne k$;}
+    \end{cases}\\
+    \label{eq:GA mutation}
+    (\tilde\mu_\cA^{k,\varepsilon})^*(p'_j x'_j)&=
+    \begin{cases} 
+      -p_k x_k & \text{if $j=k$;}\\ 
+      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right) & \text{if $j\ne k$;}
+    \end{cases}\\
+    \label{eq:DX mutation}
+    (\bar\mu_\cX^{k,\varepsilon})^*(t'_\ell)
+    &=\begin{cases} 
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{1/d_k} & \text{if $\ell=k$;}\\
+      t_\ell & \text{if $\ell\ne k$;}
+    \end{cases}\\
+    \label{eq:DA mutation}
+    (\bar\mu_\cA^{k,\varepsilon})^*(s'_j)
+    &=\begin{cases} 
+      s_k^{-1} & \text{if $j=k$;}\\ 
+      s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
+    \end{cases}
+  \end{align}
+\end{proposition}
+
+Add final definition of the groupoids over $\cA$ and $\cX$ using the tropical sign to determine transition maps.
+Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for periodicity.
+
 \newpage
 
 \begin{equation} \label{eq:GpdCD}
@@ -808,7 +846,7 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 
 \begin{itemize}
 \item Find the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.  Done.
-\item Lift the canonical change of variables to groupoids.
+\item Lift the canonical change of variables to groupoids.  Done.
 \item Composition of the two groupoid maps give us the groupoid mutations.
 \end{itemize}
 
