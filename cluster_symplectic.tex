@@ -111,7 +111,8 @@ We use the following notations:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Symplectic groupoids of log canonical Poisson structures} \label{sec: local}
+\section{Symplectic groupoids of log canonical Poisson structures}
+\label{sec: local}
 
 %In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
 %There is another construction of a source-connected symplectic groupoid, called the symplectic double \cite{MR2470108}.
@@ -327,7 +328,7 @@ For the next construction we restrict $L$ to be either $\RR_+^m$ or $(\CC^\times
 Motiviated by \cite{MR2470108}, we make the following definition of the symplectic double, which is a source-connected symplectic groupoid of the log-canonical Poisson structure on $L$.
 \begin{theorem} \label{thm:SymDBLoc}
   \cite{MR2470108}
-  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR_+^m$ or $(\CC^*)^m$), the \emph{symplectic double} $(\cD_L, \omega) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
+  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR_+^m$ or $(\CC^\times)^m$), the \emph{symplectic double} $(\cD_L, \omega) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
   \begin{enumerate}
     \item $\cG_L \cong L \times L$ has the coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
     \item the source map is
@@ -407,7 +408,7 @@ Given a $D$-compatible pair of matrices $(\tilde B,\Omega)$, denote by $\{\cdot,
   \{y_k,y_\ell\}_\cX=d_kB_{k\ell}y_ky_\ell\qquad\text{and}\qquad\{x_i,x_j\}_\cA=\Omega_{ij}x_ix_j.
 \end{equation}
 An easy calculation shows that the map
-\[\rho:L_\cA\to L_\cX,\qquad \bfx\mapsto\hat\bfy,\qquad \hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
+\[\rho:L_\cA\to L_\cX,\qquad \rho^*(y_k)=\hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}\]
 is Poisson, i.e.\ $\{\hat y_k,\hat y_\ell\}_\cA=d_kB_{k\ell}\hat y_k\hat y_\ell$ for $1\le k,\ell\le n$.
 Motivated by the terminology of Fock and Goncharov \cite{???}, we will refer to the pair of Poisson manifolds $L_\cX$ and $L_\cA$ together with the Poisson map $\rho$ as a \emph{Poisson ensemble} associated to the $D$-compatible pair $(\tilde B,\Omega)$.
 
@@ -415,7 +416,7 @@ The \emph{Euler dilogarithm} is the function of a single real variable defined b
 \[\Li_2(y)=-\int_0^y \frac{\log(1-u)}{u}du,\qquad y<1.\]
 We will see below that, from the Poisson perspective, the Euler dilogarithm lies at the heart of cluster algebra theory.
 
-Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H_\cX=H^{k,\varepsilon}_\cX\in\cO_{L_\cX}$ and $H_\cA=H^{k,\varepsilon}_\cA\in\cO_{L_\cA}$ for $1\le k\le n$ by
+Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_\cX\in\cO_{L_\cX}$ and $H^{k,\varepsilon}_\cA\in\cO_{L_\cA}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
   H_\cX^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)\qquad\text{and}\qquad H_\cA^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon).
@@ -463,10 +464,10 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation
     \[E_{ij}=\begin{cases}\delta_{ij} & \text{if $j\ne k$;}\\ -1 & \text{if $i=j=k$;}\\ [-\varepsilon B_{ik}]_+ & \text{if $i\ne j=k$.}\end{cases}\]
 \end{itemize}
 It is an easy exercise to check that matrix mutation is an involution, more precisely $\mu_{k,\varepsilon}\mu_{k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
-In particular, the mutation $\mu_{k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the sign does not matter.
+In particular, the mutation $\mu_{k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_k$ for this mutation when the choice of sign can be ignored.
 
 Let $L'_\cX=\RR_+^n$ and $L'_\cA=\RR_+^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively.
-For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=\mu_{k,\varepsilon}(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}'_\cX$ and $\{\cdot,\cdot\}'_\cA$ on $L'_\cX$ and $L'_\cA$ given by
+For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_k(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}'_\cX$ and $\{\cdot,\cdot\}'_\cA$ on $L'_\cX$ and $L'_\cA$ given by
 \begin{equation}
   \label{eq:brackets}
   \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
@@ -510,6 +511,10 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, set $(\tilde B',\Omega')=
   \end{align*}
 \end{proof}
 
+Since the mutation of $D$-compatible pairs is an involution, we obtain analogous Poisson maps from $L'_\cX$ to $L_\cX$ and from $L'_\cA$ to $L_\cA$ which, by a slight abuse of notation, we denote by the same symbols $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ respectively.
+It is important to note that the maps $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ are not independent of the sign $\varepsilon$ and, moreover, that they are not involutions, i.e.\ $(\tau_\cX^{k,\varepsilon})^2$ and $(\tau_\cA^{k,\varepsilon})^2$ do not give identity maps on $L_\cX$ nor $L_\cA$.
+However, an easy calculation shows that $\tau_\cX^{k,\varepsilon}\tau_\cX^{k,-\varepsilon}$ and $\tau_\cA^{k,\varepsilon}\tau_\cA^{k,-\varepsilon}$ will be identity maps for either choice of sign $\varepsilon$.
+
 For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutations in direction $k$} by $\mu_\cX^{k,\varepsilon}:=\tau_\cX^{k,\varepsilon}\circ\varphi_\cX^1:L_\cX\to L'_\cX$ and $\mu_\cA^{k,\varepsilon}:=\tau_\cA^{k,\varepsilon}\circ\varphi_\cA^1:L_\cA\to L'_\cA$.
 \begin{lemma}
   \label{le:cluster mutation}
@@ -520,18 +525,21 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
     \label{eq:A mutation}
     (\mu_\cA^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right)(1+\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
   \end{align}
+  Moreover, the cluster mutations $\mu_\cX^{k,\varepsilon}$ and $\mu_\cA^{k,\varepsilon}$ are independent of the choice of sign $\varepsilon$.
 \end{lemma}
 \begin{proof}
-  Observe for both $L_\cX$ and $L_\cA$ that $(\mu_-^{k,\varepsilon})^*=(\varphi_-^1)^*\circ(\tau_-^{k,\varepsilon})^*$ and so the result immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
+  The first claim immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
+  The final claim is a consequence of the identity $\varepsilon B_{k\ell}=[\varepsilon B_{k\ell}]_+-[-\varepsilon B_{k\ell}]_+$.
 \end{proof}
 
-While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian nature of $\tau_\cX^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^\times)^n$ and $L_\cA= (\CC^\times)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
+While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the Hamiltonian natures of $\mu_\cX^{k,\varepsilon}$ and~$\mu_\cA^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^\times)^n$ and $L_\cA= (\CC^\times)^m$ as well. The various Poisson maps are summarized in the following commutative diagram.
 
-\begin{equation} \label{eq:PoisCD}
-	\xymatrix{
-	L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} \ar@/^1pc/[rr]|-{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} & L'_\cA \ar[d]^{\rho} \\
-	L_\cX \ar[r]^{\tau_\cX} \ar@/_1pc/[rr]|-{\mu_\cX} & L_\cX \ar[r]^{\varphi_\cX} & L'_\cX
-	}
+\begin{equation} 
+  \label{eq:PoisCD}
+  \xymatrix{
+    L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} \ar@/^1pc/[rr]|-{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} & L'_\cA \ar[d]^{\rho} \\
+    L_\cX \ar[r]^{\varphi_\cX} \ar@/_1pc/[rr]|-{\mu_\cX} & L_\cX \ar[r]^{\tau_\cX} & L'_\cX
+  }
 \end{equation}
 
 \subsection{Mutation of Groupoid Charts}
@@ -667,8 +675,8 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \end{itemize}
 \end{proof}
 \begin{remark}
-  While the formulas for the flows above were defined when $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$, the formulas for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L_\cX\cong(\CC^*)^n$ and $L_\cA\cong(\CC^*)^m$.
-  Indeed, although $\log(-)$ is multivalued as a function on $\CC^*$, the functions $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ are well-defined on $\cG_\cX$ and $\cG_\cA$ respectively.
+  While the formulas for the flows above were defined when $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$, the formulas for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L_\cX\cong(\CC^\times)^n$ and $L_\cA\cong(\CC^\times)^m$.
+  Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ are well-defined on $\cG_\cX$ and $\cG_\cA$ respectively.
   To see this, note that $\tilde\varphi_\cX^1$ and $\tilde\varphi_\cA^1$ are groupoid morphisms and hence must carry the identity section to the identity section.
   This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ at the origin of each source fiber.
   Thus, by simple-connectedness, we are able to fix the choice of branch cut when computing their values at arbitrary points of the source fibers. 
