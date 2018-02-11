@@ -81,20 +81,34 @@ Outline
 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-This is the first of a series of papers whose aim is to implement Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures. In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
+This is the first of a series of papers whose aim is to implement Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures.
+In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
-The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{MR1887642} as the culmination of their study of total positivity and canonical bases for algebraic groups. Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}. The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{MR2683456}.
+The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{MR1887642} as the culmination of their study of total positivity and canonical bases for algebraic groups.
+Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}.
+The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{MR2683456}.
 
-The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{MR2470108}\footnote{Find earlier reference} in their study of higher Teichmuller space. The $\cX$-varieties are always endowed with a canonical Poisson structure. If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
+The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{MR2470108}\footnote{Find earlier reference} in their study of higher Teichmuller space.
+The $\cX$-varieties are always endowed with a canonical Poisson structure.
+If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 
-In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}. Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form to be integral. See e.g. \cite{MR1806388}.
-The notion of symplectic groupoids was introduced by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}. Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}. The concrete nature of cluster algebra makes it an ideal testing ground for groupoid quantization. Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
+In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{MR2470108} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}.
+Geometric quantization for symplectic manifolds takes one step further by constructing an action on a Hilbert space, but this requires that the cohomology class of the symplectic 2-form be integral (see e.g.\ \cite{MR1806388}).
+The notion of symplectic groupoids was introduced by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}.
+Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has only been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}.
+The concrete nature of cluster coordinates makes that setting an ideal testing ground for groupoid quantization.
+Indeed, this idea was implicitly implemented by Fock and Goncharov \cite{MR2470108} in the case of $\cX$-varieties.
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
-
 \begin{itemize}
-	\item In Section~\ref{sec: local}, we build the symplectic groupoid in each local chart of a cluster variety. This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}, but for a log-canonical Poisson structure, there is a clever choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$. We also recall the symplectic double $\cD$ as in \cite{MR2470108}, albeit with slightly different notations to accommodate the fact that we consider the non-square exchange matrices in this paper. The symplectic double is a source-connected symplectic groupoid of the log-canonical Poisson structure and admits a groupoid covering $\kappa: \cG \to \cD$.
-	\item In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\tilde{\mu}: \cG \to \cG'$. The first step is to decompose the cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$, where $\varphi^1$ is the time-$1$-flow of the Euler dilogarithm function and $\tau$ is a natural transformation of log-canonical coordinates. See \cite{MR2567745} for the case of $\cX$-varieties and \cite{MR3691969} for the case of $\cA$-varieties. We then lift $\varphi^1$ and $\tau$ to groupoid maps $\tilde{\varphi}^1$ and $\tilde{\tau}$, and the composition $\tilde{\mu} = \tilde{\tau} \circ \tilde{\varphi}^1$ is the cluster groupoid mutation.
+  \item In Section~\ref{sec: local}, we build the symplectic groupoid in each local chart of a cluster variety.
+    This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}, but for a log-canonical Poisson structure, there is a clever choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$.
+    We also recall the symplectic double $\cD$ as in \cite{MR2470108}, albeit with slightly different notations to accommodate the fact that we consider the non-square exchange matrices in this paper.
+    The symplectic double is a source-connected symplectic groupoid of the log-canonical Poisson structure and admits a groupoid covering $\kappa: \cG \to \cD$.
+  \item In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\tilde{\mu}: \cG \to \cG'$.
+    The first step is to decompose the cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$, where $\varphi^1$ is the time-$1$-flow of the Euler dilogarithm function and $\tau$ is a natural transformation of log-canonical coordinates.
+    See \cite{MR2567745} for the case of $\cX$-varieties and \cite{MR3691969} for the case of $\cA$-varieties.
+    We then lift $\varphi^1$ and $\tau$ to groupoid maps $\tilde{\varphi}^1$ and $\tilde{\tau}$, and the composition $\tilde{\mu} = \tilde{\tau} \circ \tilde{\varphi}^1$ is the cluster groupoid mutation.
 \end{itemize}
 
 \bigskip
@@ -542,6 +556,28 @@ While we have assumed that $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$ to motivate the H
   }
 \end{equation}
 
+To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
+In particular, each vertex $t$ of $\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
+Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and assign exchange matrices $\tilde B_t$ to the vertices $t\in\TT_n$ so that $\tilde B_{t'}=\mu_k\tilde B_t$ whenever $t$ and $t'$ are joined by an edge labeled by $k$.
+The collection $\{\tilde B_t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B_{t_0}$ and any two exchange matrices $\tilde B_t$, $\tilde B_{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
+Given an $m\times m$ matrix $\Omega_{t_0}$ compatible with $\tilde B_{t_0}$, we define matrices $\Omega_t$ compatible with $\tilde B_t$ by iterating mutations as above.
+
+The mutation pattern gives rise to the following important combinatorial construction.
+\begin{example}
+  \label{ex:tropical signs}
+  Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B_{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
+  %In this case a seed $\Sigma_{prin}=(\bfx_{prin},\tilde B_{prin})$ is said to have \emph{principal coefficients}.
+  Given $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$, the lower $n\times n$ submatrix $C_t$ of $\tilde B_t$ has the following remarkable \emph{sign-coherence} property: each column of $C_t$, known as a $\bfc$-vector, has either all non-negative entries or all non-positive entries \cite{fomin-zelevinsky4,nakanishi-zelevinsky,gross-hacking-keel-kontsevich}.
+  Thus each exchange matrix $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{k;t}\in\{\pm1\}$, where $\varepsilon_{k;t}=1$ if the entries in the $k$-th column of $C_t$ are non-negative and $\varepsilon_{k;t}=-1$ if the entries in the $k$-th column of $C_t$ are non-positive. 
+\end{example}
+
+\begin{remark}
+  Given an arbitrary exchange matrix $\tilde B$, we may construct a corresponding principalized exchange matrix $\tilde B_{prin}$ from the principal submatrix $B$.
+  Then for each vertex $t\in\TT_n$, we associate the same tropical signs $\varepsilon_{k;t}$ to the columns of $\tilde B_t$.
+\end{remark}
+
+
+
 \subsection{Mutation of Groupoid Charts}
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
 Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the standard Poisson structures on $L_\cX$ and $L_\cA$ respectively.
@@ -861,31 +897,11 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 \end{equation}
 
 \begin{itemize}
-\item Find the time-1 flow of the multiplicative Hamiltonian vector field on the groupoids.  Done.
-\item Lift the canonical change of variables to groupoids.  Done.
+\item Lift the canonical change of variables to groupoids.
 \item Composition of the two groupoid maps give us the groupoid mutations.
 \end{itemize}
 
 \newpage 
-
-To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
-In particular, each vertex $t$ of $\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
-Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and assign exchange matrices $\tilde B_t$ to the vertices $t\in\TT_n$ so that $\tilde B_{t'}=\mu_k\tilde B_t$ whenever $t$ and $t'$ are joined by an edge labeled by $k$.
-The collection $\{\tilde B_t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B_{t_0}$ and any two exchange matrices $\tilde B_t$, $\tilde B_{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
-Given an $m\times m$ matrix $\Omega_{t_0}$ compatible with $\tilde B_{t_0}$, we define matrices $\Omega_t$ compatible with $\tilde B_t$ by iterating mutations as above.
-
-The mutation pattern gives rise to the following important combinatorial construction.
-\begin{example}
-  Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B_{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
-  %In this case a seed $\Sigma_{prin}=(\bfx_{prin},\tilde B_{prin})$ is said to have \emph{principal coefficients}.
-  Given $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$, the lower $n\times n$ submatrix $C_t$ of $\tilde B_t$ has the following remarkable \emph{sign-coherence} property: each column of $C_t$, known as a $\bfc$-vector, has either all non-negative entries or all non-positive entries \cite{fomin-zelevinsky4,nakanishi-zelevinsky,gross-hacking-keel-kontsevich}.
-  Thus each exchange matrix $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{k;t}\in\{\pm1\}$, where $\varepsilon_{k;t}=1$ if the entries in the $k$-th column of $C_t$ are non-negative and $\varepsilon_{k;t}=-1$ if the entries in the $k$-th column of $C_t$ are non-positive. 
-\end{example}
-
-\begin{remark}
-  Given an arbitrary exchange matrix $\tilde B$, we may construct a corresponding principalized exchange matrix $\tilde B_{prin}$ from the principal submatrix $B$.
-  Then for each vertex $t\in\TT_n$, we associate the same tropical signs $\varepsilon_{k;t}$ to the columns of $\tilde B_t$.
-\end{remark}
 
 The mutation of exchange matrices is accompanied by two notions of mutation on rational functions.
 Let $\cF$ and $\cP$ be extension fields of $\QQ$ with transcendence degrees $m$ and $n$ respectively.   
