@@ -22,6 +22,7 @@
 \newcommand{\bfe}{\mathbf{e}}
 \newcommand{\bfp}{\mathbf{p}}
 \newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
 \newcommand{\bfs}{\mathbf{s}}
 \newcommand{\bft}{\mathbf{t}}
 \newcommand{\bfx}{\mathbf{x}}
@@ -84,9 +85,9 @@ Outline
 This is the first of a series of papers whose aim is to implement Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures.
 In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
-The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{MR1887642} as the culmination of their study of total positivity and canonical bases for algebraic groups.
+The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{FZ02} as the culmination of their study of total positivity and canonical bases for algebraic groups.
 Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}.
-The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{MR2683456}.
+The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{GSV10}.
 
 The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{FG09a} in their study of higher Teichmuller space.
 The $\cX$-varieties are always endowed with a canonical Poisson structure.
@@ -219,7 +220,7 @@ Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_
   for some skew-symmetric $m\times m$ matrix $\Omega = (\Omega_{ij})$.
 \end{definition}
 
-For both the cluster $\cA$-varieties \cite{MR2683456} and $\cX$-varieties \cite{FG09c}, the compatible Poisson structures are log-canonical in local charts.
+For both the cluster $\cA$-varieties \cite{GSV10} and $\cX$-varieties \cite{FG09c}, the compatible Poisson structures are log-canonical in local charts.
 Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-connected symplectic groupoid of a log-canonical Poisson structure by carefully chosing a Poisson spray. 
 \begin{definition} 
   \cite{MR2900786}
@@ -431,25 +432,32 @@ The \emph{Euler dilogarithm} is the function of a single real variable defined b
 It will become apparent from the results below that, from the Poisson perspective, the Euler dilogarithm lies at the heart of cluster algebra theory.
 However, we will work in a slightly more general setting.
 
-For each $k=1,\ldots,n$, fix a monic polynomial $F_k(z)\in\RR_+[z]$ with $F_k(0)=1$.
-Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_\cX\in\cO_{L_\cX}$ and $H^{k,\varepsilon}_\cA\in\cO_{L_\cA}$ for $1\le k\le n$ by
+Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{k=1}^n \RR_+^{r_k-1}$.
+Set 
+\[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr.\]
+Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that functions on $L_\bfr$ are Casimirs. 
+Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{\cX,\bfr}$ which we still denote by $\rho$.
+The $k$-th coordinate of a point in $L_\bfr$ determines a degree $r_k$ monic polynomial $F_k(z)\in\RR_+[z]$ with $F_k(0)=1$.
+
+Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_\cX\in\cO_{L_{\cX,\bfr}}$ and $H^{k,\varepsilon}_\cA\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
   H_\cX^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du\qquad\text{and}\qquad H_\cA^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du.
 \end{equation}
-Observe that when $F_k(z)=1+z$, we have $H_\cX^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $H_\cA^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
+Observe that when $r_k=1$, i.e.\ $F_k(z)=1+z$, we have $H_\cX^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $H_\cA^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
 
 Clearly, there is an equality $\rho^*(H_\cX^{k,\varepsilon})=H_\cA^{k,\varepsilon}$.
-Write $X_\cX^{k,\varepsilon}\in\cT_\cX$ and $X_\cA^{k,\varepsilon}\in\cT_\cA$ for the Hamiltonian vector fields associated to $H_\cX^{k,\varepsilon}$ and $H_\cA^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{H_\cX^{k,\varepsilon},\cdot\}_\cX$ and $\{H_\cA^{k,\varepsilon},\cdot\}_\cA$.
+Write $X_\cX^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_\cA^{k,\varepsilon}\in\cT_{L_{\cA,\bfr}}$ for the Hamiltonian vector fields associated to $H_\cX^{k,\varepsilon}$ and $H_\cA^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{H_\cX^{k,\varepsilon},\cdot\}_\cX$ and $\{H_\cA^{k,\varepsilon},\cdot\}_\cA$.
 \begin{lemma}
   \label{le:hamiltonian dynamics}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_\cX^{k,\varepsilon}$ and $X_\cA^{k,\varepsilon}$ determine the following dynamics on $L_\cX$ and $L_\cA$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_\cX^{k,\varepsilon}$ and $X_\cA^{k,\varepsilon}$ determine the following dynamics on $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$:
   \begin{align}
     \label{eq:X dynamics}
     \dot y_\ell&:=\{H_\cX^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
     \dot x_j&:=\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
   \end{align}
+  Moreover, the points of $L_\bfr$ are fixed by the Hamiltonian flows.
 \end{lemma}
 \begin{proof}
   Equation~\eqref{eq:X dynamics} was essentially proven in \cite{MR3691969}.
@@ -461,9 +469,9 @@ It immediately follows that $y_k$ is a conserved quantity under the flow of $L_\
 Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity under the flow of $L_\cA$ by the vector field $X_\cA^{k,\varepsilon}$.
 \begin{corollary}
   \label{cor:time-one flows}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_\cX\to L_\cX$ of the Hamiltonian vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_{\cX,\bfr}\to L_{\cX,\bfr}$ of the Hamiltonian vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
   \[(\varphi_\cX^t)^*(y_\ell)=\big(F_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\]
-  and the time-$t$ flow $\varphi_\cA^t:L_\cA\to L_\cA$ of the Hamiltonian vector field $X_\cA^{k,\varepsilon}$, given on coordiates by
+  and the time-$t$ flow $\varphi_\cA^t:L_{\cA,\bfr}\to L_{\cA,\bfr}$ of the Hamiltonian vector field $X_\cA^{k,\varepsilon}$, given on coordiates by
   \[(\varphi_\cA^t)^*(x_j)=\big(F_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\]
   preserve the respective Poisson structures.
 \end{corollary}
@@ -473,7 +481,6 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 \end{proof}
 
 In what follows we use the notation $[a]_+=\max\{a,0\}$.
-Denote by $r_k$ the degree of the exchange polynomial $F_k(z)$.
 For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{k,\varepsilon}(\tilde B,\Omega)=\big(\mu_{k,\varepsilon}\tilde B,\Omega'\big)$, where
 \begin{itemize}
   \item $\mu_{k,\varepsilon}\tilde B=(B'_{ij})$ is given by
@@ -490,9 +497,10 @@ For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_k(\tilde B,\Omega)$ and consider
   \label{eq:brackets}
   \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
 \end{equation}
+Define $L'_{\cX,\bfr}$ and $L'_{\cA,\bfr}$ as above.
 \begin{lemma}
   \label{le:tropical cluster transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_\cX^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\tau_\cA^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ which are the identity map on the $L_\bfr$ components and are given on coordinates of $L_\cX$ and $L_\cA$ by
   \begin{align}
     \label{eq:tropical X transformation}
     (\tau_\cX^{k,\varepsilon})^*(y'_\ell)
@@ -529,61 +537,66 @@ For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_k(\tilde B,\Omega)$ and consider
   \end{align*}
 \end{proof}
 
-Since the mutation of $D$-compatible pairs is an involution, we obtain analogous Poisson maps from $L'_\cX$ to $L_\cX$ and from $L'_\cA$ to $L_\cA$ which, by a slight abuse of notation, we denote by the same symbols $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ respectively.
-It is important to note that the maps $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ are not independent of the sign $\varepsilon$ and, moreover, that they are not involutions, i.e.\ $(\tau_\cX^{k,\varepsilon})^2$ and $(\tau_\cA^{k,\varepsilon})^2$ do not give identity maps on $L_\cX$ nor $L_\cA$.
+Since the mutation of $D$-compatible pairs is an involution, we obtain analogous Poisson maps from $L'_{\cX,\bfr}$ to $L_{\cX,\bfr}$ and from $L'_{\cA,\bfr}$ to $L_{\cA,\bfr}$ which, by a slight abuse of notation, we denote by the same symbols $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ respectively.
+It is important to note that the maps $\tau_\cX^{k,\varepsilon}$ and $\tau_\cA^{k,\varepsilon}$ are not independent of the sign $\varepsilon$ and, moreover, that they are not involutions, i.e.\ $(\tau_\cX^{k,\varepsilon})^2$ and $(\tau_\cA^{k,\varepsilon})^2$ do not give identity maps on $L_{\cX,\bfr}$ nor on $L_{\cA,\bfr}$.
 However, an easy calculation shows that $\tau_\cX^{k,\varepsilon}\tau_\cX^{k,-\varepsilon}$ and $\tau_\cA^{k,\varepsilon}\tau_\cA^{k,-\varepsilon}$ will be identity maps for either choice of sign $\varepsilon$.
 
 For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutations in direction $k$} by 
-\[\mu_\cX^{k,\varepsilon}:=\tau_\cX^{k,\varepsilon}\circ\varphi_\cX^1:L_\cX\to L'_\cX\qquad\text{ and }\qquad\mu_\cA^{k,\varepsilon}:=\tau_\cA^{k,\varepsilon}\circ\varphi_\cA^1:L_\cA\to L'_\cA.\]
+\[\mu_\cX^{k,\varepsilon}:=\tau_\cX^{k,\varepsilon}\circ\varphi_\cX^1:L_{\cX,\bfr}\to L'_{\cX,\bfr}\qquad\text{ and }\qquad\mu_\cA^{k,\varepsilon}:=\tau_\cA^{k,\varepsilon}\circ\varphi_\cA^1:L_{\cA,\bfr}\to L'_{\cA,\bfr}.\]
 \begin{lemma}
   \label{le:cluster mutation}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\mu_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_\cX^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_\cA^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ which are the identity map on the $L_\bfr$ components and are given on coordinates of $L_\cX$ and $L_\cA$ by
   \begin{align}
     \label{eq:X mutation}
     (\mu_\cX^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+}F_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
     (\mu_\cA^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)F_k(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
   \end{align}
-  Moreover, the cluster mutations $\mu_\cX^{k,\varepsilon}$ and $\mu_\cA^{k,\varepsilon}$ are independent of the choice of sign $\varepsilon$.
+  Moreover, the cluster mutations $\mu_\cX^{k,\varepsilon}\mu_\cX^{k,-\varepsilon}$ and $\mu_\cA^{k,\varepsilon}\mu_\cA^{k,-\varepsilon}$ are identity maps on $L_{\cX,\bfr}$ and on $L_{\cA,\bfr}$ respectively for any choice of sign $\varepsilon$.
 \end{lemma}
 \begin{proof}
   The first claim immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
-  The final claim is a consequence of the identity $\varepsilon B_{k\ell}=[\varepsilon B_{k\ell}]_+-[-\varepsilon B_{k\ell}]_+$.
+  The final claim is a consequence of the identities $B'_{k\ell}=-B_{k\ell}$ and $B'_{ik}=-B_{ik}$.
 \end{proof}
 
-While we have assumed that $L_\cX=\RR_+^n$, $L_\cA=\RR_+^m$, and $F_k(z)\in\RR_+[z]$ to motivate the Hamiltonian natures of $\mu_\cX^{k,\varepsilon}$ and~$\mu_\cA^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are well-defined for $L_\cX= (\CC^\times)^n$, $L_\cA= (\CC^\times)^m$, and $F_k(z)\in\CC[z]$ a monic polynomial with $F_k(0)=1$ also.
-This holds equally well for the \emph{automorphism parts} $\varphi_\cX^1$, $\varphi_\cA^1$ and the \emph{tropical parts} $\tau_\cX^{k,\varepsilon}$, $\tau_\cA^{k,\varepsilon}$ of the cluster mutations.
-The various Poisson maps are summarized in the following commutative diagram.
-
-\begin{equation} 
-  \label{eq:PoisCD}
-  \xymatrix{
-    L_\cA \ar[d]^{\rho} \ar[r]_{\varphi_\cA} \ar@/^1pc/[rr]|-{\mu_\cA} & L_\cA \ar[d]^{\rho} \ar[r]_{\tau_\cA} & L'_\cA \ar[d]^{\rho} \\
-    L_\cX \ar[r]^{\varphi_\cX} \ar@/_1pc/[rr]|-{\mu_\cX} & L_\cX \ar[r]^{\tau_\cX} & L'_\cX
-  }
-\end{equation}
+\begin{remark}
+  While we have assumed that $L_\cX=\RR_+^n$, $L_\cA=\RR_+^m$, and $F_k(z)\in\RR_+[z]$ to motivate the Hamiltonian natures of $\mu_\cX^{k,\varepsilon}$ and~$\mu_\cA^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined when $L_\cX=(\CC^\times)^n$, $L_\cA=(\CC^\times)^m$, and $F_k(z)\in\CC[z]$ is a monic polynomial with $F_k(0)=1$.
+  Similarly in the real case, the requirement that the coefficients of $F_k(z)$ be positive real numbers was unnecessary and we allow any monic polynomials $F_k(z)\in\RR[z]$ with $F_k(0)=1$ from now on.
+  This holds equally well for the \emph{automorphism parts} $\varphi_\cX^1$, $\varphi_\cA^1$ and the \emph{tropical parts} $\tau_\cX^{k,\varepsilon}$, $\tau_\cA^{k,\varepsilon}$ of the cluster mutations.
+  The various Poisson maps are summarized in the following commutative diagram.
+  \begin{equation} 
+    \label{eq:PoisCD}
+    \xymatrix{
+      L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_\cA} \ar@/^1pc/[rr]|-{\mu_\cA} & L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_\cA} & L'_{\cA,\bfr} \ar[d]^{\rho} \\
+      L_{\cX,\bfr} \ar[r]^{\varphi_\cX} \ar@/_1pc/[rr]|-{\mu_\cX} & L_{\cX,\bfr} \ar[r]^{\tau_\cX} & L'_{\cX,\bfr}
+    }
+  \end{equation}
+\end{remark}
 
 To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
-In particular, each vertex $t\in\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to $t$.
+In particular, each vertex $t\in\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to~$t$.
+
 Fix an initial $m\times n$ exchange matrix $\tilde B^{t_0}$ and assign exchange matrices $\tilde B^t$ to the vertices $t\in\TT_n$ so that $\tilde B^{t'}=\mu_k\tilde B^t$ whenever $t$ and $t'$ are joined by an edge labeled by $k$.
 The collection $\{\tilde B^t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B^{t_0}$ and any two exchange matrices $\tilde B^t$, $\tilde B^{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
 Given an $m\times m$ matrix $\Omega^{t_0}$ compatible with $\tilde B^{t_0}$, we define matrices $\Omega^t$ compatible with $\tilde B^t$ by iterating mutations as above.
 
-Thus, associated to each $t\in \TT_n$, we obtain a Poisson space $L_{\cX;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$.
+Thus, associated to each $t\in \TT_n$, we obtain a Poisson space $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$.
 That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $L_{\cX;t}$ and a system of coordinates $\bfx_t=(x_{1;t},\ldots,x_{m;t})$ on $L_{\cA;t}$ satisfying
 \begin{equation}
   \label{eq:brackets2}
   \{y_{k;t},y_{\ell;t}\}_\cX=d_kB^t_{k\ell}y_{k;t}y_{\ell;t}\qquad\text{and}\qquad\{x_{i;t},x_{j;t}\}_\cA=\Omega^t_{ij}x_{i;t}x_{j;t}.
 \end{equation}
-As observed above, the cluster mutations are independent of the choice of signs $\varepsilon$ while their automorphism and tropical parts are not.
-In what follows, it will be important to make a particular choice of signs. 
-To accomplish this, we observe that the mutation pattern gives rise to the following remarkable combinatorial construction.
+As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{k=1}^n \RR^{r_k-1}$ or $(\CC^\times)^n\times\prod_{k=1}^n \CC^{r_k-1}$ and $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{k=1}^n \RR^{r_k-1}$ or $(\CC^\times)^m\times\prod_{k=1}^n \CC^{r_k-1}$.
+
+As observed above, the inverse of a cluster mutation requires a change of signs $\varepsilon$.
+In general, it will important to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations.
+To accomplish this, we observe that the mutation pattern gives rise to the following combinatorial construction.
 \begin{example}
   \label{ex:tropical signs}
   Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B^{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
-  Then, given $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$, the lower $n\times n$ submatrix $C^t$ of $\tilde B^t$ has the following remarkable \emph{sign-coherence} property: 
+  Then, given $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$, the lower $n\times n$ submatrix $C^t$ of $\tilde B^t$ has the following \emph{sign-coherence} property: 
   \begin{itemize}
-    \item each column of $C^t$, known as a $\bfc$-vector, has either all non-negative entries or all non-positive entries \cite{fomin-zelevinsky4,nakanishi-zelevinsky,gross-hacking-keel-kontsevich}.
+    \item each column of $C^t$, known as a $\bfc$-vector, has either all non-negative entries or all non-positive entries \cite{FZ07,nakanishi-zelevinsky,gross-hacking-keel-kontsevich}.
   \end{itemize}
   Thus each exchange matrix $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{k;t}\in\{\pm1\}$, where $\varepsilon_{k;t}=1$ if the entries in the $k$-th column of $C^t$ are non-negative and $\varepsilon_{k;t}=-1$ if the entries in the $k$-th column of $C^t$ are non-positive. 
 
@@ -593,24 +606,30 @@ To accomplish this, we observe that the mutation pattern gives rise to the follo
 
 \begin{definition}
   Fix an initial $m\times n$ exchange matrix $\tilde B^{t_0}$ and an $m\times m$ matrix $\Omega^{t_0}$ which is compatible with $\tilde B^{t_0}$.
-  The \emph{cluster varieties} \footnote{Why does this definition give something smooth?}
-  $\cX=\cX_{\tilde B^{t_0}}$ and $\cA=\cA_{\tilde B^{t_0}}$ are obtained by gluing the cluster charts $L_{\cX;t}$ and $L_{\cA;t}$ respectively along the cluster mutations $\mu_\cX^{k,\varepsilon_{k;t}}$ and $\mu_\cA^{k,\varepsilon_{k;t}}$, that is
+  Let $\bfr=(r_1,\ldots,r_n)$ be a sequence of positive integers.
+  The \emph{(generalized) cluster varieties}
+  $\cX_\bfr=\cX_\bfr(\tilde B^{t_0})$ and $\cA_\bfr=\cA_\bfr(\tilde B^{t_0})$ are obtained by gluing the cluster charts $L_{\cX,\bfr;t}$ and $L_{\cA,\bfr;t}$ respectively along the cluster mutations $\mu_\cX^{k,\varepsilon_{k;t}}$ and $\mu_\cA^{k,\varepsilon_{k;t}}$, that is
   \begin{equation}
     \label{eq:cluster varieties}
-    \cX=\bigcup_{t\in\TT_n} L_{\cX;t}\qquad\text{ and }\cA=\bigcup_{t\in\TT_n} L_{\cA;t}.
+    \cX=\bigcup_{t\in\TT_n} L_{\cX,\bfr;t}\qquad\text{ and }\qquad\cA=\bigcup_{t\in\TT_n} L_{\cA,\bfr;t}.
   \end{equation}
 \end{definition}
+\begin{remark}
+  When $r_k=1$ for all $k$, the construction above gives rise to the ordinary cluster varieties \cite{FZ01,FG09a}.
+\end{remark}
 
 \begin{theorem}
-  \cite{GSV13}
-  The Poisson structures on the cluster charts $L_{\cX;t}$ and $L_{\cA;t}$ glue to give global Poisson structures on the cluster varieties $\cX$ and $\cA$.
+  \cite{GSV10}
+  The Poisson structures on the cluster charts $L_{\cX,\bfr;t}$ and $L_{\cA,\bfr;t}$ determined by the $D$-compatible pairs $(\tilde B^t,\Omega^t)$ glue to give a global Poisson structure on the cluster varieties $\cX_\bfr$ and $\cA_\bfr$.
+  Moreover, the Poisson morphisms $\rho_t:L_{\cA,\bfr;t}\to L_{\cX,\bfr;t}$ glue to give a Poisson morphism $\rho:\cA_\bfr\to\cX_\bfr$.
 \end{theorem}
 
-The following result is the famous Laurent phenomenon for cluster algebras.
+The following result is the famous Laurent phenomenon for (generalized) cluster algebras.
 \begin{theorem}
-  \cite{FZ01}
-  Each cluster coordinate $x_{i;t}$ on the cluster chart $L_{\cA;t}$ determines a global function on $\cA$ which is given by a Laurent polynomial in the coordinates of any other cluster chart $L_{\cA;t'}$.
+  \cite{FZ02,GSV16}
+  Each cluster coordinate $x_{i;t}$ on the cluster chart $L_{\cA,\bfr;t}$ determines a global function on $\cA$ which is given by a Laurent polynomial in the coordinates of any other cluster chart $L_{\cA,\bfr;t'}$.
 \end{theorem}
+
 
 \subsection{Mutation of Groupoid Charts}
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
@@ -975,7 +994,7 @@ The resulting collection $\{\Sigma_t\}_{t\in\TT_n}$ is known as the \emph{exchan
 By iterating the exchange relations we appear to get elements of $\QQ(x_1,\ldots,x_m)\subset\cF$, that is rational functions in $x_1,\ldots,x_m$.  
 The following result of Fomin and Zelevinsky known as ``the Laurent phenomenon'' shows that the cluster variables always take on a much simpler form.
 \begin{theorem}
-  \cite{fomin-zelevinsky1}
+  \cite{FZ02}
   Let $\Sigma$ be a seed in $\cF$ and $\Sigma_t$ any seed in the exchange pattern generated by $\Sigma$.
   Each cluster variable $x_{i;t}$ of $\Sigma_t$ is an element of the subring $\ZZ[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$.
 \end{theorem}
