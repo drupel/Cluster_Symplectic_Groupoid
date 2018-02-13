@@ -126,7 +126,7 @@ We use the following notations:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Symplectic groupoids of log canonical Poisson structures}
+\section{Symplectic groupoids of log-canonical Poisson structures}
 \label{sec: local}
 
 %In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
@@ -151,13 +151,9 @@ The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for
 The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}. A Poisson map from $(M_1, \pi_1)$ to $(M_2, \pi_2)$ is a map $\varphi: M_1\to M_2$ such that $\varphi_*\pi_1 = \pi_2$ or equivalently $\{\varphi^*f, \varphi^*g\} = \varphi^*(\{f, g\})$ for $f, g \in \cO_{M_2}$.
 
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
-	\[
-		\pi^\flat: \cT^*_M \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi
-	\]
+\[\pi^\flat: \cT^*_M \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi\]
 is invertible. The inverse of the bundle map defines a non-degenerate 2-form $\omega \in \Omega^2(M)$. That is, the bundle map
-	\[
-		\omega^\sharp: \cT_M \to \cT^*_M, \qquad v \mapsto \iota_v \omega
-	\]
+\[\omega^\sharp: \cT_M \to \cT^*_M, \qquad v \mapsto \iota_v \omega\]
 is the inverse of $\pi^\flat$.
 
 \begin{definition}
@@ -208,7 +204,11 @@ As a Lie groupoid, $\cG \rra M$ integrates the Poisson Lie algebroid $T^*M$ with
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
 We list some important examples of symplectic groupoids: the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{FG09c}.
 
-Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids. In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$. In fact, $\varphi$ is Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrates to Lagrangian subgroupoids \cite{MR2104442}, so a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$. However, the Poisson maps occuring in cluster algebras always lift to symplectic groupoid maps. This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
+Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids.
+In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
+In fact, $\varphi$ is Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrates to Lagrangian subgroupoids \cite{MR2104442}, so a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$.
+However, the Poisson maps occuring in cluster algebras always lift to symplectic groupoid maps.
+This will be a recurring theme when we lift to cluster mutations to groupoid mutations.
 
 \begin{definition}
   Let $L$ be either $\RR^m$ or $\CC^m$ and write $\bfx = (x_1, \ldots, x_m)$ for a system of coordinates on $L$.
@@ -244,7 +244,7 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
     \item the target map is
       \[\beta: U \to M, \qquad \beta = \tau \circ \varphi_X^1,\]
       where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$-flow of $X$;
-	\item the identity map $\mathtt{1}: M \to U$ is the zero section;
+    \item the identity map $\mathtt{1}: M \to U$ is the zero section;
     \item the inverse map is
       \[\iota: U \to U, \qquad \iota = -\varphi_X^1;\]
     \item the multiplication $m: U {_\alpha \times_\beta} U \to U$ is defined as the solution of an ODE (see \cite{CMS17} for details);
@@ -259,7 +259,9 @@ For the standard symplectic structure $\omega_0$ in Theorem~\ref{thm:poissp}, we
 \end{remark}
 
 \begin{remark}
-By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we mean that the multiplication $m: \cG {_\alpha \times_\beta} \cG \to \cG$ may not be defined on all of its domain. In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$. Indeed: the Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may contain loops; or the 2-form $\omega$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
+  By a local symplectic groupoid $(\cG, \omega) \rra (M, \pi)$, we mean that the multiplication $m: \cG {_\alpha \times_\beta} \cG \to \cG$ may not be defined on all of its domain.
+  In general, the local symplectic groupoid structure cannot be extended to the total space $T^*M$.
+  Indeed, the Poisson spray $X$ may not be complete; the flow of the Poisson spray $X$ may contain loops; or the 2-form $\omega$, though non-degenerate near the zero section of $T^*M$, may be degenerate in general.
 \end{remark}
 
 In the next results, we introduce a Poisson spray whose local symplectic groupoid provides an integration of a log-canonical Poisson structure.
@@ -277,19 +279,15 @@ In the next results, we introduce a Poisson spray whose local symplectic groupoi
 \end{lemma}
 
 \begin{proof}
-	For the co-vector $\alpha = p_1 dx_1 + \ldots + p_m dx_m$ and the point $(\mathbf{x}, \mathbf{p})$, we have
-	\[
-		\tau_* X|_{(\mathbf{x},\mathbf{p})} = \sum_{i, j}\Omega_{ij} x_i p_i x_j \frac{\partial}{\partial x_j} = \iota_\alpha \pi.
-	\]
-	To find the flow of $X$, we note that $x_i p_i$ is a constant under the flow of $X$:
-	\[
-		\frac{d}{dt}(x_j p_j) = \dot{x}_j p_j - x_j \dot{p}_j = \sum_{1 \leq i,j \leq m}\Omega_{ij}x_i p_i x_j p_j - \sum_{1 \leq i,j \leq m}\Omega_{ij}x_ip_i p_j x_j = 0.
-	\]
-	Therefore $\sum_{i}\Omega_{ij}x_i p_i$ is constant, and
-	\begin{align*}
-		x_j(t) & = e^{t \sum_i \Omega_{ij} x_ip_i} x_j(0) = a_j^t x_j(0), \\
-		p_j(t) & = e^{-t \sum_i \Omega_{ij} x_ip_i} p_j(0) = a_j^{-t} p_j(0).
-	\end{align*}
+  For the co-vector $\alpha = p_1 dx_1 + \ldots + p_m dx_m$ and the point $(\mathbf{x}, \mathbf{p})$, we have
+  \[\tau_* X|_{(\mathbf{x},\mathbf{p})} = \sum_{i, j}\Omega_{ij} x_i p_i x_j \frac{\partial}{\partial x_j} = \iota_\alpha \pi.\]
+  To find the flow of $X$, we note that $x_i p_i$ is a constant under the flow of $X$:
+  \[\frac{d}{dt}(x_j p_j) = \dot{x}_j p_j - x_j \dot{p}_j = \sum_{1 \leq i,j \leq m}\Omega_{ij}x_i p_i x_j p_j - \sum_{1 \leq i,j \leq m}\Omega_{ij}x_ip_i p_j x_j = 0.\]
+  Therefore $\sum_{i}\Omega_{ij}x_i p_i$ is constant, and
+  \begin{align*}
+    x_j(t) & = e^{t \sum_i \Omega_{ij} x_ip_i} x_j(0) = a_j^t x_j(0), \\
+    p_j(t) & = e^{-t \sum_i \Omega_{ij} x_ip_i} p_j(0) = a_j^{-t} p_j(0).
+  \end{align*}
 \end{proof}
 
 This Poisson spray $X$ induces the symplectic groupoid structure below.
@@ -300,8 +298,9 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item $\cG_L \cong T^*L$ has the coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$;
     \item the source map is the bundle projection $\alpha: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfx$;
     \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$;
-	\item the identity map $\mathtt{1}: L \to T^*L, \quad \bfx \mapsto (0, \bfx)$;
+    \item the identity map $\mathtt{1}: L \to T^*L, \quad \bfx \mapsto (0, \bfx)$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
+      \footnote{Fix this}
     \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the symplectic form $\omega$ is
       \begin{equation}
@@ -379,7 +378,7 @@ With our chosen conventions, we have a simple expression for the map $\kappa: \c
 \begin{proof}
 We show that $\kappa$ is compatible with the target maps, and leave the compatibility with other structure maps to the readers.
 	\begin{align*}
-		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
+		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta_\cD (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
 		& = \left(x_1 \prod_{i=1}^m e^{\Omega_{i1}x_ip_i}, \ldots, x_m \prod_{i=1}^m e^{\Omega_{im}x_ip_i}\right) \\
 		& = \left(x_1 e^{\sum_i \Omega_{i1}x_ip_i}, \ldots, x_m  e^{\sum_i \Omega_{im}x_ip_i}\right) \\
 		& = \beta_\cG (\bfp, \bfx).
@@ -465,8 +464,8 @@ Write $X_\cX^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_\cA^{k,\varepsilon}\in
   \[\{H_\cA^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(F_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_j.\]
 \end{proof}
 
-It immediately follows that $y_k$ is a conserved quantity under the flow of $L_\cX$ by the vector field $X_\cX^{k,\varepsilon}$.
-Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity under the flow of $L_\cA$ by the vector field $X_\cA^{k,\varepsilon}$.
+It immediately follows that $y_k$ is a conserved quantity under the flow of $L_{\cX,\bfr}$ by the vector field $X_\cX^{k,\varepsilon}$.
+Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity under the flow of $L_{\cA,\bfr}$ by the vector field $X_\cA^{k,\varepsilon}$.
 \begin{corollary}
   \label{cor:time-one flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_\cX^t:L_{\cX,\bfr}\to L_{\cX,\bfr}$ of the Hamiltonian vector field $X_\cX^{k,\varepsilon}$, given on coordiates by
@@ -580,13 +579,13 @@ Fix an initial $m\times n$ exchange matrix $\tilde B^{t_0}$ and assign exchange 
 The collection $\{\tilde B^t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B^{t_0}$ and any two exchange matrices $\tilde B^t$, $\tilde B^{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
 Given an $m\times m$ matrix $\Omega^{t_0}$ compatible with $\tilde B^{t_0}$, we define matrices $\Omega^t$ compatible with $\tilde B^t$ by iterating mutations as above.
 
-Thus, associated to each $t\in \TT_n$, we obtain a Poisson space $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$.
+Thus, associated to each $t\in \TT_n$, we obtain a Poisson space $L_{\cX;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$.
 That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $L_{\cX;t}$ and a system of coordinates $\bfx_t=(x_{1;t},\ldots,x_{m;t})$ on $L_{\cA;t}$ satisfying
 \begin{equation}
   \label{eq:brackets2}
   \{y_{k;t},y_{\ell;t}\}_\cX=d_kB^t_{k\ell}y_{k;t}y_{\ell;t}\qquad\text{and}\qquad\{x_{i;t},x_{j;t}\}_\cA=\Omega^t_{ij}x_{i;t}x_{j;t}.
 \end{equation}
-As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{k=1}^n \RR^{r_k-1}$ or $(\CC^\times)^n\times\prod_{k=1}^n \CC^{r_k-1}$ and $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{k=1}^n \RR^{r_k-1}$ or $(\CC^\times)^m\times\prod_{k=1}^n \CC^{r_k-1}$.
+As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{k=1}^n \RR^{r_k-1}$ or to $(\CC^\times)^n\times\prod_{k=1}^n \CC^{r_k-1}$ and $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{k=1}^n \RR^{r_k-1}$ or to $(\CC^\times)^m\times\prod_{k=1}^n \CC^{r_k-1}$.
 
 As observed above, the inverse of a cluster mutation requires a change of signs $\varepsilon$.
 In general, it will important to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations.
@@ -633,14 +632,18 @@ The following result is the famous Laurent phenomenon for (generalized) cluster 
 
 \subsection{Mutation of Groupoid Charts}
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
-Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the standard Poisson structures on $L_\cX$ and $L_\cA$ respectively.
-These groupoids have coordinates given as follows:
+Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec: local}.
+We begin by assuming 
+\[\cG_\cX\cong\RR^n\times L_\cX,\qquad\cD_\cX\cong\RR_+^n\times L_\cX,\qquad\cG_\cA\cong\RR^m\times L_\cA,\qquad\cD_\cA\cong\RR_+^m\times L_\cA.\]
+We introduce coordinates on these groupoids given as follows:
 \begin{itemize}
   \item $\cG_\cX$ has coordinates $(\bfq,\bfy)=(q_1,\ldots,q_n,y_1,\ldots,y_n)$; 
   \item $\cD_\cX$ has coordinates $(\bft,\bfy)=(t_1,\ldots,t_n,y_1,\ldots,y_n)$; 
   \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
   \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
 \end{itemize}
+As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce 
+\[\cG_{\cX,\bfr}\cong\RR^n\times L_{\cX,\bfr},\qquad\cD_{\cX,\bfr}\cong\RR_+^n\times L_{\cX,\bfr},\qquad\cG_{\cA,\bfr}\cong\RR^m\times L_{\cA,\bfr},\qquad\cD_{\cA\bfr}\cong\RR_+^m\times L_{\cA,\bfr}.\]
 
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all the groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$; this slight abuse of notation should not lead to any confusion. The symplectic groupoid structures on $\cG_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, and the symplectic groupoid structures on $\cD_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}. The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:PoiSpLogC} by replacing $x_i$ with $y_k$, $p_j$ with $q_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$, and the symplectic groupoid structures on $\cD_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:SymDBLoc} by replacing $x_i$ with $y_k$, $s_j$ with $t_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$.
 
@@ -774,7 +777,8 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   
 \begin{lemma}
   \label{le:tropical groupoid transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, lifting the Poisson morphisms of Lemma~\ref{le:tropical cluster transformations}, given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$, $\bar\tau_\cX^{k,\varepsilon}:\cD_\cX\to\cD'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, $\bar\tau_\cA^{k,\varepsilon}:\cD_\cA\to\cD'_\cA$ lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
+  These are given on coordinates by
   \begin{align}
     \label{eq:tropical GX transformation}
     (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
@@ -803,103 +807,12 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
   \end{align}
 \end{lemma}
 \begin{proof}
-  There are several cases to consider.
-  For $\ell,\ell'\ne k$, we have
-  \begin{align*}
-    \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell),(\tilde\tau_\cX^{k,\varepsilon})^*(q'_{\ell'})\}_{\cG_\cX}
-    &=\left\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\right\}_{\cG_\cX}\\
-    &=(d_\ell B_{\ell\ell'} + d_\ell B_{\ell k} [\varepsilon B_{k\ell'}]_+ + [\varepsilon B_{k\ell}]_+ d_k B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\\
-    &=(d_\ell B_{\ell\ell'} + d_\ell B_{\ell k} [\varepsilon B_{k\ell'}]_+ + d_\ell [-\varepsilon B_{\ell k}]_+ B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} q_{\ell'} y_k^{-[\varepsilon B_{k\ell'}]_+}\\
-    &=d_\ell B'_{\ell\ell'} (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell) (\tilde\tau_\cX^{k,\varepsilon})^*(q'_{\ell'})
-  \end{align*}
-  and
-  \begin{align*}
-    \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell),(\tilde\tau_\cX^{k,\varepsilon})^*(y'_{\ell'})\}_{\cG_\cX}
-    &=\left\{q_\ell y_k^{-[\varepsilon B_{k\ell}]_+},y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\right\}_{\cG_\cX}\\
-    &=\delta_{\ell\ell'} + (-d_\ell B_{\ell\ell'} - d_\ell B_{\ell k}[\varepsilon B_{k\ell'}]_+ - [\varepsilon B_{k\ell}]_+d_k B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\\
-    &=\delta_{\ell\ell'} - (d_\ell B_{\ell\ell'} + d_\ell B_{\ell k}[\varepsilon B_{k\ell'}]_+ + d_\ell [-\varepsilon B_{\ell k}]_+ B_{k\ell'}) q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} y_{\ell'} y_k^{[\varepsilon B_{k\ell'}]_+}\\
-    &=\delta_{\ell\ell'} - d_\ell B'_{\ell\ell'} (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell) (\tilde\tau_\cX^{k,\varepsilon})^*(y'_{\ell'}).
-  \end{align*}
-  The case $\ell'=k$ in the last computation is trivial and we omit the details.
-
-  For $\ell\ne k$, we have
-  \begin{align*}
-    \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k),(\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)\}_{\cG_\cX}
-    &=\left\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,q_\ell y_k^{-[\varepsilon B_{k\ell}]_+}\right\}_{\cG_\cX}\\
-    &=-(d_k B_{k\ell}-2 d_k B_{k\ell}) q_k q_\ell y_k^{2-[\varepsilon B_{k\ell}]_+} + [\varepsilon B_{k\ell}]_+ q_\ell y_k^{1-[\varepsilon B_{k\ell}]_+}\\
-    &\quad + \sum\limits_{\ell'\ne\ell} [\varepsilon B_{k\ell'}]_+\Big(d_{\ell'} B_{\ell' \ell} - d_{\ell'} B_{\ell' \ell} -d_k B_{k\ell}\\[-13pt]
-    &\hspace{1.5in}+ d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ - d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ \Big) q_{\ell'} q_\ell y_{\ell'} y_k^{1-[\varepsilon B_{k\ell}]_+}\\
-    &\quad + [\varepsilon B_{k\ell}]_+ \bigg(-q_\ell y_k^{1-[\varepsilon B_{k\ell}]_+} + \Big( -d_k B_{k\ell} + d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\\[-11pt]
-    &\hspace{2.53in}- d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\Big) q_\ell^2 y_\ell y_k^{1-[\varepsilon B_{k\ell}]_+}\bigg)\\
-    &=-d_k B_{k\ell} (-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k)(q_\ell y_k^{-[\varepsilon B_{k\ell}]_+})\\
-    &=d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k) (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
-  \end{align*}
-  and
-  \begin{align*}
-    \{(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k),(\tilde\tau_\cX^{k,\varepsilon})^*(y'_\ell)\}_{\cG_\cX}
-    &=\left\{-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k,y_\ell y_k^{[\varepsilon B_{k\ell}]_+}\right\}_{\cG_\cX}\\
-    &=-(-d_k B_{k\ell} + 2 d_k B_{k\ell}) q_k y_\ell y_k^{2+[\varepsilon B_{k\ell}]_+} - [\varepsilon B_{k\ell}]_+ y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+}\\
-    &\quad + \sum\limits_{\ell'\ne\ell} [\varepsilon B_{k\ell'}]_+ \Big(-d_{\ell'} B_{\ell' \ell} + d_{\ell'} B_{\ell' \ell} + d_k B_{k\ell}\\[-13pt]
-    &\hspace{1.67in}- d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ + d_{\ell'} B_{\ell' k} [\varepsilon B_{k\ell}]_+ \Big) q_{\ell'} y_{\ell'} y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+}\\
-    &\quad + [\varepsilon B_{k\ell}]_+ \bigg(y_\ell y_k^{1+[\varepsilon B_{k\ell}]_+} + \Big( d_k B_{k\ell} + d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\\[-11pt]
-    &\hspace{2.20in}- d_\ell B_{\ell k} [\varepsilon B_{k\ell}]_+\Big) q_\ell y_\ell^2 y_k^{1+[\varepsilon B_{k\ell}]_+}\bigg)\\
-    &=d_k B_{k\ell} (-q_k y_k^2 + \sum\limits_{\ell'=1}^n[\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k) (y_\ell y_k^{[\varepsilon B_{k\ell}]_+})\\
-    &=-d_k B'_{k\ell}(\tilde\tau_\cX^{k,\varepsilon})^*(q'_k) (\tilde\tau_\cX^{k,\varepsilon})^*(y'_\ell).
-  \end{align*}
-  This completes the proof for $\tilde\tau_\cX^{k,\varepsilon}$.
-
-  For $j,j'\ne k$, we have
-  \begin{align*}
-    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_{j'})\}_{\cG_\cA}
-    &=\left\{p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j},p_{j'}+[-\varepsilon B_{j'k}]_+\frac{p_k x_k}{x_{j'}}\right\}_{\cG_\cA}\\
-    &=\Omega_{jj'} p_j p_{j'} + [-\varepsilon B_{jk}]_+ (\Omega_{kj'} - \Omega_{kj'} + \Omega_{jj'}) \frac{p_k x_k}{x_j} p_{j'}\\
-    &\hspace{0.725in} + [-\varepsilon B_{j'k}]_+ (\Omega_{jk} - \Omega_{jk} + \Omega_{jj'}) p_j \frac{p_k x_k}{x_{j'}}\\
-    &\hspace{0.725in} + [-\varepsilon B_{jk}]_+ [-\varepsilon B_{j'k}]_+ (\Omega_{kj'} - \Omega_{kj'} + \Omega_{jk} - \Omega_{jk} + \Omega_{jj'}) \frac{p_k x_k}{x_j} \frac{p_k x_k}{x_{j'}}\\
-    &=\Omega_{jj'} (p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}) (p_{j'}+[-\varepsilon B_{j'k}]_+\frac{p_k x_k}{x_{j'}})\\
-    &=\Omega'_{jj'} (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_{j'}).
-  \end{align*}
-  The analogous computation with $p'_j$ replaced by $x'_j$ is straightforward and left to the reader.
-
-  For $j\ne k$, we have
-  \begin{align*}
-    \{(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)\}_{\cG_\cA}
-    &=\left\{x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+},p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}\right\}_{\cG_\cA}\\
-    &=(\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} p_j - [-\varepsilon B_{jk}]_+ x_k^{-1} x_j^{-1} \prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
-    &\quad + x_k^{-2}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} [-\varepsilon B_{jk}]_+\frac{x_k}{x_j}\\
-    &\quad + \bigg(\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ (-\Omega_{ik} + \Omega_{ik} - \Omega_{ij}) \bigg) x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+} [-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j}\\
-    &=(\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) (x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}) (p_j+[-\varepsilon B_{jk}]_+\frac{p_k x_k}{x_j})\\
-    &= -\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)
-  \end{align*}
-  and
-  \begin{align*}
-    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)\}_{\cG_\cA}
-    &=\left\{-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+},p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j}\right\}_{\cG_\cA}\\
-    &=-(\Omega_{kj} - 2\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} p_j\\
-    &\quad - [-\varepsilon B_{jk}]_+ p_k x_k^2 x_j^{-1} \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} - x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) [-\varepsilon B_{jk}]_+ \frac{p_k}{x_j}\\
-    &\quad - \bigg(\Omega_{kj} - 2\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ (-\Omega_{ik} + \Omega_{ik} - \Omega_{ij}) \bigg) p_k x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)\times\\
-    &\hspace{3.9in} \times[-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j}\\
-    &\quad + 2 p_k x_k \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right) [-\varepsilon B_{jk}]_+ \frac{x_k}{x_j}\\
-    &=(-\Omega_{kj} + \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) (-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}) (p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j})\\
-    &=\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)
-  \end{align*}
-  and
-  \begin{align*}
-    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(x'_j)\}_{\cG_\cA}
-    &=\left\{-p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+},x_j\right\}_{\cG_\cA}\\
-    &= -(-\Omega_{kj} + 2\Omega_{kj} - \sum\limits_{i=1}^m [-\varepsilon B_{ik}]_+ \Omega_{ij}) p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)x_j\\
-    &= -\Omega'_{kj}(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k) (\tilde\tau_\cA^{k,\varepsilon})^*(x'_j).
-  \end{align*}
-  Finally, we have
-  \begin{align*}
-    \{(\tilde\tau_\cA^{k,\varepsilon})^*(p'_k),(\tilde\tau_\cA^{k,\varepsilon})^*(x'_k)\}_{\cG_\cA}
-    &=\left\{-p_k x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right),x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\right\}_{\cG_\cA}\\
-    &=x_k^2\left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)x_k^{-2}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
-    &\quad -\bigg(\sum\limits_{i=1}^m \Big([-\varepsilon B_{ik}]_+ (-\Omega_{ki} + 2\Omega_{ki}) + [-\varepsilon B_{ik}]_+ \Omega_{ik}\Big) \bigg) p_k x_k^2 \left(\prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}\right)\times\\
-    &\hspace{3.7in}\times x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\\
-    &=1.
-  \end{align*}
-  This completes the proof for $\tilde\tau_\cA^{k,\varepsilon}$.
+  This is a straightforward exercise in applying the Leibniz rule, we leave the details to the reader.
 \end{proof}
+
+\begin{lemma}
+  The Poisson morphisms from Lemma~\ref{le:tropical groupoid transformations} respect the relevant groupoid structures.
+\end{lemma}
 
 \begin{proposition}
   \label{prop:groupoid mutation}
