@@ -179,7 +179,7 @@ is the inverse of $\pi^\flat$.
     \item the multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG$ is smooth;
     \item the inversion map $i: \cG \to \cG$ is smooth.
   \end{enumerate}
-  A Lie groupoid $\cG \rightrightarrows M$ is \emph{source-connected} if $\alpha^{-1}(x)$ is connected for every $x \in M$; it is \emph{source-simply-connected} if $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
+  A Lie groupoid $\cG \rightrightarrows M$ is \emph{source-connected} if the source fiber $\alpha^{-1}(x)$ is connected for every $x \in M$; it is \emph{source-simply-connected} if the source fiber $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
 \end{definition}
 
 Given a Lie groupoid $\cG \rra M$, its $k$-nerve 
@@ -197,7 +197,7 @@ where $\mathrm{pr}_1: \cG^{(2)} \to \cG$ and $\mathrm{pr}_2: \cG^{(2)} \to \cG$ 
   That is, $\mathrm{pr}_1^*(\omega)+\mathrm{pr}_2^*(\omega) = m^*(\omega)$ or equivalently the graph of the multiplication map $\Gamma_m = \{(g, h, gh) \in \cG \times \cG \times \cG\}$ is Lagrangian with repsect to the symplectic structure $\omega \oplus \omega \oplus -\omega$.
 \end{definition}
 
-A symplectic groupoid map from $(\cG_1, \omega_1) \rra M_1$ to $(\cG_2, \omega_2) \rra M_2$ is a Lie groupoid map $\tilde{\varphi}: \cG_1 \to \cG_2$ which is also a symplectomorphism.
+A symplectic groupoid map from $(\cG_1, \omega_1) \rra M_1$ to $(\cG_2, \omega_2) \rra M_2$ is a Lie groupoid map $\tilde{\varphi}: \cG_1 \to \cG_2$ which is also a symplectomorphism. The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
 
 For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps.
 Poisson manifolds that arise this way are called \emph{integrable}.
@@ -369,6 +369,28 @@ Motiviated by \cite{FG09c}, we make the following definition of the symplectic d
       \end{equation}
   \end{enumerate}
 \end{theorem}
+
+\begin{remark}
+	We relate the target map in Theorem~\ref{thm:SymDBLoc} to the symplectic realization in \cite{MR3691969}.
+	
+	With the notations in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, we have a symplectic vector space $(\cU, \omega)$ where $\cU$, with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, is either $\RR^{2m}$ or $\CC^{2m}$ and
+	\[
+		\omega = \sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j.
+	\]
+Although $(\cU, \omega)$ is not a symplectic groupoid of $(L, \pi)$ (e.g. the identity map cannot be defined), the source and target maps are well-defined in these coordinates:
+	\begin{align*}
+		& \alpha: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1}, \ldots, e^{\chi_m}\right), \\
+		& \beta: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1+\sum_i\Omega_{i1}\xi_i}, \ldots, e^{\chi_m+\sum_i\Omega_{im}\xi_i}\right),
+	\end{align*}
+The $\alpha$-fibers are symplectic orthogonal to the $\beta$-fibers; both $\alpha: (\cU, \omega) \to (L, \pi)$ and $\beta: (\cU, - \omega) \to (L, \pi)$ are Poisson maps.
+
+For the standard symplectic structure $\omega_0 = \sum_{i} d\chi_i \wedge d\xi_i$ on $\cU$, since
+	\[
+		\omega - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j
+	\]
+is supported on the source fiber, it follows that $\beta_*(\omega_0^{-1}) = \beta_*(\omega^{-1}) = -\pi$. The symplectic realization $\beta: (\cU, -\omega_0) \to (L, \pi)$ is the central object of study in \cite{MR3691969}.
+	
+\end{remark}
 
 For an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
 With our chosen conventions, we have a simple expression for the map $\kappa: \cG_L \to \cD_L$.
