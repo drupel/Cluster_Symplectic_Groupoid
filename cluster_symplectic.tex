@@ -3,7 +3,10 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage[pagebackref, bookmarks=true, bookmarksopen=true, bookmarksdepth=3,bookmarksopenlevel=2, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, menucolor=blue, urlcolor=blue]{hyperref}
-\usepackage{xypic}
+\input xy
+\xyoption{all}
+
+\usepackage[inline]{showlabels}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
@@ -32,7 +35,7 @@
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cG}{\mathcal{G}}
 %\newcommand{\cH}{\mathcal{H}}
-\renewcommand{\cD}{\mathcal{D}}
+\newcommand{\cD}{\mathcal{D}}
 \newcommand{\cO}{\mathcal{O}}
 \newcommand{\cP}{\mathcal{P}}
 \newcommand{\cX}{\mathcal{X}}
@@ -314,7 +317,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the symplectic form $\omega$ is
       \begin{equation}
-        \label{eq:2-formG_A}
+        \label{eq:2-formGA}
 	\omega_\cG = \sum_{i} dx_i \wedge dp_i
 	  + \left(
 	    \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
@@ -369,7 +372,7 @@ Motiviated by \cite{FG09c}, we make the following definition of the symplectic d
         \end{aligned}\]
     \item the symplectic form $\omega_\cD$ is
       \begin{equation} 
-        \label{eq:2-formG_X}
+        \label{eq:2-formGX}
 	\omega = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
       \end{equation}
   \end{enumerate}
@@ -472,12 +475,13 @@ The \emph{Euler dilogarithm} is the function of a single real variable defined b
 It will become apparent from the results below that, from the Poisson perspective, the Euler dilogarithm lies at the heart of cluster algebra theory.
 However, we will work in a slightly more general setting.
 
-Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{k=1}^n \RR_+^{r_k-1}$.
+Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{\ell=1}^n \RR_+^{r_\ell-1}$ with coordinates $a_{\ell,i}$ for $1\le\ell\le n$, $1\le i\le r_\ell-1$.
+We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $F_\ell(z)\in\RR_+[z]$ with $F_\ell(0)=1$ given by
+\[F_\ell(z)=1+a_{\ell,1}z+\cdots+a_{\ell,r_\ell-1}z^{r_\ell-1}+z^{r_\ell}.\]
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr.\]
-Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that functions on $L_\bfr$ are Casimirs. 
+Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the functions $a_{\ell,i}$ on $L_\bfr$ are Casimirs. 
 Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{\cX,\bfr}$ which we still denote by $\rho$.
-The $k$-th coordinate of a point in $L_\bfr$ determines a degree $r_k$ monic polynomial $F_k(z)\in\RR_+[z]$ with $F_k(0)=1$.
 
 Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L_{\cX,\bfr}}$ and $H^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
 \begin{equation}
@@ -510,9 +514,9 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 \begin{corollary}
   \label{cor:time-one flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_{\cX,\bfr}^t:L_{\cX,\bfr}\to L_{\cX,\bfr}$ of the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$, given on coordiates by
-  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(F_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\]
+  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(F_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\qquad (\varphi_{\cX,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i},\]
   and the time-$t$ flow $\varphi_{\cA,\bfr}^t:L_{\cA,\bfr}\to L_{\cA,\bfr}$ of the Hamiltonian vector field $X_{\cA,\bfr}^{k,\varepsilon}$, given on coordiates by
-  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(F_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\]
+  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(F_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\qquad (\varphi_{\cA,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i}\]
   preserve the respective Poisson structures.
 \end{corollary}
 \begin{proof}
@@ -534,13 +538,13 @@ In particular, the mutation $\mu_{\bfr,k,\varepsilon}$ acting on $D$-compatible 
 Let $L'_\cX=\RR_+^n$ and $L'_\cA=\RR_+^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively.
 For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_{\bfr,k}(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}'_\cX$ and $\{\cdot,\cdot\}'_\cA$ on $L'_\cX$ and $L'_\cA$ given by
 \begin{equation}
-  \label{eq:brackets}
+  \label{eq:brackets2}
   \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
 \end{equation}
 Define $L'_{\cX,\bfr}$ and $L'_{\cA,\bfr}$ as above.
 \begin{lemma}
   \label{le:tropical cluster transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ which are the identity map on the $L_\bfr$ components and are given on coordinates of $L_\cX$ and $L_\cA$ by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ which are each the identity map on the $L_\bfr$ component and are given on coordinates of $L_\cX$ and $L_\cA$ by
   \begin{align}
     \label{eq:tropical X transformation}
     (\tau_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)
@@ -639,10 +643,10 @@ To accomplish this, we observe that the mutation pattern gives rise to the follo
 We associate a Poisson space $L_{\cX;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$ to each vertex $t\in\TT_n$.
 That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $L_{\cX;t}$ and a system of coordinates $\bfx_t=(x_{1;t},\ldots,x_{m;t})$ on $L_{\cA;t}$ satisfying
 \begin{equation}
-  \label{eq:brackets2}
+  \label{eq:brackets3}
   \{y_{k;t},y_{\ell;t}\}_\cX=d_kB^t_{k\ell}y_{k;t}y_{\ell;t}\qquad\text{and}\qquad\{x_{i;t},x_{j;t}\}_\cA=\Omega^t_{ij}x_{i;t}x_{j;t}.
 \end{equation}
-As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{k=1}^n \RR^{r_k-1}$ or to $(\CC^\times)^n\times\prod_{k=1}^n \CC^{r_k-1}$ and $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{k=1}^n \RR^{r_k-1}$ or to $(\CC^\times)^m\times\prod_{k=1}^n \CC^{r_k-1}$.
+As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
 
 \begin{definition}
   Fix an initial $m\times n$ exchange matrix $\tilde B^{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega^{t_0}$ which is compatible with~$\tilde B^{t_0}$.
@@ -656,7 +660,7 @@ As above, we also introduce the Poisson spaces $L_{\cX,\bfr;t}$ isomorphic to ei
   with cluster charts glued by the mutations as above.
 \end{definition}
 \begin{remark}
-  When $r_k=1$ for all $k$, the construction above gives rise to the ordinary cluster varieties \cite{FZ01,FG09a}.
+  When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties \cite{FZ01,FG09a}.
 \end{remark}
 
 \begin{theorem}
@@ -689,7 +693,7 @@ The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures
 
 As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce the symplectic groupoids 
 \[\cG_{\cX,\bfr}=\cG_\cX\times T^*L_\bfr,\qquad\cD_{\cX,\bfr}=\cD_\cX\times T^*L_\bfr,\qquad\cG_{\cA,\bfr}=\cG_\cA\times T^*L_\bfr,\qquad\cD_{\cA,\bfr}=\cD_\cA\times T^*L_\bfr,\]
-where each cotangent bundle is equipped with its standard symplectic structure.
+where each cotangent bundle is equipped with its standard symplectic structure and we write $b_{\ell,i}$ for the cotangent coordinate associated to the coordinate $a_{\ell,i}$ of $L_\bfr$.
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
 %Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
@@ -734,7 +738,7 @@ As the first step, we explicitly compute the Poisson structures on the symplecti
     \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij} x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
     &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij} p_i x_j \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij} p_i p_j \frac{\partial}{\partial p_j},
   \end{align*}
-  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formG_A}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
+  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formGA}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
   \begin{align*}
     \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij} p_i x_j dp_j + \sum_{j} \Omega_{ij} p_i p_j dx_j, \\
     &~ \frac{\partial}{\partial p_i} \mapsto -dx_i + \sum_{j} \Omega_{ij} x_i p_j dx_j + \sum_{j} \Omega_{ij} x_i x_j dp_j.
@@ -745,7 +749,7 @@ As the first step, we explicitly compute the Poisson structures on the symplecti
     \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto -x_i s_i \frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
     &~ ds_i \mapsto s_i x_i \frac{\partial}{\partial x_i},
   \end{align*}
-  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formG_X}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
+  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formGX}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
   \begin{align*}
     \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto \frac{1}{x_i s_i} ds_i, \\
     &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
@@ -757,21 +761,25 @@ As the first step, we explicitly compute the Poisson structures on the symplecti
 Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. 
 Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
 Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
-More explicitly, these Hamiltonian functions are given by
-\begin{align*}
-  \tilde H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon e^{\varepsilon\sum_{\ell=1}^n d_\ell B_{\ell k}q_\ell y_\ell}\right);\\
-  \bar H_\cX^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-y_k^\varepsilon\prod_{\ell=1}^n t_\ell^{\varepsilon d_\ell B_{\ell k}}\right);\\
-  \tilde H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right);\\
-  \bar H_\cA^{k,\varepsilon}&=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)-\frac{\varepsilon}{d_k}\Li_2\left(-\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right).
-\end{align*}
+More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
+\begin{align}
+  \label{eq:GX hamiltonian}
+  \tilde H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{y_k^\varepsilon e^{\varepsilon\sum_{\ell=1}^n d_\ell B_{\ell k}q_\ell y_\ell}} \frac{\log\big(F_k(u)\big)}{u}du;\\
+  \label{eq:DX hamiltonian}
+  \bar H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{y_k^\varepsilon \prod_{\ell=1}^n t_\ell^{\varepsilon d_\ell B_{\ell k}}} \frac{\log\big(F_k(u)\big)}{u}du;\\
+  \label{eq:GA hamiltonian}
+  \tilde H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}} \frac{\log\big(F_k(u)\big)}{u}du;\\
+  \label{eq:DA hamiltonian}
+  \bar H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\hat y_k^\varepsilon s_k^{-\varepsilon d_k}} \frac{\log\big(F_k(u)\big)}{u}du.
+\end{align}
 Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
   \begin{align}
-    \dot q_\ell&=\{\tilde H_\cX^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right)+B_{k\ell}\log(1+y_k^\varepsilon)q_\ell;\\
-    \dot t_\ell&=\{\bar H_\cX^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)t_k;\\
-    \label{eq:p dot}\dot p_j&=\{\tilde H_\cA^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right)+\delta_{jk}\log(1+\hat y_k^\varepsilon)p_k;\\
-    \label{eq:s dot}\dot s_j&=\{\bar H_\cA^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)s_j.
+    \dot q_\ell&=\{\tilde H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)q_\ell;\\
+    \dot t_\ell&=\{\bar H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;\\
+    \label{eq:p dot}\dot p_j&=\{\tilde H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)p_k;\\
+    \label{eq:s dot}\dot s_j&=\{\bar H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
 \end{lemma}
 \begin{proof}
@@ -793,13 +801,13 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 \begin{corollary}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
   \begin{align*}
-    (\tilde\varphi_\cX^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right),\\
-    (\bar\varphi_\cX^t)^*(t_\ell)&=\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
+    (\tilde\varphi_\cX^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
+    (\bar\varphi_\cX^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
   and the Hamiltonian flow $\varphi_\cA^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted  to the multiplicative Hamiltonian flows $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
   \begin{align*}
-    (\tilde\varphi_\cA^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right), \\
-    (\bar\varphi_\cA^t)^*(s_j)&=\left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-tB_{jk}/d_k}s_j.
+    (\tilde\varphi_\cA^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
+    (\bar\varphi_\cA^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
 \end{corollary}
 \begin{proof}
@@ -869,26 +877,26 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
     \label{eq:GX mutation}
     (\tilde\mu_\cX^{k,\varepsilon})^*(q'_\ell y'_\ell)
     &=\begin{cases} 
-      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{1+y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}}{1+y_k^\varepsilon}\right) & \text{if $\ell=k$;}\\ 
+      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
       q_\ell y_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:GA mutation}
     (\tilde\mu_\cA^{k,\varepsilon})^*(p'_j x'_j)&=
     \begin{cases} 
       -p_k x_k & \text{if $j=k$;}\\ 
-      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{1+\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}}{1+\hat y_k^\varepsilon}\right) & \text{if $j\ne k$;}
+      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DX mutation}
     (\bar\mu_\cX^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
-      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{1+y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}}{1+y_k^\varepsilon}\right)^{1/d_k} & \text{if $\ell=k$;}\\
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
     (\bar\mu_\cA^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
-      s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{1+\hat y_k^\varepsilon s_k^{-\varepsilon d_k}}{1+\hat y_k^\varepsilon}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
+      s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
     \end{cases}
   \end{align}
 \end{proposition}
