@@ -475,12 +475,12 @@ The \emph{Euler dilogarithm} is the function of a single real variable defined b
 It will become apparent from the results below that, from the Poisson perspective, the Euler dilogarithm lies at the heart of cluster algebra theory.
 However, we will work in a slightly more general setting.
 
-Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{\ell=1}^n \RR_+^{r_\ell-1}$ with coordinates $a_{\ell,i}$ for $1\le\ell\le n$, $1\le i\le r_\ell-1$.
+Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{\ell=1}^n \RR_+^{r_\ell-1}$ with coordinates $a_{\ell,j}$ for $1\le\ell\le n$, $1\le j\le r_\ell-1$.
 We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $F_\ell(z)\in\RR_+[z]$ with $F_\ell(0)=1$ given by
 \[F_\ell(z)=1+a_{\ell,1}z+\cdots+a_{\ell,r_\ell-1}z^{r_\ell-1}+z^{r_\ell}.\]
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr.\]
-Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the functions $a_{\ell,i}$ on $L_\bfr$ are Casimirs. 
+Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the functions $a_{\ell,j}$ on $L_\bfr$ are Casimirs. 
 Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{\cX,\bfr}$ which we still denote by $\rho$.
 
 Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L_{\cX,\bfr}}$ and $H^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
@@ -524,7 +524,7 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
   That these vector fields preserve the Poisson structures follows from their Hamiltonian definition.
 \end{proof}
 
-In what follows we use the notation $[a]_+=\max\{a,0\}$.
+In what follows we use the notation $[b]_+:=\max\{b,0\}$.
 For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{\bfr,k,\varepsilon}(\tilde B,\Omega)=\big(\mu_{\bfr,k,\varepsilon}\tilde B,\Omega'\big)$, where
 \begin{itemize}
   \item $\mu_{\bfr,k,\varepsilon}\tilde B=(B'_{ij})$ is given by
@@ -677,6 +677,8 @@ The following result is the famous Laurent phenomenon for (generalized) cluster 
 
 
 \subsection{Mutation of Groupoid Charts}
+\label{sec:groupoid mutations}
+
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
 Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec: local}.
 That is, we begin working in the setting 
@@ -693,7 +695,7 @@ The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures
 
 As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce the symplectic groupoids 
 \[\cG_{\cX,\bfr}=\cG_\cX\times T^*L_\bfr,\qquad\cD_{\cX,\bfr}=\cD_\cX\times T^*L_\bfr,\qquad\cG_{\cA,\bfr}=\cG_\cA\times T^*L_\bfr,\qquad\cD_{\cA,\bfr}=\cD_\cA\times T^*L_\bfr,\]
-where each cotangent bundle is equipped with its standard symplectic structure and we write $b_{\ell,i}$ for the cotangent coordinate associated to the coordinate $a_{\ell,i}$ of $L_\bfr$.
+where each cotangent bundle $T^*L_\bfr$ is equipped with its canonical symplectic structure and we write $b_{\ell,j}$ for the cotangent coordinate associated to the coordinate $a_{\ell,j}$ of $L_\bfr$.
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
 %Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
@@ -704,10 +706,13 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
   \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{j\ell}x_jp_j.\]
 \end{lemma}
 \begin{remark}
+  \label{rmk:source-connected lift}
   When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
   \footnote{This might actually require $m=n$.}
   \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
-Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$. This is remedied in \cite{FG09c} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
+  Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$.
+  This is remedied in \cite{FG09c} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
+  \footnote{This makes it sound like Fock and Goncharov also considered the source-connected groupoid for the $\cA$-variety.}
 \end{remark}
 
 To lift the Poisson maps $\mu_\cX^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_\cA^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
@@ -717,6 +722,11 @@ Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f -
 Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
 
 As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
+Note that on $T^*L_\bfr$ we have the canonical Poisson structure 
+\begin{equation}
+  \label{eq:canonical brackets}
+  \{a_{k,i},a_{\ell,j}\}_\bfr=0,\qquad\{a_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
+\end{equation}
 \begin{lemma}
   \label{le:groupoid Poisson structures}
   \begin{align}
@@ -758,9 +768,10 @@ As the first step, we explicitly compute the Poisson structures on the symplecti
   We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 \end{proof}
 
-Define functions $\tilde H_\cX^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_\cX^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_\cX^{k,\varepsilon}-\beta^* H_\cX^{k,\varepsilon}$ for appropriate source and target maps. 
-Define functions $\tilde H_\cA^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_\cA^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
-Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_\cX^{k,\varepsilon})=\tilde H_\cX^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_\cA^{k,\varepsilon})=\tilde H_\cA^{k,\varepsilon}$.
+Define functions $\tilde H_{\cX,\bfr}^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_{\cX,\bfr}^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_{\cX,\bfr}^{k,\varepsilon}-\beta^* H_{\cX,\bfr}^{k,\varepsilon}$ for appropriate source and target maps. 
+Define functions $\tilde H_{\cA,\bfr}^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_{\cA,\bfr}^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
+Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_{\cX,\bfr}^{k,\varepsilon})=\tilde H_{\cX,\bfr}^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_{\cA,\bfr}^{k,\varepsilon})=\tilde H_{\cA,\bfr}^{k,\varepsilon}$.
+Similarly, we have $\tilde\rho^*(\tilde H_{\cX,\bfr}^{k,\varepsilon})=\tilde H_{\cA,\bfr}^{k,\varepsilon}$ and, when Remark~\ref{rmk:source-connected lift} applies, we have $\bar\rho^*(\bar H_{\cX,\bfr}^{k,\varepsilon})=\bar H_{\cA,\bfr}^{k,\varepsilon}$
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
 \begin{align}
   \label{eq:GX hamiltonian}
@@ -772,15 +783,27 @@ More explicitly, these Hamiltonian functions are given by the following analogue
   \label{eq:DA hamiltonian}
   \bar H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\hat y_k^\varepsilon s_k^{-\varepsilon d_k}} \frac{\log\big(F_k(u)\big)}{u}du.
 \end{align}
-Write $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ for the Hamiltonian vector fields associated to the functions $\tilde H_\cX^{k,\varepsilon}$, $\bar H_\cX^{k,\varepsilon}$, $\tilde H_\cA^{k,\varepsilon}$, and $\bar H_\cA^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{\tilde H_\cX^{k,\varepsilon},\cdot\}_{\cG_\cX}$, $\{\bar H_\cX^{k,\varepsilon},\cdot\}_{\cD_\cX}$, $\{\tilde H_\cA^{k,\varepsilon},\cdot\}_{\cG_\cA}$, and $\{\bar H_\cA^{k,\varepsilon},\cdot\}_{\cD_\cA}$.
+Write
+\begin{equation}
+  \label{eq:groupoid vector fields}
+  \tilde X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cG_\cX},\qquad \bar X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cD_\cX},\qquad \tilde X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_\cA},\qquad \bar X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cD_\cA}
+\end{equation}
+for the Hamiltonian vector fields associated to the functions $\tilde H_{\cX,\bfr}^{k,\varepsilon}$, $\bar H_{\cX,\bfr}^{k,\varepsilon}$, $\tilde H_{\cA,\bfr}^{k,\varepsilon}$, and $\bar H_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations 
+\[\{\tilde H_{\cX,\bfr}^{k,\varepsilon},\cdot\}_{\cG_\cX},\qquad \{\bar H_{\cX,\bfr}^{k,\varepsilon},\cdot\}_{\cD_\cX},\qquad \{\tilde H_{\cA,bfr}^{k,\varepsilon},\cdot\}_{\cG_\cA},\qquad \{\bar H_{\cA,\bfr}^{k,\varepsilon},\cdot\}_{\cD_\cA}.\]
 \begin{lemma}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ determine the following dynamics on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields \eqref{eq:groupoid vector fields} determine the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cD_{\cX,\bfr}$, $\cG_{\cA,\bfr}$, and $\cD_{\cA,\bfr}$:
   \begin{align}
     \dot q_\ell&=\{\tilde H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)q_\ell;\\
     \dot t_\ell&=\{\bar H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;\\
     \label{eq:p dot}\dot p_j&=\{\tilde H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)p_k;\\
     \label{eq:s dot}\dot s_j&=\{\bar H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
+  The coordinates $b_{\ell,j}$ on $T^*L_\bfr$ evolve according to
+  \begin{equation}
+    \label{eq:b dot}
+    \dot b_{\ell,j}=\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
+  \end{equation}
+  where the bounds of integration are respectively those from equations \eqref{eq:GX hamiltonian}, \eqref{eq:DX hamiltonian}, \eqref{eq:GA hamiltonian}, or \eqref{eq:DA hamiltonian}.
 \end{lemma}
 \begin{proof}
   We prove equation \eqref{eq:p dot}, leaving the others as an exercise for the reader.
