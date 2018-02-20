@@ -814,32 +814,37 @@ for the Hamiltonian vector fields associated to the functions $\tilde H_{\cX,\bf
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
 \end{proof}
 
-Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$, $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$, $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$, and $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$:
+Consider the time-$t$ flows of the vector fields from \eqref{eq:groupoid vector fields}:
 \[
-  \tilde\varphi_\cX^t:\cG_\cX\to\cG_\cX;\qquad
-  \bar\varphi_\cX^t:\cD_\cX\to\cD_\cX;\qquad
-  \tilde\varphi_\cA^t:\cG_\cA\to\cG_\cA;\qquad
-  \bar\varphi_\cA^t:\cD_\cA\to\cD_\cA.
+  \tilde\varphi_{\cX,\bfr}^t:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr};\qquad
+  \bar\varphi_{\cX,\bfr}^t:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr};\qquad
+  \tilde\varphi_{\cA,\bfr}^t:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr};\qquad
+  \bar\varphi_{\cA,\bfr}^t:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}.
 \]
 \begin{corollary}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_\cX^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_\cX^t: \cG_\cX \to \cG_\cX$ and $\bar\varphi_\cX^t: \cD_\cX \to \cD_\cX$, which on coordinates are given by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L_{\cX,\bfr} \to L_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$ and $\bar\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, which on coordinates are given by
   \begin{align*}
-    (\tilde\varphi_\cX^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
-    (\bar\varphi_\cX^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
+    (\tilde\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
+    (\bar\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
-  and the Hamiltonian flow $\varphi_\cA^t: L_\cX \to L_\cX$ in Corollary~\ref{cor:time-one flows} is lifted  to the multiplicative Hamiltonian flows $\tilde\varphi_\cA^t: \cG_\cA \to \cG_\cA$ and $\bar\varphi_\cA^t: \cD_\cA \to \cD_\cA$, which on coordinates are given by
+  and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L_{\cA,\bfr} \to L_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$ and $\bar\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, which on coordinates are given by
   \begin{align*}
-    (\tilde\varphi_\cA^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
-    (\bar\varphi_\cA^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
+    (\tilde\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
+    (\bar\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
+  Each of the Hamiltonian flows above transform the coordinates $b_{\ell,j}$ on $T^*L_\bfr$ according to
+  \begin{equation*}
+    (\varphi_{-,\bfr}^t)^*(b_{\ell,j})=b_{\ell,j}+\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
+  \end{equation*}
+  where the bounds of integration are respectively those from equations \eqref{eq:GX hamiltonian}, \eqref{eq:DX hamiltonian}, \eqref{eq:GA hamiltonian}, or \eqref{eq:DA hamiltonian}.
 \end{corollary}
 \begin{proof}
   To see this, it suffices to make the following observations:
   \begin{itemize}
-    \item the quantities $y_k$ and $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$ are conserved under the flow of the vector field $\tilde X_\cX^{k,\varepsilon}\in\cT_{\cG_\cX}$ and so $\frac{d}{dt}(q_\ell y_\ell)$ is a constant;
-    \item the quantities $y_k$ and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector field $\bar X_\cX^{k,\varepsilon}\in\cT_{\cD_\cX}$ and so $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$;
-    \item the quantities $\hat y_k$ and $e^{-\varepsilon d_kp_kx_k}$ are conserved under the flow of the vector field $\tilde X_\cA^{k,\varepsilon}\in\cT_{\cG_\cA}$ and so $\frac{d}{dt}(p_jx_j)$ is a constant;
-    \item the quantities $\hat y_k$ and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector field $\bar X_\cA^{k,\varepsilon}\in\cT_{\cD_\cA}$ and so $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
+    \item the quantities $y_k$ and $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$ are conserved under the flow of the vector field $\tilde X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cX,\bfr}}$ and so $\frac{d}{dt}(q_\ell y_\ell)$ is a constant;
+    \item the quantities $y_k$ and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector field $\bar X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cD_{\cX,\bfr}}$ and so $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$;
+    \item the quantities $\hat y_k$ and $e^{-\varepsilon d_kp_kx_k}$ are conserved under the flow of the vector field $\tilde X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$ and so $\frac{d}{dt}(p_jx_j)$ is a constant;
+    \item the quantities $\hat y_k$ and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector field $\bar X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cD_{\cA,\bfr}}$ and so $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
   \end{itemize}
 \end{proof}
 \begin{remark}
@@ -892,31 +897,31 @@ Consider the time-$t$ flows of the vector fields $\tilde X_\cX^{k,\varepsilon}\i
 
 \begin{proposition}
   \label{prop:groupoid mutation}
-  \[\tilde\mu_{\cX}^{k,\varepsilon}=\tilde\tau_{\cX}^{k,\varepsilon}\circ\tilde\varphi_{\cX}^1:\cG_\cX\to\cG_\cX\]
-  \[\tilde\mu_{\cA}^{k,\varepsilon}=\tilde\tau_{\cA}^{k,\varepsilon}\circ\tilde\varphi_{\cA}^1:\cG_\cA\to\cG_\cA\]
-  \[\bar\mu_{\cX}^{k,\varepsilon}=\bar\tau_{\cX}^{k,\varepsilon}\circ\bar\varphi_{\cX}^1:\cD_\cX\to\cD_\cX\]
-  \[\bar\mu_{\cA}^{k,\varepsilon}=\bar\tau_{\cA}^{k,\varepsilon}\circ\bar\varphi_{\cA}^1:\cD_\cA\to\cD_\cA\]
+  \[\tilde\mu_{\cX,\bfr}^{k,\varepsilon}=\tilde\tau_{\cX,\bfr}^{k,\varepsilon}\circ\tilde\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr}\]
+  \[\tilde\mu_{\cA,\bfr}^{k,\varepsilon}=\tilde\tau_{\cA,\bfr}^{k,\varepsilon}\circ\tilde\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr}\]
+  \[\bar\mu_{\cX,\bfr}^{k,\varepsilon}=\bar\tau_{\cX,\bfr}^{k,\varepsilon}\circ\bar\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr}\]
+  \[\bar\mu_{\cA,\bfr}^{k,\varepsilon}=\bar\tau_{\cA,\bfr}^{k,\varepsilon}\circ\bar\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}\]
   \begin{align}
     \label{eq:GX mutation}
-    (\tilde\mu_\cX^{k,\varepsilon})^*(q'_\ell y'_\ell)
+    (\tilde\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell y'_\ell)
     &=\begin{cases} 
       -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
       q_\ell y_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:GA mutation}
-    (\tilde\mu_\cA^{k,\varepsilon})^*(p'_j x'_j)&=
+    (\tilde\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j x'_j)&=
     \begin{cases} 
       -p_k x_k & \text{if $j=k$;}\\ 
       p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DX mutation}
-    (\bar\mu_\cX^{k,\varepsilon})^*(t'_\ell)
+    (\bar\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
-    (\bar\mu_\cA^{k,\varepsilon})^*(s'_j)
+    (\bar\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
       s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
