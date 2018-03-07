@@ -34,6 +34,7 @@
 \newcommand{\bfy}{\mathbf{y}}
 
 \newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
 \newcommand{\cF}{\mathcal{F}}
 \newcommand{\cG}{\mathcal{G}}
 %\newcommand{\cH}{\mathcal{H}}
@@ -107,16 +108,16 @@ The concrete nature of cluster coordinates makes that setting an ideal testing g
 Indeed, a modified version was implicitly implemented by Fock and Goncharov \cite{FG09c} in the case of $\cX$-varieties.
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
-\begin{itemize}
-  \item In Section~\ref{sec: local}, we build the symplectic groupoid in each local chart of a cluster variety.
-    This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}, but for a log-canonical Poisson structure, there is a clever choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$.
-    We also recall the symplectic double $\cD$ as in \cite{FG09c}, albeit with slightly different notations to accommodate the case of the non-square exchange matrices.
-    The symplectic double is a source-connected symplectic groupoid of the log-canonical Poisson structure and admits a groupoid covering $\kappa: \cG \to \cD$.
-  \item In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\tilde{\mu}: \cG \to \cG'$.
-    The first step is to decompose a generalized cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$. The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a natural transformation of log-canonical coordinates.
-    See \cite{FG09a, MR3691969}.
-    We then lift $\varphi^1$ and $\tau$ to groupoid maps $\tilde{\varphi}^1$ and $\tilde{\tau}$, and the composition $\tilde{\mu} = \tilde{\tau} \circ \tilde{\varphi}^1$ is the cluster groupoid mutation.
-\end{itemize}
+
+In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log canonical Poisson $\pi$ on a vector space $L$. The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid. This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}. For a log-canonical Poisson structure, there is a nice choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$. Being the source-simply-connected symplectic groupoid, the source and the target maps of $\cG \rra L$ are transcendental.
+
+The groupoid $\cB \rra L$ is a source-connected symplectic groupoid. The advantage of $\cB \rra L$ is that the source and the target maps of $\cG \rra L$ are rational. The tradeoff is the expression symplectic form is more complicated.
+
+The groupoid $\cD \rra L$ is a source-connected Poisson groupoid. The restriction of $\cD \rra L$ over an octant $L_+$ of $L$, which we denote by $\cD_+ \rra L_+$ is symplectic, is called the symplectic double in \cite{FG09c}, albeit with slightly different notations to accommodate the case of the non-square exchange matrices.
+
+The symplectic groupoid $\cB \rra L$ can be realized as the blowup of $\cD \rra L$ in the sense of \cite{MR3214314}, whereas both $\cB \rra L$ and $\cD \rra L$ receives maps from the source-simply-connected symplectic groupoid $\cG$.
+
+In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$. The first step is to decompose a generalized cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$. The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a natural transformation of log-canonical coordinates \cite{FG09a, MR3691969}. We then lift $\varphi^1$ and $\tau$ to groupoid maps, and the composition the lifted groupoid maps is the cluster groupoid mutation.
 
 \bigskip
 
