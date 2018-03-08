@@ -126,7 +126,12 @@ In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster grou
 
 We use the following notations.
 \begin{itemize}
-	\item Boldface letters denote vectors, e.g. $\bfx = (x_1, \ldots, x_m)$.
+	\item We write $\RR_+ = (0, \infty)$, $\bar\RR_+ = [0, \infty)$ and $\CC_\times = \CC \setminus \{0\}$.
+	\item For the cluster charts, we use the following notations:
+	$$
+		L = \RR^m \text{ or } \CC^m, \quad L^+ = \RR_+^m \text{ or } \CC_\times^m, \quad \bar L_+ = \bar\RR_+^m.
+	$$
+	\item We denote vectors by boldface, e.g. $\bfx = (x_1, \ldots, x_m)$.
 	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
 	\item For a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, \ldots, x_m^t)$.
 	\item For a vector bundle $A$ over $M$, we denote the space of sections by $\cA = \Gamma(M, A)$. In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$, but to follow the conventional notation, we denote the space of differential $1$-forms by $\Omega^1(M) = \Gamma(M, T^*M)$.
@@ -355,11 +360,14 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item the identity map $\mathtt{1}: L \to T^*L, \quad \bfx \mapsto (0, \bfx)$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
     \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
-    \item the symplectic form $\omega$ is
+    \item the multiplicative symplectic form $\omega$ is
       \begin{equation}
-        \label{eq:2-formGA}
-	\omega_\cG = \sum_{i} dx_i \wedge dp_i + \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
-	 .
+	\omega_\cG = \sum_{i} dx_i \wedge dp_i + \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j, 
+      \end{equation}
+      or equivalently
+      \begin{equation}
+      \label{eq:2-formGA}
+      	\pi_\cG = \omega_\cG^{-1} = \sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j} +\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j} +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
       \end{equation}
   \end{enumerate}
 \end{theorem}
@@ -387,29 +395,32 @@ Note that $\omega_\cG$ is non-degenerate since
   In the case when the underlying field is $\CC$, the symplectic groupoid structures can be verified directly.
 \end{proof}
 
-For the next construction we restrict $L$ to be either $\RR_+^m$ or $(\CC^\times)^m$, where $\RR_+ = (0, \infty)$ and $\CC^\times = \CC \setminus \{0\}$.
-Motiviated by \cite{FG09c}, we make the following definition of the symplectic double, which is a source-connected symplectic groupoid of the log-canonical Poisson structure on $L$.
+Motiviated by \cite{FG09c}, we make the following definition of the symplectic double, which is a source-connected Poisson groupoid of the log-canonical Poisson structure on $L$.
 \begin{theorem} \label{thm:SymDBLoc}
   \cite{FG09c}
-  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR_+^m$ or $(\CC^\times)^m$), the \emph{symplectic double} $(\cD, \omega_\cD) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
+  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), the \emph{symplectic double} $(\cD, \omega_\cD) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
   \begin{enumerate}
-    \item $\cD \cong L \times L$ has the coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
+    \item $\cD \cong L_+ \times L$ (where $L_+$ is either $\RR_+^m$ or $\CC_\times^m$) has the coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
     \item the source map is
-      \[\alpha: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;\]
+      \[\alpha: L_+ \times L \to L, \qquad (\bfs, \bfx) \mapsto \bfx;\]
     \item the target map is
-      \[\beta: L \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
-	\item the identity map $\mathtt{1}: L \to L \times L, \quad \bfx \mapsto (1, \ldots, 1, \bfx)$;
+      \[\beta: L_+ \times L \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
+	\item the identity map $\mathtt{1}: L \to L_+ \times L, \quad \bfx \mapsto (1, \ldots, 1, \bfx)$;
     \item the inverse map is
-      \[\iota: L \times L \to L \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
+      \[\iota: L_+ \times L \to L_+ \times L, \qquad (\bfs, \bfx) \mapsto \left(\frac{1}{s_1}, \ldots, \frac{1}{s_m}, x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right);\]
     \item the multiplication map is
       \[\begin{aligned}
-	  m: & \left(L \times L\right) {_\beta \times_\alpha} \left(L \times L\right) \to L \times L, \\
+	  m: & \left(L_+ \times L\right) {_\beta \times_\alpha} \left(L_+ \times L\right) \to L_+ \times L, \\
 	     & \left((\bfs, \bfx), \left(\bfs', x_1 \prod_{i=1}^m s_i^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m s_i^{\Omega_{im}}\right)\right) \mapsto (\bfs' \circ \bfs, \bfx );
         \end{aligned}\]
-    \item the symplectic form $\omega_\cD$ is
+    \item the multiplicative Poisson structure is
+    \begin{equation}
+    \label{eq:2-formGX}
+		\pi_\cD =\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
+    \end{equation}
+    or equivalently the singular multiplicative 2-form $\omega_\cD$ is
       \begin{equation} 
-        \label{eq:2-formGX}
-	\omega = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
+	\omega_\cD = \pi_\cD^{-1} = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
       \end{equation}
   \end{enumerate}
 \end{theorem}
@@ -433,8 +444,13 @@ For the standard symplectic structure $\omega_0 = \sum_{i} d\chi_i \wedge d\xi_i
 		\omega - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j
 	\]
 is supported on the $\alpha$-fiber, it follows that $\beta_*(-\omega_0^{-1}) = \beta_*(-\omega_\cU^{-1}) = \pi$. The symplectic realization $\beta: (\cU, -\omega_0) \to (L, \pi)$ plays an important role in \cite{MR3691969}.
-	
 \end{remark}
+
+We describe the Lie algebroid of $\cD \rra L$. 
+
+To do list...
+
+We take a degression... elementary modification... blowup...
 
 For an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
 With our chosen conventions, we have a simple expression for the groupoid map $\cG \to \cD$.
