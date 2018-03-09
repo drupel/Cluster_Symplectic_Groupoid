@@ -32,8 +32,8 @@
 \newcommand{\bft}{\mathbf{t}}
 \newcommand{\bfu}{\mathbf{u}}
 \newcommand{\bfv}{\mathbf{v}}
-\newcommand{\bfx}{\mathbf{x}}
-\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfx}{{\boldsymbol{x}}}
+\newcommand{\bfy}{{\boldsymbol{y}}}
 
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cB}{\mathcal{B}}
@@ -500,30 +500,30 @@ Set
 Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the functions $a_{\ell,j}$ on $L_\bfr$ are Casimirs. 
 Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{\cX,\bfr}$ which we still denote by $\rho$.
 
-Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $H^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L_{\cX,\bfr}}$ and $H^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
+Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $h^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L_{\cX,\bfr}}$ and $h^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
-  H_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du\qquad\text{and}\qquad H_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du.
+  h_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du\qquad\text{and}\qquad h_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du.
 \end{equation}
-Observe that when $r_k=1$, i.e.\ $F_k(z)=1+z$, we have $H_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $H_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
+Observe that when $r_k=1$, i.e.\ $F_k(z)=1+z$, we have $h_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $h_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
 
-Clearly, there is an equality $\rho^*(H_{\cX,\bfr}^{k,\varepsilon})=H_{\cA,\bfr}^{k,\varepsilon}$.
-Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{L_{\cA,\bfr}}$ for the Hamiltonian vector fields associated to $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}_\cX$ and $\{H_{\cA,\bfr}^{k,\varepsilon},\cdot\}_\cA$.
+Clearly, there is an equality $\rho^*(h_{\cX,\bfr}^{k,\varepsilon})=h_{\cA,\bfr}^{k,\varepsilon}$.
+Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{L_{\cA,\bfr}}$ for the Hamiltonian vector fields associated to $h_{\cX,\bfr}^{k,\varepsilon}$ and $h_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{h_{\cX,\bfr}^{k,\varepsilon},\cdot\}_\cX$ and $\{h_{\cA,\bfr}^{k,\varepsilon},\cdot\}_\cA$.
 \begin{lemma}
   \label{le:hamiltonian dynamics}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ determine the following dynamics on $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$:
   \begin{align}
     \label{eq:X dynamics}
-    \dot y_\ell&:=\{H_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
+    \dot y_\ell&:=\{h_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
-    \dot x_j&:=\{H_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
+    \dot x_j&:=\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
   \end{align}
   Moreover, the points of $L_\bfr$ are fixed by the Hamiltonian flows.
 \end{lemma}
 \begin{proof}
   Equation~\eqref{eq:X dynamics} was essentially proven in \cite{MR3691969}.
   Since equation~\eqref{eq:A dynamics} seems to technically be new, we will indicate the key steps in the computation here:
-  \[\{H_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(F_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_j.\]
+  \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(F_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_j.\]
 \end{proof}
 
 It immediately follows that $y_k$ is a conserved quantity under the flow of $L_{\cX,\bfr}$ by the vector field $X_{\cX,\bfr}^{k,\varepsilon}$.
@@ -697,23 +697,29 @@ The following result is the famous Laurent phenomenon for (generalized) cluster 
 \label{sec:groupoid mutations}
 
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts.
-Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec: local}.
+Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec: local}.
 That is, we begin working in the setting 
-\[\cG_\cX\cong\RR^n\times L_\cX,\qquad\cD_\cX\cong\RR_+^n\times L_\cX,\qquad\cG_\cA\cong\RR^m\times L_\cA,\qquad\cD_\cA\cong\RR_+^m\times L_\cA.\]
+\begin{align*}
+  \cG_\cX&\cong\RR^n\times L_\cX,& \cB_\cX&\cong\RR^n\times L_\cX,& \cD_\cX&\cong\RR_+^n\times L_\cX,\\
+  \cG_\cA&\cong\RR^m\times L_\cA,& \cB_\cA&\cong\RR^m\times L_\cA,& \cD_\cA&\cong\RR_+^m\times L_\cA.
+\end{align*}
 We introduce coordinates on these groupoids given as follows:
 \begin{itemize}
   \item $\cG_\cX$ has coordinates $(\bfq,\bfy)=(q_1,\ldots,q_n,y_1,\ldots,y_n)$; 
   \item $\cB_\cX$ has coordinates $(\bfv,\bfy)=(v_1,\ldots,v_n,y_1,\ldots,y_n)$; 
   \item $\cD_\cX$ has coordinates $(\bft,\bfy)=(t_1,\ldots,t_n,y_1,\ldots,y_n)$; 
   \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
-  \item $\cB_\cA$ has coordinates $(\bfu,\bfx)=(u_1,\ldots,u_m,x_1,\ldots,x_m)$.
+  \item $\cB_\cA$ has coordinates $(\bfu,\bfx)=(u_1,\ldots,u_m,x_1,\ldots,x_m)$;
   \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
 \end{itemize}
 The symplectic groupoid structures on $\cG_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, while the symplectic groupoid structures on $\cD_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}.
 The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:PoiSpLogC} by replacing $x_i$ with $y_k$, $p_j$ with $q_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$, and the symplectic groupoid structures on $\cD_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:SymDBLoc} by replacing $x_i$ with $y_k$, $s_j$ with $t_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$.
 
 As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce the symplectic groupoids 
-\[\cG_{\cX,\bfr}=\cG_\cX\times T^*L_\bfr,\qquad\cD_{\cX,\bfr}=\cD_\cX\times T^*L_\bfr,\qquad\cG_{\cA,\bfr}=\cG_\cA\times T^*L_\bfr,\qquad\cD_{\cA,\bfr}=\cD_\cA\times T^*L_\bfr,\]
+\begin{align*}
+  \cG_{\cX,\bfr}&=\cG_\cX\times T^*L_\bfr,& \cB_{\cX,\bfr}&=\cB_\cX\times T^*L_\bfr,& \cD_{\cX,\bfr}&=\cD_\cX\times T^*L_\bfr,\\
+  \cG_{\cA,\bfr}&=\cG_\cA\times T^*L_\bfr,& \cB_{\cA,\bfr}&=\cB_\cA\times T^*L_\bfr,& \cD_{\cA,\bfr}&=\cD_\cA\times T^*L_\bfr,
+\end{align*}
 where each cotangent bundle $T^*L_\bfr$ is equipped with its canonical symplectic structure and we write $b_{\ell,j}$ for the cotangent coordinate associated to the coordinate $a_{\ell,j}$ of $L_\bfr$.
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
@@ -787,42 +793,39 @@ Note that on $T^*L_\bfr$ we have the canonical Poisson structure
   We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 \end{proof}
 
-Define functions $\tilde H_{\cX,\bfr}^{k,\varepsilon}\in\cO_{\cG_\cX}$ and $\bar H_{\cX,\bfr}^{k,\varepsilon}\in\cO_{\cD_\cX}$ by the formulas $\alpha^* H_{\cX,\bfr}^{k,\varepsilon}-\beta^* H_{\cX,\bfr}^{k,\varepsilon}$ for appropriate source and target maps. 
-Define functions $\tilde H_{\cA,\bfr}^{k,\varepsilon}\in\cO_{\cG_\cA}$ and $\bar H_{\cA,\bfr}^{k,\varepsilon}\in\cO_{\cD_\cA}$ similarly.
-Since $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ are groupoid morphisms, we clearly have $\kappa_\cX^*(\bar H_{\cX,\bfr}^{k,\varepsilon})=\tilde H_{\cX,\bfr}^{k,\varepsilon}$ and $\kappa_\cA^*(\bar H_{\cA,\bfr}^{k,\varepsilon})=\tilde H_{\cA,\bfr}^{k,\varepsilon}$.
-Similarly, we have $\tilde\rho^*(\tilde H_{\cX,\bfr}^{k,\varepsilon})=\tilde H_{\cA,\bfr}^{k,\varepsilon}$ and, when Remark~\ref{rmk:source-connected lift} applies, we have $\bar\rho^*(\bar H_{\cX,\bfr}^{k,\varepsilon})=\bar H_{\cA,\bfr}^{k,\varepsilon}$
+Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cA$, $\cB_\cA$, $\cD_\cA$.
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
 \begin{align}
-  \label{eq:GX hamiltonian}
-  \tilde H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{y_k^\varepsilon e^{\varepsilon\sum_{\ell=1}^n d_\ell B_{\ell k}q_\ell y_\ell}} \frac{\log\big(F_k(u)\big)}{u}du;\\
-  \label{eq:DX hamiltonian}
-  \bar H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{y_k^\varepsilon \prod_{\ell=1}^n t_\ell^{\varepsilon d_\ell B_{\ell k}}} \frac{\log\big(F_k(u)\big)}{u}du;\\
-  \label{eq:GA hamiltonian}
-  \tilde H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}} \frac{\log\big(F_k(u)\big)}{u}du;\\
-  \label{eq:DA hamiltonian}
-  \bar H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\hat y_k^\varepsilon s_k^{-\varepsilon d_k}} \frac{\log\big(F_k(u)\big)}{u}du.
+  \label{eq:X hamiltonian}
+  H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(F_k(u)\big)}{u}du;\\
+  \label{eq:A hamiltonian}
+  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(F_k(u)\big)}{u}du.
 \end{align}
-Write
-\begin{equation}
-  \label{eq:groupoid vector fields}
-  \tilde X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cG_\cX},\qquad \bar X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cD_\cX},\qquad \tilde X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_\cA},\qquad \bar X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cD_\cA}
-\end{equation}
-for the Hamiltonian vector fields associated to the functions $\tilde H_{\cX,\bfr}^{k,\varepsilon}$, $\bar H_{\cX,\bfr}^{k,\varepsilon}$, $\tilde H_{\cA,\bfr}^{k,\varepsilon}$, and $\bar H_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations 
-\[\{\tilde H_{\cX,\bfr}^{k,\varepsilon},\cdot\}_{\cG_\cX},\qquad \{\bar H_{\cX,\bfr}^{k,\varepsilon},\cdot\}_{\cD_\cX},\qquad \{\tilde H_{\cA,bfr}^{k,\varepsilon},\cdot\}_{\cG_\cA},\qquad \{\bar H_{\cA,\bfr}^{k,\varepsilon},\cdot\}_{\cD_\cA}.\]
+Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used.
+
+Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the Hamiltonian vector fields associated to the functions $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}$ and $\{H_{\cA,bfr}^{k,\varepsilon},\cdot\}$ on the appropriate groupoids.
 \begin{lemma}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields \eqref{eq:groupoid vector fields} determine the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cD_{\cX,\bfr}$, $\cG_{\cA,\bfr}$, and $\cD_{\cA,\bfr}$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$:
   \begin{align}
-    \dot q_\ell&=\{\tilde H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)q_\ell;\\
-    \dot t_\ell&=\{\bar H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;\\
-    \label{eq:p dot}\dot p_j&=\{\tilde H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)p_k;\\
-    \label{eq:s dot}\dot s_j&=\{\bar H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
+    \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)q_\ell;\\
+    \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;\\
+    \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;\\
+  \end{align}
+  and the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$:
+  \begin{align}
+    \label{eq:p dot}
+    \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)p_k;\\
+    \label{eq:u dot}
+    \dot u_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
+    \label{eq:s dot}
+    \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
   The coordinates $b_{\ell,j}$ on $T^*L_\bfr$ evolve according to
   \begin{equation}
     \label{eq:b dot}
     \dot b_{\ell,j}=\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
   \end{equation}
-  where the bounds of integration are respectively those from equations \eqref{eq:GX hamiltonian}, \eqref{eq:DX hamiltonian}, \eqref{eq:GA hamiltonian}, or \eqref{eq:DA hamiltonian}.
+  where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{lemma}
 \begin{proof}
   We prove equation \eqref{eq:p dot}, leaving the others as an exercise for the reader.
