@@ -35,6 +35,7 @@
 \newcommand{\bfx}{{\boldsymbol{x}}}
 \newcommand{\bfy}{{\boldsymbol{y}}}
 \newcommand{\bfxi}{\boldsymbol{\xi}}
+\newcommand{\bfzero}{\mathbf{0}}
 
 \newcommand{\cA}{\mathcal{A}}
 \newcommand{\cB}{\mathcal{B}}
@@ -246,10 +247,9 @@ We note that symplectic groupoids is a special case of Poisson groupoids.
   A \emph{Poisson groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative Poisson structure $\omega \in \cT^2_\cG$. That is, the graph of the multiplication map $\Gamma_m$ is coisotropic with repsect to the Poisson structure $\pi \oplus \pi \oplus -\pi$.
 \end{definition}
 
-A symplectic groupoid map from $(\cG_1, \omega_1) \rra M_1$ to $(\cG_2, \omega_2) \rra M_2$ is a Lie groupoid map $\varphi: \cG_1 \to \cG_2$ which is also a symplectomorphism. The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
+A Poisson groupoid map from $(\cG_1, \pi_1) \rra M_1$ to $(\cG_2, \pi_2) \rra M_2$ is a Lie groupoid map $\varphi: \cG_1 \to \cG_2$ which is Poisson. 
 
-For a symplectic groupoid $(\cG, \omega) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are symplectic realizations.
-Poisson manifolds that arise this way are called \emph{integrable}. The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent Lie algebroid $T^*M$ \cite{MR866024} with the anchor map
+For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \sigma) \to (M, \pi)$ and $\beta: (\cG, \sigma) \to (M, -\pi)$ are Poisson maps. For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map. If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}. The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{MR866024} with the anchor map
 $$
 	\pi^\flat: T^*_M \to T_M, \qquad \alpha \mapsto \iota_\alpha \pi,
 $$
@@ -257,10 +257,8 @@ and the Koszul bracket: for $\alpha, \beta \in \Omega^1(M)$,
 $$
 	[\alpha, \beta] = \cL_{\pi(\alpha)} \beta - \cL_{\pi(\alpha)} \beta - d\pi(\alpha \otimes \beta).
 $$
-
-
-As a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*M, TM)$, where $TM$ carries the standard Lie algebroid structure \cite{MR1262213}.
-The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
+For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$. As a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$ \cite{MR1262213}.
+The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}. The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
 We list some important examples of symplectic groupoids: the Kostant-Kirillov-Souriau Poisson structures \cite{MR996653}, the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{FG09c}. %For the two extreme cases where the Poisson structure is either trivial or non-degenerate, we describe the symplectic groupoid below.
 
 %\begin{example}
@@ -374,7 +372,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
       or equivalently
       \begin{equation}
       \label{eq:2-formGA}
-      	\pi_\cG = \omega_\cG^{-1} = \sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j} +\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j} +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
+      	\sigma_\cG = \omega_\cG^{-1} = \sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j} +\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j} +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
       \end{equation}
   \end{enumerate}
 \end{theorem}
@@ -405,7 +403,7 @@ Note that $\omega_\cG$ is non-degenerate since
 Motiviated by \cite{FG09c}, we make the following definition of the symplectic double, which is a source-connected Poisson groupoid of the log-canonical Poisson structure on $L$.
 \begin{theorem} \label{thm:SymDBLoc}
   \cite{FG09c}
-  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), the \emph{symplectic double} $(\cD, \omega_\cD) \rra (L, \pi)$ is a source-connected Poisson groupoid with the following structures:
+  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), the \emph{symplectic double} $(\cD, \sigma_\cD) \rra (L, \pi)$ is a source-connected Poisson groupoid with the following structures:
   \begin{enumerate}
     \item $\cD \cong L_+ \times L$ (where $L_+$ is either $\RR_+^m$ or $\CC_\times^m$) has the coordinates $(\bfs, \bfx) = (s_1, \ldots, s_m, x_1, \ldots, x_m)$;
     \item the source map is
@@ -423,11 +421,11 @@ Motiviated by \cite{FG09c}, we make the following definition of the symplectic d
     \item the multiplicative Poisson structure is
     \begin{equation}
     \label{eq:2-formGX}
-		\pi_\cD =\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
+		\sigma_\cD =\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}
     \end{equation}
     or equivalently the singular multiplicative 2-form $\omega_\cD$ is
       \begin{equation} 
-	\omega_\cD = \pi_\cD^{-1} = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
+	\omega_\cD = \sigma_\cD^{-1} = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{ds_i}{s_i} + \sum_{j < i} \Omega_{ij} \frac{ds_i}{s_i} \wedge \frac{ds_j}{s_j}.
       \end{equation}
   \end{enumerate}
 \end{theorem}
@@ -459,7 +457,7 @@ Next, we describe the Lie algebroid of $\cD \rra L$. We introduce coordinates on
 \[
 	A_\cD \cong L\times L \to L, \qquad (\bfxi, \bfx) \mapsto \bfx.
 \]
-For a $m\times m$ skew-symmetric matrix $\Omega$, we define a Lie algebroid structure on $A_\cD$ with the anchor map
+For an $m\times m$ skew-symmetric matrix $\Omega$, we define a Lie algebroid structure on $A_\cD$ with the anchor map
 \[
 	\rho_\cD: A_\cD \cong L\times L \to TL, \qquad (\bfxi, \bfx) \mapsto \sum_{i,j}\xi_j x_i\Omega_{ji}\frac{\partial}{\partial x_i},
 \]
@@ -475,10 +473,10 @@ With the notations in Theorem~\ref{thm:SymDBLoc}, if we write $e^{\xi_i} = s_i$,
 	\beta: (\bfxi, \bfx) \mapsto \left(e^{\sum_i\Omega_{i1}\xi_i}x_1, \ldots, e^{\sum_i\Omega_{im}\xi_i}x_m\right).
 \]
 Therefore, 
-\[
+\begin{equation} \label{eq: D anchor}
 	\beta_* \left(\frac{\partial}{\partial \xi_j}\right) = \sum_i x_i \Omega_{ji}  \frac{\partial}{\partial x_i}, \quad 
 	\beta_* \left(\sum_j \xi_j \frac{\partial}{\partial \xi_j}\right) = \sum_i \xi_j x_i \Omega_{ji}  \frac{\partial}{\partial x_i}.
-\]
+\end{equation}
 This shows that the bundle map
 \[
 	A_\cD \to \Lie D, \qquad (\bfxi, \bfx) \to \sum_j \xi_j \frac{\partial}{\partial \xi_j}
@@ -508,10 +506,10 @@ Fixing an $m\times m$ skew-symmetric matrix $\Omega$ and the corresponding log c
 	If $A$ be a Lie algebroid over $M$ and let $B$ be a subbundle of $A|_L$ for some hypersurface $L$ such that $B$ is also a Lie algebroid over $L$, then $[A\!:\!B]$ is a Lie algebroid over $M$.
 \end{proposition}
 
-Let $\cG \rra M$ be a Lie groupoid and let $\cH \rra L$ be a Lie subgroupoid over a hypersurface $L$. We denote the blowup of $\cG$ along $\cH$ by $\mathrm{Bl}(\cG, \cH)$ with the blow-down map $p: \mathrm{Bl}(\cG, \cH) \to \cG$ and write $[\cG\!:\!\cH] = \mathrm{Bl}(\cG, \cH) \setminus (S_L \cup T_L)$ where $S_L$ is the proper transform of $\alpha^{-1}(L)$ and $T_L$ is the proper transform of $\beta^{-1}(L)$.
+Let $\cG \rra M$ be a Lie groupoid and let $\cH \rra L$ be a Lie subgroupoid over a hypersurface $L$. We denote the blowup of $\cG$ along $\cH$ by $\mathrm{Bl}(\cG, \cH)$ with the blow-down map $\nu: \mathrm{Bl}(\cG, \cH) \to \cG$ and write $[\cG\!:\!\cH] = \mathrm{Bl}(\cG, \cH) \setminus (S_L \cup T_L)$ where $S_L$ is the proper transform of $\alpha^{-1}(L)$ and $T_L$ is the proper transform of $\beta^{-1}(L)$.
 
 \begin{theorem} \cite{MR3214314}
-	For a Lie groupoid $\cG \rra M$ and a Lie subgroupoid $\cH \rra L$ for some hypersurface $L$, there is a unique Lie groupoid structure $[\cG\!:\!\cH] \rra M$ such that the blow-down map $p: [\cG\!:\!\cH] \to \cG$ is a groupoid morphism. Moreover, blowup of Lie groupoids corresponds to elementary modification of Lie algebroids. That is,
+	For a Lie groupoid $\cG \rra M$ and a Lie subgroupoid $\cH \rra L$ for some hypersurface $L$, there is a unique Lie groupoid structure $[\cG\!:\!\cH] \rra M$ such that the blow-down map $\nu: [\cG\!:\!\cH] \to \cG$ is a groupoid morphism. Moreover, blowup of Lie groupoids corresponds to elementary modification of Lie algebroids. That is,
 	\[
 		\Lie[\cG\!:\!\cH] = [\Lie\cG\!:\!\Lie\cH].
 	\]
@@ -521,7 +519,7 @@ Our task is clear now. We need to find the Lie subalgebroids of $A_\cD$ such tha
 
 For each $k = 1, \ldots, m$, we define the Lie subalgebroid $A_\cD^k$ of $A_\cD$ as follows. Let $L_k$ be the codimension 1 subpace in $L$ defined by $x_k = 0$. As a vector bundle, $A_\cD^{k}$ is the corank $1$ subbundle of $A_\cD |_{L_k}$ defined by $\xi_k = 0$. That is, the anchor map of $A_\cD^k$ is given by
 \begin{align*}
-	\rho_\cD^k: & A_\cD^k \cong L_k\times L_k \to TL_k, \\
+	\rho_\cD^k: ~& A_\cD^k \cong L_k\times L_k \to TL_k, \\
 	& (\xi_1, \ldots, \xi_{k-1}, \xi_{k+1}, \ldots, \xi_m, x_1, \ldots, x_{k-1}, x_{k+1}, \ldots, x_m) \mapsto \sum_{1\le i \le m, j\ne k}\xi_j x_i\Omega_{ji}\frac{\partial}{\partial x_i}.
 \end{align*}
 
@@ -537,53 +535,107 @@ For each $k = 1, \ldots, m$, we define the Lie subalgebroid $A_\cD^k$ of $A_\cD$
 	\begin{equation}	\label{eq:log-can Poiss}
 		\pi^\flat: T^*L \to TL, \qquad dx_j \to \sum_i x_ix_j \Omega_{ji}  \frac{\partial}{\partial x_i}.
 	\end{equation}
+	The result follows by comparing \eqref{eq:log-can Poiss} with the anchor map \eqref{eq: D anchor} for $\Lie \cD$ which is isomorphic to $A_\cD$, 
+\end{proof}
+
+To obtain a source-connected symplectic groupoid of the log-canonical Poisson space $(L, \pi)$ which integrates $T^*_\pi L$, we need to iteratively blowup the Poisson groupoid $\cD \rra L$ along the subgroupoids integrating $A_\cD^k$, for $k =1, \ldots, m$. Indeed the Lie subalgebroid $A_\cD^k$ integrates to the subgroupoids $\cD_k \rra L_k$ defined by $x_k=0$ and $s_k=1$, so we define the Lie groupoid
+\[
+	\cB = [\ldots[[\cD\!:\!\cD_1]\!:\!\cD_2] \ldots \!:\!\cD_m]
+\]
+Using the blowup coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following symplectic groupoid structure on $\cB \rra L$.
+
+\begin{theorem} 
+  For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), we have that $(\cB, \omega_\cB) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
+  \begin{enumerate}
+    \item $\cB \subset L \times L$ has the coordinates $(\bfu, \bfx) = (u_1, \ldots, u_m, x_1, \ldots, x_m)$;
+    \item $\cB$ is given by $u_i x_i + 1 > 0$ if $L = \RR^m$ and $u_i x_i + 1\ne 0$ if $L = \CC^m$;
+    \item the source map is
+      \[\alpha: \cB \to L, \qquad (\bfu, \bfx) \mapsto \bfx;\]
+    \item the target map is
+      \[\beta: \cB \to L, \qquad (\bfs, \bfx) \mapsto \left(x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right);\]
+	\item the identity map $\mathtt{1}: L \to \cB, \quad \bfx \mapsto (\bfzero, \bfx)$;
+    \item the inverse map is
+      \[\iota: \cB \to \cB, \qquad (\bfu, \bfx) \mapsto \left(-\frac{u_1}{u_1x_1+1}, \ldots, -\frac{u_m}{u_mx_m+1}, x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right);\]
+    \item the multiplication map is
+      \[\begin{aligned}
+	  m: & \cB {_\beta \times_\alpha} \cB \to \cB, \\
+	     & \left((\bfu, \bfx), \left(\bfu', x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right)\right) \mapsto (\bfu'', \bfx )
+        \end{aligned}\]
+        where $u''_i = \left( u'_i (u_ix_i+1) \prod_{j=1}^m (u_jx_j+1)^{\Omega_{ji}} + u_i \right)$;
+    \item the multiplicative Poisson structure is
+    \begin{equation}
+	\pi_\cB = \sum_{i} (t_i x_i + 1) \frac{\partial}{\partial t_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}t_i x_j \frac{\partial}{\partial t_i} \wedge \frac{\partial}{\partial x_j} +\sum_{j < i} \Omega_{ij}t_it_j \frac{\partial}{\partial t_i} \wedge \frac{\partial}{\partial t_j} + \sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j},
+    \end{equation}
+    or equivalently the multiplicative symplectic structure $\omega_\cB$ is
+    \begin{align*} 
+	\omega_\cB & = \sum_{i} \frac{1}{t_ix_i+1}dx_i \wedge dt_i + \sum_{i, j} \frac{\Omega_{ij}t_ix_j}{(t_ix_i+1)(t_jx_j+1)}  dx_i \wedge dt_j \\
+	& \quad + \sum_{j < i}\frac{\Omega_{ij}t_it_j}{(t_ix_i+1)(t_jx_j+1)}  dx_i \wedge dx_j + \sum_{j < i} \frac{\Omega_{ij}x_ix_j}{(t_ix_i+1)(t_jx_j+1)}  dt_i \wedge dt_j.
+      \end{align*}
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	These are the same groupoid structures as in Theorem~\ref{thm:SymDBLoc} with the change of variables $u_i = \frac{s_i-1}{x_i}$. The difference is precisely that $\omega_\cB$ is no longer singular. Note that $\omega_\cB$ is also non-degenerate since
+  \[(\omega_\cB)^m = m!  \prod_{1\leq i\leq m} \frac{1}{t_ix_i+1} \bigwedge\limits_{1\leq i\leq m} dx_i \wedge dt_i\]
+  is a volume form.
 	
 \end{proof}
 
-
-\vspace{1in}
-
-
-For an integrable Lie algebroid, every source-connected integration receives a surjective groupoid map from the source-simply-connected groupoid.
-With our chosen conventions, we have a simple expression for the groupoid map $\cG \to \cD$.
-\begin{proposition}
-  As symplectic groupoids over the log Poisson structure on $\RR_+^m$ or $(\CC^\times)^m$, the map
-  \[
-  	\kappa: \cG \to \cD, \qquad (\bfp, \bfx) \mapsto (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)
-  \]
-  is a symplectic groupoid morphism.
-\end{proposition}
-
-\begin{proof}
-We show that $\kappa$ is compatible with the target maps, and leave the compatibility with other structure maps to the readers.
-	\begin{align*}
-		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta_\cD (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
-		& = \left(x_1 \prod_{i=1}^m e^{\Omega_{i1}x_ip_i}, \ldots, x_m \prod_{i=1}^m e^{\Omega_{im}x_ip_i}\right) \\
-		& = \left(x_1 e^{\sum_i \Omega_{i1}x_ip_i}, \ldots, x_m  e^{\sum_i \Omega_{im}x_ip_i}\right) \\
-		& = \beta_\cG (\bfp, \bfx).
-	\end{align*}
-To show that $\kappa$ preserves the symplectic structures, we have
-	\begin{align*}
-		\kappa^*\omega_\cD & = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{d(e^{x_ip_i})}{e^{x_ip_i}} + \sum_{j < i} \Omega_{ij} \frac{d(e^{x_ip_i})}{e^{x_ip_i}} \wedge \frac{d(e^{x_jp_j})}{e^{x_jp_j}} \\
-		& = \sum_{i} \frac{dx_i}{x_i} \wedge (x_i dp_i + p_i dx_i) + \sum_{j < i} \Omega_{ij} (x_i dp_i + p_i dx_i) \wedge (x_j dp_j + p_j dx_j) \\
-		& = \sum_{i} dx_i \wedge dp_i
-	  	+ \left(
-	    	\sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
-	    	+ \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
-	    	+ \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
-	  	\right) \\
-		& = \omega_\cG.
-	\end{align*}
-\end{proof}
-
-The symplectic groupoids $\cG \rra L$ and $\cD \rra L$ are summarized in the following commutative diagram.
+For an integrable Lie algebroid, every source-connected groupoid receives a surjective groupoid map from the source-simply-connected groupoid. This means that we have a natural symplectic groupoid $\kappa:\cG\to\cB$. Together with the blowdown map $\nu:\cB\to\cD$, the following commutative diagram summarizes the maps among the Poisson groupoids $\cG$, $\cB$ and $\cD$.
 \begin{equation} 
     \label{eq:LGpdCD}
     \xymatrix{
-      (\cG, \omega_{\cG})  \ar[r]^{\kappa} \ar@/^-0.5pc/[d]|-{\alpha} \ar@/^0.5pc/[d]|-{\beta} & (\cD, \omega_{\cD}) \ar@/^-0.5pc/[d]|-{\alpha} \ar@/^0.5pc/[d]|-{\beta} \\
-       (L, \pi) \ar[u]|-{\mathtt{1}} \ar[r]^{=} & (L, \pi) \ar[u]|-{\mathtt{1}}
+      \cG  \ar[dr]_{\kappa} \ar[rr]^{\lambda} && \cD \\
+       & \cB \ar[ur]_{\nu}
     }
 \end{equation}
+Explicitly in coordinates, these maps are given by
+\begin{align}
+	& \kappa: \cG \to \cB, \qquad (\bfp, \bfx) \mapsto \left(\frac{e^{x_1p_1}-1}{x_1}, \ldots, \frac{e^{x_mp_m}-1}{x_2}, \bfx\right), \\
+	& \nu: \cB \to \cD, \qquad (\bfu, \bfx) \mapsto (u_1x_1+1, \ldots, u_mx_m+1, \bfx), \\
+	& \lambda: \cG \to \cD, \qquad (\bfp, \bfx) \mapsto (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx).
+\end{align}
+
+\begin{remark}
+	If $L = \RR^m$, then $\cB$ is already source-simply-connected and $\kappa: \cG \to \cB$ is a groupoid isomorphism, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
+\end{remark}
+
+
+%\begin{equation} 
+%    \label{eq:LGpdCD}
+%    \xymatrix{
+%      (\cG, \omega_{\cG})  \ar[r]^{\kappa} \ar@/^-0.5pc/[d]|-{\alpha} \ar@/^0.5pc/[d]|-{\beta} & (\cD, \omega_{\cD}) \ar@/^-0.5pc/[d]|-{\alpha} \ar@/^0.5pc/[d]|-{\beta} \\
+%       (L, \pi) \ar[u]|-{\mathtt{1}} \ar[r]^{=} & (L, \pi) \ar[u]|-{\mathtt{1}}
+%    }
+%\end{equation}
+%\begin{proposition}
+%  As symplectic groupoids over the log Poisson structure on $\RR_+^m$ or $(\CC^\times)^m$, the map
+%  \[
+%  	\kappa: \cG \to \cD, \qquad (\bfp, \bfx) \mapsto (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx)
+%  \]
+%  is a symplectic groupoid morphism.
+%\end{proposition}
+%\begin{proof}
+%We show that $\kappa$ is compatible with the target maps, and leave the compatibility with other structure maps to the readers.
+%	\begin{align*}
+%		(\beta_\cD \circ \kappa) (\bfp, \bfx) & = \beta_\cD (e^{x_1p_1}, \ldots, e^{x_mp_m}, \bfx) \\
+%		& = \left(x_1 \prod_{i=1}^m e^{\Omega_{i1}x_ip_i}, \ldots, x_m \prod_{i=1}^m e^{\Omega_{im}x_ip_i}\right) \\
+%		& = \left(x_1 e^{\sum_i \Omega_{i1}x_ip_i}, \ldots, x_m  e^{\sum_i \Omega_{im}x_ip_i}\right) \\
+%		& = \beta_\cG (\bfp, \bfx).
+%	\end{align*}
+%To show that $\kappa$ preserves the symplectic structures, we have
+%	\begin{align*}
+%		\kappa^*\omega_\cD & = \sum_{i} \frac{dx_i}{x_i} \wedge \frac{d(e^{x_ip_i})}{e^{x_ip_i}} + \sum_{j < i} \Omega_{ij} \frac{d(e^{x_ip_i})}{e^{x_ip_i}} \wedge \frac{d(e^{x_jp_j})}{e^{x_jp_j}} \\
+%		& = \sum_{i} \frac{dx_i}{x_i} \wedge (x_i dp_i + p_i dx_i) + \sum_{j < i} \Omega_{ij} (x_i dp_i + p_i dx_i) \wedge (x_j dp_j + p_j dx_j) \\
+%		& = \sum_{i} dx_i \wedge dp_i
+%	  	+ \left(
+%	    	\sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j 
+%	    	+ \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j
+%	    	+ \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j
+%	  	\right) \\
+%		& = \omega_\cG.
+%	\end{align*}
+%\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
