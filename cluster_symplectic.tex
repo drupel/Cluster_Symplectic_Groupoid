@@ -244,11 +244,9 @@ We note that symplectic groupoids is a special case of Poisson groupoids.
   A \emph{Poisson groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative Poisson structure $\omega \in \cT^2_\cG$. That is, the graph of the multiplication map $\Gamma_m$ is coisotropic with repsect to the Poisson structure $\pi \oplus \pi \oplus -\pi$.
 \end{definition}
 
-A Poisson groupoid map from $(\cG_1, \pi_1) \rra M_1$ to $(\cG_2, \pi_2) \rra M_2$ is a Lie groupoid map $\varphi: \cG_1 \to \cG_2$ which is Poisson. 
-
-For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \sigma) \to (M, \pi)$ and $\beta: (\cG, \sigma) \to (M, -\pi)$ are Poisson maps. For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map. If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}. The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{MR866024} with the anchor map
+A Poisson groupoid map from $(\cG_1, \sigma_1) \rra M_1$ to $(\cG_2, \sigma_2) \rra M_2$ is a Lie groupoid map $\varphi: \cG_1 \to \cG_2$ which is Poisson. For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \sigma) \to (M, \pi)$ and $\beta: (\cG, \sigma) \to (M, -\pi)$ are Poisson maps. For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map. If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}. The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{MR866024} with the anchor map
 $$
-	\pi^\flat: T^*_M \to T_M, \qquad \alpha \mapsto \iota_\alpha \pi,
+	\pi^\flat: T^*M \to TM, \qquad \alpha \mapsto \iota_\alpha \pi,
 $$
 and the Koszul bracket: for $\alpha, \beta \in \Omega^1(M)$,
 $$
@@ -256,7 +254,7 @@ $$
 $$
 For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$.
 
-Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid. As a Poisson groupoid, the symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$ \cite{MR1262213}.
+Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MR1262213}. As a Poisson groupoid, the symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$.
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}. The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
 We list some important examples of symplectic groupoids: the Kostant-Kirillov-Souriau Poisson structures \cite{MR996653}, the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{FG09c}. %For the two extreme cases where the Poisson structure is either trivial or non-degenerate, we describe the symplectic groupoid below.
 
@@ -398,6 +396,14 @@ Note that $\omega_\cG$ is non-degenerate since
 
   In the case when the underlying field is $\CC$, the symplectic groupoid structures can be verified directly.
 \end{proof}
+
+\begin{corollary}
+For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$, the exponential map
+\[
+	\exp: T^*_\pi L \to \cG, \qquad (\bfp, \bfx) \mapsto \bfa \circ \bfx,
+\]
+where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$, is a diffeomorphism.
+\end{corollary}
 
 Motiviated by \cite{FG09c}, we make the following definition of the symplectic double, which is a source-connected Poisson groupoid of the log-canonical Poisson structure on $L$.
 \begin{theorem} \label{thm:SymDBLoc}
