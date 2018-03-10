@@ -95,54 +95,51 @@ Outline
 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-This is the first of a series of papers whose aim is to implement a modified version of Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures.
+This is the first of a series of papers whose aim is to implement the Weinstein's program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of cluster Poisson structures.
 In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
 The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{FZ02} as the culmination of their study of total positivity and canonical bases for algebraic groups.
 Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}.
-The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{GSV10}.
-
-The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{FG09a} in their study of higher Teichmuller space.
+The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{GSV10}. The cluster $\cX$-varieties were introduced by Fock and Goncharov \cite{FG09a} in their study of higher Teichmuller space.
 The $\cX$-varieties are always endowed with a canonical Poisson structure.
 If a $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 
-In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{FG09c} are both concrete examples of deformation quantization of Poisson manifolds \cite{MR2062626}.
-Geometric quantization for symplectic manifolds takes one step further by constructing an action on a Hilbert space, but this requires that the cohomology class of the symplectic 2-form be integral (see e.g.\ \cite{MR1806388}).
+In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{FG09c} are both concrete examples of quantization of Poisson manifolds. In fact, the q-quantization of log-canonical variables is simply the exponential version of the Weyl quantization of canonical variables.
+Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space, but this requires that the cohomology class of the symplectic 2-form is integral (see e.g.\ \cite{MR1806388}).
 The notion of symplectic groupoids was introduced by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}.
-Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has only been successfully implemented for a handful of examples \cite{MR2417440, MR2925830}.
-The concrete nature of cluster coordinates makes that setting an ideal testing ground for groupoid quantization.
-Indeed, a modified version was implicitly implemented by Fock and Goncharov \cite{FG09c} in the case of $\cX$-varieties.
+Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has only been successfully implemented for a handful of examples \cite{MR2238946, MR2417440, MR2925830}.
+The concrete nature of cluster coordinates provides an ideal testing ground for groupoid quantization.
+Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in the case of $\cX$-varieties.
 
-In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties, by constructing their symplectic groupoids. The paper is organized as follows.
+In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties by constructing their symplectic groupoids. The paper is organized as follows.
 
-In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log canonical Poisson $\pi$ on a vector space $L$. The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid. This is essentially the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}. For a log-canonical Poisson structure, there is a nice choice of the Poisson spray such that the construction yields the global source-simply-connected symplectic groupoid $\cG$. Being the source-simply-connected symplectic groupoid, the source and the target maps of $\cG \rra L$ are transcendental.
+In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log canonical Poisson $\pi$ on a vector space $L$. The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid when the underlying field is $\CC$. The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}. For a log-canonical Poisson structure, there is a natural choice of a Poisson spray such that the spray construction yields $\cG$. The source and the target maps of $\cG \rra L$ are transcendental. 
 
-The groupoid $\cB \rra L$ is a source-connected symplectic groupoid. The advantage of $\cB \rra L$ is that the source and the target maps of $\cG \rra L$ are rational. The tradeoff is the expression symplectic form is more complicated.
+The groupoid $\cD \rra L$ is a source-connected Poisson groupoid. The restriction of $\cD \rra L$ over an octant $L_+$ of $L$, which we denote by $\cD_+ \rra L_+$ is symplectic, is essentially the symplectic double in \cite{FG09c}, albeit with slightly different notations to accommodate the case of the non-square exchange matrices.
 
-The groupoid $\cD \rra L$ is a source-connected Poisson groupoid. The restriction of $\cD \rra L$ over an octant $L_+$ of $L$, which we denote by $\cD_+ \rra L_+$ is symplectic, is called the symplectic double in \cite{FG09c}, albeit with slightly different notations to accommodate the case of the non-square exchange matrices.
+The groupoid $\cB \rra L$ is a source-connected symplectic groupoid, obtained from $\cD \rra L$ by a blow-up construction. Comparing to $\cG \rra L$, the advantage of $\cB \rra L$ is that the source and the target maps of $\cG \rra L$ are rational.
 
 The symplectic groupoid $\cB \rra L$ can be realized as the blowup of $\cD \rra L$ in the sense of \cite{MR3214314}, whereas both $\cB \rra L$ and $\cD \rra L$ receives maps from the source-simply-connected symplectic groupoid $\cG$.
 
-In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$. The first step is to decompose a generalized cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$. The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a natural transformation of log-canonical coordinates \cite{FG09a, MR3691969}. We then lift $\varphi^1$ and $\tau$ to groupoid maps, and the composition the lifted groupoid maps is the cluster groupoid mutation.
-
+In Section~\ref{sec:cluster}, we give the explicit formulae for the cluster groupoid mutation $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$. The first step is to decompose a generalized cluster mutation $\mu: L \to L'$ into two maps $\varphi^1$ and $\tau$. The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a natural transformation of the log-canonical coordinates \cite{FG09a, MR3691969}. We then lift $\varphi^1$ and $\tau$ to groupoid maps, and the composition of the lifted groupoid maps is the cluster groupoid mutation. We also lift the cluster ensemble map $\rho: L_\cA \to L_\cX$ to groupoid maps. When the underlying field is $\RR$, the Poisson map $\rho$ can be lifed to all three groupoids $\cG$, $\cD$ and $\cB$. When the underlying field is $\CC$, the Poisson map $\rho$ can only lifed to the source-simply-connected symplectic groupoid $\cG$.
 \bigskip
 
 
-We use the following notations.
+Throughout the paper, we use the following notations.
 \begin{itemize}
 	\item We write $\RR_+ = (0, \infty)$, $\bar\RR_+ = [0, \infty)$ and $\CC_\times = \CC \setminus \{0\}$.
 	\item For the cluster charts, we use the following notations:
 	$$
-		L = \RR^m \text{ or } \CC^m, \quad L^+ = \RR_+^m \text{ or } \CC_\times^m, \quad \bar L_+ = \bar\RR_+^m.
+		L = \RR^m \text{ or } \CC^m, \quad L_+ = \RR_+^m \text{ or } \CC_\times^m, \quad \bar L_+ = \bar\RR_+^m.
 	$$
 	\item We denote vectors by boldface, e.g. $\bfx = (x_1, \ldots, x_m)$.
 	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
 	\item For a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, \ldots, x_m^t)$.
-	\item For a vector $\bfx$, we denote the diagonal matrix for which the diagonal entries is $\bfx$ by $I_\bfx$, i.e. 
-	\[
-		I_\bfx = \begin{bmatrix} x_1 & 0 & \cdots & 0 \\ 0 & x_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & x_m \end{bmatrix}
-	\]
-	\item For a vector bundle $A$ over $M$, we denote the space of sections by $\cA = \Gamma(M, A)$. In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$, but to follow the conventional notation, we denote the space of differential $1$-forms by $\Omega^1(M) = \Gamma(M, T^*M)$.
+%	\item For a vector $\bfx$, we denote the diagonal matrix for which the diagonal entries is $\bfx$ by $I_\bfx$, i.e. 
+%	\[
+%		I_\bfx = \begin{bmatrix} x_1 & 0 & \cdots & 0 \\ 0 & x_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & x_m \end{bmatrix}
+%	\]
+	\item For a vector bundle $E$ over $M$, we denote the space of sections by $\Gamma(M, E)$. In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$, but to follow the conventional notation, we denote the space of differential $1$-forms by $\Omega^1(M) = \Gamma(M, T^*M)$.
 	%\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
 	%\item for a matrix $B = (B_{ij})$, $B_{[k]}$ denotes the kth column vector of $B$.
 \end{itemize}
@@ -203,23 +200,23 @@ We continue with the notion of Lie groupoids.
   \end{enumerate}
   A \emph{Lie groupoid} $\cG \rightrightarrows M$ has the following additional properties:
   \begin{enumerate}
-    \item $\cG$ and $M$ are either smooth manifolds or complex manifolds;
+    \item $\cG$ and $M$ are smooth manifolds (or complex manifolds);
     \item the source $\alpha: \cG \to M$ and the target $\beta: \cG \to M$ are surjective submersions;
-    \item the multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG$ is smooth;
-    \item the inversion map $i: \cG \to \cG$ is smooth.
+    \item the multiplication map $m: \cG {_\beta \times_\alpha} \cG \to \cG$ is smooth (or holomorphic);
+    \item the inversion map $i: \cG \to \cG$ is smooth (or holomorphic).
   \end{enumerate}
   A Lie groupoid $\cG \rightrightarrows M$ is \emph{source-connected} if the source fiber $\alpha^{-1}(x)$ is connected for every $x \in M$; it is \emph{source-simply-connected} if the source fiber $\alpha^{-1}(x)$ is connected and simply-connected for every $x \in M$.
 \end{definition}
 
-We recall the notion of a Lie algebroid, which is the infitesimal object of a Lie groupoid.
+With our convention, $\cG$ acts on itself on the left. Next we recall the notion of a Lie algebroid, which is the infitesimal object of a Lie groupoid.
 \begin{definition}
 	For a smooth (or holomorphic) manifold $M$, a Lie algebroid over $M$ is a triple $(A, [\cdot, \cdot], \rho)$ where
 	\begin{enumerate}
 		\item $A$ is a vector bundle over a $M$,
-		\item $[\cdot, \cdot]$ is a Lie bracket on the space of section $\cA$ of $A$, and
+		\item $[\cdot, \cdot]$ is a Lie bracket on the space of sections $\Gamma(M, A)$, and
 		\item $\rho: A \to TM$ is a bundle morphism preserving the Lie bracket
 	\end{enumerate}
-	that satisfies the Leibniz rule: for $X, Y \in \cA$ and $f \in \cO_M$,
+	that satisfies the Leibniz rule: for $X, Y \in \Gamma(M, A)$ and $f \in \cO_M$,
 	\[
 		[X, fY] = \rho(X) f \cdot Y + f[X, Y].
 	\]
@@ -257,7 +254,9 @@ and the Koszul bracket: for $\alpha, \beta \in \Omega^1(M)$,
 $$
 	[\alpha, \beta] = \cL_{\pi(\alpha)} \beta - \cL_{\pi(\alpha)} \beta - d\pi(\alpha \otimes \beta).
 $$
-For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$. As a Poisson groupoid, $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$ \cite{MR1262213}.
+For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$.
+
+Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid. As a Poisson groupoid, the symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$ \cite{MR1262213}.
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}. The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
 We list some important examples of symplectic groupoids: the Kostant-Kirillov-Souriau Poisson structures \cite{MR996653}, the Drinfeld double of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoid of log symplectic manifolds \cite{MR3214314}, and the symplectic double of the cluster $\cX$-varieties \cite{FG09c}. %For the two extreme cases where the Poisson structure is either trivial or non-degenerate, we describe the symplectic groupoid below.
 
@@ -270,7 +269,7 @@ We list some important examples of symplectic groupoids: the Kostant-Kirillov-So
 
 
 Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids.
-In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\tilde{\varphi}: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
+In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\varphi: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
 In fact, $\varphi$ being Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrates to Lagrangian subgroupoids \cite{MR2104442}, so a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$.
 However as a recurring theme throughout \S\ref{sec:cluster}, the cluster mutations always lift to groupoid mutations.
 
@@ -364,7 +363,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
     \item the target map is $\beta: T^*L \to L, \quad (\bfp, \bfx) \mapsto \bfa \circ \bfx$, where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$;
     \item the identity map $\mathtt{1}: L \to T^*L, \quad \bfx \mapsto (0, \bfx)$;
     \item the inverse map is $\iota: T^*L \to T^*L, \quad (\bfp, \bfx) \mapsto -\bfa^{-1}\circ \bfx$;
-    \item the multiplication map is $m: T^*L {_\alpha \times_\beta} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
+    \item the multiplication map is $m: T^*L {_\beta \times_\alpha} T^*L \to T^*L, \quad \big((\bfp, \bfx), (\bfp', \bfa \circ \bfx)\big) \mapsto (\bfa \circ \bfp' + \bfp, \bfx )$;
     \item the multiplicative symplectic form $\omega$ is
       \begin{equation}
 	\omega_\cG = \sum_{i} dx_i \wedge dp_i + \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j, 
@@ -482,7 +481,6 @@ This shows that the bundle map
 	A_\cD \to \Lie \cD, \qquad (\bfxi, \bfx) \to \sum_j \xi_j \frac{\partial}{\partial \xi_j}
 \]
 is a Lie algebroid isomorphism.
-
 %For a $m\times m$ skew-symmetric matrix $\Omega$, $\bfx \in L$ and $\bfs \in L_+$, we define the matrix
 %\[
 %	I_{\bfxi} \Omega I_\bfx = \begin{bmatrix}
@@ -581,7 +579,7 @@ Using the blowup coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following sy
 	
 \end{proof}
 
-For an integrable Lie algebroid, every source-connected groupoid receives a surjective groupoid map from the source-simply-connected groupoid. This means that we have a natural symplectic groupoid $\kappa:\cG\to\cB$. Together with the blow-down map $\nu:\cB\to\cD$, the following commutative diagram summarizes the maps among the Poisson groupoids $\cG$, $\cB$ and $\cD$.
+For an integrable Lie algebroid, every source-connected groupoid receives a surjective groupoid map from the source-simply-connected groupoid. This means that we have a natural symplectic groupoid $\kappa:\cG\to\cB$. Together with the blow-down map $\nu:\cB\to\cD$, the following commutative diagram summarizes the maps among the groupoids $\cG$, $\cB$ and $\cD$.
 \begin{equation} 
     \label{eq:LGpdCD}
     \xymatrix{
@@ -597,7 +595,29 @@ Explicitly in coordinates, these maps are given by
 \end{align}
 
 \begin{remark}
-	If $L = \RR^m$, then $\cB$ is already source-simply-connected and $\kappa: \cG \to \cB$ is a groupoid isomorphism, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
+	If $L = \RR^m$, then $\cB \rra L$ is source-simply-connected and all three maps $\kappa: \cG \to \cB$ is a groupoid isomorphism, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
+\end{remark}
+
+\begin{remark}
+Recall that the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MR1262213}. The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $(A_\cD, TL(-\log D))$ where $TL(-\log D)$ is the log tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{MR3214314}. That is
+\[
+	TL(-\log D) = [\ldots[[TL\!:\!TL_1]\!:\!TL_2] \ldots \!:\!TL_m],
+\]
+or equivalently the sections of $TL(-\log D)$ are the vector fields on $L$ tangent to $L_k$ for $k = 1, \ldots, m$. As a vector bundle $TL(-\log D)$ is generated by $x_k \frac{\partial}{\partial x_k}, k = 1, \ldots, m$, and its dual bundle $T^*L(-\log D)$ is generated by $\frac{d x_k}{x_k}, k = 1, \ldots, m$. The bundle map
+\[
+	A_\cD \to T^*L(-\log D), \qquad (\bfxi, \bfx) \mapsto \sum_k\xi_k\frac{d x_k}{x_k}
+\]
+identifies $A_\cD$ with $T^*L(-\log D)$.
+\end{remark}
+
+\begin{remark}
+Each of the three groupoids $\cG \rra L$, $\cB \rra L$ and $\cD \rra L$ has pros and cons.
+
+The symplectic groupoid $\cG \rra L$ is source-simply-connected when the underlying field is $\CC$, and as we will see in \S\ref{sec:groupoid mutations}, is the only one aming the three groupoids for which the Poisson ensemble map $\rho: L_\cA \to L_\cX$ from an holomorphic $\cA$-vareity to its corresponding holomorphic $\cX$-vareity can be lifted to a symplectic groupoid map $\rho: \cG_\cA \to \cG_\cX$. The disadvantage of $\cG \rra L$ is that its groupoid structure maps are transcendental.
+
+On the other hand, the multiplicative Poisson structure of $\cD \rra L$ have a simple expression and its groupoid structure maps are algebraic, but it is only symplectic when restricted to $L_+$. Both $\cG \rra L$ and $\cB \rra L$ are symplectic groupoids over $L$, and as we will see in \S\ref{sec:groupoid mutations}, this enables us to define the groupoid mutations for $\cG$ and $\cB$ over $\bar{L}_+$ when the underlying field is $\RR$.
+
+Comparing to $\cG \rra L$, the symplectic groupoid $\cB \rra L$ has the added plus that its groupoid structure maps are algebraic, but the tradeoff comparing to $\cD \rra L$ is that its multiplicative Poisson structure and its groupoid structures is somewhat more complicated.
 \end{remark}
 
 
@@ -1135,7 +1155,22 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 
 \newpage
 
-\begin{equation} \label{eq:GpdCD}
+\begin{equation} 
+	\label{eq:GpdCD}
+    \xymatrix{
+      \cG_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cG_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cG'_{\cA,\bfr} \ar[d]^{\rho} 
+	&& \cD_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cD_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cD'_{\cA,\bfr} \ar[d]^{\rho} \\
+      \cG_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cG_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} \ar@{}[ddr]^(.325){}="a"^(.775){}="b" \ar@<1ex> "a";"b"^-{\kappa_\cA} \ar@<-1ex> "a";"b"_-{\kappa_\cX} & \cG'_{\cX,\bfr} \ar@{}[rr]^(.3){}="e"^(.7){}="f" \ar@<5ex> "e";"f"^-{\lambda_\cA} \ar@<3ex> "e";"f"_-{\lambda_\cX}
+	&& \cD_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cD_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & \cD'_{\cX,\bfr} \\
+	&&&&&&\\
+	&&\cB_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cB_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cB'_{\cA,\bfr} \ar[d]^{\rho} \ar@{}[uur]^(.2){}="c"^(.65){}="d" \ar@<1ex> "c";"d"^-{\nu_\cA} \ar@<-1ex> "c";"d"_-{\nu_\cX}  \\
+      &&\cB_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cB_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & \cB'_{\cX,\bfr}
+    }
+\end{equation}
+
+\vspace{2in}
+
+\begin{equation} 
 	\xymatrix{
 		& \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} && \cD'_\cA \ar[dd]|-{\bar{\rho}} \\
 	\cG_\cA \ar[dd]|-{\tilde{\rho}} \ar[rr]|-(.65){\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[rr]|-(.65){\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
