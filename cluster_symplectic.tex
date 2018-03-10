@@ -1081,29 +1081,46 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   
 \begin{lemma}
   \label{le:tropical groupoid transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$, $\bar\tau_\cX^{k,\varepsilon}:\cD_\cX\to\cD'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, $\bar\tau_\cA^{k,\varepsilon}:\cD_\cA\to\cD'_\cA$ lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms 
+  \begin{align*}
+    \tau_\cX^{k,\varepsilon}&:\cG_\cX\to\cG'_\cX,& \tau_\cX^{k,\varepsilon}&:\cB_\cX\to\cB'_\cX,& \bar\tau_\cX^{k,\varepsilon}&:\cD_\cX\to\cD'_\cX\\
+    \tau_\cA^{k,\varepsilon}&:\cG_\cA\to\cG'_\cA,& \tau_\cA^{k,\varepsilon}&:\cB_\cA\to\cB'_\cA,& \tau_\cA^{k,\varepsilon}&:\cD_\cA\to\cD'_\cA
+  \end{align*}
+  lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
   These are given on coordinates by
   \begin{align}
     \label{eq:tropical GX transformation}
-    (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
+    (\tau_\cX^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
       -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ 
       q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:tropical GA transformation}
-    (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=
-    \begin{cases} 
-      -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
-      p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j} & \text{if $j\ne k$;}
+    \label{eq:tropical BX transformation}
+    (\tau_\cX^{k,\varepsilon})^*(v'_\ell)
+    &=\begin{cases} 
+      y_k\Big[(v_k y_k + 1)^{-1}\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{[\varepsilon B_{k\ell'}]_+} -1\Big] & \text{if $\ell=k$;}\\
+      v_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:tropical DX transformation}
-    (\bar\tau_\cX^{k,\varepsilon})^*(t'_\ell)
+    (\tau_\cX^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
+    \label{eq:tropical GA transformation}
+    (\tau_\cA^{k,\varepsilon})^*(p'_j)&=
+    \begin{cases} 
+      -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
+      p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j} & \text{if $j\ne k$;}
+    \end{cases}\\
+    \label{eq:tropical BA transformation}
+    (\tau_\cA^{k,\varepsilon})^*(u'_j)
+    &=\begin{cases} 
+      -(u_k x_k + 1)^{-1}u_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}  & \text{if $j=k$;}\\ 
+      x_j^{-1}\big[(u_j x_j + 1) (u_k x_k + 1)^{[-\varepsilon B_{jk}]_+}-1\big] & \text{if $j\ne k$.}
+    \end{cases}\\
     \label{eq:tropical DA transformation}
-    (\bar\tau_\cA^{k,\varepsilon})^*(s'_j)
+    (\tau_\cA^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
       s_j s_k^{[-\varepsilon B_{jk}]_+} & \text{if $j\ne k$.}
