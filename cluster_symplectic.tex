@@ -113,7 +113,7 @@ Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in th
 
 In this paper, we take the first step towards the groupoid quantization for both $\cA$-varieties and $\cX$-varieties by constructing their symplectic groupoids. The paper is organized as follows.
 
-In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log canonical Poisson $\pi$ on a vector space $L$. The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid when the underlying field is $\CC$. The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}. For a log-canonical Poisson structure, there is a natural choice of a Poisson spray such that the spray construction yields $\cG$. The source and the target maps of $\cG \rra L$ are transcendental. 
+In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure $\pi$ on a vector space $L$. The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid when the underlying field is $\CC$. The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}. For a log-canonical Poisson structure, there is a natural choice of a Poisson spray such that the spray construction yields $\cG$. The source and the target maps of $\cG \rra L$ are transcendental. 
 
 The groupoid $\cD \rra L$ is a source-connected Poisson groupoid. The restriction of $\cD \rra L$ over an octant $L_+$ of $L$, which we denote by $\cD_+ \rra L_+$ is symplectic, is essentially the symplectic double in \cite{FG09c}, albeit with slightly different notations to accommodate the case of the non-square exchange matrices.
 
@@ -497,7 +497,7 @@ is a Lie algebroid isomorphism.
 %\]
 \end{proof}
 
-Fixing an $m\times m$ skew-symmetric matrix $\Omega$ and the corresponding log canonical Poisson space as in Definition~\ref{def: logPoisson}, the cotangent Lie algebroid $T^*_\pi L$ is not isomorphic to the Lie algebroid $A_\cD$. In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected symplectic groupoid of $(L,\pi)$ by the blow-up construction \cite{MR3214314}. 
+Fixing an $m\times m$ skew-symmetric matrix $\Omega$ and the corresponding log-canonical Poisson space as in Definition~\ref{def: logPoisson}, the cotangent Lie algebroid $T^*_\pi L$ is not isomorphic to the Lie algebroid $A_\cD$. In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected symplectic groupoid of $(L,\pi)$ by the blow-up construction \cite{MR3214314}. 
 
 \begin{definition}
 	Let $E$ be a vector bundle over $M$ and let $F$ be a subbundle of $E|_L$ for some hypersurface $L$. The \emph{elementary (lower) modfication} of $E$ along $F$, denoted by $[E\!:\!F]$, is the vector bundle with the sheaf of sections
@@ -1041,37 +1041,33 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
 \end{proof}
 
-Consider the time-$t$ flows of the vector fields from \eqref{eq:groupoid vector fields}:
-\[
-  \tilde\varphi_{\cX,\bfr}^t:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr};\qquad
-  \bar\varphi_{\cX,\bfr}^t:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr};\qquad
-  \tilde\varphi_{\cA,\bfr}^t:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr};\qquad
-  \bar\varphi_{\cA,\bfr}^t:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}.
-\]
+Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$.
 \begin{corollary}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L_{\cX,\bfr} \to L_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$ and $\bar\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, which on coordinates are given by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L_{\cX,\bfr} \to L_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB_{\cX,\bfr} \to \cB_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
-    (\tilde\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
-    (\bar\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
+    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
+    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1)-1,\\
+    (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
-  and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L_{\cA,\bfr} \to L_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\tilde\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$ and $\bar\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, which on coordinates are given by
+  and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L_{\cA,\bfr} \to L_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB_{\cA,\bfr} \to \cB_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, given on coordinates by
   \begin{align*}
-    (\tilde\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
-    (\bar\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
+    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
+    (\varphi_{\cA,\bfr}^t)^*(u_jx_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1)-1, \\
+    (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
   Each of the Hamiltonian flows above transform the coordinates $b_{\ell,j}$ on $T^*L_\bfr$ according to
   \begin{equation*}
     (\varphi_{-,\bfr}^t)^*(b_{\ell,j})=b_{\ell,j}+\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
   \end{equation*}
-  where the bounds of integration are respectively those from equations \eqref{eq:GX hamiltonian}, \eqref{eq:DX hamiltonian}, \eqref{eq:GA hamiltonian}, or \eqref{eq:DA hamiltonian}.
+  where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{corollary}
 \begin{proof}
   To see this, it suffices to make the following observations:
   \begin{itemize}
-    \item the quantities $y_k$ and $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$ are conserved under the flow of the vector field $\tilde X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cX,\bfr}}$ and so $\frac{d}{dt}(q_\ell y_\ell)$ is a constant;
-    \item the quantities $y_k$ and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector field $\bar X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{\cD_{\cX,\bfr}}$ and so $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$;
-    \item the quantities $\hat y_k$ and $e^{-\varepsilon d_kp_kx_k}$ are conserved under the flow of the vector field $\tilde X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$ and so $\frac{d}{dt}(p_jx_j)$ is a constant;
-    \item the quantities $\hat y_k$ and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector field $\bar X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cD_{\cA,\bfr}}$ and so $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
+    \item The quantities $y_k$, $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$, $\prod_{\ell'=1}^n (v_{\ell'}y_{\ell'}+1)^{\varepsilon d_{\ell'} B_{\ell' k}}$, and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$.
+      It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$
+    \item the quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_kx_k+1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
+      It follows that $\frac{d}{dt}(p_jx_j)$ is a constant, $\frac{d}{dt}(u_j x_j)$ is a constant multiple of $u_j x_j+1$, and $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
   \end{itemize}
 \end{proof}
 \begin{remark}
@@ -1085,29 +1081,46 @@ Consider the time-$t$ flows of the vector fields from \eqref{eq:groupoid vector 
   
 \begin{lemma}
   \label{le:tropical groupoid transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms $\tilde\tau_\cX^{k,\varepsilon}:\cG_\cX\to\cG'_\cX$, $\bar\tau_\cX^{k,\varepsilon}:\cD_\cX\to\cD'_\cX$ and $\tilde\tau_\cA^{k,\varepsilon}:\cG_\cA\to\cG'_\cA$, $\bar\tau_\cA^{k,\varepsilon}:\cD_\cA\to\cD'_\cA$ lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms 
+  \begin{align*}
+    \tau_\cX^{k,\varepsilon}&:\cG_\cX\to\cG'_\cX,& \tau_\cX^{k,\varepsilon}&:\cB_\cX\to\cB'_\cX,& \bar\tau_\cX^{k,\varepsilon}&:\cD_\cX\to\cD'_\cX\\
+    \tau_\cA^{k,\varepsilon}&:\cG_\cA\to\cG'_\cA,& \tau_\cA^{k,\varepsilon}&:\cB_\cA\to\cB'_\cA,& \tau_\cA^{k,\varepsilon}&:\cD_\cA\to\cD'_\cA
+  \end{align*}
+  lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
   These are given on coordinates by
   \begin{align}
     \label{eq:tropical GX transformation}
-    (\tilde\tau_\cX^{k,\varepsilon})^*(q'_\ell)
+    (\tau_\cX^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
       -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k & \text{if $\ell=k$;}\\ 
       q_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:tropical GA transformation}
-    (\tilde\tau_\cA^{k,\varepsilon})^*(p'_j)&=
-    \begin{cases} 
-      -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
-      p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j} & \text{if $j\ne k$;}
+    \label{eq:tropical BX transformation}
+    (\tau_\cX^{k,\varepsilon})^*(v'_\ell)
+    &=\begin{cases} 
+      y_k\Big[(v_k y_k + 1)^{-1}\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{[\varepsilon B_{k\ell'}]_+} -1\Big] & \text{if $\ell=k$;}\\
+      v_\ell y_k^{-[\varepsilon B_{k\ell}]_+} & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:tropical DX transformation}
-    (\bar\tau_\cX^{k,\varepsilon})^*(t'_\ell)
+    (\tau_\cX^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
+    \label{eq:tropical GA transformation}
+    (\tau_\cA^{k,\varepsilon})^*(p'_j)&=
+    \begin{cases} 
+      -p_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+} & \text{if $j=k$;}\\ 
+      p_j + [-\varepsilon B_{jk}]_+ \frac{p_k x_k}{x_j} & \text{if $j\ne k$;}
+    \end{cases}\\
+    \label{eq:tropical BA transformation}
+    (\tau_\cA^{k,\varepsilon})^*(u'_j)
+    &=\begin{cases} 
+      -(u_k x_k + 1)^{-1}u_k x_k^2 \prod\limits_{i=1}^m x_i^{-[-\varepsilon B_{ik}]_+}  & \text{if $j=k$;}\\ 
+      x_j^{-1}\big[(u_j x_j + 1) (u_k x_k + 1)^{[-\varepsilon B_{jk}]_+}-1\big] & \text{if $j\ne k$.}
+    \end{cases}\\
     \label{eq:tropical DA transformation}
-    (\bar\tau_\cA^{k,\varepsilon})^*(s'_j)
+    (\tau_\cA^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
       s_j s_k^{[-\varepsilon B_{jk}]_+} & \text{if $j\ne k$.}
