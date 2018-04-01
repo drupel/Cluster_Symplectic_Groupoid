@@ -101,7 +101,7 @@ This is the first of a series of papers whose aim is to implement the Weinstein 
 In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
 The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{FZ02} as the culmination of their study of total positivity and canonical bases for algebraic groups \cite{BFZ98}.
-Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{berenstein-fomin-zelevinsky,scott,gekhtman-shapiro-vainshtein,williams}.
+Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{BFZ05,scott,gekhtman-shapiro-vainshtein,Wil13b}.
 The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{GSV10}.
 In particular, our results immediately give rise to a trio of symplectic/Poisson groupoids integrating a compatible Poisson structure on any cluster $\cA$-variety, including those mentioned above. 
 
@@ -727,19 +727,19 @@ It will become apparent from the results below that, from the Poisson perspectiv
 However, we will work in a slightly more general setting.
 
 Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{\ell=1}^n \RR_+^{r_\ell-1}$ with coordinates $a_{\ell,j}$ for $1\le\ell\le n$, $1\le j\le r_\ell-1$.
-We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $F_\ell(z)\in\RR_+[z]$ with $F_\ell(0)=1$ given by
-\[F_\ell(z)=1+a_{\ell,1}z+\cdots+a_{\ell,r_\ell-1}z^{r_\ell-1}+z^{r_\ell}.\]
+We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $P_\ell(z)\in\RR_+[z]$ with $P_\ell(0)=1$ given by
+\[P_\ell(z)=1+a_{\ell,1}z+\cdots+a_{\ell,r_\ell-1}z^{r_\ell-1}+z^{r_\ell}.\]
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr.\]
-Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the functions $a_{\ell,j}$ on $L_\bfr$ are Casimirs. 
+Here we extend the Poisson structures on $L_\cX$ and $L_\cA$ to $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ so that the coordinate functions $a_{\ell,j}$ on $L_\bfr$ are Casimirs. 
 Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{\cX,\bfr}$ which we still denote by $\rho$.
 
 Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $h^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L_{\cX,\bfr}}$ and $h^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L_{\cA,\bfr}}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
-  h_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du\qquad\text{and}\qquad h_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(F_k(u)\big)}{u}du.
+  h_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(P_k(u)\big)}{u}du\qquad\text{and}\qquad h_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(P_k(u)\big)}{u}du.
 \end{equation}
-Observe that when $r_k=1$, i.e.\ $F_k(z)=1+z$, we have $h_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $h_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
+Observe that when $r_k=1$, i.e.\ $P_k(z)=1+z$, we have $h_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $h_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
 
 Clearly, there is an equality $\rho^*(h_{\cX,\bfr}^{k,\varepsilon})=h_{\cA,\bfr}^{k,\varepsilon}$.
 Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{L_{\cA,\bfr}}$ for the Hamiltonian vector fields associated to $h_{\cX,\bfr}^{k,\varepsilon}$ and $h_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{h_{\cX,\bfr}^{k,\varepsilon},\cdot\}_\cX$ and $\{h_{\cA,\bfr}^{k,\varepsilon},\cdot\}_\cA$.
@@ -748,16 +748,16 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ determine the following dynamics on $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$:
   \begin{align}
     \label{eq:X dynamics}
-    \dot y_\ell&:=\{h_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
+    \dot y_\ell&:=\{h_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(P_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
-    \dot x_j&:=\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
+    \dot x_j&:=\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(P_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
   \end{align}
   Moreover, the points of $L_\bfr$ are fixed by the Hamiltonian flows.
 \end{lemma}
 \begin{proof}
   Equation~\eqref{eq:X dynamics} was essentially proven in \cite{MR3691969}.
   Since equation~\eqref{eq:A dynamics} seems to technically be new, we will indicate the key steps in the computation here:
-  \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(F_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)x_j.\]
+  \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(P_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(P_k(\hat y_k^\varepsilon)\big)x_j.\]
 \end{proof}
 
 It immediately follows that $y_k$ is a conserved quantity under the flow of $L_{\cX,\bfr}$ by the vector field $X_{\cX,\bfr}^{k,\varepsilon}$.
@@ -765,9 +765,9 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 \begin{corollary}
   \label{cor:time-one flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_{\cX,\bfr}^t:L_{\cX,\bfr}\to L_{\cX,\bfr}$ of the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$, given on coordiates by
-  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(F_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\qquad (\varphi_{\cX,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i},\]
+  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(P_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\qquad (\varphi_{\cX,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i},\]
   and the time-$t$ flow $\varphi_{\cA,\bfr}^t:L_{\cA,\bfr}\to L_{\cA,\bfr}$ of the Hamiltonian vector field $X_{\cA,\bfr}^{k,\varepsilon}$, given on coordiates by
-  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(F_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\qquad (\varphi_{\cA,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i}\]
+  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(P_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\qquad (\varphi_{\cA,\bfr}^t)^*(a_{\ell,i})=a_{\ell,i}\]
   preserve the respective Poisson structures.
 \end{corollary}
 \begin{proof}
@@ -783,7 +783,9 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation
   \item $\Omega'=E_{\bfr,k,\varepsilon}^T\Omega E_{\bfr,k,\varepsilon}$ for $E_{\bfr,k,\varepsilon}$ the $m\times m$ matrix with entries
     \[E_{ij}=\begin{cases}\delta_{ij} & \text{if $j\ne k$;}\\ -1 & \text{if $i=j=k$;}\\ [-\varepsilon B_{ik}r_k]_+ & \text{if $i\ne j=k$.}\end{cases}\]
 \end{itemize}
-It is an easy exercise to check that mutation of compatible pairs is an involution, more precisely $\mu_{\bfr,k,\varepsilon}\mu_{\bfr,k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)$ for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
+It is an easy exercise to check that mutation of compatible pairs is an involution, more precisely 
+\[\mu_{\bfr,k,\varepsilon}\mu_{\bfr,k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)\]
+for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
 In particular, the mutation $\mu_{\bfr,k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_{\bfr,k}$ for this mutation when the choice of sign can be ignored.
 
 Let $L'_\cX=\RR_+^n$ and $L'_\cA=\RR_+^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively.
@@ -843,9 +845,9 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ which are the identity map on the $L_\bfr$ components and are given on coordinates of $L_\cX$ and $L_\cA$ by
   \begin{align}
     \label{eq:X mutation}
-    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+}F_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+}P_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)F_k(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)P_k(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
   \end{align}
   Moreover, the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}\mu_{\cX,\bfr}^{k,-\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}\mu_{\cA,\bfr}^{k,-\varepsilon}$ are identity maps on $L_{\cX,\bfr}$ and on $L_{\cA,\bfr}$ respectively for any choice of sign $\varepsilon$.
 \end{lemma}
@@ -855,18 +857,20 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
 \end{proof}
 
 \begin{remark}
-  While we have assumed that $L_\cX=\RR_+^n$, $L_\cA=\RR_+^m$, and $F_k(z)\in\RR_+[z]$ to motivate the Hamiltonian natures of $\mu_{\cX,\bfr}^{k,\varepsilon}$ and~$\mu_{\cA,\bfr}^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined when $L_\cX=(\CC^\times)^n$, $L_\cA=(\CC^\times)^m$, and $F_k(z)\in\CC[z]$ is a monic polynomial with $F_k(0)=1$.
-  Similarly in the real case, the requirement that the coefficients of $F_k(z)$ be positive real numbers was unnecessary and we allow any monic polynomials $F_k(z)\in\RR[z]$ with $F_k(0)=1$ from now on.
+  While we have assumed that $L_\cX=\RR_+^n$, $L_\cA=\RR_+^m$, and $P_k(z)\in\RR_+[z]$ to motivate the Hamiltonian natures of $\mu_{\cX,\bfr}^{k,\varepsilon}$ and~$\mu_{\cA,\bfr}^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined when $L_\cX=(\CC^\times)^n$, $L_\cA=(\CC^\times)^m$, and $P_k(z)\in\CC[z]$ is a monic polynomial with $P_k(0)=1$.
+  Similarly in the real case, the requirement that the coefficients of $P_k(z)$ be positive real numbers was unnecessary and we allow any monic polynomials $P_k(z)\in\RR[z]$ with $P_k(0)=1$ from now on.
   This holds equally well for the \emph{automorphism parts} $\varphi_{\cX,\bfr}^1$, $\varphi_{\cA,\bfr}^1$ and the \emph{tropical parts} $\tau_{\cX,\bfr}^{k,\varepsilon}$, $\tau_{\cA,\bfr}^{k,\varepsilon}$ of the cluster mutations.
-  The various Poisson maps are summarized in the following commutative diagram.
-\begin{equation} 
-    \label{eq:PoisCD}
-    \xymatrix{
-      L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & L'_{\cA,\bfr} \ar[d]^{\rho} \\
-      L_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & L_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & L'_{\cX,\bfr}
-    }
-  \end{equation}
 \end{remark}
+
+The various Poisson maps are summarized in the following commutative diagram.
+\begin{equation} 
+  \label{eq:PoisCD}
+  \xymatrix{
+    L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & L_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & L'_{\cA,\bfr} \ar[d]^{\rho} \\
+    L_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & L_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & L'_{\cX,\bfr}
+  }
+\end{equation}
+\bigskip
 
 To record the iteration of mutations, we introduce the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$ and with the $n$ edges emanating from each vertex labeled by the set $\{1,\ldots,n\}$.
 In particular, each vertex $t\in\TT_n$ is uniquely determined by a sequence of indices specifying the edge labels along the unique path from $t_0$ to~$t$.
@@ -878,18 +882,27 @@ Given a skew-symmetric $m\times m$ matrix $\Omega^{t_0}$ compatible with $\tilde
 As observed above, the inverse of a cluster mutation requires a change of signs $\varepsilon$.
 In general, it will be important to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations for the cluster charts $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
 To accomplish this, we observe that the mutation pattern gives rise to the following combinatorial construction.
-\begin{example}
-  \label{ex:tropical signs}
+\begin{definition}
+  \label{def:tropical signs}
   Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B^{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
-  Then, given $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$, the lower $n\times n$ submatrix $C^t$ of $\tilde B^t$ has the following \emph{sign-coherence} property: 
+  Then, given $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$, the lower $n\times n$ submatrix $C^t$ of $\tilde B^t$ transforms as follows when $t$ and $t'$ are joined by an edge labeled $k$:
+  \begin{equation}
+    \label{eq:c-matrix mutation}
+    C_{ij}^{t'}=
+    \begin{cases}
+      -C_{ij}^t & \text{if $j=k$;}\\
+      C_{ij}^t+C_{ik}^t[r_kB_{kj}^t]_++[-C_{ik}^t]_+r_kB_{kj}^t & \text{if $j\ne k$.}
+    \end{cases}
+  \end{equation}
+  The $C$-matrices have the following \emph{sign-coherence} property: 
   \begin{itemize}
-    \item each column of $C^t$, known as a $\bfc$-vector, has either all non-negative entries or all non-positive entries \cite{FZ07,nakanishi-zelevinsky,gross-hacking-keel-kontsevich,NR16}.
+    \item each column of $C^t$, known as a \emph{$\bfc$-vector}, has either all non-negative entries or all non-positive entries \cite{FZ07,NZ12,GHKK14,NR16}.
   \end{itemize}
   Thus each exchange matrix $\tilde B^t$ mutation equivalent to $\tilde B^{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{\bfr,k;t}\in\{\pm1\}$, where $\varepsilon_{\bfr,k;t}=1$ if the entries in the $k$-th column of $C^t$ are non-negative and $\varepsilon_{\bfr,k;t}=-1$ if the entries in the $k$-th column of $C^t$ are non-positive. 
 
   Given an arbitrary exchange matrix $\tilde B$, we may construct a corresponding principalized exchange matrix $\tilde B_{prin}$ from the principal submatrix $B$ of $\tilde B$.
   Then for each vertex $t\in\TT_n$, we associate the same tropical signs $\varepsilon_{\bfr,k;t}$ as above to the columns of $\tilde B^t$.
-\end{example}
+\end{definition}
 
 We associate a Poisson space $L_{\cX;t}$ isomorphic to either $\RR_+^n$ or $(\CC^\times)^n$ and a Poisson space $L_{\cA;t}$ isomorphic to either $\RR_+^m$ or $(\CC^\times)^m$ to each vertex $t\in\TT_n$.
 That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $L_{\cX;t}$ and a system of coordinates $\bfx_t=(x_{1;t},\ldots,x_{m;t})$ on $L_{\cA;t}$ satisfying
@@ -926,7 +939,52 @@ The following result is the famous Laurent phenomenon for (generalized) cluster 
   Each cluster coordinate $x_{i;t}$ on the cluster chart $L_{\cA,\bfr;t}$ determines a global function on $\cA_\bfr$ which is given by a Laurent polynomial in the coordinates of any other cluster chart $L_{\cA,\bfr;t'}$.
 \end{theorem}
 
+This result can be made considerably more precise as follows, c.f.\ \cite{FZ07,NR16}.
+Given a pair of vertices $t,t'\in\TT_n$, the composition of mutations from $L_{-,\bfr;t}$ to $L_{-,\bfr;t'}$ along the unique path from $t$ to $t'$ in $\TT_n$ (always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}) gives rise to birational maps
+\[\mu_{\cX,\bfr}^{t',t}:L_{\cX,\bfr;t}\to L_{\cX,\bfr;t'}\qquad\text{and}\qquad\mu_{\cA,\bfr}^{t',t}:L_{\cA,\bfr;t}\to L_{\cA,\bfr;t'}.\]
 
+When $\tilde B^{t_0}=\tilde B_{prin}$ has principal coefficients, the cluster coordinates of $\cA_\bfr$ admit a lot of structure which turns out to control the expressions for cluster coordinates with arbitrary coefficients.
+In this case, all cluster coordinates $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ on $L_{\cA,\bfr;t_0}$ are homogeneous with respect to the $\ZZ^n$-grading
+\[\deg(x_{i;t_0})=\bfe_i\qquad\text{and}\qquad\deg(x_{n+i;t_0})=-\bfb_i,\]
+for $1\le i\le n$, where $\bfe_i$ is the $i$-th standard basis vector of $\ZZ^n$ and $\bfb_i\in\ZZ^n$ is the $i$-th column of $B$.
+Note that each $\hat y_k:=x_{n+k;t_0}\prod_{i=1}^n x_{i;t_0}^{B_{ik}^{t_0}}$ has degree zero under this grading.
+The \emph{$\bfg$-vector} $\bfg_{j;t}=\sumlimits_{i=1}^n G_{ij}^t\bfe_i$ of the cluster coordinate $x_{j;t}$ is its degree when pulled back to $L_{\cA,\bfr;t_0}$.
+These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$:
+\begin{equation}
+  \label{eq:g-matrix mutation}
+  G_{ij}^{t'}=
+  \begin{cases}
+    -G_{ik}^t+\sum\limits_{\ell=1}^n G_{i\ell}^t[-B_{\ell k}^t r_k]_+-\sum\limits_{\ell=1}^n B_{i\ell}^t[-C_{\ell k}^t r_k]_+ & \text{if $j=k$;}\\
+    G_{ij}^t & \text{if $j\ne k$.}
+  \end{cases}
+\end{equation}
+Then there exists a unique polynomial $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$, called the \emph{$F$-polynomial}, such that the initial cluster Laurent expansion of $x_{j;t}$ is given by
+\[\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(x_{j;t})=\prod_{i=1}^n x_i^{G_{ij}^t} F_{j,\bfr;t}(\hat y_1,\ldots,\hat y_n).\]
+The $F$-polynomials transform via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
+\begin{equation}
+  \label{eq:F-polynomial mutation}
+  F_{j,\bfr;t'}=
+  \begin{cases}
+    F_{k,\bfr;t}^{-1}\left(\prod_{i=1}^n u_i^{[-C_{ik}^t]_+} F_{i,\bfr;t}^{[-B_{ik}^t]_+}\right)^{r_k} P_k\left(\prod_{i=1}^n u_i^{C_{ik}^t} F_{i,\bfr;t}^{B_{ik}^t}\right) & \text{if $j=k$;}\\
+    F_{j,\bfr;t} & \text{if $j\ne k$.}
+  \end{cases}
+\end{equation}
+
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials associated to principal coefficients cluster algebras completely control the mutations for arbitrary coefficients as follows.
+Let $\tilde B^{t_0}$ be an $m\times n$ exchange matrix.
+Define a \emph{tropical addition} on monomials in $\CC[x_{j;t_0}:n+1\le j\le m]$ by
+\[\prod_{j=n+1}^m x_{j;t_0}^{a_j}\oplus \prod_{j=n+1}^m x_{j;t_0}^{b_j}=\prod_{j=n+1}^m x_{j;t_0}^{\max\{a_j,b_j\}}.\]
+Then we have the following \emph{separation of additions} formulas:
+\begin{align}
+  \label{eq:separation of additions 1}
+  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})=\prod_{i=1}^n x_i^{G_{ij}^t} \frac{F_{j,\bfr;t}(\hat y_1,\ldots,\hat y_n)}{F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)};\\
+  \label{eq:separation of additions 2}
+  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})=\left(\prod_{k=1}^n y_{k;t_0}^{C_{k \ell}^t}\right) \prod_{k=1}^n F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k \ell}^t};
+\end{align}
+where $F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)$ denotes the tropical evaluation setting each $x_{i;t_0}=1$ for $1\le i \le n$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mutation of Groupoid Charts}
 \label{sec:groupoid mutations}
 
@@ -1031,9 +1089,9 @@ Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\var
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
 \begin{align}
   \label{eq:X hamiltonian}
-  H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(F_k(u)\big)}{u}du;\\
+  H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(P_k(u)\big)}{u}du;\\
   \label{eq:A hamiltonian}
-  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(F_k(u)\big)}{u}du.
+  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(P_k(u)\big)}{u}du.
 \end{align}
 Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used.
 
@@ -1041,23 +1099,23 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$:
   \begin{align}
-    \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)q_\ell;\\
-    \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},v_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (1+v_{\ell'}y_{\ell'})^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)(v_ky_k+1)+B_{k\ell}\log\big(F_k(y_k^\varepsilon)\big)v_\ell;\\
-    \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)t_k;
+    \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{P_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{P_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(P_k(y_k^\varepsilon)\big)q_\ell;\\
+    \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},v_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{P_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (1+v_{\ell'}y_{\ell'})^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{P_k(y_k^\varepsilon)}\right)(v_ky_k+1)+B_{k\ell}\log\big(P_k(y_k^\varepsilon)\big)v_\ell;\\
+    \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{P_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{P_k(y_k^\varepsilon)}\right)t_k;
   \end{align}
   and the Hamiltonian vector field $X_{\cA,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$:
   \begin{align}
     \label{eq:p dot}
-    \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)p_k;\\
+    \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{P_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(P_k(\hat y_k^\varepsilon)\big)p_k;\\
     \label{eq:u dot}
-    \dot u_j&=\{H_{\cA,\bfr}^{k,\varepsilon},u_j\}_{\cB_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{F_k\left(\hat y_k^\varepsilon (1+u_kx_k)^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)(u_jx_j+1)+\delta_{jk}\log\big(F_k(\hat y_k^\varepsilon)\big)u_k\\
+    \dot u_j&=\{H_{\cA,\bfr}^{k,\varepsilon},u_j\}_{\cB_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{P_k\left(\hat y_k^\varepsilon (1+u_kx_k)^{-\varepsilon d_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)(u_jx_j+1)+\delta_{jk}\log\big(P_k(\hat y_k^\varepsilon)\big)u_k\\
     \label{eq:s dot}
-    \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)s_j.
+    \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{P_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
   The coordinates $b_{\ell,j}$ on $T^*L_\bfr$ evolve according to
   \begin{equation}
     \label{eq:b dot}
-    \dot b_{\ell,j}=\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
+    \dot b_{\ell,j}=\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{P_k(u)}du,
   \end{equation}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{lemma}
@@ -1074,19 +1132,19 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
 \begin{corollary}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L_{\cX,\bfr} \to L_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB_{\cX,\bfr} \to \cB_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right),\\
-    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1)-1,\\
-    (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
+    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{P_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{P_k(y_k^\varepsilon)}\right),\\
+    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell)&=\left(\frac{P_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{P_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1)-1,\\
+    (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{P_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{P_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
   and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L_{\cA,\bfr} \to L_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB_{\cA,\bfr} \to \cB_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right), \\
-    (\varphi_{\cA,\bfr}^t)^*(u_jx_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1)-1, \\
-    (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
+    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{P_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{P_k(\hat y_k^\varepsilon)}\right), \\
+    (\varphi_{\cA,\bfr}^t)^*(u_jx_j)&=\left(\frac{P_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1)-1, \\
+    (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{P_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
   Each of the Hamiltonian flows above transform the coordinates $b_{\ell,j}$ on $T^*L_\bfr$ according to
   \begin{equation*}
-    (\varphi_{-,\bfr}^t)^*(b_{\ell,j})=b_{\ell,j}+\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{F_k(u)}du,
+    (\varphi_{-,\bfr}^t)^*(b_{\ell,j})=b_{\ell,j}+\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{P_k(u)}du,
   \end{equation*}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{corollary}
@@ -1174,26 +1232,26 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
     \label{eq:GX mutation}
     (\tilde\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell y'_\ell)
     &=\begin{cases} 
-      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{F_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{F_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
+      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{P_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{P_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
       q_\ell y_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:GA mutation}
     (\tilde\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j x'_j)&=
     \begin{cases} 
       -p_k x_k & \text{if $j=k$;}\\ 
-      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{F_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{F_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
+      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{P_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{P_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DX mutation}
     (\bar\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
-      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{F_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{F_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{P_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{P_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
     (\bar\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
-      s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{F_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{F_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
+      s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{P_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{P_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
     \end{cases}
   \end{align}
 \end{proposition}
@@ -1278,7 +1336,8 @@ The following result of Fomin and Zelevinsky known as ``the Laurent phenomenon''
 \end{theorem}
 
 In fact, the situtation is even better:\footnote{do we need this?} the initial cluster Laurent expansions of all cluster variables have positive integer coefficients.
-\begin{theorem}\cite{lee-schiffler, gross-hacking-keel-kontsevich}
+\begin{theorem}
+  \cite{lee-schiffler,GHKK14}
   Let $\Sigma$ be a seed in $\cF$ and $\Sigma'\sim\Sigma$.  Each cluster variable $x'_i$ of $\Sigma'$ is an element of the subsemiring $\ZZ_{\ge0}[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$. 
 \end{theorem}
 For $x'_i$ a cluster variable from a seed $\Sigma'\sim\Sigma$, we write $x'_i(\bfx)$ when we wish to emphasize that $x'_i$ should be thought of as a function of the cluster variables in $\bfx=(x_1,\ldots,x_m)$.
@@ -1423,8 +1482,8 @@ where $\varepsilon_k$ denotes the tropical sign for the seed $\Sigma$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Totally Positive Cluster Manifolds}
-In this section we show that the totally nonnegative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{MR3077259}.  
-Moreover, we show that the nonnegative cluster manifold is a union of symplectic leaves for any compatible Poisson structure on $\cA(\Sigma)$.  
+In this section we show that the totally non-negative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{MR3077259}.  
+Moreover, we show that the non-negative cluster manifold is a union of symplectic leaves for any compatible Poisson structure on $\cA(\Sigma)$.  
 The symplectic leaves of $M_{\ge0}(\Sigma)$ are naturally labelled by compatible subsets of cluster variables, where the number of cluster variables in the labeling set determines the corank of the symplectic leaf.
 Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigma)$ is again a union of symplectic leaves of lower dimension where the Poisson structure degenerates.
 
