@@ -601,8 +601,8 @@ Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following s
     \item the target map is
       \[\beta: \cB \to L, \qquad (\bfu, \bfx) \mapsto \left(x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right);\]
 	\item the identity map $\mathtt{1}: L \to \cB, \quad \bfx \mapsto (\bfzero, \bfx)$;
-    \item the inverse map is
-      \[\iota: \cB \to \cB, \qquad (\bfu, \bfx) \mapsto \left(-\frac{u_1}{u_1x_1+1}, \ldots, -\frac{u_m}{u_mx_m+1}, x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right);\]
+    \item the inverse map is $\iota: \cB \to \cB$ sending $(\bfu, \bfx)$ to 
+      \[\left(-\frac{u_1\prod_{i=1}^m (u_ix_i+1)^{-\Omega_{i1}}}{u_1x_1+1}, \ldots, -\frac{u_m\prod_{i=1}^m (u_ix_i+1)^{-\Omega_{im}}}{u_mx_m+1}, x_1 \prod_{i=1}^m (u_ix_i+1)^{\Omega_{i1}}, \ldots, x_m \prod_{i=1}^m (u_ix_i+1)^{\Omega_{im}}\right);\]
     \item the multiplication map is
       \[\begin{aligned}
 	  m: & \cB {_\beta \times_\alpha} \cB \to \cB, \\
