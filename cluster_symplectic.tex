@@ -461,8 +461,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
 
 \begin{corollary}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$, the exponential map
-  \[\exp: T^*_\pi L \to \cG, \qquad (\bfp, \bfx) \mapsto \bfa \circ \bfx,\]
-  \footnote{There does not appear to be enough coordinates on the right hand side.}
+  \[\exp: T^*_\pi L \to \cG, \qquad (\bfp, \bfx) \mapsto \left(\bfa^{-1} \circ \bfp, \bfa \circ \bfx \right),\]
   where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$, is a diffeomorphism.
 \end{corollary}
 
@@ -510,7 +509,7 @@ It may be strange that the Poisson groupoid $\cD \rra L$ is called the symplecti
   The $\alpha$-fibers are symplectic orthogonal to the $\beta$-fibers; both $\alpha: (\cU, \omega_\cU) \to (L, \pi)$ and $\beta: (\cU, - \omega_\cU) \to (L, \pi)$ are Poisson maps.
 
   For the standard symplectic structure $\omega_0 = \sum_{i} d\chi_i \wedge d\xi_i$ on $\cU$, since
-  \[\omega - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j\]
+  \[\omega_\cU - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j\]
   is supported on the $\alpha$-fiber, we have that $\beta_*(-\omega_0^{-1}) = \beta_*(-\omega_\cU^{-1}) = \pi$.
   The symplectic realization $\beta: (\cU, -\omega_0) \to (L, \pi)$ plays an essential role in \cite{MR3691969}.
 \end{remark}
@@ -661,7 +660,7 @@ Explicitly in coordinates, these maps are given by
 \end{align}
 
 \begin{remark}
-  If $L = \RR^m$, then $\cB \rra L$ is source-simply-connected and all three maps $\kappa: \cG \to \cB$ is a groupoid isomorphism, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
+  If $L = \RR^m$, then $\cB \rra L$ is source-simply-connected and all three groupoid maps are groupoid isomorphisms when we restricted the base to $L_+ = \RR_+^m$, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
 \end{remark}
 
 We summarize the pros and cons of the three groupoids $\cG \rra L$, $\cB \rra L$ and $\cD \rra L$.
