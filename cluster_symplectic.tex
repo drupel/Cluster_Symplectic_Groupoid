@@ -311,11 +311,14 @@ The integrability of Poisson manifolds, and more generally the integrability of 
 %	\end{enumerate}
 %\end{example}
 
-Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids.
-In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\varphi: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
-In fact, $\varphi$ being Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrate to Lagrangian subgroupoids \cite{MR2104442}.
-That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$.
-However, we will see as a recurring theme throughout \S\ref{sec:mutations} that the cluster mutations always lift to groupoid mutations.
+\begin{remark}
+  \label{rem:lifting}
+  Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids.
+  In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\varphi: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
+  In fact, $\varphi$ being Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrate to Lagrangian subgroupoids \cite{MR2104442}.
+  That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$.
+  However, we will see as a recurring theme throughout \S\ref{sec:mutations} that the cluster mutations always lift to groupoid mutations.
+\end{remark}
 
 We focus on the symplectic groupoids of log-canonical Poisson structures.
 \begin{definition} 
@@ -540,7 +543,7 @@ where the kernel of $\rho_\cD$ has trivial bracket.
 \end{proof}
 
 Fixing an $m\times m$ skew-symmetric matrix $\Omega$ and the corresponding log-canonical Poisson space as in Definition~\ref{def: logPoisson}, the cotangent Lie algebroid $T^*_\pi L$ is not isomorphic to the Lie algebroid $A_\cD$.
-In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected\footnote{I thought source-connectedness was lost by blowing up} symplectic groupoid of $(L,\pi)$ via the blow-up construction \cite{MR3214314}. 
+In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected symplectic groupoid of $(L,\pi)$ via the blow-up construction \cite{MR3214314}. 
 \begin{definition}
   Let $E$ be a vector bundle over $M$ and let $F$ be a subbundle of $E|_L$ for some hypersurface $L$. The \emph{elementary (lower) modfication} of $E$ along $F$, denoted by $[E\!:\!F]$, is the vector bundle with the sheaf of sections
   \[\Gamma\big(M, [E\!:\!F]\big) = \{s \in \Gamma(M, E) : s|_L \in \Gamma(L, F) \}.\]
@@ -591,6 +594,7 @@ Indeed, the Lie subalgebroid $A_\cD^k$ integrates to the subgroupoid $\cD_k \rra
 \[\cB = [\ldots[[\cD\!:\!\cD_1]\!:\!\cD_2] \ldots \!:\!\cD_m].\]
 Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following symplectic groupoid structure on $\cB \rra L$.
 \begin{theorem} 
+  \label{th:blowup groupoid}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), we have that $(\cB, \omega_\cB) \rra (L, \pi)$ is a source-connected symplectic groupoid with the following structures:
   \begin{enumerate}
     \item $\cB \subset L \times L$ has the coordinates $(\bfu, \bfx) = (u_1, \ldots, u_m, x_1, \ldots, x_m)$;
@@ -629,7 +633,7 @@ Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following s
 
 \begin{remark}
   Recall that the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MR1262213}.
-  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $(A_\cD, TL(-\log D))$, where $TL(-\log D)$ is the log tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{MR3214314}.
+  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $\big(A_\cD, TL(-\log D)\big)$, where $TL(-\log D)$ is the log tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{MR3214314}.
   That is,
   \[TL(-\log D) = [\ldots[[TL\!:\!TL_1]\!:\!TL_2] \ldots \!:\!TL_m],\]
   or equivalently the sections of $TL(-\log D)$ are the vector fields on $L$ tangent to $L_k$ for $k = 1, \ldots, m$.
@@ -665,7 +669,7 @@ Explicitly in coordinates, these maps are given by
 
 We summarize the pros and cons of the three groupoids $\cG \rra L$, $\cB \rra L$ and $\cD \rra L$.
 
-The symplectic groupoid $\cG \rra L$ is source-simply-connected when the underlying field is $\CC$, and as we will see in \S\ref{sec:groupoid mutations}, is the only one among the three groupoids for which the Poisson ensemble map $\rho: L_\cA \to L_\cX$ from an holomorphic $\cA$-vareity to its corresponding holomorphic $\cX$-vareity can be lifted to a symplectic groupoid map $\rho: \cG_\cA \to \cG_\cX$.
+The symplectic groupoid $\cG \rra L$ is source-simply-connected when the underlying field is $\CC$, and as we will see in \S\ref{sec:groupoid mutations}, is the only one among the three groupoids for which the Poisson ensemble map $\rho: L_\cA \to L_\cX$ from an holomorphic $\cA$-variety to its corresponding holomorphic $\cX$-variety can be lifted to a symplectic groupoid map $\rho: \cG_\cA \to \cG_\cX$.
 The disadvantage of $\cG \rra L$ is that its groupoid structure maps are transcendental.
 
 On the other hand, the multiplicative Poisson structure of $\cD \rra L$ has a simple expression and its groupoid structure maps are algebraic, but it is only symplectic when restricted to $L^+$.
@@ -1037,8 +1041,8 @@ We introduce coordinates on these groupoids given as follows:
   \item $\cB_\cA$ has coordinates $(\bfu,\bfx)=(u_1,\ldots,u_m,x_1,\ldots,x_m)$;
   \item $\cD_\cA$ has coordinates $(\bfs,\bfx)=(s_1,\ldots,s_m,x_1,\ldots,x_m)$.
 \end{itemize}
-The symplectic groupoid structures on $\cG_\cA \rra L^+_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, while the symplectic groupoid structures on $\cD_\cA \rra L^+_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}.
-The symplectic groupoid structures on $\cG_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:PoiSpLogC} by replacing $x_i$ with $y_k$, $p_j$ with $q_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$, and the symplectic groupoid structures on $\cD_\cX \rra L_\cX$ mimics the structures in Theorem~\ref{thm:SymDBLoc} by replacing $x_i$ with $y_k$, $s_j$ with $t_\ell$, and $\Omega_{ij}$ with $d_kB_{k\ell}$.
+The symplectic groupoid structure on $\cG_\cA \rra L^+_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, while the symplectic groupoid structure on $\cD_\cA \rra L^+_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}, and the symplectic groupoid structure on $\cB_\cA \rra L^+_\cA$ is the same as in Theorem~\ref{th:blowup groupoid}.
+The symplectic groupoid structures over $L^+_\cX$ mimic the structures in the theorems above by replacing $x_i$ with $y_k$ and $\Omega_{ij}$ with $d_kB_{k\ell}$ together with the corresponding replacements of coordinates $p_j$ with $q_\ell$, $u_j$ with $v_\ell$, and $s_j$ with $t_\ell$.
 
 As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce the symplectic groupoids 
 \begin{align*}
@@ -1046,14 +1050,24 @@ As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introd
   \cG_{\cA,\bfr}&=\cG_\cA\times T^*L_\bfr,& \cB_{\cA,\bfr}&=\cB_\cA\times T^*L_\bfr,& \cD_{\cA,\bfr}&=\cD_\cA\times T^*L_\bfr,
 \end{align*}
 where each cotangent bundle $T^*L_\bfr$ is equipped with its canonical symplectic structure and we write $b_{\ell,j}$ for the cotangent coordinate associated to the coordinate $z_{\ell,j}$ of $L_\bfr$.
+Translating this symplectic structure into a Poisson bracket on $T^*L_\bfr$, we have
+\begin{equation}
+  \label{eq:canonical brackets}
+  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
+\end{equation}
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
 %Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 %\[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
+
+Our first observation is that, despite the warnings of Remark~\ref{rem:lifting}, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to maps between each of the symplectic groupoids over these spaces.
 \begin{lemma}
-  \footnote{Check this again}
-  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to a morphism of symplectic groupoids $\tilde\rho:\cG_\cA\to\cG_\cX$ given on fiber coordinates by 
-  \[\tilde\rho^*(q_\ell)=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{j\ell}x_jp_j.\]
+  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to morphisms of symplectic groupoids $\rho:\cG_\cA\to\cG_\cX$, $\rho:\cB_\cA\to\cB_\cX$, and $\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  \begin{align*}
+    \rho^*(q_\ell)&=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{j\ell}x_jp_j;\\
+    \rho^*(v_\ell)&=\prod\limits_{j=1}^m (u_j x_j + 1)^{-d_\ell^{-1}\Omega_{\ell j}}.\\
+    \rho^*(t_\ell)&=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\\
+  \end{align*}
 \end{lemma}
 \begin{remark}
   \label{rmk:source-connected lift}
@@ -1071,52 +1085,53 @@ More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X
 Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
 Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
 
-As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
-Note that on $T^*L_\bfr$ we have the canonical Poisson structure 
-\begin{equation}
-  \label{eq:canonical brackets}
-  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
-\end{equation}
-\begin{lemma}
-  \label{le:groupoid Poisson structures}
-  \begin{align}
-    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_k} - \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_\ell}\\
-    \nonumber &\quad+\sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
-		    +\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} t_ky_k\frac{\partial}{\partial t_k} \wedge \frac{\partial}{\partial y_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j}\\
-    \nonumber &\quad+\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-		    +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
-    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
-  \end{align}
-\end{lemma}
-\begin{proof}
-  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
-
-  Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map $\pi_{\cG_\cA}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
-  \begin{align*}
-    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij} x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
-    &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij} p_i x_j \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij} p_i p_j \frac{\partial}{\partial p_j},
-  \end{align*}
-  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formGA}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
-  \begin{align*}
-    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij} p_i x_j dp_j + \sum_{j} \Omega_{ij} p_i p_j dx_j, \\
-    &~ \frac{\partial}{\partial p_i} \mapsto -dx_i + \sum_{j} \Omega_{ij} x_i p_j dx_j + \sum_{j} \Omega_{ij} x_i x_j dp_j.
-  \end{align*}
-
-  Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cD_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cD_\cA$, the bundle map $\pi_{\cD_\cA}^\flat: T^*\cD_\cA \to T\cD_\cA, \quad \alpha \mapsto \pi_{\cD_\cA}(\alpha, \cdot)$ is given by
-  \begin{align*}
-    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto -x_i s_i \frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
-    &~ ds_i \mapsto s_i x_i \frac{\partial}{\partial x_i},
-  \end{align*}
-  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formGX}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
-  \begin{align*}
-    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto \frac{1}{x_i s_i} ds_i, \\
-    &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
-  \end{align*}
-
-  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
-\end{proof}
+%As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
+%Note that on $T^*L_\bfr$ we have the canonical Poisson structure 
+%\begin{equation}
+%  \label{eq:canonical brackets}
+%  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
+%\end{equation}
+%\begin{lemma}
+%  \label{le:groupoid Poisson structures}
+%  \begin{align}
+%    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_k} - \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_\ell}\\
+%    \nonumber &\quad+\sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
+%+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
+%    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} t_ky_k\frac{\partial}{\partial t_k} \wedge \frac{\partial}{\partial y_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
+%    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j}\\
+%    \nonumber &\quad+\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
+%		    +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
+%    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
+%  \end{align}
+%\end{lemma}
+%\begin{proof}
+%  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
+%
+%  Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map $\pi_{\cG_\cA}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
+%  \begin{align*}
+%    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij} x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
+%    &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij} p_i x_j \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij} p_i p_j \frac{\partial}{\partial p_j},
+%  \end{align*}
+%  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formGA}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
+%  \begin{align*}
+%    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij} p_i x_j dp_j + \sum_{j} \Omega_{ij} p_i p_j dx_j, \\
+%    &~ \frac{\partial}{\partial p_i} \mapsto -dx_i + \sum_{j} \Omega_{ij} x_i p_j dx_j + \sum_{j} \Omega_{ij} x_i x_j dp_j.
+%  \end{align*}
+%
+%
+%Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cD_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cD_\cA$, the bundle map $\pi_{\cD_\cA}^\flat: T^*\cD_\cA \to T\cD_\cA, \quad \alpha \mapsto \pi_{\cD_\cA}(\alpha, \cdot)$ is given by
+%  \begin{align*}
+%    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto -x_i s_i \frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
+%    &~ ds_i \mapsto s_i x_i \frac{\partial}{\partial x_i},
+%  \end{align*}
+%  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formGX}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
+%  \begin{align*}
+%    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto \frac{1}{x_i s_i} ds_i, \\
+%    &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
+%  \end{align*}
+%
+%  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
+%\end{proof}
 
 Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cA$, $\cB_\cA$, $\cD_\cA$.
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
@@ -1126,9 +1141,9 @@ More explicitly, these Hamiltonian functions are given by the following analogue
   \label{eq:A hamiltonian}
   H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(Z_k(u)\big)}{u}du.
 \end{align}
-Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used.
+Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used in their definition.
 
-Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the Hamiltonian vector fields associated to the functions $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}$ and $\{H_{\cA,bfr}^{k,\varepsilon},\cdot\}$ on the appropriate groupoids.
+Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the Hamiltonian vector fields associated to the functions $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}$ and $\{H_{\cA,\bfr}^{k,\varepsilon},\cdot\}$ on the appropriate groupoids.
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$:
   \begin{align}
@@ -1154,22 +1169,22 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
 \end{lemma}
 \begin{proof}
   We prove equation \eqref{eq:p dot}, leaving the others as an exercise for the reader.
-  By Lemma~\ref{le:groupoid Poisson structures}, we have $\{x_i,p_j\}_{\cG_\cA}=-\delta_{ij}-\Omega_{ij}x_ip_j$ and $\{p_i,p_j\}_{\cG_\cA}=\Omega_{ij}p_ip_j$ so that
+  By Theorem~\ref{thm:PoiSpLogC}, we have $\{x_i,p_j\}_{\cG_\cA}=-\delta_{ij}-\Omega_{ij}x_ip_j$ and $\{p_i,p_j\}_{\cG_\cA}=\Omega_{ij}p_ip_j$ so that
   \[\{\hat y_k,p_j\}_{\cG_\cA}=\sum_{i=1}^m B_{ik}\frac{\hat y_k}{x_i}\{x_i,p_j\}_{\cG_\cA}=-B_{jk}\frac{\hat y_k}{x_j}-\delta_{jk}d_k\hat y_kp_k\]
   and
-  \[\{e^{-d_kp_kx_k},p_j\}_{\cG_\cA}=\delta_{jk}d_kp_ke^{d_kp_kx_k}.\]
+  \[\{e^{-d_kp_kx_k},p_j\}_{\cG_\cA}=\delta_{jk}d_kp_ke^{-d_kp_kx_k}.\]
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
 \end{proof}
 
 Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$.
 \begin{corollary}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L_{\cX,\bfr} \to L_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB_{\cX,\bfr} \to \cB_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, given on coordinates by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L^+_{\cX,\bfr} \to L^+_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB_{\cX,\bfr} \to \cB_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
     (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right),\\
     (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1)-1,\\
     (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
-  and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L_{\cA,\bfr} \to L_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB_{\cA,\bfr} \to \cB_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, given on coordinates by
+  and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L^+_{\cA,\bfr} \to L^+_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG_{\cA,\bfr} \to \cG_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB_{\cA,\bfr} \to \cB_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD_{\cA,\bfr} \to \cD_{\cA,\bfr}$, given on coordinates by
   \begin{align*}
     (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right), \\
     (\varphi_{\cA,\bfr}^t)^*(u_jx_j)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1)-1, \\
@@ -1191,7 +1206,7 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   \end{itemize}
 \end{proof}
 \begin{remark}
-  While the formulas for the flows above were defined when $L_\cX\cong\RR_+^n$ and $L_\cA\cong\RR_+^m$, the formulas for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L_\cX\cong(\CC^\times)^n$ and $L_\cA\cong(\CC^\times)^m$.
+  While the formulas for the flows above were defined when $L^+_\cX\cong\RR_+^n$ and $L^+_\cA\cong\RR_+^m$, the formulas for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L^+_\cX\cong(\CC^\times)^n$ and $L^+_\cA\cong(\CC^\times)^m$.
   Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ are well-defined on $\cG_\cX$ and $\cG_\cA$ respectively.
   To see this, note that $\tilde\varphi_\cX^1$ and $\tilde\varphi_\cA^1$ are groupoid morphisms and hence must carry the identity section to the identity section.
   This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ at the origin of each source fiber.
@@ -1206,7 +1221,7 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
     \tau_\cX^{k,\varepsilon}&:\cG_\cX\to\cG'_\cX,& \tau_\cX^{k,\varepsilon}&:\cB_\cX\to\cB'_\cX,& \bar\tau_\cX^{k,\varepsilon}&:\cD_\cX\to\cD'_\cX\\
     \tau_\cA^{k,\varepsilon}&:\cG_\cA\to\cG'_\cA,& \tau_\cA^{k,\varepsilon}&:\cB_\cA\to\cB'_\cA,& \tau_\cA^{k,\varepsilon}&:\cD_\cA\to\cD'_\cA
   \end{align*}
-  lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L_\cX\to L'_\cX$ and $\tau_\cA^{k,\varepsilon}:L_\cA\to L'_\cA$ of Lemma~\ref{le:tropical cluster transformations}.
+  lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L^+_\cX\to L^+_{\cX'}$ and $\tau_\cA^{k,\varepsilon}:L^+_\cA\to L^+_{\cA'}$ of Lemma~\ref{le:tropical cluster transformations}.
   These are given on coordinates by
   \begin{align}
     \label{eq:tropical GX transformation}
