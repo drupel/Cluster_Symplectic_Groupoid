@@ -986,12 +986,12 @@ In this case, all cluster coordinates $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t
 for $1\le i\le n$, where $\bfe_i$ is the $i$-th standard basis vector of $\ZZ^n$ and $\bfb_i\in\ZZ^n$ is the $i$-th column of $B$.
 Note that each $\hat y_k^\circ:=x_{n+k;t_0}^\circ\prod_{i=1}^n (x_{i;t_0}^\circ)^{B_{ik}^{t_0}}$ has degree zero under this grading.
 The \emph{$\bfg$-vector} $\bfg_{j;t}=\sum\limits_{i=1}^n G_{ij}^t\bfe_i$ of the cluster coordinate $x_{j;t}^\circ$ is its degree when pulled back to $L^+_{\cA,\bfr;t_0}$.
-These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$:
+These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
 \begin{equation}
   \label{eq:g-matrix mutation}
   G_{ij}^{t'}=
   \begin{cases}
-    -G_{ik}^t+\sum\limits_{\ell=1}^n G_{i\ell}^t[-B_{\ell k}^t r_k]_+-\sum\limits_{\ell=1}^n B_{i\ell}^t[-C_{\ell k}^t r_k]_+ & \text{if $j=k$;}\\
+    -G_{ik}^t+\sum\limits_{\ell=1}^n G_{i\ell}^t[-\varepsilon_{\bfr,k;t} B_{\ell k}^t r_k]_+ & \text{if $j=k$;}\\
     G_{ij}^t & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
@@ -1002,7 +1002,7 @@ The $F$-polynomials transform via the following recursion when $t$ and $t'$ are 
   \label{eq:F-polynomial mutation}
   F_{j,\bfr;t'}=
   \begin{cases}
-    F_{k,\bfr;t}^{-1}\left(\prod_{i=1}^n u_i^{[-C_{ik}^t]_+} F_{i,\bfr;t}^{[-B_{ik}^t]_+}\right)^{r_k} Z_k\left(\prod_{i=1}^n u_i^{C_{ik}^t} F_{i,\bfr;t}^{B_{ik}^t}\right) & \text{if $j=k$;}\\
+    F_{k,\bfr;t}^{-1} \left(\prod_{i=1}^n F_{i,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{ik}^t r_k]_+}\right) Z_k\left(\prod_{i=1}^n u_i^{\varepsilon_{\bfr,k;t} C_{ik}^t} F_{i,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{ik}^t}\right) & \text{if $j=k$;}\\
     F_{j,\bfr;t} & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
@@ -1081,8 +1081,8 @@ Our first observation is that, despite the warnings of Remark~\ref{rem:lifting},
 
 To lift the Poisson maps $\mu_\cX^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_\cA^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
 In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{MR2504211}.
-More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} = \alpha^*f - \beta^*f$.
-Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \alpha^*f - \beta^*f = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
+More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} := \alpha^*f - \beta^*f$.
+Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
 Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
 
 %As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
