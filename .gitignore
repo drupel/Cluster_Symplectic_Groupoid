@@ -231,3 +231,7 @@ pip-log.txt
 cluster_symplectic.aux
 cluster_symplectic.brf
 cluster_symplectic.out
+
+cluster_symplectic\.bib\.sav
+
+*.sav

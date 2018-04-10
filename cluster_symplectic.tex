@@ -126,8 +126,7 @@ In this paper, we take the first step towards the groupoid quantization for both
 The construction of each is detailed below as we discuss the organization of the paper.
 
 In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure $\pi$ on a vector space $L$, these each possess important properties which justify their consideration.
-The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid when the underlying field is $\CC$.
-\footnote{Does something go wrong in the real case?}
+The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid. \footnote{Corrected! My original statement creates confusion.}
 The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
 For a log-canonical Poisson structure, there is a natural choice of a Poisson spray which yields $\cG$ under the spray construction.
 An important note, is that although this provides the source-simply-connected groupoid, the source and the target maps of $\cG \rra L$ will be transcendental and in particular they do not conform (strictly speaking) to the algebraic nature of cluster theory.
@@ -146,10 +145,9 @@ In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster gr
 We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, MR3691969}.
 The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates .
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
-We also lift the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$ to groupoid maps.
-When the underlying field is $\RR$, the Poisson map $\rho$ can be lifed to all three groupoids $\cG$, $\cD$ and $\cB$.
-When the underlying field is $\CC$, the Poisson map $\rho$ can only be lifted to the source-simply-connected symplectic groupoid $\cG$.
-\footnote{Are we sure we cannot lift the map always?}
+We also lift the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$.
+When the exchange matrix is square, the Poisson map $\rho$ can be lifed to groupoid maps for all three groupoids $\cG$, $\cD$ and $\cB$.
+However when the exchange matrix is not sqaure, $\rho$ does not lift to bona fide groupoid maps. This is because Poisson maps in general lift Lagrangian relations of symplectic groupoids.
 \bigskip
 
 Throughout the paper, we use the following notations.
@@ -502,12 +500,12 @@ It may be strange that the Poisson groupoid $\cD \rra L$ is called the symplecti
 \begin{remark}
   We relate the target map in Theorem~\ref{thm:SymDBLoc} to the symplectic realization in \cite{MR3691969}.
 	
-  With the notation in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, the symplectic double $(\cD, \omega_\cD)$ becomes the symplectic vector space $(\cU, \omega_\cU)$ with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, where $\cU$ is either $\RR^{2m}$ or $\CC^{2m}$, and
+  With the notation in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, the symplectic double $(\cD^+, \omega_\cD)$ becomes the symplectic vector space $(\cU, \omega_\cU)$ with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, where $\cU$ is either $\RR^{2m}$ or $\CC^{2m}$, and
   \[\omega_\cU = \sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j.\]
   Although $(\cU, \omega_\cU)$ is not a symplectic groupoid integrating $(L, \pi)$ (e.g.\ the identity map cannot be defined), the maps $\alpha$ and $\beta$ are well-defined in these coordinates:
   \begin{align*}
-    & \alpha: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1}, \ldots, e^{\chi_m}\right); \\
-    & \beta: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1+\sum_i\Omega_{i1}\xi_i}, \ldots, e^{\chi_m+\sum_i\Omega_{im}\xi_i}\right).
+    & \alpha: \cU \to L^+, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1}, \ldots, e^{\chi_m}\right); \\
+    & \beta: \cU \to L^+, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1+\sum_i\Omega_{i1}\xi_i}, \ldots, e^{\chi_m+\sum_i\Omega_{im}\xi_i}\right).
   \end{align*}
   The $\alpha$-fibers are symplectic orthogonal to the $\beta$-fibers; both $\alpha: (\cU, \omega_\cU) \to (L, \pi)$ and $\beta: (\cU, - \omega_\cU) \to (L, \pi)$ are Poisson maps.
 
