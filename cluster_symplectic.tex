@@ -723,6 +723,7 @@ In this section, we introduce mutations of cluster seeds from the Hamiltonian vi
 This perspective was first given in \cite{FG09c} and is the foundation for the main results of \cite{MR3691969}.
 We demonstrate how the Hamiltonian perspective provides a canonical choice of mutations for groupoid charts which glue to give a symplectic groupoid integrating various log-canonical Poisson structures on cluster varieties.
 The standard combinatorics of $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials are then lifted to provide descriptions of iterations of the gluing maps for groupoid charts.
+While in Section~\ref{sec: local} it was most convenient to use covariant notation for all maps of groupoids, due to the algebraic nature of cluster mutations and also the piecewise nature of the formulae, in this section we use contravariant notation for describing all maps, i.e.\ we describe them via the pullback of coordinate functions.
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.  
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e.\ there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
@@ -1011,7 +1012,7 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials associated 
 Let $\tilde B^{t_0}$ be an $m\times n$ exchange matrix and $\cA_\bfr$ the corresponding cluster variety.
 Define a \emph{tropical addition} on monomials in $\CC[x_{j;t_0}:n+1\le j\le m]$ by
 \[\prod_{j=n+1}^m x_{j;t_0}^{a_j}\oplus \prod_{j=n+1}^m x_{j;t_0}^{b_j}=\prod_{j=n+1}^m x_{j;t_0}^{\min\{a_j,b_j\}}.\]
-Then we have the following \emph{separation of additions} formulas:
+Then we have the following \emph{separation of additions} formulae:
 \begin{align}
   \label{eq:separation of additions 1}
   \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij}^t}\right) \frac{F_{j,\bfr;t}(\hat y_1,\ldots,\hat y_n)}{F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)};\\
@@ -1145,13 +1146,13 @@ Note that, although we use the same symbols for the Hamiltonian functions on eac
 
 Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the Hamiltonian vector fields associated to the functions $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}$ and $\{H_{\cA,\bfr}^{k,\varepsilon},\cdot\}$ on the appropriate groupoids.
 \begin{lemma}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$:
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ determine the following dynamics on the symplectic groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$:
   \begin{align}
     \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(Z_k(y_k^\varepsilon)\big)q_\ell;\\
     \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},v_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (1+v_{\ell'}y_{\ell'})^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)(v_ky_k+1)+B_{k\ell}\log\big(Z_k(y_k^\varepsilon)\big)v_\ell;\\
     \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)t_k;
   \end{align}
-  and the Hamiltonian vector field $X_{\cA,\bfr}^{k,\varepsilon}$ determines the following dynamics on the symplectic groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$:
+  and the Hamiltonian vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ determine the following dynamics on the symplectic groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$:
   \begin{align}
     \label{eq:p dot}
     \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)p_k;\\
@@ -1200,13 +1201,13 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   To see this, it suffices to make the following observations:
   \begin{itemize}
     \item The quantities $y_k$, $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$, $\prod_{\ell'=1}^n (v_{\ell'}y_{\ell'}+1)^{\varepsilon d_{\ell'} B_{\ell' k}}$, and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$.
-      It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$
-    \item the quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_kx_k+1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
+      It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$.
+    \item The quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_kx_k+1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
       It follows that $\frac{d}{dt}(p_jx_j)$ is a constant, $\frac{d}{dt}(u_j x_j)$ is a constant multiple of $u_j x_j+1$, and $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
   \end{itemize}
 \end{proof}
 \begin{remark}
-  While the formulas for the flows above were defined when $L^+_\cX\cong\RR_+^n$ and $L^+_\cA\cong\RR_+^m$, the formulas for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L^+_\cX\cong(\CC^\times)^n$ and $L^+_\cA\cong(\CC^\times)^m$.
+  While the formulae for the flows above were defined when $L^+_\cX\cong\RR_+^n$ and $L^+_\cA\cong\RR_+^m$, the formulae for the time-one flows on $\cG_\cX$ and $\cG_\cA$ can be applied equally well in the settings $L^+_\cX\cong(\CC^\times)^n$ and $L^+_\cA\cong(\CC^\times)^m$.
   Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ are well-defined on $\cG_\cX$ and $\cG_\cA$ respectively.
   To see this, note that $\tilde\varphi_\cX^1$ and $\tilde\varphi_\cA^1$ are groupoid morphisms and hence must carry the identity section to the identity section.
   This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\tilde\varphi_\cX^1)^*(q_\ell y_\ell)$ and $(\tilde\varphi_\cA^1)^*(p_jx_j)$ at the origin of each source fiber.
@@ -1218,7 +1219,7 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   \label{le:tropical groupoid transformations}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson morphisms 
   \begin{align*}
-    \tau_\cX^{k,\varepsilon}&:\cG_\cX\to\cG'_\cX,& \tau_\cX^{k,\varepsilon}&:\cB_\cX\to\cB'_\cX,& \bar\tau_\cX^{k,\varepsilon}&:\cD_\cX\to\cD'_\cX\\
+    \tau_\cX^{k,\varepsilon}&:\cG_\cX\to\cG'_\cX,& \tau_\cX^{k,\varepsilon}&:\cB_\cX\to\cB'_\cX,& \tau_\cX^{k,\varepsilon}&:\cD_\cX\to\cD'_\cX\\
     \tau_\cA^{k,\varepsilon}&:\cG_\cA\to\cG'_\cA,& \tau_\cA^{k,\varepsilon}&:\cB_\cA\to\cB'_\cA,& \tau_\cA^{k,\varepsilon}&:\cD_\cA\to\cD'_\cA
   \end{align*}
   lifting respectively the Poisson morphisms $\tau_\cX^{k,\varepsilon}:L^+_\cX\to L^+_{\cX'}$ and $\tau_\cA^{k,\varepsilon}:L^+_\cA\to L^+_{\cA'}$ of Lemma~\ref{le:tropical cluster transformations}.
@@ -1272,31 +1273,31 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
 
 \begin{proposition}
   \label{prop:groupoid mutation}
-  \[\tilde\mu_{\cX,\bfr}^{k,\varepsilon}=\tilde\tau_{\cX,\bfr}^{k,\varepsilon}\circ\tilde\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr}\]
-  \[\tilde\mu_{\cA,\bfr}^{k,\varepsilon}=\tilde\tau_{\cA,\bfr}^{k,\varepsilon}\circ\tilde\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr}\]
-  \[\bar\mu_{\cX,\bfr}^{k,\varepsilon}=\bar\tau_{\cX,\bfr}^{k,\varepsilon}\circ\bar\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr}\]
-  \[\bar\mu_{\cA,\bfr}^{k,\varepsilon}=\bar\tau_{\cA,\bfr}^{k,\varepsilon}\circ\bar\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}\]
+  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr}\]
+  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr}\]
+  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr}\]
+  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}\]
   \begin{align}
     \label{eq:GX mutation}
-    (\tilde\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell y'_\ell)
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell y'_\ell)
     &=\begin{cases} 
       -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
       q_\ell y_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:GA mutation}
-    (\tilde\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j x'_j)&=
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j x'_j)&=
     \begin{cases} 
       -p_k x_k & \text{if $j=k$;}\\ 
       p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DX mutation}
-    (\bar\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
-    (\bar\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
       s_j s_k^{[-\varepsilon B_{jk}]_+} \left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
@@ -1304,8 +1305,30 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   \end{align}
 \end{proposition}
 
-Add final definition of the groupoids over $\cA$ and $\cX$ using the tropical sign to determine transition maps.
+As in Section~\ref{sec:cluster}, we record iterated mutations using the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$.
+That is, over each cluster chart $L^+_{\cX,\bfr;t}$ and $L^+_{\cA,\bfr;t}$ we have, respectively, groupoids $\cG_{\cX,\bfr;t}$, $\cB_{\cX,\bfr;t}$, $\cD_{\cX,\bfr;t}$ and $\cG_{\cA,\bfr;t}$, $\cB_{\cA,\bfr;t}$, $\cD_{\cA,\bfr;t}$ with all of the structure as above.
+\begin{definition}
+  Fix an initial $m\times n$ exchange matrix $\tilde B^{t_0}$ and an initial skew-symmetric matrix $\Omega^{t_0}$ which is $D$-compatible with $\tilde B^{t_0}$.
+  Define groupoids $\cG_{\cX_\bfr}$, $\cB_{\cX_\bfr}$, $\cD_{\cX_\bfr}$ and $\cG_{\cA_\bfr}$, $\cB_{\cA_\bfr}$, $\cD_{\cA_\bfr}$ over the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ respectively by gluing the groupoid charts $\cG_{\cX_\bfr;t}$, $\cB_{\cX_\bfr;t}$, $\cD_{\cX_\bfr;t}$ to $\cG_{\cX_\bfr;t'}$, $\cB_{\cX_\bfr;t'}$, $\cD_{\cX_\bfr;t'}$ respectively and by gluing the groupoid charts $\cG_{\cA_\bfr;t}$, $\cB_{\cA_\bfr;t}$, $\cD_{\cA_\bfr;t}$ to $\cG_{\cA_\bfr;t'}$, $\cB_{\cA_\bfr;t'}$, $\cD_{\cA_\bfr;t'}$ respectively, for $t,t'\in\TT_n$ joined by an edge labeled $k$, along the appropriate groupoid mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$, where $\varepsilon=\varepsilon_{\bfr,k;t}$ is the tropical sign from Definition~\ref{def:tropical signs}.
+\end{definition}
+
+Given a pair of vertices $t,t'\in\TT_n$, we follow the notation of Section~\ref{sec:cluster} and write $\mu_{\cX,\bfr}^{t,t'}$ and $\mu_{\cA,\bfr}^{t,t'}$ for each of the composed groupoid mutations over ithe cluster charts of $\cX_\bfr$ and $\cA_\bfr$ respectively.
+In particular, we have the following analogues of the separation of additions formulas describing the cluster coordinates.
+\begin{theorem}
+
+  \begin{align}
+    \label{eq:separation of additions 1}
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij}^t}\right) \frac{F_{j,\bfr;t}(\hat y_1,\ldots,\hat y_n)}{F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)};\\
+    \label{eq:separation of additions 2}
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\left(\prod_{k=1}^n y_{k;t_0}^{C_{k \ell}^t}\right) \prod_{k=1}^n F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k \ell}^t};
+  \end{align}
+\end{theorem}
+
+
+
 Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for periodicity.
+
+
 
 \newpage
 
@@ -1333,10 +1356,7 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 	}
 \end{equation}
 
-\begin{itemize}
-\item Lift the canonical change of variables to groupoids.
-\item Composition of the two groupoid maps give us the groupoid mutations.
-\end{itemize}
+
 
 \newpage 
 
