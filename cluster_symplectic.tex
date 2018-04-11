@@ -126,8 +126,7 @@ In this paper, we take the first step towards the groupoid quantization for both
 The construction of each is detailed below as we discuss the organization of the paper.
 
 In Section~\ref{sec: local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure $\pi$ on a vector space $L$, these each possess important properties which justify their consideration.
-The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid when the underlying field is $\CC$.
-\footnote{Does something go wrong in the real case?}
+The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid. \footnote{Corrected! My original statement creates confusion.}
 The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
 For a log-canonical Poisson structure, there is a natural choice of a Poisson spray which yields $\cG$ under the spray construction.
 An important note, is that although this provides the source-simply-connected groupoid, the source and the target maps of $\cG \rra L$ will be transcendental and in particular they do not conform (strictly speaking) to the algebraic nature of cluster theory.
@@ -146,10 +145,8 @@ In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster gr
 We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, MR3691969}.
 The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates .
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
-We also lift the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$ to groupoid maps.
-When the underlying field is $\RR$, the Poisson map $\rho$ can be lifed to all three groupoids $\cG$, $\cD$ and $\cB$.
-When the underlying field is $\CC$, the Poisson map $\rho$ can only be lifted to the source-simply-connected symplectic groupoid $\cG$.
-\footnote{Are we sure we cannot lift the map always?}
+On the other hand, the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$ can only be lifted to groupoid maps when the exchange matrix is square and hence invertible.
+In general, Poisson maps lift to Lagrangian relations \cite{MR2063018}, or more precisely comorphisms \cite{MR3089758}, of the symplectic groupoids. Indeed for nonsquare exchange matrices, the graph of $\rho: L^+_\cA \to L^+_\cX$ lifts to a Lagrangian subgroupoid of, say, $\cG_\cA \times \overline{\cG}_\cX$.
 \bigskip
 
 Throughout the paper, we use the following notations.
@@ -315,9 +312,9 @@ The integrability of Poisson manifolds, and more generally the integrability of 
   \label{rem:lifting}
   Let $(\cG_1, \omega_1) \rra (M_1, \pi_1)$ and $(\cG_2, \omega_2) \rra (M_2, \pi_2)$ be symplectic groupoids.
   In general, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ does not integrate to a symplectic groupoid map $\varphi: (\cG_1, \omega_1) \rra (\cG_2, \omega_2)$.
-  In fact, $\varphi$ being Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrate to Lagrangian subgroupoids \cite{MR2104442}.
+  In fact, $\varphi$ being Poisson means that its graph $\Gamma_\varphi \in M_1 \times M_2$ is coisotropic with respect to $\pi \oplus -\pi$ \cite{MR959095} and coisotropic submanifolds integrate to Lagrangian subgroupoids \cite{MR2063018}.
   That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1\times\cG_2, \omega_1\oplus-\omega_2)$.
-  However, we will see as a recurring theme throughout \S\ref{sec:mutations} that the cluster mutations always lift to groupoid mutations.
+  In \S\ref{sec:mutations}, we will see that the cluster mutations integrate to groupoid mutations whereas the cluster ensemble maps do not integrate groupoid mutations unless the exchange matrix is square and invertible.
 \end{remark}
 
 We focus on the symplectic groupoids of log-canonical Poisson structures.
@@ -502,19 +499,19 @@ It may be strange that the Poisson groupoid $\cD \rra L$ is called the symplecti
 \begin{remark}
   We relate the target map in Theorem~\ref{thm:SymDBLoc} to the symplectic realization in \cite{MR3691969}.
 	
-  With the notation in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, the symplectic double $(\cD, \omega_\cD)$ becomes the symplectic vector space $(\cU, \omega_\cU)$ with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, where $\cU$ is either $\RR^{2m}$ or $\CC^{2m}$, and
+  With the notation in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, the symplectic double $(\cD^+, \omega_\cD)$ becomes the symplectic vector space $(\cU, \omega_\cU)$ with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, where $\cU$ is either $\RR^{2m}$ or $\CC^{2m}$, and
   \[\omega_\cU = \sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j.\]
   Although $(\cU, \omega_\cU)$ is not a symplectic groupoid integrating $(L, \pi)$ (e.g.\ the identity map cannot be defined), the maps $\alpha$ and $\beta$ are well-defined in these coordinates:
   \begin{align*}
-    & \alpha: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1}, \ldots, e^{\chi_m}\right); \\
-    & \beta: \cU \to L, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1+\sum_i\Omega_{i1}\xi_i}, \ldots, e^{\chi_m+\sum_i\Omega_{im}\xi_i}\right).
+    & \alpha: \cU \to L^+, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1}, \ldots, e^{\chi_m}\right); \\
+    & \beta: \cU \to L^+, \qquad (\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m) \mapsto \left(e^{\chi_1+\sum_i\Omega_{i1}\xi_i}, \ldots, e^{\chi_m+\sum_i\Omega_{im}\xi_i}\right).
   \end{align*}
   The $\alpha$-fibers are symplectic orthogonal to the $\beta$-fibers; both $\alpha: (\cU, \omega_\cU) \to (L, \pi)$ and $\beta: (\cU, - \omega_\cU) \to (L, \pi)$ are Poisson maps.
 
   For the standard symplectic structure $\omega_0 = \sum_{i} d\chi_i \wedge d\xi_i$ on $\cU$, since
   \[\omega_\cU - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j\]
   is supported on the $\alpha$-fiber, we have that $\beta_*(-\omega_0^{-1}) = \beta_*(-\omega_\cU^{-1}) = \pi$.
-  The symplectic realization $\beta: (\cU, -\omega_0) \to (L, \pi)$ plays an essential role in \cite{MR3691969}.
+  The symplectic realization $\beta: (\cU, -\omega_0) \to (L^+, \pi)$ plays an essential role in \cite{MR3691969}.
 \end{remark}
 
 Next, we describe the Lie algebroid of $\cD \rra L$.
@@ -1036,7 +1033,7 @@ That is, we begin working in the setting
 We introduce coordinates on these groupoids given as follows:
 \begin{itemize}
   \item $\cG_\cX$ has coordinates $(\bfq,\bfy)=(q_1,\ldots,q_n,y_1,\ldots,y_n)$; 
-  \item $\cB_\cX$ has coordinates $(\bfv,\bfx)=(v_1,\ldots,v_n,y_1,\ldots,y_n)$;
+  \item $\cB_\cX$ has coordinates $(\bfv,\bfy)=(v_1,\ldots,v_n,y_1,\ldots,y_n)$;
   \item $\cD_\cX$ has coordinates $(\bft,\bfy)=(t_1,\ldots,t_n,y_1,\ldots,y_n)$; 
   \item $\cG_\cA$ has coordinates $(\bfp,\bfx)=(p_1,\ldots,p_m,x_1,\ldots,x_m)$; 
   \item $\cB_\cA$ has coordinates $(\bfu,\bfx)=(u_1,\ldots,u_m,x_1,\ldots,x_m)$;
@@ -1335,13 +1332,13 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 \begin{equation} 
 	\label{eq:GpdCD}
     \xymatrix{
-      \cG_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cG_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cG'_{\cA,\bfr} \ar[d]^{\rho} 
-	&& \cD_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cD_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cD'_{\cA,\bfr} \ar[d]^{\rho} \\
-      \cG_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cG_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} \ar@{}[ddr]^(.325){}="a"^(.775){}="b" \ar@<1ex> "a";"b"^-{\kappa_\cA} \ar@<-1ex> "a";"b"_-{\kappa_\cX} & \cG'_{\cX,\bfr} \ar@{}[rr]^(.3){}="e"^(.7){}="f" \ar@<5ex> "e";"f"^-{\lambda_\cA} \ar@<3ex> "e";"f"_-{\lambda_\cX}
-	&& \cD_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cD_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & \cD'_{\cX,\bfr} \\
+      \cG_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cG_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cG'_{\cA} \ar@{~}[d]^{\rho} 
+	&& \cD_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cD_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cD'_{\cA} \ar@{~}[d]^{\rho} \\
+      \cG_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cG_{\cX} \ar[r]^{\tau_{\cX}} \ar@{}[ddr]^(.325){}="a"^(.775){}="b" \ar@<1ex> "a";"b"^-{\kappa_\cA} \ar@<-1ex> "a";"b"_-{\kappa_\cX} & \cG'_{\cX} \ar@{}[rr]^(.3){}="e"^(.7){}="f" \ar@<5ex> "e";"f"^-{\lambda_\cA} \ar@<3ex> "e";"f"_-{\lambda_\cX}
+	&& \cD_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cD_{\cX} \ar[r]^{\tau_{\cX}} & \cD'_{\cX} \\
 	&&&&&&\\
-	&&\cB_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\varphi_{\cA,\bfr}} \ar@/^1pc/[rr]|-{\mu_{\cA,\bfr}} & \cB_{\cA,\bfr} \ar[d]^{\rho} \ar[r]_{\tau_{\cA,\bfr}} & \cB'_{\cA,\bfr} \ar[d]^{\rho} \ar@{}[uur]^(.2){}="c"^(.65){}="d" \ar@<1ex> "c";"d"^-{\nu_\cA} \ar@<-1ex> "c";"d"_-{\nu_\cX}  \\
-      &&\cB_{\cX,\bfr} \ar[r]^{\varphi_{\cX,\bfr}} \ar@/_1pc/[rr]|-{\mu_{\cX,\bfr}} & \cB_{\cX,\bfr} \ar[r]^{\tau_{\cX,\bfr}} & \cB'_{\cX,\bfr}
+	&&\cB_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cB_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cB'_{\cA} \ar@{~}[d]^{\rho} \ar@{}[uur]^(.2){}="c"^(.65){}="d" \ar@<1ex> "c";"d"^-{\nu_\cA} \ar@<-1ex> "c";"d"_-{\nu_\cX}  \\
+      &&\cB_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cB_{\cX} \ar[r]^{\tau_{\cX}} & \cB'_{\cX}
     }
 \end{equation}
 
