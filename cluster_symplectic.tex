@@ -1058,23 +1058,25 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
 %Write $\kappa_\cX:\cG_\cX\to\cD_\cX$ and $\kappa_\cA:\cG_\cA\to\cD_\cA$ for the groupoid covering maps from the source-simply connected symplectic groupoids to the symplectic doubles, these are given on fiber coordinates by
 %\[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
 
-Our first observation is that, despite the warnings of Remark~\ref{rem:lifting}, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to maps between each of the symplectic groupoids over these spaces.
+%Our first observation is that, despite the warnings of Remark~\ref{rem:lifting}, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to maps between each of the symplectic groupoids over these spaces.
 \begin{lemma}
-  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ lifts to morphisms of symplectic groupoids $\rho:\cG_\cA\to\cG_\cX$, $\rho:\cB_\cA\to\cB_\cX$, and $\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
-  \begin{align*}
-    \rho^*(q_\ell)&=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{j\ell}x_jp_j;\\
-    \rho^*(v_\ell)&=\prod\limits_{j=1}^m (u_j x_j + 1)^{-d_\ell^{-1}\Omega_{\ell j}}.\\
-    \rho^*(t_\ell)&=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\\
-  \end{align*}
+  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ induces comorphisms of groupoids as follows:
 \end{lemma}
 \begin{remark}
   \label{rmk:source-connected lift}
-  When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
-  \footnote{This might actually require $m=n$.}
-  \[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
-  Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$.
-  This is remedied in \cite{FG09c} by requiring $m=n$ and using the coordiates $B_j = s_j^{d_\ell^{-1}}$.
-  \footnote{This makes it sound like Fock and Goncharov also considered the source-connected groupoid for the $\cA$-variety.}
+  When $m=n$, i.e.\ the map $\rho:L_\cA\to L_\cX$ is an isomorphism, the Poisson ensemble map actually lifts to true morphisms of symplectic groupoids $\rho:\cG_\cA\to\cG_\cX$, $\rho:\cB_\cA\to\cB_\cX$, and $\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  \begin{align*}
+    \rho^*(q_\ell)&=-(d_\ell\hat y_\ell)^{-1}\sum\limits_{j=1}^m\Omega_{j\ell}x_jp_j;\\
+    \rho^*(v_\ell)&=\prod\limits_{j=1}^m (u_j x_j + 1)^{-d_\ell^{-1}\Omega_{\ell j}};\\
+    \rho^*(t_\ell)&=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\\
+  \end{align*}
+  Observe that care must me taken when considering the fractional exponents above, however the maps are in fact well defined.
+  Indeed, a morphism of groupoids must take the identity section to the identity section.
+  With this observation in mind, it is easy to see that the maps $\rho:\cB_\cA\to\cB_\cX$ and $\rho:\cD_\cA\to\cD_\cX$ become well-defined covering maps on the fibers.
+  %When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
+  %\footnote{This might actually require $m=n$.}
+  %\[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
+  %Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$.
 \end{remark}
 
 To lift the Poisson maps $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
