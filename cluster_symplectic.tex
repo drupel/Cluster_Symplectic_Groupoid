@@ -1014,9 +1014,9 @@ Then we have the following \emph{separation of additions} formulae:
   \label{eq:separation of additions 1}
   \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\left(\prod_{k=1}^n y_{k;t_0}^{C_{k \ell;t}}\right) \prod_{k=1}^n F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k \ell;t}};\\
   \label{eq:separation of additions 2}
-  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij;t}}\right) \frac{F_{j,\bfr;t}(\hat y_1,\ldots,\hat y_n)}{F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)};
+  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij;t}}\right) \frac{F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};
 \end{align}
-where $F_{j,\bfr;t}^{\oplus}(\hat y_1,\ldots,\hat y_n)$ denotes the tropical evaluation setting each $x_{i;t_0}=1$ for $1\le i \le n$.
+where $F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ denotes the tropical evaluation setting each $x_{i;t_0}=1$ for $1\le i \le n$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1272,30 +1272,42 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
 
 \begin{proposition}
   \label{prop:groupoid mutation}
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG_{\cX,\bfr}\]
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cB_{\cX,\bfr}\to\cB_{\cX,\bfr}\]
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD_{\cX,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG_{\cA,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cB_{\cA,\bfr}\to\cB_{\cA,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD_{\cA,\bfr}\]
+  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG'_{\cX,\bfr}\]
+  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cB_{\cX,\bfr}\to\cB'_{\cX,\bfr}\]
+  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD'_{\cX,\bfr}\]
+  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG'_{\cA,\bfr}\]
+  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cB_{\cA,\bfr}\to\cB'_{\cA,\bfr}\]
+  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD'_{\cA,\bfr}\]
   \begin{align}
     \label{eq:GX mutation}
-    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell y'_\ell)
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
-      -q_k y_k + \sum\limits_{\ell'=1}^n [\varepsilon B_{k\ell'}]_+ q_{\ell'} y_{\ell'} + \frac{1}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
-      q_\ell y_\ell & \text{if $\ell\ne k$;}
+      -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon r_k B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k + \frac{y_k}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
+      q_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:GA mutation}
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j x'_j)&=
-    \begin{cases} 
-      -p_k x_k & \text{if $j=k$;}\\ 
-      p_j x_j + [-\varepsilon B_{jk}]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
+    \label{eq:BX mutation}
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(v'_\ell)
+    &=\begin{cases} 
+      y_k \left[ (v_k y_k + 1)^{-1} \left(\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} +1)^{[\varepsilon r_k B_{k\ell'}]_+}\right)\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{\frac{1}{d_k}} - 1\right] & \text{if $\ell=k$;}\\ 
+      v_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
     \label{eq:DX mutation}
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
-      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon B_{k\ell'}]_+}\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon r_k B_{k\ell'}]_+}\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
+    \end{cases}\\
+    \label{eq:GA mutation}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)&=
+    \begin{cases} 
+      -p_k x_k^2 \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
+      p_j + [-\varepsilon B_{jk} r_k]_+ \frac{p_k x_k}{x_j} - \frac{B_{jk}}{d_k x_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
+    \end{cases}\\
+    \label{eq:BA mutation}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(u'_j)
+    &=\begin{cases}
+      x_k \left[ (u_k x_k +1)^{-1} -1\right] \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
+      x_j^{-1} \left[ (u_j x_j + 1) (u_k x_k + 1)^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} - 1\right] & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
@@ -1325,7 +1337,7 @@ Then we have the following analogues of the separation of additions formulas des
     \label{eq:groupoid separation of additions 1}
     \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{\ell;t})&=\left(\prod_{k=1}^n t_{k;t_0}^{G_{k\ell;t}}\right) \frac{F_{\ell,\bfr;t}\big(y_{1;t_0}\prod_{k=1}^n t_k^{d_k B_{k1;t_0}},\ldots,y_{n;t_0}\prod_{k=1}^n t_k^{d_k B_{kn;t_0}}\big)}{F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{j;t})&=\left(\prod_{k=1}^n s_{k;t_0}^{C_{kj;t}}\right) \prod_{k=1}^n F_{k,\bfr;t}(\hat y_1,\ldots,\hat y_n)^{B_{k \ell;t}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{j;t})&=\left(\prod_{k=1}^n s_{k;t_0}^{C_{kj;t}}\right) \left(\frac{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0} s_1^{-d_1},\ldots,\hat y_{n;t_0} s_n^{-d_n})}{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k \ell;t}};
   \end{align}
 \end{theorem}
 
