@@ -145,8 +145,9 @@ In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster gr
 We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, MR3691969}.
 The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates.
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
-These maps can either be lifted as algebroid morphisms or algebroid comorphism.
-When the exchange matrix is non-square, the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$, which induces an algebroid comorphism, can only be lifted to groupoid comorphism \cite{MR3089758}. In the case of a square exchange matrix, $\rho$ becomes an isomorphism and can be lifted as either an morphism or a comorphism.
+These maps can either be lifted as algebroid morphisms or algebroid comorphisms.
+When the exchange matrix is non-square, the cluster ensemble map $\rho: L^+_\cA \to L^+_\cX$, which induces an algebroid comorphism, can only be lifted to groupoid comorphisms \cite{MR3089758}.
+In the case of a square exchange matrix, $\rho$ becomes an isomorphism and can be lifted as either a morphism or a comorphism.
 In general, Poisson maps lift to Lagrangian relations \cite{MR2063018}, or more precisely comorphisms \cite{MR3089758}, of the symplectic groupoids.
 \bigskip
 
@@ -182,7 +183,8 @@ Throughout the paper, we use the following notations.
 %We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
 
 We begin with the equivalent notions of Poisson brackets and Poisson bi-vectors.
-\begin{definition} \label{def: PoissonMfld}
+\begin{definition} 
+  \label{def: PoissonMfld}
   Let $M$ be either a smooth manifold or a complex manifold.
   A \emph{Poisson structure} on $M$ is one of the two following equivalent structures:
   \begin{enumerate}
@@ -192,11 +194,15 @@ We begin with the equivalent notions of Poisson brackets and Poisson bi-vectors.
       $$\{fg, h\} = f\{g,h\} + g\{f,h\};$$
     \item a \emph{Poisson bi-vector} $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$, where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
   \end{enumerate}
-We say $f \in \cO_M$ is a Casimir if $\{f, g\} = 0$ for every $g\in \cO_M$.
+  We say $f \in \cO_M$ is a Casimir if $\{f, g\} = 0$ for every $g\in \cO_M$.
 \end{definition}
 
 The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_M$.
-The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}. The \emph{Hamiltonian vector field} of $f \in \cO_M$ is defined to be $X_f = \iota_{df}\pi$. A Poisson map from $(M_1, \pi_1)$ to $(M_2, \pi_2)$ is a map $\varphi: M_1\to M_2$ such that $\varphi_*\pi_1 = \pi_2$ or equivalently $\{\varphi^*f, \varphi^*g\} = \varphi^*(\{f, g\})$ for $f, g \in \cO_{M_2}$. For $f \in \cO_{M_2}$, the pullback of a Hamiltonian vector field $X_f$ is $X_{\varphi^*f}$. A Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ is \emph{complete} if the pullback of a complete Hamiltonian vector field is complete.
+The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
+The \emph{Hamiltonian vector field} of $f \in \cO_M$ is defined to be $X_f = \iota_{df}\pi$.
+A Poisson map from $(M_1, \pi_1)$ to $(M_2, \pi_2)$ is a map $\varphi: M_1\to M_2$ such that $\varphi_*\pi_1 = \pi_2$ or equivalently $\{\varphi^*f, \varphi^*g\} = \varphi^*(\{f, g\})$ for $f, g \in \cO_{M_2}$.
+For $f \in \cO_{M_2}$, the pullback of a Hamiltonian vector field $X_f$ is $X_{\varphi^*f}$.
+A Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ is \emph{complete} if the pullback of a complete Hamiltonian vector field is again a complete vector field.
 
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
 \[\pi^\flat: \Omega^1(M) \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi\]
