@@ -1200,6 +1200,7 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
 
 Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cX,\bfr}$, $\cB_{\cX,\bfr}$, $\cD_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_{\cA,\bfr}$, $\cB_{\cA,\bfr}$, $\cD_{\cA,\bfr}$.
 \begin{corollary}
+  \label{cor:groupoid hamiltonian flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L^+_{\cX,\bfr} \to L^+_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG_{\cX,\bfr} \to \cG_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB_{\cX,\bfr} \to \cB_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD_{\cX,\bfr} \to \cD_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
     (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right),\\
@@ -1285,7 +1286,7 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   \end{align}
 \end{lemma}
 \begin{proof}
-  This is a straightforward exercise in applying the Leibniz rule, we leave the details to the reader.
+  That these morphisms are Poisson is a straightforward exercise in applying the Leibniz rule, we leave the details to the reader.
 \end{proof}
 
 \begin{lemma}
@@ -1294,12 +1295,12 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
 
 \begin{proposition}
   \label{prop:groupoid mutation}
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cG_{\cX,\bfr}\to\cG'_{\cX,\bfr}\]
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cB_{\cX,\bfr}\to\cB'_{\cX,\bfr}\]
-  \[\mu_{\cX,\bfr}^{k,\varepsilon}=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:\cD_{\cX,\bfr}\to\cD'_{\cX,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cG_{\cA,\bfr}\to\cG'_{\cA,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cB_{\cA,\bfr}\to\cB'_{\cA,\bfr}\]
-  \[\mu_{\cA,\bfr}^{k,\varepsilon}=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:\cD_{\cA,\bfr}\to\cD'_{\cA,\bfr}\]
+  There are morphisms of Poisson groupoids $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$:
+  \begin{align*}
+    \mu_{\cX,\bfr}^{k,\varepsilon}&:\cG_{\cX,\bfr}\to\cG'_{\cX,\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cB_{\cX,\bfr}\to\cB'_{\cX,\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cD_{\cX,\bfr}\to\cD'_{\cX,\bfr}\\
+    \mu_{\cA,\bfr}^{k,\varepsilon}&:\cG_{\cA,\bfr}\to\cG'_{\cA,\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cB_{\cA,\bfr}\to\cB'_{\cA,\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cD_{\cA,\bfr}\to\cD'_{\cA,\bfr}
+  \end{align*}
+  defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi_{-,\bfr}^1$ given on coordinates by
   \begin{align}
     \label{eq:GX mutation}
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
@@ -1339,6 +1340,24 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
     \end{cases}
   \end{align}
 \end{proposition}
+\begin{proof}
+  This is immediate from Lemma~\ref{le:tropical groupoid transformations} and Corollary~\ref{cor:groupoid hamiltonian flows}.
+\end{proof}
+\begin{remark}
+  Observe that the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
+  However, these maps are continuous when appropriate values are assigned.
+  Indeed, for $j\ne k$ and $x_j=0$ we set
+  \begin{align*}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)
+    &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
+    &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
+    &=\begin{cases} 
+      p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
+      p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
+      p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+    \end{cases}
+  \end{align*}
+\end{remark}
 
 As in Section~\ref{sec:cluster}, we record iterated mutations using the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$.
 That is, over each cluster chart $L^+_{\cX,\bfr;t}$ and $L^+_{\cA,\bfr;t}$ we have, respectively, groupoids $\cG_{\cX,\bfr;t}$, $\cB_{\cX,\bfr;t}$, $\cD_{\cX,\bfr;t}$ and $\cG_{\cA,\bfr;t}$, $\cB_{\cA,\bfr;t}$, $\cD_{\cA,\bfr;t}$ with all of the structure as above.
