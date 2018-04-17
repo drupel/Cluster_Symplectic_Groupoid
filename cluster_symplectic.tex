@@ -871,7 +871,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_{\cX,\bfr}^{k,\varepsilon}:L^+_{\cX,\bfr}\to L^+_{\cX',\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L^+_{\cA,\bfr}\to L^+_{\cA',\bfr}$ which are the identity map on the $L_\bfr$ components and are given on coordinates of $L^+_\cX$ and $L^+_\cA$ by
   \begin{align}
     \label{eq:X mutation}
-    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+}Z_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+} Z_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
   \end{align}
@@ -883,12 +883,14 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
 \end{proof}
 
 \begin{remark}
+  \label{rem:extended cluster charts}
   While we have assumed that $L^+_\cX=\RR_+^n$, $L^+_\cA=\RR_+^m$, and $Z_k(u)\in\RR_+[u]$ to motivate the Hamiltonian natures of $\mu_{\cX,\bfr}^{k,\varepsilon}$ and~$\mu_{\cA,\bfr}^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined when $L^+_\cX=(\CC^\times)^n$, $L^+_\cA=(\CC^\times)^m$, and $Z_k(u)\in\CC[u]$ is a monic polynomial with $Z_k(0)=1$.
   Similarly in the real case, the requirement that the coefficients of $Z_k(u)$ be positive real numbers was unnecessary and we allow any monic polynomials $Z_k(u)\in\RR[u]$ with $Z_k(0)=1$ from now on.
   This holds equally well for the \emph{automorphism parts} $\varphi_{\cX,\bfr}^1$, $\varphi_{\cA,\bfr}^1$ and the \emph{tropical parts} $\tau_{\cX,\bfr}^{k,\varepsilon}$, $\tau_{\cA,\bfr}^{k,\varepsilon}$ of the cluster mutations.
   
   Mutations for $\bar L^+_\cX=\RR_{\ge0}^n$ have also been considered \cite{FG16} under the name ``special completion'' for $\cX$-varieties.
   See also \cite{chavez et al} for similar considerations using charts $L_\cX=\CC^n$.
+  It is important in these cases that the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ or where $Z_k(y_k^\varepsilon)^{-B_{k\ell}}$ is undefined and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ or where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$.
 \end{remark}
 
 The various Poisson maps are summarized in the following commutative diagram.
@@ -951,6 +953,7 @@ That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $
 As above, we also introduce the Poisson spaces $L^+_{\cX,\bfr;t}$ isomorphic to either $\RR_+^n\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^+_{\cA,\bfr;t}$ isomorphic to either $\RR_+^m\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
 
 \begin{definition}
+  \label{def:cluster varieties}
   Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is compatible with~$\tilde B_{t_0}$.
   Let $\bfr=(r_1,\ldots,r_n)$ be a sequence of positive integers.
   The \emph{(generalized) cluster varieties} $\cX_\bfr=\cX_\bfr(\tilde B_{t_0})$ and $\cA_\bfr=\cA_\bfr(\tilde B_{t_0})$ are obtained by gluing the cluster charts $L^+_{\cX,\bfr;t}$, $L^+_{\cX,\bfr;t'}$ and $L^+_{\cA,\bfr;t}$, $L^+_{\cA,\bfr;t'}$ respectively, for $t,t'\in\TT_n$ joined by an edge labeled $k$, along the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$, where $\varepsilon=\varepsilon_{\bfr,k;t}$.
@@ -1357,6 +1360,8 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
       p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
     \end{cases}
   \end{align*}
+  Observe that the map above is not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
+  Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{-,\bfr}^{k,\varepsilon}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$ and thus the gluing of fibers is not attempted over these loci. 
 \end{remark}
 
 As in Section~\ref{sec:cluster}, we record iterated mutations using the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$.
@@ -1374,6 +1379,10 @@ That is, over each cluster chart $L^+_{\cX,\bfr;t}$ and $L^+_{\cA,\bfr;t}$ we ha
 \end{remark}
 
 Given a pair of vertices $t,t'\in\TT_n$, we follow the notation of Section~\ref{sec:cluster} and write $\mu_{\cX,\bfr}^{t,t'}$ and $\mu_{\cA,\bfr}^{t,t'}$ for each of the composed groupoid mutations over the cluster charts of $\cX_\bfr$ and $\cA_\bfr$ respectively.
+As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we record the simple observation that the mutations respect target maps $\beta$.
+\begin{lemma}
+  \label{le:target compatibility}
+
 Then we have the following analogues of the separation of additions formulas describing the cluster coordinates.
 \begin{theorem}
   \begin{align}
