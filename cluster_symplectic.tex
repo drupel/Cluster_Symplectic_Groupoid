@@ -246,7 +246,7 @@ Of particular importance among all the symplectic realizations is the symplectic
 
 With our convention, $\cG$ naturally acts on itself on the left.
 Next we recall the notion of a Lie algebroid, which is the infinitesimal object of a Lie groupoid.
-\begin{definition}
+\begin{definition} \label{def:algeroid}
   For a smooth (or holomorphic) manifold $M$, a Lie algebroid over $M$ is a triple $(A, [\cdot, \cdot], \rho)$ where
   \begin{enumerate}
     \item $A$ is a vector bundle over a $M$;
@@ -1032,47 +1032,47 @@ where $F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ denotes the 
 \label{sec:groupoid mutations}
 
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts. Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L^+_\cX\cong\RR_+^n$ and $L^+_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec:local}. In general,
- a Poisson map does not induce Lie algebroid morphisms and hence do not integrate to bona fide symplectic groupoid maps. Instead a Poisson map induces a Lie algebroid comorphism. Following \cite{MR3089758}, we outline the procedure of lifting Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
+ a Poisson map does not induce a Lie algebroid morphism and hence does not integrate to a bona fide symplectic groupoid map. Instead a Poisson map induces a Lie algebroid comorphism. Following \cite{MR3089758}, we outline the procedure to lift Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
 \begin{definition} \cite{Higgins1990, MR2157566, MR3089758}
- 	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps
- 	\[ \rho_1: A_1 \to TM_1, \qquad \rho_2: A_2 \to TM_2 \]
+ 	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps (see Definition~\ref{def:algeroid})
+ 	\[ \rho_1: A_1 \to TM_1, \qquad \rho_2: A_2 \to TM_2. \]
  	\begin{enumerate}
- 		\item A Lie algebroid morphism is a bundle map $(\Phi, \varphi): (A_1, M_1) \to (A_2, M_2)$ such that the pullback of sections $\Phi^*: \Gamma(\wedge^\bullet A_2) \to \Gamma(\wedge^\bullet A_2)$ is a chain map of complex .
- 		\item A Lie algebroid comorphism is a bundle comorphism $(\varphi, \Phi)$ with
- 			\[ \varphi: M_1 \to M_2,~ \Phi: \varphi^! A_2 = M_1 {\times_{M_2}} A_2 \to A_1 \]
- 			such that if $\varphi_* \circ \rho_1 \circ \Phi = \rho_2$. 
+ 		\item A Lie algebroid morphism is a bundle map $(\varphi, \Phi): (M_1, A_1) \to (M_2, A_2)$ such that the pullback of sections $\Phi^*: \Gamma(\wedge^\bullet A_2) \to \Gamma(\wedge^\bullet A_2)$ is a chain map of complexes.
+ 		\item A Lie algebroid comorphism is a bundle comorphism $(\varphi, \Psi)$ with
+ 			\[ \varphi: M_1 \to M_2,~ \Psi: \varphi^! A_2 = M_1 {\times_{M_2}} A_2 \to A_1 \]
+ 			such that $\varphi_* \circ \rho_1 \circ \Psi = \rho_2$. 
  	\end{enumerate}
 \end{definition}
-For a diffeomorphism $\varphi: M_1 \to M_2$, then $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^*)$ is a Lie algebroid comorphism.
-\begin{definition} \cite{MR2157566, MR3089758} \label{def:algcom}
+For a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^*)$ is a Lie algebroid comorphism.
+\begin{definition} \cite{MR2157566, MR3089758} \label{def:gpdcomor}
 	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids.
 	\begin{enumerate}
- 		\item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $\Phi: \cG_1 \to \cG_2$ that is compatible with groupoid structures. 
+ 		\item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $(\varphi, \Phi): (M_1, \cG_1) \to (M_2, \cG_2)$ that is compatible with groupoid structures. 
  		\item A Lie groupoid comorphism from $\cG_1$ to $\cG_2$ is a base map $\varphi: M_1 \to M_2$ together with a map
- 			\[ \Phi: M_1 {_\varphi \times_\alpha} \cG_2 \to \cG_2 \]
+ 			\[ \Psi: M_1 {_\varphi \times_\alpha} \cG_2 \to \cG_1 \]
  		that is compatible with groupoid structures. (For details, see p.5 of \cite{MR3089758}.) 
  	\end{enumerate}
 \end{definition}
-Note the difference in convention: the source and target maps in Definition~\ref{def:algcom} are switched comparing to the convention in \cite{MR3089758}. 
+Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{MR3089758}. 
 
-In general, a Lie algebroid morphism from $A_1$ to $A_2$ integrates to a Lie groupoid morphism from $\cG_1$ to $\cG_2$ if $\cG_1$ is source-simply-connected; a Lie algebroid comorphism from $A_1$ to $A_2$ integrates to a Lie groupoid comorphism from $\cG_1$ to $\cG_2$ if $\cG_2$ is source-simply-connected and the algebroid comorphism is complete. Concretely, a morphism or a comorphism from $A_1$ to $A_2$ is a Lie subalgebroid of $A_1 \times A_2$, and the exponential map $A_1 \times A_2 \to \cG_1 \times \cG_2$ integrates to a Lie subgroupoid of $\cG_1 \times \cG_2$ which is the graph of a morphism or a comorphism from $\cG_1$ to $\cG_2$.
+In general, a Lie algebroid morphism from $A_1$ to $A_2$ integrates to a Lie groupoid morphism from $\cG_1$ to $\cG_2$ if $\cG_1$ is source-simply-connected; a Lie algebroid comorphism from $A_1$ to $A_2$ integrates to a Lie groupoid comorphism from $\cG_1$ to $\cG_2$ if $\cG_2$ is source-simply-connected and the algebroid comorphism is complete. Concretely, the graph of a morphism or a comorphism from $A_1$ to $A_2$ is a Lie subalgebroid of $A_1 \times A_2$, and the exponential map $A_1 \times A_2 \to \cG_1 \times \cG_2$ integrates the graph to a Lie subgroupoid of $\cG_1 \times \cG_2$ which happens to be the graph of a morphism or a comorphism from $\cG_1$ to $\cG_2$.
 
-The Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ induces the pullback $\varphi^*: \varphi^!  T^*_{\pi_2} M_2 \to T^*_{\pi_1} M_1$, which means that the following diagram commutes \cite{Higgins1990}.
+The Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ induces the Lie algebroid comorphism $\varphi^*: \varphi^!  T^*_{\pi_2} M_2 \to T^*_{\pi_1} M_1$, which means that the following diagram commutes \cite{Higgins1990}.
 \begin{equation} 
 	\xymatrix{
-		T^* M_1 \ar[d]^{\pi_1^\flat} & \varphi^! T^*_{\pi_2}  M_2 \ar[l]_{\varphi^*} \ar[r]& T^* M_2  \ar[d]^{\pi_1^\flat} \\
+		T^*_{\pi_1} M_1 \ar[d]^{\pi_1^\flat} & \varphi^! T^*_{\pi_2}  M_2 \ar[l]_{\varphi^*} \ar[r]& T^*_{\pi_2} M_2  \ar[d]^{\pi_2^\flat} \\
 		T M_1 \ar[rr]^{\varphi_*} & & TM_2
 	}
 \end{equation}
-The comorphism induced by the Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the Hamiltonian vector field $X_{\varphi^*f}$ is also complete. That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and the Poisson map $\varphi$ is complete. In fact, the graph of $\varphi$ which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{MR2063018}.
+This comorphsim $\varphi^*$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the pullback Hamiltonian vector field $X_{\varphi^*f}$ is also complete. That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete. In fact, the graph of $\varphi$ which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{MR2063018}.
 
-If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces bother a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphis. Following \cite{MR2504211}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
+If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphism. Following \cite{MR2504211}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
 In general, Poisson vector fields are lifted to multiplicative Hamiltonian vector fields. For the Hamiltonian vector field $X_f \in \cT_M$ of $f \in \cO_M$, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid, then $X_f$ is lifted to the Hamiltonian vector field $X_F \in \cT_\cG$ where $F := \alpha^*f - \beta^*f$.
-Indeed, $F \in \cO_\cG$ is multiplicative since $F = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_F = \iota_{dF}\omega^{-1}$ is multiplicative. It follows that $X_F$ preserves the symplectic groupoid structures of $(\cG,\omega)$; and the time-$t$ flow $\varphi^t_f: (M, \pi) \to (M, \pi)$ of the Hamiltonian vector field $X_f$ is lifted to the time-$t$ flow $\varphi^t_F: (\cG, \omega) \to (\cG, \omega)$ of the Hamiltonian vector field $X_F$.
+Indeed, $F \in \cO_\cG$ is multiplicative since $F = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_F = \iota_{dF}\omega^{-1}$ is multiplicative. It follows that $X_F$ preserves the symplectic groupoid structures of $(\cG,\omega)$; and the time-$t$ flow $\varphi^t_f: (M, \pi) \to (M, \pi)$ of $X_f$ is lifted to the time-$t$ flow $\varphi^t_F: (\cG, \omega) \to (\cG, \omega)$ of $X_F$.
 
 Here is an outline for the rest of the section.
 \begin{enumerate}
-	\item We lift the Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} to symplectic groupoid comorphisms. When the exchange matrix is square, $\rho$ is a diffeomorphism, and the graph of the groupoid comophisms also defines a groupoid morphism.
+	\item We lift the Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} to symplectic groupoid comorphisms. When the exchange matrix is square, $\rho$ is a diffeomorphism, and the graph of each groupoid comophism also defines a groupoid morphism.
 	\item We lift the Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows} to symplectic groupoid morphisms using their Hamiltonian nature. We also show that the Lie functor maps the graph of groupoid morphism to the graph of the induced algebroid comorphism.
 	\item We lift the Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}$ in Lemma~\ref{le:tropical cluster transformations} to groupoid comorphisms and show that they can also be interpreted as groupoid morphisms.
 \end{enumerate}
