@@ -219,7 +219,7 @@ Hence for a symplectic 2-form $\omega$, we denote the corresponding Poisson bi-v
 \end{definition}
 
 Of particular importance among all the symplectic realizations is the symplectic groupoid, but first we recall the notion of Lie groupoids and Lie algebroids.
-\begin{definition}
+\begin{definition} \label{def:groupoid}
   A \emph{groupoid} $\cG\rightrightarrows M$ consists of two sets $\cG$ and $M$ with the following maps:
   \begin{enumerate}
     \item a surjective \emph{source map} $\alpha: \cG \to M$ and a surjective \emph{target map} $\beta: \cG \to M$;
@@ -378,7 +378,7 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
 \end{remark}
 
 In the next results, we introduce a Poisson spray whose local symplectic groupoid provides an integration of a log-canonical Poisson structure.
-\begin{lemma}
+\begin{lemma} \label{lemma:PoisSp}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L = \RR^m$, the vector field $X \in \cT_{T^*L}$ given in coordinates $(\bfp, \bfx) = (p_1, \ldots, p_m, x_1, \ldots, x_m)$ on $T^*L$ by
   \begin{equation} 
     \label{eq: PoisSp}
@@ -461,7 +461,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
   In the case when the underlying field is $\CC$, the symplectic groupoid structures can be verified directly.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary} \label{cor:exp}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$, the exponential map
   \[\exp: T^*_\pi L \to \cG, \qquad (\bfp, \bfx) \mapsto \left(\bfa^{-1} \circ \bfp, \bfa \circ \bfx \right),\]
   where $a_j = e^{\sum_i \Omega_{ij} x_ip_i}$, is a diffeomorphism.
@@ -1043,9 +1043,9 @@ We have presented thus far the Hamiltonian viewpoint of mutation for cluster cha
  			such that $\varphi_* \circ \rho_1 \circ \Psi = \rho_2$. 
  	\end{enumerate}
 \end{definition}
-For a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^*)$ is a Lie algebroid comorphism.
+In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 = M_1 {\times_{M_2}} A_2 \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^*)$ is a Lie algebroid comorphism.
 \begin{definition} \cite{MR2157566, MR3089758} \label{def:gpdcomor}
-	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids.
+	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids. (see Definition~\ref{def:groupoid})
 	\begin{enumerate}
  		\item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $(\varphi, \Phi): (M_1, \cG_1) \to (M_2, \cG_2)$ that is compatible with groupoid structures. 
  		\item A Lie groupoid comorphism from $\cG_1$ to $\cG_2$ is a base map $\varphi: M_1 \to M_2$ together with a map
@@ -1053,7 +1053,7 @@ For a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a
  		that is compatible with groupoid structures. (For details, see p.5 of \cite{MR3089758}.) 
  	\end{enumerate}
 \end{definition}
-Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{MR3089758}. 
+Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{MR3089758}. Like the Lie algebroids, we will interpret the graph of a Lie groupoid comorphism $\Psi$ from $\cG_1$ to $\cG_2$ as a subset of $\cG_2 \times \cG_1$.
 
 In general, a Lie algebroid morphism from $A_1$ to $A_2$ integrates to a Lie groupoid morphism from $\cG_1$ to $\cG_2$ if $\cG_1$ is source-simply-connected; a Lie algebroid comorphism from $A_1$ to $A_2$ integrates to a Lie groupoid comorphism from $\cG_1$ to $\cG_2$ if $\cG_2$ is source-simply-connected and the algebroid comorphism is complete. Concretely, the graph of a morphism or a comorphism from $A_1$ to $A_2$ is a Lie subalgebroid of $A_1 \times A_2$, and the exponential map $A_1 \times A_2 \to \cG_1 \times \cG_2$ integrates the graph to a Lie subgroupoid of $\cG_1 \times \cG_2$ which happens to be the graph of a morphism or a comorphism from $\cG_1$ to $\cG_2$.
 
@@ -1111,11 +1111,41 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
 %\[\kappa_\cX^*(t_\ell)=e^{q_\ell y_\ell}\quad\text{and}\quad\kappa_\cA^*(s_j)=e^{p_j x_j}.\]
 
 \begin{lemma}
-  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} induces comorphisms of groupoids as follows:
-  \begin{equation} \label{eq:gpdensemble}
-  	x_i p_i =  \sum_{k=1}^n B_{ik} y_k q_k
-  \end{equation}
+  The Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} lifts to the following comorphisms of symplectic groupoids.
+	\begin{enumerate}
+		\item $(\rho, P)$ from $\cG_\cA$ to $\cG_\cX$ such that
+		\begin{equation} \label{eq:ensembleG}
+		\end{equation}
+		\item $(\rho, P)$ from $\cB_\cA$ to $\cB_\cX$ such that
+		\[
+			P^*\left(\prod_{k=1}^n (v_iy_i+1)^{B_{ik}} \right) = u_ix_i+1
+		\]
+		\item $(\rho, P)$ from $\cD_\cA$ to $\cD_\cX$ such that
+		\[
+			P^*\left(\prod_{k=1}^n t_i^{B_{ik}} \right) = s_i
+		\]
+	\end{enumerate}
 \end{lemma}
+\begin{proof}
+	We prove \eqref{eq:ensembleG} and the cases for $\cB$ and $\cD$ follows from \eqref{eq:LGpdCD}. Taking direvative of $\rho^*(y_k) = \prod_{i=1}^m x_i^{B_{ik}}$, we have
+	\[
+		dy_k = \sum_{i=1}^m \frac{B_{ik}}{x_i} y_k dx_i, \qquad k = 1, \ldots, n.
+	\]
+The pullback of $1$-forms is
+	\[
+		\sum_{k=1}^n q_k dy_k = \sum_{i=1}^m \frac{1}{x_i} \sum_{k=1}^n B_{ik} y_k q_k dx_i.
+	\]
+or as a bundle map
+	\[
+		\rho^*: \rho^! T^*_{\pi_\cX} L_\cX \to T^*_{\pi_\cA} L_\cA, \qquad (\rho^*)^*(p_i) = \frac{1}{x_i} \sum_{k=1}^n B_{ik} y_k q_k, \qquad i = 1, \ldots, m.
+	\]
+The graph of the Lie algebroid comorphism $\rho^*$ from $T^*_{\pi_\cA} L_\cA$ to $T^*_{\pi_\cX} L_\cX$ is defined by
+	\[
+		x_i p_i =  \sum_{k=1}^n B_{ik} y_k q_k, \qquad i = 1, \ldots, m.
+	\]
+By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_i p_i$ and $y_k q_k$ are invariant under the exponential map, so \eqref{eq:ensembleG} follows.
+\end{proof}
+
 \begin{remark}
   \label{rmk:source-connected lift}
   When $m=n$, i.e.\ the map $\rho:L_\cA\to L_\cX$ is an isomorphism, the Poisson ensemble map actually lifts to true morphisms of symplectic groupoids $\rho:\cG_\cA\to\cG_\cX$, $\rho:\cB_\cA\to\cB_\cX$, and $\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
@@ -1127,17 +1157,20 @@ For simplicity of notation, we will write $\alpha$ and $\beta$ for the source an
   Observe that care must me taken when considering the fractional exponents above, however the maps are in fact well defined.
   Indeed, a morphism of groupoids must take the identity section to the identity section.
   With this observation in mind, it is easy to see that the maps $\rho:\cB_\cA\to\cB_\cX$ and $\rho:\cD_\cA\to\cD_\cX$ become well-defined covering maps on the fibers.
+
+	Note that in \cite{FG09c}, the last formula was given with the coordinates $t_\ell^{d_\ell}$ to avoid the fractional exponents.
   %When $L_\cX=\RR_+^n$ and $L_\cA=\RR_+^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
   %\footnote{This might actually require $m=n$.}
   %\[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
   %Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$.
 \end{remark}
 
-To lift the Poisson maps $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
-In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{MR2504211}.
-More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} := \alpha^*f - \beta^*f$.
-Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
-Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
+
+%To lift the Poisson maps $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
+%In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{MR2504211}.
+%More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} := \alpha^*f - \beta^*f$.
+%Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
+%Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
 
 %As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
 %Note that on $T^*L_\bfr$ we have the canonical Poisson structure 
@@ -1187,7 +1220,7 @@ Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid stru
 %  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 %\end{proof}
 
-Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cA$, $\cB_\cA$, $\cD_\cA$.
+Next, we lift the Hamiltonian Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows}. Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cA$, $\cB_\cA$, $\cD_\cA$.
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
 \begin{align}
   \label{eq:X hamiltonian}
@@ -1435,12 +1468,12 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 \begin{equation} 
 	\label{eq:GpdCD}
     \xymatrix{
-      \cG_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cG_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cG'_{\cA} \ar@{~}[d]^{\rho} 
-	&& \cD_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cD_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cD'_{\cA} \ar@{~}[d]^{\rho} \\
+      \cG_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cG_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cG'_{\cA} \ar@{.>}[d]^{\rho} 
+	&& \cD_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cD_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cD'_{\cA} \ar@{.>}[d]^{\rho} \\
       \cG_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cG_{\cX} \ar[r]^{\tau_{\cX}} \ar@{}[ddr]^(.325){}="a"^(.775){}="b" \ar@<1ex> "a";"b"^-{\kappa_\cA} \ar@<-1ex> "a";"b"_-{\kappa_\cX} & \cG'_{\cX} \ar@{}[rr]^(.3){}="e"^(.7){}="f" \ar@<5ex> "e";"f"^-{\lambda_\cA} \ar@<3ex> "e";"f"_-{\lambda_\cX}
 	&& \cD_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cD_{\cX} \ar[r]^{\tau_{\cX}} & \cD'_{\cX} \\
 	&&&&&&\\
-	&&\cB_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cB_{\cA} \ar@{~}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cB'_{\cA} \ar@{~}[d]^{\rho} \ar@{}[uur]^(.2){}="c"^(.65){}="d" \ar@<1ex> "c";"d"^-{\nu_\cA} \ar@<-1ex> "c";"d"_-{\nu_\cX}  \\
+	&&\cB_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\varphi_{\cA}} \ar@/^1pc/[rr]|-{\mu_{\cA}} & \cB_{\cA} \ar@{.>}[d]^{\rho} \ar[r]_{\tau_{\cA}} & \cB'_{\cA} \ar@{.>}[d]^{\rho} \ar@{}[uur]^(.2){}="c"^(.65){}="d" \ar@<1ex> "c";"d"^-{\nu_\cA} \ar@<-1ex> "c";"d"_-{\nu_\cX}  \\
       &&\cB_{\cX} \ar[r]^{\varphi_{\cX}} \ar@/_1pc/[rr]|-{\mu_{\cX}} & \cB_{\cX} \ar[r]^{\tau_{\cX}} & \cB'_{\cX}
     }
 \end{equation}
