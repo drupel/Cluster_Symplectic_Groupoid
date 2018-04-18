@@ -809,7 +809,7 @@ For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation
   \item $\Omega'=E_{\bfr,k,\varepsilon}^T\Omega E_{\bfr,k,\varepsilon}$ for $E_{\bfr,k,\varepsilon}$ the $m\times m$ matrix with entries
     \[E_{ij}=\begin{cases}\delta_{ij} & \text{if $j\ne k$;}\\ -1 & \text{if $i=j=k$;}\\ [-\varepsilon B_{ik}r_k]_+ & \text{if $i\ne j=k$.}\end{cases}\]
 \end{itemize}
-It is an easy exercise to check that mutation of compatible pairs is an involution, more precisely 
+It is an easy exercise to check that $\big(\mu_{\bfr,k,\varepsilon}\tilde B,\Omega'\big)$ is again $D$-compatible and that the mutation of compatible pairs is an involution, more precisely 
 \[\mu_{\bfr,k,\varepsilon}\mu_{\bfr,k,\varepsilon'}(\tilde B,\Omega)=(\tilde B,\Omega)\]
 for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
 In particular, the mutation $\mu_{\bfr,k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_{\bfr,k}$ for this mutation when the choice of sign can be ignored.
@@ -1379,19 +1379,35 @@ That is, over each cluster chart $L^+_{\cX,\bfr;t}$ and $L^+_{\cA,\bfr;t}$ we ha
 \end{remark}
 
 Given a pair of vertices $t,t'\in\TT_n$, we follow the notation of Section~\ref{sec:cluster} and write $\mu_{\cX,\bfr}^{t,t'}$ and $\mu_{\cA,\bfr}^{t,t'}$ for each of the composed groupoid mutations over the cluster charts of $\cX_\bfr$ and $\cA_\bfr$ respectively.
-As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we record the simple observation that the mutations respect target maps $\beta$.
-\begin{lemma}
-  \label{le:target compatibility}
-  This may not be necessary to write down.
-\end{lemma}
+As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we introduce analogues of the $\bfc$-vectors and $\bfg$-vectors which describe iterations of the cluster mutations.
+To begin let $C^\vee_{t_0}$ be an $m\times m$ identity matrix and let $G^\vee_{t_0}$ be an $n\times n$ identity matrix.
+We then assign matrices $C^\vee_t:=(C^\vee_{ij;t})$ and $G^\vee_t:=(G^\vee_{ij;t})$ to the vertices $t\in\TT_n$ by the following recursion.
+For vertices $t,t'\in\TT_n$ joined by an edge labeled $k$, the matrices $C^\vee_t$ and $C^\vee_{t'}$ are related by
+\begin{equation}
+  \label{eq:dual c-matrix mutation}
+  C^\vee_{ij;t'}=
+  \begin{cases}
+    -C^\vee_{ij;t} & \text{if $i=k$;}\\
+    C^\vee_{ij;t}+[-\varepsilon_{\bfr,k;t} B_{ik;t} r_k]_+ C^\vee_{kj;t} & \text{if $i\ne k$;}
+  \end{cases}
+\end{equation}
+while the matrices $G^\vee_t$ and $G^\vee_{t'}$ are related by
+\begin{equation}
+  \label{eq:dual g-matrix mutation}
+  G^\vee_{ij;t'}=
+  \begin{cases}
+    -G^\vee_{kj;t}+\sum\limits_{\ell=1}^n [\varepsilon_{\bfr,k;t} r_k B_{k\ell;t}]_+ G^\vee_{\ell j;t} & \text{if $i=k$;}\\
+    G^\vee_{ij;t} & \text{if $i\ne k$.}
+  \end{cases}
+\end{equation}
 
 Then we have the following analogues of the separation of additions formulas describing the cluster coordinates.
 \begin{theorem}
   \begin{align}
     \label{eq:groupoid separation of additions 1}
-    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{\ell;t})&=\left(\prod_{k=1}^n t_{k;t_0}^{G_{k\ell;t}}\right) \frac{F_{\ell,\bfr;t}\big(y_{1;t_0}\prod_{k=1}^n t_k^{d_k B_{k1;t_0}},\ldots,y_{n;t_0}\prod_{k=1}^n t_k^{d_k B_{kn;t_0}}\big)}{F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})};\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{\ell;t})&=\left(\prod_{k=1}^n t_{k;t_0}^{G^\vee_{\ell k;t}}\right) \frac{F_{\ell,\bfr;t}\big(y_{1;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{k1;t_0}},\ldots,y_{n;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{kn;t_0}}\big)}{F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{j;t})&=\left(\prod_{k=1}^n s_{k;t_0}^{C_{kj;t}}\right) \left(\frac{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0} s_1^{-d_1},\ldots,\hat y_{n;t_0} s_n^{-d_n})}{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k \ell;t}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{j;t})&=\left(\prod_{k=1}^n s_{k;t_0}^{C^\vee_{jk;t}}\right) \left(\frac{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k \ell;t}};
   \end{align}
 \end{theorem}
 
