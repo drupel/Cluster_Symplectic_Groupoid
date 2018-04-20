@@ -920,7 +920,7 @@ To accomplish this, we observe that the mutation pattern gives rise to the follo
   Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B_{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
   Then, given $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$, the lower $n\times n$ submatrix $C_t:=(C_{ij;t})$ of $\tilde B_t$ transforms as follows when $t$ and $t'$ are joined by an edge labeled $k$:
   \begin{equation}
-    \label{eq:c-matrix mutation1}
+    \label{eq:c-matrix mutation 1}
     C_{ij;t'}=
     \begin{cases}
       -C_{ij;t} & \text{if $j=k$;}\\
@@ -932,9 +932,9 @@ To accomplish this, we observe that the mutation pattern gives rise to the follo
     \item each column of $C_t$, known as a \emph{$\bfc$-vector}, has either all non-negative entries or all non-positive entries \cite{FZ07,NZ12,GHKK14,NR16}.
   \end{itemize}
   Thus each exchange matrix $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{\bfr,k;t}\in\{\pm1\}$, where $\varepsilon_{\bfr,k;t}=1$ if the entries in the $k$-th column of $C_t$ are non-negative and $\varepsilon_{\bfr,k;t}=-1$ if the entries in the $k$-th column of $C_t$ are non-positive. 
-  Taking the tropical sign in the mutation formula for $\bfc$-vectors above gives the following simplified mutation rule:
+  Taking the tropical sign in the mutation formula \eqref{eq:c-matrix mutation 1} for $\bfc$-vectors gives the following simplified mutation rule:
   \begin{equation}
-    \label{eq:c-matrix mutation2}
+    \label{eq:c-matrix mutation 2}
     C_{ij;t'}=
     \begin{cases}
       -C_{ij;t} & \text{if $j=k$;}\\
@@ -988,8 +988,8 @@ Given a pair of vertices $t,t'\in\TT_n$, the composition of mutations from $L^+_
 
 When $\tilde B_{t_0}=\tilde B_{prin}$ has principal coefficients, the cluster coordinates $x_{j;t}^\circ$ of the cluster variety $\cA_\bfr^\circ$ admit a lot of structure which turns out to control the expressions for cluster coordinates with arbitrary coefficients.
 In this case, all cluster coordinates $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t}^\circ)$ on $L^+_{\cA,\bfr;t_0}$ are homogeneous with respect to the $\ZZ^n$-grading
-\[\deg(x_{i;t_0}^\circ)=\bfe_i\qquad\text{and}\qquad\deg(x_{n+i;t_0}^\circ)=-\bfb_i,\]
-for $1\le i\le n$, where $\bfe_i$ is the $i$-th standard basis vector of $\ZZ^n$ and $\bfb_i\in\ZZ^n$ is the $i$-th column of $B$.
+\[\deg(x_{i;t_0}^\circ)=\bfe_i\qquad\text{and}\qquad\deg(x_{n+k;t_0}^\circ)=-\bfb_k,\]
+for $1\le i,k\le n$, where $\bfe_i$ is the $i$-th standard basis vector of $\ZZ^n$ and $\bfb_k\in\ZZ^n$ is the $k$-th column of $B$.
 Note that each $\hat y_k^\circ:=x_{n+k;t_0}^\circ\prod_{i=1}^n (x_{i;t_0}^\circ)^{B_{ik;t_0}}$ has degree zero under this grading.
 The \emph{$\bfg$-vector} $\bfg_{j;t}=\sum\limits_{i=1}^n G_{ij;t}\bfe_i$ of the cluster coordinate $x_{j;t}^\circ$ is its degree when pulled back to $L^+_{\cA,\bfr;t_0}$.
 These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
@@ -1003,12 +1003,16 @@ These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are join
 \end{equation}
 Then there exists a unique polynomial $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$, called the \emph{$F$-polynomial}, such that the initial cluster Laurent expansion of $x_{j;t}^\circ$ is given by
 \[\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(x_{j;t}^\circ)=\left(\prod_{i=1}^n (x_{i;t_0}^\circ)^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_1^\circ,\ldots,\hat y_n^\circ).\]
+\begin{remark}
+  \label{rem:frozen F-polynomials}
+  While it does not seem to be standard to define $\bfg$-vectors and $F$-polynomials for the frozen cluster variables $x_{n+k;t_0}^\circ$, the definitions given above naturally extend to this setting by taking $G_{i,n+k;t}=-B_{ik}$ and $F_{n+k,\bfr;t}=u_k$ for $1\le k\le n$.
+\end{remark}
 The $F$-polynomials transform via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
 \begin{equation}
   \label{eq:F-polynomial mutation}
   F_{j,\bfr;t'}=
   \begin{cases}
-    F_{k,\bfr;t}^{-1} \left(\prod_{i=1}^n F_{i,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{ik;t} r_k]_+}\right) Z_k\left(\prod_{i=1}^n u_i^{\varepsilon_{\bfr,k;t} C_{ik;t}} F_{i,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{ik;t}}\right) & \text{if $j=k$;}\\
+    F_{k,\bfr;t}^{-1} \left(\prod_{\ell=1}^n F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) Z_k\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
     F_{j,\bfr;t} & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
@@ -1020,7 +1024,7 @@ Define a \emph{tropical addition} on monomials in $\CC[x_{j;t_0}:n+1\le j\le m]$
 Then we have the following \emph{separation of additions} formulae:
 \begin{align}
   \label{eq:separation of additions 1}
-  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\left(\prod_{k=1}^n y_{k;t_0}^{C_{k \ell;t}}\right) \prod_{k=1}^n F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k \ell;t}};\\
+  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})&=\left(\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}}\right) \prod_{\ell=1}^n F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}};\\
   \label{eq:separation of additions 2}
   \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij;t}}\right) \frac{F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};
 \end{align}
@@ -1463,6 +1467,17 @@ while the matrices $G^\vee_t$ and $G^\vee_{t'}$ are related by
     G^\vee_{ij;t} & \text{if $i\ne k$.}
   \end{cases}
 \end{equation}
+\begin{remark}
+  An easy induction shows that $C^\vee_{ij;t}$ is independent of $t$ for $1\le i\le m$ and $n+1\le j\le m$.
+  In particular, $C^\vee_{ij;t}=0$ for $1\le i\le m$ and $n+1\le j\le m$ with $i\ne j$ while $C^\vee_{jj;t}=1$ for $n+1\le j\le m$.
+\end{remark}
+\begin{lemma}
+  \label{le:dual C-vectors}
+  For $1\le k,\ell\le n$, we have $d_kC^\vee_{k\ell;t}=d_\ell C_{\ell k;t}$ for all $t\in\TT_n$.
+\end{lemma}
+\begin{proof}
+  This is an easy induction using the recursions \eqref{eq:c-matrix mutation 2} and \eqref{eq:dual c-matrix mutation} together with the identities $d_k B_{k\ell;t}=-d_\ell B_{\ell k;t}$ for all $t\in\TT_n$.
+\end{proof}
 
 Then we have the following analogues of the separation of additions formulas describing the cluster coordinates.
 \begin{theorem}
@@ -1470,11 +1485,53 @@ Then we have the following analogues of the separation of additions formulas des
     \label{eq:groupoid separation of additions 1}
     \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{\ell;t})&=\left(\prod_{k=1}^n t_{k;t_0}^{G^\vee_{\ell k;t}}\right) \frac{F_{\ell,\bfr;t}\big(y_{1;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{k1;t_0}},\ldots,y_{n;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{kn;t_0}}\big)}{F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{j;t})&=\left(\prod_{k=1}^n s_{k;t_0}^{C^\vee_{jk;t}}\right) \left(\frac{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{\prod_{k=1}^n F_{k,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k \ell;t}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};
   \end{align}
 \end{theorem}
+\begin{proof}
+  We work by induction on the distance from $t_0$ to $t$ inside $\TT_n$.
+  First consider when $t$ is joined to $t_0$ by an edge labeled $k$.
+  Then $F_{k,\bfr;t}=Z_k(u_k)$ and $F_{\ell,\bfr;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
+
+  Now suppose $t'$ and $t$ are joined by an edge labeled $k$ with $t$ lying on the unique shortest path from $t_0$ to $t'$.
+  Then $\mu_{\cA,\bfr}^{t',t_0}=\mu_{\cA,\bfr}^{t',t}\circ\mu_{\cA,\bfr}^{t,t_0}$ so that
+  \begin{align*}
+    \big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{k;t'})
+    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\circ\big(\mu_{\cA,\bfr}^{t',t}\big)^*(s_{k;t'})\\
+    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{k;t}^{-1})\\
+    &=\left(\prod_{j=1}^m s_{j;t_0}^{-C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{k\ell;t}/d_\ell}\\
+    &=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{kj;t'}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k\ell;t'}/d_\ell},
+  \end{align*}
+  where the last equality used that $\ell\ne k$ in the product since $B_{kk;t}=0$.
+  On the other hand, writing $\varepsilon=\varepsilon_{\bfr,k;t}$ below, for $i\ne k$ we have
+  \begin{align*}
+    \big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})
+    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\circ\big(\mu_{\cA,\bfr}^{t',t}\big)^*(s_{i;t'})\\
+    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(s_{i;t} s_{k;t}^{[-\varepsilon B_{ik;t} r_k]_+} \left(\frac{Z_k\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_k(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}\right).
+  \end{align*}
+  We handle the ``$\bfc$-vector part'' of the above expression first.
+  Applying \eqref{eq:groupoid separation of additions 2} to the first two terms above and recording only the $\bfc$-vector part gives
+  \begin{align*}
+    \left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right)\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{kj;t}}\right)^{[-\varepsilon B_{ik;t} r_k]_+}
+    =\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t} + [-\varepsilon B_{ik;t} r_k]_+ C^\vee_{kj;t}}
+    =\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t'}}.
+  \end{align*}
+  \begin{align*}
+    &=\left(\frac{Z_k\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}} \left(\prod_{j=1}^m s_{j;t_0}^{\varepsilon d_k C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{\varepsilon d_k B_{k\ell;t}/d_\ell}\right)}{Z_k(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}})}\right)^{-B_{ik;t}/d_k}\\
+  \end{align*}
 
 
+  \[\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})=\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{C_{\ell k;t}}\right) \prod_{\ell=1}^n F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}\]
+
+\begin{equation}
+  F_{j,\bfr;t'}=
+  \begin{cases}
+    F_{k,\bfr;t}^{-1} \left(\prod_{i=1}^n F_{i,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{ik;t} r_k]_+}\right) Z_k\left(\prod_{i=1}^n u_i^{\varepsilon_{\bfr,k;t} C_{ik;t}} F_{i,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{ik;t}}\right) & \text{if $j=k$;}\\
+    F_{j,\bfr;t} & \text{if $j\ne k$.}
+  \end{cases}
+\end{equation}
+
+\end{proof}
 
 Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for periodicity.
 
