@@ -1027,7 +1027,7 @@ Define a \emph{tropical addition} on monomials in $\CC[x_{j;t_0}:n+1\le j\le m]$
 Then we have the following \emph{separation of additions} formulae:
 \begin{align}
   \label{eq:separation of additions 1}
-  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})&=\left(\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}}\right) \prod_{\ell=1}^n F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}};\\
+  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})&=\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}};\\
   \label{eq:separation of additions 2}
   \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij;t}}\right) \frac{F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};
 \end{align}
@@ -1345,10 +1345,11 @@ On the other hand, taking direvatives of
 \]
 we obtain
 \begin{align}
-	& (\varphi_{\cA,\bfr})^* (dx_j) = dx_j \quad \text{if}~j\ne k, \\
-	& (\varphi_{\cA,\bfr})^* (dx_k) = \frac{1}{Z_k(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{Z'_k(\hat{y}_k^\varepsilon)}{\left(Z_k(\hat{y}_k^\varepsilon)\right)^2} dx_j. \label{eq:G_Acomorphism}
+  & (\varphi_{\cA,\bfr})^* (dx_j) = dx_j \quad \text{if}~j\ne k, \\
+  & (\varphi_{\cA,\bfr})^* (dx_k) = \frac{1}{Z_k(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{Z'_k(\hat{y}_k^\varepsilon)}{\left(Z_k(\hat{y}_k^\varepsilon)\right)^2} dx_j. 
+  \label{eq:GAcomorphism}
 \end{align}
-Notice that $x_j, \> j \ne k$ and $\hat{y}_k$ are invariant under $\varphi_{\cA,\bfr}$ and $(\varphi_{\cA,\bfr})^*(x_k) = \frac{x_k}{Z_k(\hat{y}_k^\varepsilon)}$. If we apply $\varphi_{\cA,\bfr}$ to the right hand side of \eqref{eq:G_Acomorphism}, then $(\varphi_{\cA,\bfr})^*$ is the transpose of $\Lie \left(\varphi_{\cA,\bfr} \right)$.
+Notice that $x_j, \> j \ne k$ and $\hat{y}_k$ are invariant under $\varphi_{\cA,\bfr}$ and $(\varphi_{\cA,\bfr})^*(x_k) = \frac{x_k}{Z_k(\hat{y}_k^\varepsilon)}$. If we apply $\varphi_{\cA,\bfr}$ to the right hand side of \eqref{eq:GAcomorphism}, then $(\varphi_{\cA,\bfr})^*$ is the transpose of $\Lie \left(\varphi_{\cA,\bfr} \right)$.
 
 Now if we identify $\Lie \left(\cG_\cA \right)$ and $T L_\cA = T^*_{\pi_\cA} L_\cA$ with $\frac{\partial}{\partial p_j} = dx_j, \> j =1, \ldots, m$, then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$. That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is the Lie algebroid comorphism such that the corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$. It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of the groupoid morphism $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
 
@@ -1559,23 +1560,31 @@ Then we have the following analogues of the separation of additions formulas des
   \begin{align*}
     \left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right)\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{kj;t}}\right)^{[-\varepsilon B_{ik;t} r_k]_+}
     =\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t} + [-\varepsilon B_{ik;t} r_k]_+ C^\vee_{kj;t}}
-    =\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t'}}.
+    =\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t'}},
   \end{align*}
+  which is the desired $\bfc$-vector part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
+  Meanwhile the $F$-polynomial part of this is given by
   \begin{align*}
-    &=\left(\frac{Z_k\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}} \left(\prod_{j=1}^m s_{j;t_0}^{\varepsilon d_k C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{\varepsilon d_k B_{k\ell;t}/d_\ell}\right)}{Z_k(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}})}\right)^{-B_{ik;t}/d_k}\\
+    &\prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell}
+    \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{[-\varepsilon B_{ik;t} r_k]_+ B_{k\ell;t}/d_\ell}\\
+    & = \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{ik;t}/d_k}
+    \prod_{\ell\ne k} \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell-B_{ik;t} [\varepsilon r_k B_{k\ell;t}]_+/d_\ell},
   \end{align*}
-
-
-  \[\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})=\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{C_{\ell k;t}}\right) \prod_{\ell=1}^n F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}\]
-
-\begin{equation}
-  F_{j,\bfr;t'}=
-  \begin{cases}
-    F_{k,\bfr;t}^{-1} \left(\prod_{i=1}^n F_{i,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{ik;t} r_k]_+}\right) Z_k\left(\prod_{i=1}^n u_i^{\varepsilon_{\bfr,k;t} C_{ik;t}} F_{i,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{ik;t}}\right) & \text{if $j=k$;}\\
-    F_{j,\bfr;t} & \text{if $j\ne k$.}
-  \end{cases}
-\end{equation}
-
+  where the final exponent above may be rewritten as $B_{i\ell;t'}/d_\ell-B_{ik;t} [-\varepsilon r_k B_{\ell k;t}]_+/d_k$.
+  On the other hand, considering only $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)$ gives
+  \begin{align*}
+    \nonumber &\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{j=1}^m s_{j;t_0}^{-\varepsilon d_k C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-\varepsilon d_k B_{k\ell;t}/d_\ell}\\
+    \nonumber &=\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{\ell=1}^n s_{\ell;t_0}^{-\varepsilon d_k C^\vee_{k\ell;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{\varepsilon B_{\ell k;t}}\\
+    %\label{eq:Z argument}
+    &=\left(\prod_{\ell=1}^n (\hat y_{\ell;t_0} s_{\ell;t_0}^{-d_\ell})^{\varepsilon C_{\ell k;t}}\right) \prod_{\ell=1}^n \left(F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})\right)^{\varepsilon B_{\ell k;t}},
+  \end{align*}
+  where the last equality used Lemma~\ref{le:dual C-vectors}.
+  Thus combining the $F$-polynomial part above with the expression $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\frac{Z_k\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_k(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}$ and applying the $F$-polynomial recursion \eqref{eq:F-polynomial mutation} gives
+  \begin{align*}
+    \prod_{\ell\ne k} \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell}
+    \left(\frac{F_{\ell,\bfr;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.
+  \end{align*}
+  But $B_{ik;t'}=-B_{ik;t}$ so that this final expression gives the desired $F$-polynomial part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
 \end{proof}
 
 Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for periodicity.
