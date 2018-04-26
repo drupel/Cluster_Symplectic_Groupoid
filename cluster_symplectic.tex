@@ -1009,6 +1009,9 @@ Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ we comp
     G_{ij;t} & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
+\begin{remark}
+  Since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $G_{ij;t}=\delta_{ij}$ for $n+1\le j\le m$.
+\end{remark}
 Next we introduce the \emph{$F$-polynomials} $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$ of $x_{j;t}$.
 These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
 \begin{equation}
@@ -1551,26 +1554,28 @@ while the matrices $G^\vee_t$ and $G^\vee_{t'}$ are related by
 \end{equation}
 \begin{remark}
   An easy induction shows that $C^\vee_{ij;t}$ is independent of $t$ for $1\le i\le m$ and $n+1\le j\le m$.
-  In particular, $C^\vee_{ij;t}=0$ for $1\le i\le m$ and $n+1\le j\le m$ with $i\ne j$ while $C^\vee_{jj;t}=1$ for $n+1\le j\le m$.
+  In particular, $C^\vee_{ij;t}=\delta_{ij}$ for $1\le i\le m$ and $n+1\le j\le m$.
 \end{remark}
 \begin{lemma}
   \label{le:dual C-vectors}
-  For $1\le k,\ell\le n$, we have $d_kC^\vee_{k\ell;t}=d_\ell C_{\ell k;t}$ for all $t\in\TT_n$.
+  For $1\le k,\ell\le n$, we have $d_kC^\vee_{k\ell;t}=d_\ell C_{\ell k;t}$ and $d_kG^\vee_{k\ell;t}=d_\ell G_{\ell k;t}$ for all $t\in\TT_n$.
 \end{lemma}
 \begin{proof}
-  This is an easy induction using the recursions \eqref{eq:c-matrix mutation 2} and \eqref{eq:dual c-matrix mutation} together with the identities $d_k B_{k\ell;t}=-d_\ell B_{\ell k;t}$ for all $t\in\TT_n$.
+  This is an easy induction using the recursions \eqref{eq:c-matrix mutation 2} and \eqref{eq:dual c-matrix mutation} or \eqref{eq:g-matrix mutation} and \eqref{eq:dual g-matrix mutation} together with the identities $d_k B_{k\ell;t}=-d_\ell B_{\ell k;t}$ for all $t\in\TT_n$.
 \end{proof}
 
 Then we have the following analogues of the separation of additions formulas describing the cluster coordinates.
 \begin{theorem}
-  For any vertex $t\in\TT_n$, we have the following formulas for the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, where each $\beta$ below denotes the target map of an appropriate groupoid:
+  For any vertex $t\in\TT_n$, we have the following formulas for the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, where each $\beta$ below denotes the target map of the appropriate groupoid:
   \begin{align}
     \label{eq:groupoid separation of additions 1}
-    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{k;t})&=\left(\prod_{\ell=1}^n t_{\ell;t_0}^{G^\vee_{k\ell;t}}\right) \left(\frac{F_{k,\bfr;t}\big(y_{1;t_0}\prod_{\ell=1}^n t_{\ell;t_0}^{d_\ell B_{\ell 1;t_0}},\ldots,y_{n;t_0}\prod_{\ell=1}^n t_{\ell;t_0}^{d_\ell B_{\ell n;t_0}}\big)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k};\\
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{i;t} p_{i;t})&=\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right);\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(q_{k;t})&=\frac{ \sum_{\ell=1}^n G^\vee_{k\ell;t} y_{\ell;t_0} q_{\ell;t_0} +\frac{1}{d_k} \log\left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{k;t})&=\left(\prod_{\ell=1}^n t_{\ell;t_0}^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k};\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(v_{k;t})&=\frac{\left(\prod_{\ell=1}^n (y_{\ell;t_0} v_{\ell;t_0} + 1)^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k} - 1}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(p_{i;t})&=\frac{\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
     \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{i;t} u_{i;t} + 1)&=\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell}.
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}.
   \end{align}
 \end{theorem}
 \begin{proof}
@@ -1658,57 +1663,6 @@ Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for per
 
 
 
-\newpage 
-
-The mutation of exchange matrices is accompanied by two notions of mutation on rational functions.
-Let $\cF$ and $\cP$ be extension fields of $\QQ$ with transcendence degrees $m$ and $n$ respectively.   
-A \emph{compatible seed} is a quadruple $\Sigma=(\bfx,\bfy,\tilde B,\Omega)$, where
-\begin{itemize}
-  \item $\bfx=(x_1,\ldots,x_m)$ is a transcendence basis of $\cF$ over $\QQ$ with entries called \emph{cluster variables};
-  \item $\bfy=(y_1,\ldots,y_n)$ is a transcendence basis of $\cP$ over $\QQ$ with entries called \emph{coefficient variables};
-  \item $\tilde B$ is an $m\times n$ exchange matrix;
-  \item $\Omega$ is an $m\times m$ matrix compatible with $\tilde B$.
-\end{itemize}
-For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of $\Sigma$ in direction $k$} by $\mu_{k,\varepsilon}\Sigma=(\mu_{k,\varepsilon}\bfx,\mu_{k,\varepsilon}\bfy,\mu_k\tilde B,\mu_k\Omega)$, where 
-\begin{itemize}
-  \item $\mu_{k,\varepsilon}\bfx=(x'_1,\ldots,x'_m)$ is given by the exchange relation
-    \begin{equation}
-      \label{eq:x exchange relation}
-      x'_i=\begin{cases} x_i & \text{if $i\ne k$;}\\ x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}]_+}\left(1+\prod\limits_{i=1}^m x_i^{\varepsilon B_{ik}}\right) & \text{if $i=k$;}\end{cases}
-    \end{equation}
-  \item $\mu_{k,\varepsilon}\bfy=(y'_1,\ldots,y'_n)$ is given by the exchange relation 
-    \begin{equation}
-      \label{eq:y exchange relation}
-      y'_j=\begin{cases} y_j^{-1} & \text{if $j=k$;}\\ y_jy_k^{[\varepsilon B_{kj}]_+}(1+y_k^\varepsilon)^{-B_{kj}} & \text{if $j\ne k$.}\end{cases}
-    \end{equation}
-\end{itemize}
-Observe that seed mutation is again involutive and that there is a map $\pi:\cP\to\cF$ given by 
-\begin{equation}
-  \label{eq:A to X}
-  \pi(y_k)=\hat y_k:=\prod\limits_{i=1}^m x_i^{B_{ik}}
-\end{equation}
-which is compatible with mutations.
-
-Given an initial seed $\Sigma_{t_0}=(\bfx_{t_0},\bfy_{t_0},\tilde B_{t_0},\Omega_{t_0})$, we label seeds $\Sigma_t=(\bfx_t,\bfy_t,\tilde B_t,\Omega_t)$ which are mutation equivalent to $\Sigma_{t_0}$ by vertices of $\TT_n$ as above, here we write $\bfx_t=(x_{1;t},\ldots,x_{m;t})$ and $\bfy_t=(y_{1;t},\ldots,y_{m;t})$.
-The resulting collection $\{\Sigma_t\}_{t\in\TT_n}$ is known as the \emph{exchange pattern} generated by $\Sigma_{t_0}$.
-\begin{definition}
-  Let $\Sigma$ be a seed in $\cF$.
-  The \emph{cluster algebra} $\cA(\Sigma)$ is the $\ZZ$-subalgebra of $\cF$ generated by all cluster variables $x_{i;t}$ from seeds $\Sigma_t$ mutation equivalent to $\Sigma_{t_0}$.
-\end{definition}
-By iterating the exchange relations we appear to get elements of $\QQ(x_1,\ldots,x_m)\subset\cF$, that is rational functions in $x_1,\ldots,x_m$.  
-The following result of Fomin and Zelevinsky known as ``the Laurent phenomenon'' shows that the cluster variables always take on a much simpler form.
-\begin{theorem}
-  \cite{FZ02}
-  Let $\Sigma$ be a seed in $\cF$ and $\Sigma_t$ any seed in the exchange pattern generated by $\Sigma$.
-  Each cluster variable $x_{i;t}$ of $\Sigma_t$ is an element of the subring $\ZZ[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$.
-\end{theorem}
-
-In fact, the situtation is even better:\footnote{do we need this?} the initial cluster Laurent expansions of all cluster variables have positive integer coefficients.
-\begin{theorem}
-  \cite{lee-schiffler,GHKK14}
-  Let $\Sigma$ be a seed in $\cF$ and $\Sigma'\sim\Sigma$.  Each cluster variable $x'_i$ of $\Sigma'$ is an element of the subsemiring $\ZZ_{\ge0}[x_1^{\pm1},\ldots,x_m^{\pm1}]\subset\cF$. 
-\end{theorem}
-For $x'_i$ a cluster variable from a seed $\Sigma'\sim\Sigma$, we write $x'_i(\bfx)$ when we wish to emphasize that $x'_i$ should be thought of as a function of the cluster variables in $\bfx=(x_1,\ldots,x_m)$.
 
 \subsection{The Cluster Manifold and Compatible Poisson Structures}
 Fix the field $\FF=\RR$ or $\FF=\CC$.
