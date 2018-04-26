@@ -1049,7 +1049,7 @@ We have presented thus far the Hamiltonian viewpoint of mutation for cluster cha
  			such that $\varphi_* \circ \rho_1 \circ \Psi = \rho_2$. 
  	\end{enumerate}
 \end{definition}
-In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 = M_1 {\times_{M_2}} A_2 \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^*)$ is a Lie algebroid comorphism.
+In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 = M_1 {\times_{M_2}} A_2 \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^\vee)$ is a Lie algebroid comorphism where $\Phi^\vee$ is the dual bundle map of $\Phi$.
 \begin{definition} \cite{MR2157566, MR3089758} \label{def:gpdcomor}
 	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids. (see Definition~\ref{def:groupoid})
 	\begin{enumerate}
@@ -1353,19 +1353,7 @@ If we identify $\Lie \left(\cG_\cA \right)$ and $T^*_{\pi_\cA} L_\cA$ with
 \[
 	\frac{\partial}{\partial p_j} = dx_j, \> j =1, \ldots, m,
 \]
-<<<<<<< HEAD
-we obtain
-\begin{align}
-  & (\varphi_{\cA,\bfr})^* (dx_j) = dx_j \quad \text{if}~j\ne k, \\
-  & (\varphi_{\cA,\bfr})^* (dx_k) = \frac{1}{Z_k(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{Z'_k(\hat{y}_k^\varepsilon)}{\left(Z_k(\hat{y}_k^\varepsilon)\right)^2} dx_j. 
-  \label{eq:GAcomorphism}
-\end{align}
-Notice that $x_j, \> j \ne k$ and $\hat{y}_k$ are invariant under $\varphi_{\cA,\bfr}$ and $(\varphi_{\cA,\bfr})^*(x_k) = \frac{x_k}{Z_k(\hat{y}_k^\varepsilon)}$. If we apply $\varphi_{\cA,\bfr}$ to the right hand side of \eqref{eq:GAcomorphism}, then $(\varphi_{\cA,\bfr})^*$ is the transpose of $\Lie \left(\varphi_{\cA,\bfr} \right)$.
-
-Now if we identify $\Lie \left(\cG_\cA \right)$ and $T L_\cA = T^*_{\pi_\cA} L_\cA$ with $\frac{\partial}{\partial p_j} = dx_j, \> j =1, \ldots, m$, then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$. That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is the Lie algebroid comorphism such that the corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$. It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of the groupoid morphism $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
-=======
 then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$. That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is a Lie algebroid comorphism and its corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$. See the discussion proceeding Definition~\ref{def:gpdcomor}. It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
->>>>>>> c6e4d7354df971bff88bd4bec4eede8e91d3b044
 
 \begin{lemma}
   \label{le:tropical groupoid transformations}
@@ -1437,8 +1425,8 @@ or as a bundle map
 	\end{align*}
 The graph of the Lie algebroid comorphism $\tau^*$ from $T^*_{\pi_{\cA'}} L_{\cA'}$ to $T^*_{\pi_{\cA}} L_{\cA}$ is defined by
 	\begin{align*}
-		& x_k p_k = - x'_k p'_k , \\
-		& x_j p_j = x'_kp'_k [- \varepsilon B_{jk} r_k]_+  + x'_jp'_j \quad \text{if}~j\ne k.
+		& x'_k p'_k = - x_k p_k , \\
+		& x'_j p'_j = x_kp_k [- \varepsilon B_{jk} r_k]_+  + x_jp_j \quad \text{if}~j\ne k.
 	\end{align*}
 By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_j p_j$ and $x'_j p'_j$ are invariant under the exponential map, so \eqref{eq:tropical GA transformation} follows.
 \end{proof}
@@ -1511,7 +1499,7 @@ By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_j p_j$ and $x'_
   Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{-,\bfr}^{k,\varepsilon}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$ and thus the gluing of fibers is not attempted over these loci. 
 \end{remark}
 
-The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summarized in the following commutative diagram. The groupoid morphisms are represented by solid arrows and the groupoid comorphisms are represented by dotted arrows.p
+The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summarized in the following commutative diagram. The groupoid morphisms are represented by solid arrows and the groupoid comorphisms are represented by dotted arrows.
 \begin{equation} 
 	\label{eq:GpdCD}
     \xymatrix{
