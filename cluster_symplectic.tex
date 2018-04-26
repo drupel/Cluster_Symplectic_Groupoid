@@ -996,50 +996,41 @@ The following result is the famous Laurent phenomenon for (generalized) cluster 
 This result can be made considerably more precise as follows, c.f.\ \cite{FZ07,NR16}.
 Given a pair of vertices $t,t'\in\TT_n$, the composition of mutations from $L^+_{-,\bfr;t}$ to $L^+_{-,\bfr;t'}$ along the unique path from $t$ to $t'$ in $\TT_n$ (always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}) gives rise to birational maps
 \[\mu_{\cX,\bfr}^{t',t}:L^+_{\cX,\bfr;t}\to L^+_{\cX,\bfr;t'}\qquad\text{and}\qquad\mu_{\cA,\bfr}^{t',t}:L^+_{\cA,\bfr;t}\to L^+_{\cA,\bfr;t'}.\]
+To understand the iterated mutations $\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})$ and $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ we introduce the following combinatorial constructions.
 
-When $\tilde B_{t_0}=\tilde B_{prin}$ has principal coefficients, the cluster coordinates $x_{j;t}^\circ$ of the cluster variety $\cA_\bfr^\circ$ admit a lot of structure which turns out to control the expressions for cluster coordinates with arbitrary coefficients.
-In this case, all cluster coordinates $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t}^\circ)$ on $L^+_{\cA,\bfr;t_0}$ are homogeneous with respect to the $\ZZ^n$-grading
-\[\deg(x_{i;t_0}^\circ)=\bfe_i\qquad\text{and}\qquad\deg(x_{n+k;t_0}^\circ)=-\bfb_k,\]
-for $1\le i,k\le n$, where $\bfe_i$ is the $i$-th standard basis vector of $\ZZ^n$ and $\bfb_k\in\ZZ^n$ is the $k$-th column of $B$.
-Note that each $\hat y_k^\circ:=x_{n+k;t_0}^\circ\prod_{i=1}^n (x_{i;t_0}^\circ)^{B_{ik;t_0}}$ has degree zero under this grading.
-The \emph{$\bfg$-vector} $\bfg_{j;t}=\sum\limits_{i=1}^n G_{ij;t}\bfe_i$ of the cluster coordinate $x_{j;t}^\circ$ is its degree when pulled back to $L^+_{\cA,\bfr;t_0}$.
-These satisfy the following recursion for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
+The \emph{$\bfg$-vector} of $x_{j;t}$ is the integer vector $\sum\limits_{i=1}^m G_{ij;t}\bfe_i\in\ZZ^m$ defined recursively as follows.
+We begin with the identity matrix $G_{ij;t_0}=\delta_{ij}$.
+Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ we compute using the following recursion (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
 \begin{equation}
   \label{eq:g-matrix mutation}
   G_{ij;t'}=
   \begin{cases}
-    -G_{ik;t}+\sum\limits_{\ell=1}^n G_{i\ell;t}[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+ & \text{if $j=k$;}\\
+    -G_{ik;t}+\sum\limits_{\ell=1}^m G_{i\ell;t}[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+ & \text{if $j=k$;}\\
     G_{ij;t} & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
-Then there exists a unique polynomial $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$, called the \emph{$F$-polynomial}, such that the initial cluster Laurent expansion of $x_{j;t}^\circ$ is given by
-\[\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(x_{j;t}^\circ)=\left(\prod_{i=1}^n (x_{i;t_0}^\circ)^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_1^\circ,\ldots,\hat y_n^\circ).\]
-\begin{remark}
-  \label{rem:frozen F-polynomials}
-  While it does not seem to be standard to define $\bfg$-vectors and $F$-polynomials for the frozen cluster variables $x_{n+k;t_0}^\circ$, the definitions given above naturally extend to this setting by taking $G_{i,n+k;t}=-B_{ik}$ and $F_{n+k,\bfr;t}=u_k$ for $1\le k\le n$.
-\end{remark}
-The $F$-polynomials transform via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
+Next we introduce the \emph{$F$-polynomials} $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$ of $x_{j;t}$.
+These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
 \begin{equation}
   \label{eq:F-polynomial mutation}
   F_{j,\bfr;t'}=
   \begin{cases}
-    F_{k,\bfr;t}^{-1} \left(\prod_{\ell=1}^n F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) Z_k\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
+    F_{k,\bfr;t}^{-1} \left(\prod_{\ell=1}^m F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) Z_k\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
     F_{j,\bfr;t} & \text{if $j\ne k$.}
   \end{cases}
 \end{equation}
-
-As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials associated to principal coefficients cluster algebras completely control the mutations for arbitrary coefficients as follows.
-Let $\tilde B_{t_0}$ be an $m\times n$ exchange matrix and $\cA_\bfr$ the corresponding cluster variety.
-Define a \emph{tropical addition} on monomials in $\CC[x_{j;t_0}:n+1\le j\le m]$ by
-\[\prod_{j=n+1}^m x_{j;t_0}^{a_j}\oplus \prod_{j=n+1}^m x_{j;t_0}^{b_j}=\prod_{j=n+1}^m x_{j;t_0}^{\min\{a_j,b_j\}}.\]
-Then we have the following \emph{separation of additions} formulae:
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulae (c.f.\ \cite{FZ07,Nak15,NR16}):
 \begin{align}
   \label{eq:separation of additions 1}
-  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})&=\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}};\\
+  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n y_{k;t_0}^{C_{k\ell;t}} F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}};\\
   \label{eq:separation of additions 2}
-  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^n x_{i;t_0}^{G_{ij;t}}\right) \frac{F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};
+  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}).
 \end{align}
-where $F_{j,\bfr;t}^{\oplus}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ denotes the tropical evaluation setting each $x_{i;t_0}=1$ for $1\le i \le n$.
+\begin{remark}
+  The separation of additions formula for the cluster variables $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ usually has a denominator computed via a ``tropical evaluation'' of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$.
+  We have bypassed this by using $\bfg$-vectors from $\ZZ^m$ rather than the standard convention with $\bfg$-vectors in $\ZZ^n$.
+  It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our separation of additions formula reduces to the standard one in the case of geometric coefficients.
+\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1584,15 +1575,18 @@ while the matrices $G^\vee_t$ and $G^\vee_{t'}$ are related by
 
 Then we have the following analogues of the separation of additions formulas describing the cluster coordinates.
 \begin{theorem}
+  For any vertex $t\in\TT_n$, we have the following formulas for the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, where each $\beta$ below denotes the target map of an appropriate groupoid:
   \begin{align}
     \label{eq:groupoid separation of additions 1}
-    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{\ell;t})&=\left(\prod_{k=1}^n t_{k;t_0}^{G^\vee_{\ell k;t}}\right) \frac{F_{\ell,\bfr;t}\big(y_{1;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{k1;t_0}},\ldots,y_{n;t_0}\prod_{k=1}^n t_{k;t_0}^{d_k B_{kn;t_0}}\big)}{F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})};\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{k;t})&=\left(\prod_{\ell=1}^n t_{\ell;t_0}^{G^\vee_{k\ell;t}}\right) \left(\frac{F_{k,\bfr;t}\big(y_{1;t_0}\prod_{\ell=1}^n t_{\ell;t_0}^{d_\ell B_{\ell 1;t_0}},\ldots,y_{n;t_0}\prod_{\ell=1}^n t_{\ell;t_0}^{d_\ell B_{\ell n;t_0}}\big)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k};\\
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{i;t} p_{i;t})&=\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right);\\
     \label{eq:groupoid separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{i;t} u_{i;t} + 1)&=\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell}.
   \end{align}
 \end{theorem}
 \begin{proof}
-  We work by induction on the distance from $t_0$ to $t$ inside $\TT_n$.
+  We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
   First consider when $t$ is joined to $t_0$ by an edge labeled $k$.
   Then $F_{k,\bfr;t}=Z_k(u_k)$ and $F_{\ell,\bfr;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
 
