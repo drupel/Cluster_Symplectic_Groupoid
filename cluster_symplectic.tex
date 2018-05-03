@@ -91,7 +91,7 @@
 \begin{document}
 \begin{abstract}
   We construct symplectic groupoids integrating log-canonical Poisson structures on cluster varieties of type $\cA$ and $\cX$.
-  The charts of the source-simply-connected groupoids are constructed via Poisson spray technique of Crainic and M\u{a}rcu\c{t}.
+  The charts of the source-simply-connected groupoids are constructed via the Poisson spray technique of Crainic and M\u{a}rcu\c{t}.
   These charts and their analogues for the symplectic double and blow-up groupoids are then glued by groupoid comorphisms according to the Hamiltonian perspective of cluster mutations following Fock and Goncharov.
 \end{abstract}
 \maketitle
@@ -106,11 +106,11 @@ Outline
 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-This is the first of a series of papers whose aim is to implement the Weinstein program of geometric quantization for Poisson manifolds \cite{MR1104934} in the case of Poisson structures compatible with a cluster structure.
+This is the first of a series of papers whose aim is to implement the Weinstein program of geometric quantization for Poisson manifolds \cite{Wei91} in the case of Poisson structures compatible with a cluster structure.
 In this first paper, we construct the symplectic groupoids for both the cluster $\cA$-varieties and the cluster $\cX$-varieties. 
 
-The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{FZ02} as the culmination of their study of total positivity and canonical bases for algebraic groups \cite{BFZ98}.
-Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{BFZ05,scott,gekhtman-shapiro-vainshtein,Wil13b}.
+The cluster $\cA$-varieties are the geometric realization of cluster algebras defined by Fomin and Zelevinsky \cite{FZ02} as the culmination of their study of total positivity and canonical bases for algebraic groups \cite{BFZ96,FZ99}.
+Many varieties arising in Lie theory, e.g.\ Grassmannians and double Bruhat cells, are examples of $\cA$-varieties \cite{BFZ05,Sco06,GSV03,Wil13b}.
 The cluster $\cA$-varieties are often endowed with a class of compatible Poisson structures in the sense of Gekhtman, Shapiro, and Vainshtein \cite{GSV10}.
 In particular, our results immediately give rise to a trio of symplectic/Poisson groupoids integrating a compatible Poisson structure on any cluster $\cA$-variety, including those mentioned above. 
 
@@ -122,11 +122,11 @@ In particular, as with the cluster $\cA$-varieties, our results produce symplect
 If an $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
 We provide a lift of this map to maps of groupoids over the $\cA$- and $\cX$-varieties.
 
-In the case of cluster algebras, the quantum $\cA$-varieties \cite{berenstein-zelevinsky} and the quantum $\cX$-varieties \cite{FG09c} are both concrete examples of quantization of Poisson manifolds.
+In the case of cluster algebras, the quantum $\cA$-varieties \cite{BZ05} and the quantum $\cX$-varieties \cite{FG09c} are both concrete examples of quantization of Poisson manifolds.
 In fact, the $q$-quantization of log-canonical variables can be realized simply as the exponential version of the standard Weyl quantization for canonical variables.
-Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space on which the quantized algebra acts, but this requires that the cohomology class of the symplectic 2-form be integral (see e.g.\ \cite{MR1806388}).
-The notion of symplectic groupoids was introduced by Weinstein \cite{MR866024}, Karas\"{e}v \cite{MR1008479} and Zakrzewski \cite{MR1081010, MR1081011}.
-Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{MR1104934}, which has only been successfully implemented for a handful of examples \cite{MR2238946, MR2417440, MR2925830}.
+Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space on which the quantized algebra acts, but this requires that the cohomology class of the symplectic 2-form be integral (see e.g.\ \cite{BW97}).
+The notion of symplectic groupoids was introduced by Weinstein \cite{Wei87}, Karas\"{e}v \cite{Kar89} and Zakrzewski \cite{Zak90a, Zak90b}.
+Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{Wei91}, which has only been successfully implemented for a handful of examples \cite{Tan06, Haw08, BCST12}.
 The concrete nature of cluster coordinates provides an ideal testing ground for groupoid quantization.
 Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in the case of $\cX$-varieties.
 
@@ -135,7 +135,7 @@ The construction of each is detailed below as we discuss the organization of the
 
 In Section~\ref{sec:local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure $\pi$ on a vector space $L$, these each possess important properties which justify their consideration.
 The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid.
-The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{MR2900786, CMS17}.
+The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{CM11, CMS17}.
 For a log-canonical Poisson structure, there is a natural choice of a Poisson spray which yields $\cG$ under the spray construction.
 An important note, is that although this provides the source-simply-connected groupoid, the source and the target maps of $\cG \rra L$ will be transcendental and in particular they do not conform (strictly speaking) to the algebraic nature of cluster theory.
 
@@ -143,17 +143,17 @@ One fix for this is an analogue of the symplectic double introduced by Fock and 
 This groupoid which we denote $\cD \rra L$ is a source-connected Poisson groupoid.
 Over an octant $L^+$ of $L$ the groupoid $\cD \rra L$ is actually symplectic and we denote its restiction by $\cD^+ \rra L^+$, this is the groupoid considered by Fock and Goncharov in the case of $\cX$-varieties.
 
-The linear degeneracy of the Poisson structure on $\cD$ over the coordinate hyperplanes is corrected via the blow-up construction introduced in works of the first author \cite{MR3312911,MR3214314}.
+The linear degeneracy of the Poisson structure on $\cD$ over the coordinate hyperplanes is corrected via the blow-up construction introduced in works of the first author \cite{Li13, GL14}.
 This gives rise to the groupoid $\cB \rra L$ which is source-connected and symplectic.
 Comparing to $\cG \rra L$, the main advantage of $\cB \rra L$ is that the source and the target maps of $\cG \rra L$ are rational.
 In this way, it seems likely that the groupoid $\cB$ will be most useful in the theory of cluster algebras.
 Observe that both $\cB \rra L$ and $\cD \rra L$ receive maps from the source-simply-connected symplectic groupoid $\cG$.
 
 In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster groupoid mutations $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$.
-We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, MR3691969}.
+We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, GNR17}.
 The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates.
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
-In principle, a Poisson map induces a Lie algebroid comorphism \cite{Higgins1990}, which is then lifted to the groupoid comorphisms \cite{MR2063018, MR3089758}.
+In principle, a Poisson map induces a Lie algebroid comorphism \cite{HM90}, which is then lifted to the groupoid comorphisms \cite{Cat04, CDW13}.
 Indeed, the Poisson ensemble map $\rho: L_\cA \to L_\cX$ can be lifted only to a groupoid comorphism when the exchange matrix is not square.
 However, if a Poisson morphism is a diffeomorphism, then the dual bundle map of the induced Lie algebroid comorphism is a Lie algebroid morphism, which then lifts to an honest groupoid morphism.
 Since both the Hamiltonian map $\varphi^1$ and the transformation $\tau$ are diffeomorphisms on an open dense set, we may lift the cluster mutation $\mu = \tau \circ \varphi^1$ to cluster groupoid mutations.
@@ -185,7 +185,7 @@ Throughout the paper, we use the following notations.
 \section{Symplectic groupoids of log-canonical Poisson structures}
 \label{sec:local}
 
-%In this section, we will use the idea of Poisson spray \cite{MR2900786} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
+%In this section, we will use the idea of Poisson spray \cite{CM11} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
 %There is another construction of a source-connected symplectic groupoid, called the symplectic double \cite{FG09c}.
 %We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
 %We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
@@ -297,7 +297,7 @@ Our main interest will be with Lie groupoids equipped with a multiplicative symp
 \end{definition}
 
 The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
-Some important examples of symplectic groupoids include: the Kostant-Kirillov-Souriau Poisson structures \cite{MR996653}, the Drinfeld doubles of Poisson Lie groups \cite{MR1054741}, the double Bruhat cells \cite{LuM16}, the blow-up groupoids of log symplectic manifolds \cite{MR3214314}, and the symplectic doubles of the cluster $\cX$-varieties \cite{FG09c}.
+Some important examples of symplectic groupoids include: the Kostant-Kirillov-Souriau Poisson structures \cite{CDW87}, the Drinfeld doubles of Poisson Lie groups \cite{LW89}, the double Bruhat cells \cite{LuM16}, the blow-up groupoids of log symplectic manifolds \cite{GL14}, and the symplectic doubles of the cluster $\cX$-varieties \cite{FG09c}.
 We note that symplectic groupoids are a special case of Poisson groupoids.
 \begin{definition}
   A \emph{Poisson groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative Poisson structure $\sigma \in \cT^2_\cG$.
@@ -308,15 +308,15 @@ A Poisson groupoid map from $(\cG_1, \sigma_1) \rra M_1$ to $(\cG_2, \sigma_2) \
 For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \sigma) \to (M, \pi)$ and $\beta: (\cG, \sigma) \to (M, -\pi)$ are Poisson maps.
 For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map.
 If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}.
-The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{MR866024} with the anchor map
+The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{Wei87} with the anchor map
 \[\pi^\flat: T^*M \to TM, \qquad \alpha \mapsto \iota_\alpha \pi,\]
 and the Koszul bracket: for $\alpha, \beta \in \Omega^1(M)$,
 \[[\alpha, \beta] = \cL_{\pi(\alpha)} \beta - \cL_{\pi(\beta)} \alpha - d\pi(\alpha \otimes \beta).\]
 For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$.
 
-Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MR1262213}.
+Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MX94}.
 As a Poisson groupoid, the symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$.
-The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{MR1973056, MR2128714}.
+The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{CF03, CF04}.
 
 %For the two extreme cases where the Poisson structure is either trivial or non-degenerate, we describe the symplectic groupoid below.
 %\begin{example}
@@ -343,9 +343,9 @@ We focus on the symplectic groupoids of log-canonical Poisson structures.
 \end{definition}
 
 For both the cluster $\cA$-varieties \cite{GSV10} and $\cX$-varieties \cite{FG09c}, the compatible Poisson structures are log-canonical in cluster charts.
-Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-connected symplectic groupoid of a log-canonical Poisson structure by chosing an appropriate Poisson spray. 
+Using the results in \cite{CM11, CMS17}, we construct the source-simply-connected symplectic groupoid of a log-canonical Poisson structure by chosing an appropriate Poisson spray. 
 \begin{definition} 
-  \cite{MR2900786}
+  \cite{CM11}
   For a Poisson manifold $(M, \pi)$, a \emph{Poisson spray} is a vector field $X \in \cT_{T^*M}$ such that
   \begin{enumerate}
     \item for $(p,x) \in T^*M$ we have
@@ -358,7 +358,7 @@ Using the results in \cite{MR2900786, CMS17}, we construct the source-simply-con
 \end{definition}
 
 \begin{theorem} 
-  \cite{MR2900786, CMS17} 
+  \cite{CM11, CMS17} 
   \label{thm:poissp}
   For a smooth Poisson manifold $(M, \pi)$ with a Poisson spray $X \in \cT_{T^*M}$, there exists a neighborhood $U$ of the zero section of $T^*M$ which is a local symplectic groupoid over $(M, \pi)$ with the following structures:
   \begin{enumerate}
@@ -510,7 +510,7 @@ Motiviated by \cite{FG09c}, we make the following definition of the symplectic d
 
 It may be strange that the Poisson groupoid $\cD \rra L$ is called the symplectic double. The symplectic double in \cite{FG09c} is defined to be the restriction $\cD^+ =\{(\bfs, \bfx) ~|~ \bfx \in L^+ \} \cong L^+ \times L^+$ which is genuinely a symplectic groupoid over $L^+$. The Poisson groupoid $\cD \rra L$ may be viewed as the natural extension of the symplectic groupoid $\cD^+ \rra L^+$.
 \begin{remark}
-  We relate the target map in Theorem~\ref{thm:SymDBLoc} to the symplectic realization in \cite{MR3691969}.
+  We relate the target map in Theorem~\ref{thm:SymDBLoc} to the symplectic realization in \cite{GNR17}.
 	
   With the notation in Theorem~\ref{thm:SymDBLoc} and the change of variables $e^{\chi_i} = x_i$ and $e^{\xi_i} = s_i$, the symplectic double $(\cD^+, \omega_\cD)$ becomes the symplectic vector space $(\cU, \omega_\cU)$ with coordinates $(\xi_1, \ldots, \xi_m, \chi_1, \ldots, \chi_m)$, where $\cU$ is either $\RR^{2m}$ or $\CC^{2m}$, and
   \[\omega_\cU = \sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j.\]
@@ -524,7 +524,7 @@ It may be strange that the Poisson groupoid $\cD \rra L$ is called the symplecti
   For the standard symplectic structure $\omega_0 = \sum_{i} d\chi_i \wedge d\xi_i$ on $\cU$, since
   \[\omega_\cU - \omega_0 = \left(\sum_{i} d\chi_i \wedge d\xi_i + \sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j \right) - \sum_{i} d\chi_i \wedge d\xi_i  =\sum_{j < i} \Omega_{ij} d\xi_i \wedge d\xi_j\]
   is supported on the $\alpha$-fiber, we have that $\beta_*(-\omega_0^{-1}) = \beta_*(-\omega_\cU^{-1}) = \pi$.
-  The symplectic realization $\beta: (\cU, -\omega_0) \to (L^+, \pi)$ plays an essential role in \cite{MR3691969}.
+  The symplectic realization $\beta: (\cU, -\omega_0) \to (L^+, \pi)$ plays an essential role in \cite{GNR17}.
 \end{remark}
 
 Next, we describe the Lie algebroid of $\cD \rra L$.
@@ -553,14 +553,14 @@ where the kernel of $\rho_\cD$ has trivial bracket.
 \end{proof}
 
 Fixing an $m\times m$ skew-symmetric matrix $\Omega$ and the corresponding log-canonical Poisson space as in Definition~\ref{def: logPoisson}, the cotangent Lie algebroid $T^*_\pi L$ is not isomorphic to the Lie algebroid $A_\cD$.
-In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected symplectic groupoid of $(L,\pi)$ via the blow-up construction \cite{MR3214314}. 
+In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_\cD$ and we obtain a source-connected symplectic groupoid of $(L,\pi)$ via the blow-up construction \cite{GL14}. 
 \begin{definition}
   Let $E$ be a vector bundle over $M$ and let $F$ be a subbundle of $E|_L$ for some hypersurface $L$. The \emph{elementary (lower) modfication} of $E$ along $F$, denoted by $[E\!:\!F]$, is the vector bundle with the sheaf of sections
   \[\Gamma\big(M, [E\!:\!F]\big) = \{s \in \Gamma(M, E) : s|_L \in \Gamma(L, F) \}.\]
 \end{definition}
 
 \begin{proposition} 
-  \cite{MR3214314}
+  \cite{GL14}
   Let $A$ be a Lie algebroid over $M$ and let $B$ be a subbundle of $A|_L$ for some hypersurface $L$ such that $B$ is also a Lie algebroid over $L$.
   Then $[A\!:\!B]$ is a Lie algebroid over $M$.
 \end{proposition}
@@ -568,7 +568,7 @@ In fact, $T^*_\pi L$ is isomorphic to an iterated elementary modification of $A_
 Let $\cG \rra M$ be a Lie groupoid and let $\cH \rra L$ be a Lie subgroupoid over a hypersurface $L$. We denote the blow-up of $\cG$ along $\cH$ by $\mathrm{Bl}(\cG, \cH)$ with the blow-down map $\nu: \mathrm{Bl}(\cG, \cH) \to \cG$ and write $[\cG\!:\!\cH] = \mathrm{Bl}(\cG, \cH) \setminus (S_L \cup T_L)$, where $S_L$ is the proper transform of $\alpha^{-1}(L)$ and $T_L$ is the proper transform of $\beta^{-1}(L)$.
 
 \begin{theorem} 
-  \cite{MR3214314}
+  \cite{GL14}
   For a Lie groupoid $\cG \rra M$ and a Lie subgroupoid $\cH \rra L$ for some hypersurface $L$, there is a unique Lie groupoid structure $[\cG\!:\!\cH] \rra M$ such that the blow-down map $\nu: [\cG\!:\!\cH] \to \cG$ is a groupoid morphism.
   Moreover, blow-up of Lie groupoids corresponds to elementary modification of Lie algebroids. That is,
   \[\Lie[\cG\!:\!\cH] = [\Lie\cG\!:\!\Lie\cH].\]
@@ -642,8 +642,8 @@ Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following s
 \end{proof}
 
 \begin{remark}
-  Recall that the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MR1262213}.
-  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $\big(A_\cD, TL(-\log D)\big)$, where $TL(-\log D)$ is the log tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{MR3214314}.
+  Recall that the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MX94}.
+  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $\big(A_\cD, TL(-\log D)\big)$, where $TL(-\log D)$ is the log tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{GL14}.
   That is,
   \[TL(-\log D) = [\ldots[[TL\!:\!TL_1]\!:\!TL_2] \ldots \!:\!TL_m],\]
   or equivalently the sections of $TL(-\log D)$ are the vector fields on $L$ tangent to $L_k$ for $k = 1, \ldots, m$.
@@ -653,7 +653,7 @@ Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following s
   identifies $A_\cD$ with $T^*L(-\log D)$.
 
   The iterated blow-up construction that takes $\cD \rra L$ to $\cB \rra L$ corresponds to the elementary modification that takes the Lie bialgebroid $(A_\cD, TL(-\log D))$ to the Lie bialgebroid $(T^*_\pi L, TL)$, where $T^*_\pi L$ is an elementary lower modification of $A_\cD$ and $TL$ is an elementary upper modification of $TL(-\log D)$.
-  See the first author's thesis for details \cite{MR3312911}.
+  See the first author's thesis for details \cite{Li13}.
 \end{remark}
 
 For an integrable Lie algebroid, every source-connected groupoid receives a surjective groupoid map from the source-simply-connected groupoid.
@@ -730,7 +730,7 @@ Comparing to $\cG \rra L$, the symplectic groupoid $\cB \rra L$ has the added pl
 \label{sec:mutations}
 
 In this section, we introduce mutations of cluster seeds from the Hamiltonian viewpoint.
-This perspective was first given in \cite{FG09c} and is the foundation for the main results of \cite{MR3691969}.
+This perspective was first given in \cite{FG09c} and is the foundation for the main results of \cite{GNR17}.
 We demonstrate how the Hamiltonian perspective provides a canonical choice of mutations for groupoid charts which glue to give a symplectic groupoid integrating various log-canonical Poisson structures on cluster varieties.
 The standard combinatorics of $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials are then lifted to provide descriptions of iterations of the gluing maps for groupoid charts.
 
@@ -794,7 +794,7 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\
   Moreover, the points of $L_\bfr$ are fixed by the Hamiltonian flows.
 \end{lemma}
 \begin{proof}
-  Equation~\eqref{eq:X dynamics} was essentially proven in \cite{MR3691969}.
+  Equation~\eqref{eq:X dynamics} was essentially proven in \cite{GNR17}.
   Since equation~\eqref{eq:A dynamics} seems to technically be new, we will indicate the key steps in the computation here:
   \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(Z_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)x_j.\]
 \end{proof}
@@ -902,7 +902,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
   This holds equally well for the \emph{automorphism parts} $\varphi_{\cX,\bfr}^1$, $\varphi_{\cA,\bfr}^1$ and the \emph{tropical parts} $\tau_{\cX,\bfr}^{k,\varepsilon}$, $\tau_{\cA,\bfr}^{k,\varepsilon}$ of the cluster mutations.
   
   Mutations for $\bar L^+_\cX=\RR_{\ge0}^n$ have also been considered \cite{FG16} under the name ``special completion'' for $\cX$-varieties.
-  See also \cite{chavez et al} for similar considerations using charts $L_\cX=\CC^n$.
+  See also \cite{BFMMNC} for similar considerations using charts $L_\cX=\CC^n$.
   It is important in these cases that the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ or where $Z_k(y_k^\varepsilon)^{-B_{k\ell}}$ is undefined and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ or where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$.
 \end{remark}
 
@@ -978,7 +978,7 @@ As above, we also introduce the Poisson spaces $L^+_{\cX,\bfr;t}$ isomorphic to 
   with cluster charts glued by the mutations as above.
 \end{definition}
 \begin{remark}
-  When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties \cite{FZ01,FG09a}.
+  When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties \cite{FZ02,FG09a}.
 \end{remark}
 
 \begin{theorem}
@@ -989,11 +989,11 @@ As above, we also introduce the Poisson spaces $L^+_{\cX,\bfr;t}$ isomorphic to 
 
 The following result is the famous Laurent phenomenon for (generalized) cluster algebras.
 \begin{theorem}
-  \cite{FZ02,GSV16}
+  \cite{FZ02,CS14}
   Each cluster coordinate $x_{i;t}$ on the cluster chart $L^+_{\cA,\bfr;t}$ determines a global function on $\cA_\bfr$ which is given by a Laurent polynomial in the coordinates of any other cluster chart $L^+_{\cA,\bfr;t'}$.
 \end{theorem}
 
-This result can be made considerably more precise as follows, c.f.\ \cite{FZ07,NR16}.
+This result can be made more precise as follows, c.f.\ \cite{FZ07,NR16}.
 Given a pair of vertices $t,t'\in\TT_n$, the composition of mutations from $L^+_{-,\bfr;t}$ to $L^+_{-,\bfr;t'}$ along the unique path from $t$ to $t'$ in $\TT_n$ (always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}) gives rise to birational maps
 \[\mu_{\cX,\bfr}^{t',t}:L^+_{\cX,\bfr;t}\to L^+_{\cX,\bfr;t'}\qquad\text{and}\qquad\mu_{\cA,\bfr}^{t',t}:L^+_{\cA,\bfr;t}\to L^+_{\cA,\bfr;t'}.\]
 To understand the iterated mutations $\big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{k;t})$ and $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ we introduce the following combinatorial constructions.
@@ -1041,8 +1041,9 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
 \label{sec:groupoid mutations}
 
 We have presented thus far the Hamiltonian viewpoint of mutation for cluster charts. Our goal now is to lift these results to the level of the symplectic groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and $\cG_\cA$, $\cB_\cA$, $\cD_\cA$ integrating the log-canonical Poisson structures on $L^+_\cX\cong\RR_+^n$ and $L^+_\cA\cong\RR_+^m$ respectively as in Section~\ref{sec:local}. In general,
- a Poisson map does not induce a Lie algebroid morphism and hence does not integrate to a bona fide symplectic groupoid map. Instead a Poisson map induces a Lie algebroid comorphism. Following \cite{MR3089758}, we outline the procedure to lift Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
-\begin{definition} \cite{Higgins1990, MR2157566, MR3089758}
+ a Poisson map does not induce a Lie algebroid morphism and hence does not integrate to a bona fide symplectic groupoid map. Instead a Poisson map induces a Lie algebroid comorphism. Following \cite{CDW13}, we outline the procedure to lift Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
+\begin{definition} 
+  \cite{HM90, Mac05, CDW13}
  	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps (see Definition~\ref{def:algeroid})
  	\[ \rho_1: A_1 \to TM_1, \qquad \rho_2: A_2 \to TM_2. \]
  	\begin{enumerate}
@@ -1053,29 +1054,29 @@ We have presented thus far the Hamiltonian viewpoint of mutation for cluster cha
  	\end{enumerate}
 \end{definition}
 In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 = M_1 {\times_{M_2}} A_2 \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^\vee)$ is a Lie algebroid comorphism where $\Phi^\vee$ is the dual bundle map of $\Phi$.
-\begin{definition} \cite{MR2157566, MR3089758} \label{def:gpdcomor}
+\begin{definition} \cite{Mac05, CDW13} \label{def:gpdcomor}
 	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids. (see Definition~\ref{def:groupoid})
 	\begin{enumerate}
  		\item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $(\varphi, \Phi): (M_1, \cG_1) \to (M_2, \cG_2)$ that is compatible with groupoid structures. 
  		\item A Lie groupoid comorphism from $\cG_1$ to $\cG_2$ is a base map $\varphi: M_1 \to M_2$ together with a map
  			\[ \Psi: M_1 {_\varphi \times_\alpha} \cG_2 \to \cG_1 \]
- 		that is compatible with groupoid structures. (For details, see p.5 of \cite{MR3089758}.) 
+ 		that is compatible with groupoid structures. (For details, see p.5 of \cite{CDW13}.) 
  	\end{enumerate}
 \end{definition}
-Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{MR3089758}. Like the Lie algebroids, we will interpret the graph of a Lie groupoid comorphism $\Psi$ from $\cG_1$ to $\cG_2$ as a subset of $\cG_2 \times \cG_1$.
+Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{CDW13}. Like the Lie algebroids, we will interpret the graph of a Lie groupoid comorphism $\Psi$ from $\cG_1$ to $\cG_2$ as a subset of $\cG_2 \times \cG_1$.
 
 In general, a Lie algebroid morphism from $A_1$ to $A_2$ integrates to a Lie groupoid morphism from $\cG_1$ to $\cG_2$ if $\cG_1$ is source-simply-connected; a Lie algebroid comorphism from $A_1$ to $A_2$ integrates to a Lie groupoid comorphism from $\cG_1$ to $\cG_2$ if $\cG_2$ is source-simply-connected and the algebroid comorphism is complete. Concretely, the graph of a morphism or a comorphism from $A_1$ to $A_2$ is a Lie subalgebroid of $A_1 \times A_2$, and the exponential map $A_1 \times A_2 \to \cG_1 \times \cG_2$ integrates the graph to a Lie subgroupoid of $\cG_1 \times \cG_2$ which happens to be the graph of a morphism or a comorphism from $\cG_1$ to $\cG_2$.
 
-The Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ induces the Lie algebroid comorphism $\varphi^*: \varphi^!  T^*_{\pi_2} M_2 \to T^*_{\pi_1} M_1$, which means that the following diagram commutes \cite{Higgins1990}.
+The Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ induces the Lie algebroid comorphism $\varphi^*: \varphi^!  T^*_{\pi_2} M_2 \to T^*_{\pi_1} M_1$, which means that the following diagram commutes \cite{HM90}.
 \begin{equation} 
 	\xymatrix{
 		T^*_{\pi_1} M_1 \ar[d]^{\pi_1^\flat} & \varphi^! T^*_{\pi_2}  M_2 \ar[l]_{\varphi^*} \ar[r]& T^*_{\pi_2} M_2  \ar[d]^{\pi_2^\flat} \\
 		T M_1 \ar[rr]^{\varphi_*} & & TM_2
 	}
 \end{equation}
-This comorphsim $\varphi^*$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the pullback Hamiltonian vector field $X_{\varphi^*f}$ is also complete. That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete. In fact, the graph of $\varphi$ which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{MR2063018}.
+This comorphsim $\varphi^*$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the pullback Hamiltonian vector field $X_{\varphi^*f}$ is also complete. That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete. In fact, the graph of $\varphi$ which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{Cat04}.
 
-If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphism. Following \cite{MR2504211}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
+If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphism. Following \cite{Fer07}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
 In general, Poisson vector fields are lifted to multiplicative Hamiltonian vector fields. For the Hamiltonian vector field $X_f \in \cT_M$ of $f \in \cO_M$, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid, then $X_f$ is lifted to the Hamiltonian vector field $X_F \in \cT_\cG$ where $F := \alpha^*f - \beta^*f$.
 Indeed, $F \in \cO_\cG$ is multiplicative since $F = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_F = \iota_{dF}\omega^{-1}$ is multiplicative. It follows that $X_F$ preserves the symplectic groupoid structures of $(\cG,\omega)$; and the time-$t$ flow $\varphi^t_f: (M, \pi) \to (M, \pi)$ of $X_f$ is lifted to the time-$t$ flow $\varphi^t_F: (\cG, \omega) \to (\cG, \omega)$ of $X_F$.
 
@@ -1180,7 +1181,7 @@ By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_i p_i$ and $y_k
 
 
 %To lift the Poisson maps $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
-%In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{MR2504211}.
+%In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{Fer07}.
 %More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} := \alpha^*f - \beta^*f$.
 %Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
 %Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
@@ -1631,7 +1632,7 @@ Then we have the following analogues of the separation of additions formulas des
   But $B_{ik;t'}=-B_{ik;t}$ so that this final expression gives the desired $F$-polynomial part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
 \end{proof}
 
-Follow \cite{gekhtman-nakanishi-rupel} Proposition 5.5 and Corollary 5.6 for periodicity.
+Follow \cite{GNR17} Proposition 5.5 and Corollary 5.6 for periodicity.
 
 
 
@@ -1685,12 +1686,13 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 \end{definition}
 \begin{remark}
   Suppose the cluster variables of a seed $\Sigma=(\bfx,\tilde B)$ are log-canonical with respect to a Poisson bracket $\{\cdot,\cdot\}:\cA(\Sigma)\times\cA(\Sigma)\to\cA(\Sigma)$ with coefficient matrix $\Omega$.
-  Then the compatibility of $\{\cdot,\cdot\}$, together with the exchange relations, imposes the compatibility condition $\tilde B^T\Omega=[D\ 0]$ (see \cite{berenstein-zelevinsky,gekhtman-shapiro-vainshtein} for details).
+  Then the compatibility of $\{\cdot,\cdot\}$, together with the exchange relations, imposes the compatibility condition $\tilde B^T\Omega=[D\ 0]$ (see \cite{GSV03,BZ05} for details).
 \end{remark}
 
 \begin{theorem}
-  \cite{gekhtman-shapiro-vainshtein}
-  Suppose the $m\times n$ exchange matrix $\tilde B$ of a seed $\Sigma$ has full rank.  Then there exists a Poisson structure $\Omega$ compatible with the cluster structure on $\cA(\Sigma)$.
+  \cite{GSV03}
+  Suppose the $m\times n$ exchange matrix $\tilde B$ of a seed $\Sigma$ has full rank.
+  Then there exists a Poisson structure $\Omega$ compatible with the cluster structure on $\cA(\Sigma)$.
 \end{theorem}
 
 
@@ -1804,7 +1806,7 @@ where $\varepsilon_k$ denotes the tropical sign for the seed $\Sigma$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Totally Positive Cluster Manifolds}
-In this section we show that the totally non-negative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{MR3077259}.  
+In this section we show that the totally non-negative part $M_{\ge0}(\Sigma)$ of a cluster manifold is a manifold with corners in the sense of \cite{Joy12}.  
 Moreover, we show that the non-negative cluster manifold is a union of symplectic leaves for any compatible Poisson structure on $\cA(\Sigma)$.  
 The symplectic leaves of $M_{\ge0}(\Sigma)$ are naturally labelled by compatible subsets of cluster variables, where the number of cluster variables in the labeling set determines the corank of the symplectic leaf.
 Here there is a unique dense symplectic leaf and the boundary of $M_{\ge0}(\Sigma)$ is again a union of symplectic leaves of lower dimension where the Poisson structure degenerates.
