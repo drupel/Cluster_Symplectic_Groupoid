@@ -1047,13 +1047,13 @@ We have presented thus far the Hamiltonian viewpoint of mutation for cluster cha
  	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps (see Definition~\ref{def:algeroid})
  	\[ \rho_1: A_1 \to TM_1, \qquad \rho_2: A_2 \to TM_2. \]
  	\begin{enumerate}
- 		\item A Lie algebroid morphism is a bundle map $(\varphi, \Phi): (M_1, A_1) \to (M_2, A_2)$ such that the pullback of sections $\Phi^*: \Gamma(\wedge^\bullet A_2) \to \Gamma(\wedge^\bullet A_2)$ is a chain map of complexes.
+ 		\item A Lie algebroid morphism is a bundle map $(\varphi, \Phi): (M_1, A_1) \to (M_2, A_2)$ such that the pullback of sections $\Phi^*: \Gamma(\wedge^\bullet A_2) \to \Gamma(\wedge^\bullet A_1)$ is a chain map of complexes.
  		\item A Lie algebroid comorphism is a bundle comorphism $(\varphi, \Psi)$ with
  			\[ \varphi: M_1 \to M_2,~ \Psi: \varphi^! A_2 = M_1 {\times_{M_2}} A_2 \to A_1 \]
  			such that $\varphi_* \circ \rho_1 \circ \Psi = \rho_2$. 
  	\end{enumerate}
 \end{definition}
-In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 = M_1 {\times_{M_2}} A_2 \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^\vee)$ is a Lie algebroid comorphism where $\Phi^\vee$ is the dual bundle map of $\Phi$.
+In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 \times A_1 = \left(M_1 {\times_{M_2}} A_2 \right) \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^\vee)$ is a Lie algebroid comorphism where $\Phi^\vee$ is the dual bundle map of $\Phi$.
 \begin{definition} \cite{Mac05, CDW13} \label{def:gpdcomor}
 	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids. (see Definition~\ref{def:groupoid})
 	\begin{enumerate}
@@ -1076,13 +1076,15 @@ The Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ induces the Lie algebro
 \end{equation}
 This comorphsim $\varphi^*$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the pullback Hamiltonian vector field $X_{\varphi^*f}$ is also complete. That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete. In fact, the graph of $\varphi$ which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$ integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{Cat04}.
 
-If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphism. Following \cite{Fer07}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
+If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted to either symplectic groupoid morphism or a symplectic groupoid comorphism.
+
+Following \cite{Fer07}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
 In general, Poisson vector fields are lifted to multiplicative Hamiltonian vector fields. For the Hamiltonian vector field $X_f \in \cT_M$ of $f \in \cO_M$, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid, then $X_f$ is lifted to the Hamiltonian vector field $X_F \in \cT_\cG$ where $F := \alpha^*f - \beta^*f$.
 Indeed, $F \in \cO_\cG$ is multiplicative since $F = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_F = \iota_{dF}\omega^{-1}$ is multiplicative. It follows that $X_F$ preserves the symplectic groupoid structures of $(\cG,\omega)$; and the time-$t$ flow $\varphi^t_f: (M, \pi) \to (M, \pi)$ of $X_f$ is lifted to the time-$t$ flow $\varphi^t_F: (\cG, \omega) \to (\cG, \omega)$ of $X_F$.
 
 Here is an outline for the rest of the section.
 \begin{enumerate}
-	\item We lift the Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} to symplectic groupoid comorphisms. When the exchange matrix is square, $\rho$ is a diffeomorphism, and the graph of each groupoid comophism also defines a groupoid morphism.
+	\item We lift the Poisson ensemble map $\rho:L_\cA\to L_\cX$ \eqref{eq:ensemble} to symplectic groupoid comorphisms. When the exchange matrix is square, the graph of each groupoid comophism also defines a groupoid morphism.
 	\item We lift the Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows} to symplectic groupoid morphisms using their Hamiltonian nature. We also show that the Lie functor maps the graph of groupoid morphism to the graph of the induced algebroid comorphism.
 	\item We lift the Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}$ in Lemma~\ref{le:tropical cluster transformations} to groupoid comorphisms and show that they can also be interpreted as groupoid morphisms.
 \end{enumerate}
@@ -1357,7 +1359,7 @@ If we identify $\Lie \left(\cG_\cA \right)$ and $T^*_{\pi_\cA} L_\cA$ with
 \[
 	\frac{\partial}{\partial p_j} = dx_j, \> j =1, \ldots, m,
 \]
-then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$. That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is a Lie algebroid comorphism and its corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$. See the discussion proceeding Definition~\ref{def:gpdcomor}. It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
+then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$. That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is a Lie algebroid comorphism and its corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$, see the discussion proceeding Definition~\ref{def:gpdcomor}. It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
 
 \begin{lemma}
   \label{le:tropical groupoid transformations}
@@ -1427,7 +1429,7 @@ or as a bundle map
 		& p_k = - \frac{x'_k p'_k}{x_k}, \\
 		& p_j = \frac{x'_kp'_k [- \varepsilon B_{jk} r_k]_+ }{x_j}   + p'_j \qquad \text{if}~j\ne k.
 	\end{align*}
-The graph of the Lie algebroid comorphism $\tau^*$ from $T^*_{\pi_{\cA'}} L_{\cA'}$ to $T^*_{\pi_{\cA}} L_{\cA}$ is defined by
+The graph of the Lie algebroid comorphism $\tau^*$ from $T^*_{\pi_{\cA}} L_{\cA}$ to $T^*_{\pi_{\cA'}} L_{\cA'}$ is defined by
 	\begin{align*}
 		& x'_k p'_k = - x_k p_k , \\
 		& x'_j p'_j = x_kp_k [- \varepsilon B_{jk} r_k]_+  + x_jp_j \quad \text{if}~j\ne k.
