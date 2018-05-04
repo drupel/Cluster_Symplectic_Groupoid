@@ -168,15 +168,16 @@ Throughout the paper, we use the following notations.
 		L = \RR^m \text{ or } \CC^m, \quad L^+ = \RR_+^m \text{ or } \CC_\times^m, \quad \bar L^+ = \bar\RR_+^m.
 	$$
 	\item We denote vectors by boldface, e.g. $\bfx = (x_1, \ldots, x_m)$.
-	\item Hadamard product: for two vector $\bfx$ and $\bfy$, $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
-	\item For a vector $\bfx$ and a real number $t$, $\bfx^t = (x_1^t, \ldots, x_m^t)$.
+        \item The \emph{Hadamard product} of two vectors $\bfx$ and $\bfy$ is given by $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
+	\item For a vector $\bfx$ and a real number $t$, we set $\bfx^t := (x_1^t, \ldots, x_m^t)$.
 %	\item For a vector $\bfx$, we denote the diagonal matrix for which the diagonal entries is $\bfx$ by $I_\bfx$, i.e. 
 %	\[
 %		I_\bfx = \begin{bmatrix} x_1 & 0 & \cdots & 0 \\ 0 & x_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & x_m \end{bmatrix}
 %	\]
-	\item For a smooth (resp. complex) manifold $M$, we denote the space of smooth (resp. holomorphic) functions by $\cO_M$.
+	\item For a smooth (resp.\ complex) manifold $M$, we denote the space of smooth (resp.\ holomorphic) functions by $\cO_M$.
 	\item For a vector bundle $E$ over $M$, we denote the space of sections by $\Gamma(M, E)$.
-          In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$, but to follow the conventional notation, we denote the space of differential $1$-forms by $\Omega^1(M) = \Gamma(M, T^*M)$.
+          In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$ and the space of multi-vector fields by $\cT^k_M = \Gamma(M, \wedge^k TM)$.
+          To follow the conventional notation, we denote the space of differential $k$-forms by $\Omega^k(M) = \Gamma(M, \wedge^k T^*M)$.
 	%\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
 	%\item for a matrix $B = (B_{ij})$, $B_{[k]}$ denotes the kth column vector of $B$.
 \end{itemize}
@@ -191,7 +192,7 @@ Throughout the paper, we use the following notations.
 %We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
 %We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
 
-We begin with the equivalent notions of Poisson brackets and Poisson bi-vectors.
+We begin by recalling the equivalent notions of Poisson brackets and Poisson bi-vectors.
 \begin{definition} 
   \label{def: PoissonMfld}
   Let $M$ be either a smooth manifold or a complex manifold.
@@ -214,7 +215,7 @@ For $f \in \cO_{M_2}$, the pullback of a Hamiltonian vector field $X_f$ is $X_{\
 A Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ is \emph{complete} if the pullback of a complete Hamiltonian vector field is again a complete vector field.
 
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
-\[\pi^\flat: \Omega^1(M) \to \cT_M, \qquad \alpha \mapsto \iota_\alpha \pi\]
+\[\pi^\flat: \Omega^1(M) \to \cT_M, \qquad \theta \mapsto \iota_\theta \pi\]
 is invertible.
 The inverse of the bundle map defines a non-degenerate 2-form $\omega \in \Omega^2(M)$.
 That is, the bundle map
@@ -310,9 +311,9 @@ For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson struct
 For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map.
 If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}.
 The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{Wei87} with the anchor map
-\[\pi^\flat: T^*M \to TM, \qquad \alpha \mapsto \iota_\alpha \pi,\]
-and the Koszul bracket: for $\alpha, \beta \in \Omega^1(M)$,
-\[[\alpha, \beta] = \cL_{\pi(\alpha)} \beta - \cL_{\pi(\beta)} \alpha - d\pi(\alpha \otimes \beta).\]
+\[\pi^\flat: T^*M \to TM, \qquad \theta \mapsto \iota_\theta \pi,\]
+and the Koszul bracket: for $\theta, \psi \in \Omega^1(M)$,
+\[[\theta, \psi] = \cL_{\pi(\theta)} \psi - \cL_{\pi(\psi)} \theta - d\pi(\theta \otimes \psi).\]
 For $(M, \pi)$, we denote its cotangent Lie algebroid by $T^*_\pi M$.
 
 Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebroid, the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MX94}.
@@ -430,7 +431,7 @@ This Poisson spray $X$ induces the symplectic groupoid structure below.
       \begin{equation}
 	\omega_\cG = \sum_{i} dx_i \wedge dp_i + \sum_{i, j} \Omega_{ij}p_ix_j dx_i \wedge dp_j + \sum_{j < i} \Omega_{ij}p_ip_j dx_i \wedge dx_j + \sum_{j < i} \Omega_{ij}x_ix_j dp_i \wedge dp_j, 
       \end{equation}
-      or equivalently the multiplicative Poisson bivector
+      or equivalently the multiplicative Poisson bi-vector
       \begin{equation}
         \label{eq:2-formGA}
       	\sigma_\cG = \omega_\cG^{-1} = \sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j} +\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j} +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
@@ -1232,7 +1233,7 @@ By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_i p_i$ and $y_k
 %    &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
 %  \end{align*}
 %
-%  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp. $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp. $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
+%  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp.\ $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp.\ $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
 %\end{proof}
 
 Next, we lift the Hamiltonian Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows}. Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cX$, $\cB_\cX$, $\cD_\cX$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG_\cA$, $\cB_\cA$, $\cD_\cA$.
@@ -1703,7 +1704,7 @@ By construction we have $\cA(\Sigma)\subset C^\infty(M)$ and any Poisson structu
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cluster Symplectic Groupoids}
 Let $\Sigma=(\bfx,\tilde B,\Theta)$ be a graded seed and assume there exists a compatible Poisson structure on $L_\Sigma$ with coefficient matrix $\Omega=(\Omega_{ij})$.  
-%Write $\pi$ for the corresponding Poisson bivector on the cluster manifold $M$, i.e.\ in local coordinates on $L_\Sigma$ we have $\pi=\sum\limits_{i>j}\Omega_{ij}x_ix_j\frac{\partial}{\partial x_i}\wedge\frac{\partial}{\partial x_j}$.
+%Write $\pi$ for the corresponding Poisson bi-vector on the cluster manifold $M$, i.e.\ in local coordinates on $L_\Sigma$ we have $\pi=\sum\limits_{i>j}\Omega_{ij}x_ix_j\frac{\partial}{\partial x_i}\wedge\frac{\partial}{\partial x_j}$.
 In this section, we give an integration to a symplectic groupoid $G(\Sigma)$ of the Poisson structure on a cluster manifold $M(\Sigma)$.  
 
 We build the cluster symplectic groupoid $G(\Sigma)\rightrightarrows M(\Sigma)$ by gluing together local groupoid charts $G_{\Sigma'}\rightrightarrows L_{\Sigma'}$, $\Sigma'\sim\Sigma$, along transition maps which lift the cluster mutations used to glue cluster charts of $M(\Sigma)$.
