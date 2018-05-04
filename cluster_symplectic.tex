@@ -120,10 +120,10 @@ An alternative view of double Bruhat cells and Grassmannians reveal cluster $\cX
 A cluster $\cX$-variety is always endowed with a canonical Poisson structure.
 In particular, as with the cluster $\cA$-varieties, our results produce symplectic/Poisson groupoids integrating any cluster $\cX$-variety.
 If an $\cA$-variety carries a compatible Poisson structure, then the natural map from this $\cA$-variety to the corresponding $\cX$-variety is Poisson.
-We provide a lift of this map to maps of groupoids over the $\cA$- and $\cX$-varieties.
+We provide a lift of this map to comorphisms between analogous groupoids over the $\cA$- and $\cX$-varieties.
 
-In the case of cluster algebras, the quantum $\cA$-varieties \cite{BZ05} and the quantum $\cX$-varieties \cite{FG09c} are both concrete examples of quantization of Poisson manifolds.
-In fact, the $q$-quantization of log-canonical variables can be realized simply as the exponential version of the standard Weyl quantization for canonical variables.
+In the case of cluster algebras, the quantum $\cA$-varieties \cite{BZ05} and the quantum $\cX$-varieties \cite{FG09a} are both concrete examples of quantization of Poisson manifolds.
+In fact, the $q$-quantization of log-canonical variables can be realized simply as the exponential version of the standard Weyl quantization for canonical variables \cite{FG09c}.
 Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space on which the quantized algebra acts, but this requires that the cohomology class of the symplectic 2-form be integral (see e.g.\ \cite{BW97}).
 The notion of symplectic groupoids was introduced by Weinstein \cite{Wei87}, Karas\"{e}v \cite{Kar89} and Zakrzewski \cite{Zak90a, Zak90b}.
 Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{Wei91}, which has only been successfully implemented for a handful of examples \cite{Tan06, Haw08, BCST12}.
@@ -133,11 +133,11 @@ Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in th
 In this paper, we take the first step towards the groupoid quantization for both cluster $\cA$-varieties and cluster $\cX$-varieties by describing their symplectic groupoids.
 The construction of each is detailed below as we discuss the organization of the paper.
 
-In Section~\ref{sec:local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure $\pi$ on a vector space $L$, these each possess important properties which justify their consideration.
+In Section~\ref{sec:local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure on a vector space $L$, these each possess important properties which justify their consideration.
 The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid.
-The construction of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{CM11, CMS17}.
+The definition of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{CM11, CMS17}.
 For a log-canonical Poisson structure, there is a natural choice of a Poisson spray which yields $\cG$ under the spray construction.
-An important note, is that although this provides the source-simply-connected groupoid, the source and the target maps of $\cG \rra L$ will be transcendental and in particular they do not conform (strictly speaking) to the algebraic nature of cluster theory.
+An important note is that, although this provides the source-simply-connected groupoid, the source and the target maps of $\cG \rra L$ will be transcendental and in particular they do not conform (strictly speaking) to the algebraic nature of cluster theory.
 
 One fix for this is an analogue of the symplectic double introduced by Fock and Goncharov \cite{FG09c}, albeit with slightly different notation to accommodate the case of non-square exchange matrices.
 This groupoid which we denote $\cD \rra L$ is a source-connected Poisson groupoid.
@@ -149,9 +149,10 @@ Comparing to $\cG \rra L$, the main advantage of $\cB \rra L$ is that the source
 In this way, it seems likely that the groupoid $\cB$ will be most useful in the theory of cluster algebras.
 Observe that both $\cB \rra L$ and $\cD \rra L$ receive maps from the source-simply-connected symplectic groupoid $\cG$.
 
+The groupoids of the cluster $\cA$-variety and cluster $\cX$-variety are not constructed globally but rather are glued from groupoid charts over each cluster chart.
 In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster groupoid mutations $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$.
 We begin in Section~\ref{sec:cluster} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, GNR17}.
-The first map $\varphi^1$ is the time-$1$-flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates.
+The first map $\varphi^1$ is the time-$1$ flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates.
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
 In principle, a Poisson map induces a Lie algebroid comorphism \cite{HM90}, which is then lifted to the groupoid comorphisms \cite{Cat04, CDW13}.
 Indeed, the Poisson ensemble map $\rho: L_\cA \to L_\cX$ can be lifted only to a groupoid comorphism when the exchange matrix is not square.
@@ -365,7 +366,7 @@ Using the results in \cite{CM11, CMS17}, we construct the source-simply-connecte
     \item the source map $\alpha: U \to M$ is the bundle projection;
     \item the target map is
       \[\beta: U \to M, \qquad \beta = \tau \circ \varphi_X^1,\]
-      where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$-flow of $X$;
+      where $\varphi_X^1: T^*M \to T^*M$ is the time-$1$ flow of $X$;
     \item the identity map $\mathtt{1}: M \to U$ is the zero section;
     \item the inverse map is
       \[\iota: U \to U, \qquad \iota = -\varphi_X^1;\]
@@ -1308,7 +1309,7 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   \end{itemize}
 \end{proof}
 \begin{remark}
-  While the formulae for the flows above were defined when $L^+_{\cX,\bfr}\cong\RR_+^n$ and $L^+_{\cA,\bfr}\cong\RR_+^m$, the formulae for the time-one flows on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ can be applied equally well in the settings $L^+_{\cX,\bfr}\cong(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^+_{\cA,\bfr}\cong(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
+  While the formulae for the flows above were defined when $L^+_{\cX,\bfr}\cong\RR_+^n$ and $L^+_{\cA,\bfr}\cong\RR_+^m$, the formulae for the time-$1$ flows on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ can be applied equally well in the settings $L^+_{\cX,\bfr}\cong(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^+_{\cA,\bfr}\cong(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
   Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ are well-defined on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
   To see this, note that $\varphi_{\cX,\bfr}^1$ and $\varphi_{\cA,\bfr}^1$ are groupoid morphisms and hence must carry the identity image to the identity image.
   This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ at the origin of each source fiber.
