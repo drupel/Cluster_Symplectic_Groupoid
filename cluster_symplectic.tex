@@ -1079,7 +1079,7 @@ Here is an outline for this section:
   \item We lift the Poisson ensemble map $\rho:L_\cA\to L_\cX$ in \eqref{eq:ensemble} to symplectic groupoid comorphisms.
     When the exchange matrix is square (and hence invertible), the Poisson ensemble map is a diffeomorphism from its domain onto its image and so the graph of each groupoid comorphism also defines groupoid morphisms over suitable loci.
   \item We lift the Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows} to symplectic groupoid morphisms using their Hamiltonian nature.
-    We also show that the Lie functor maps the graph of the groupoid morphisms to the graph of the induced algebroid comorphisms.
+    We also show that the Lie functor maps the graphs of these groupoid morphisms to the graphs of the algebroid comorphisms naturally induced by the Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$.
   \item We lift the Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}$ in Lemma~\ref{le:tropical cluster transformations} to groupoid comorphisms and show that they can also be interpreted as groupoid morphisms.
   \item Combining the last two steps above, we obtain the mutation rule for groupoid charts analogous to the (generalized) cluster mutations in Corollary~\ref{cor:cluster mutation}.
     Through analogues of the separation of additions formulae \eqref{eq:separation of additions 1} and \eqref{eq:separation of additions 2} (c.f.\ Theorem~\ref{th:groupoid separation of additions}), we show that any periodicity of cluster mutations lifts to a periodicity of groupoid mutations (assuming groupoid mutations are always performed according to the ``tropical signs'' of the corrseponding $\bfc$-vectors).
@@ -1499,7 +1499,14 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
   
   Indeed, observe that the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
   However, these maps are continuous when appropriate values are assigned.
-  Indeed, for $j\ne k$ and $x_j=0$ we set
+  Indeed, for $j\ne k$ and $x_j=0$ we observe that $[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)=0$ as follows:
+  \begin{itemize}
+    \item If $\varepsilon B_{jk}>0$, the first term above is clearly zero and $x_j$ appears in $\hat y_k^\varepsilon$ with a positive exponent.
+      It follows that the $\log$ term reduces to zero as well since $Z_k$ has nonzero constant term.
+    \item When $B_{jk}=0$ there is nothing no show.
+    \item If $\varepsilon B_{jk}<0$, the first term does not vanish but $x_j$ appears in $\hat y_k^\varepsilon$ with a negative exponent.
+      It f
+  \end{itemize}
   \begin{align*}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)
     &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
