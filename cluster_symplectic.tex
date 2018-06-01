@@ -922,7 +922,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
 \begin{remark}
   \label{rem:extended cluster charts}
   While we have restricted to considering $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$ to motivate the Hamiltonian natures of the mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and~$\mu_{\cA,\bfr}^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined on open dense subsets of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
-  More precisely, the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ nor where $Z_k(y_k^\varepsilon)^{-B_{k\ell}}$ is undefined for some $\ell$ and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ nor where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$.
+  More precisely, the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ nor where $Z_k(y_k^\varepsilon)=0$ if $B_{k\ell}>0$ for some $\ell$ and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ nor where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$.
   This holds equally well for the \emph{automorphism parts} $\varphi_{\cX,\bfr}^1$, $\varphi_{\cA,\bfr}^1$ and the \emph{tropical parts} $\tau_{\cX,\bfr}^{k,\varepsilon}$, $\tau_{\cA,\bfr}^{k,\varepsilon}$ of the cluster mutations with similar restrictions on the domains of definition.
 
   Similar considerations can be made when $L_\cX=\CC^n$, $L_\cA=\CC^m$, and $Z_k(u)\in\CC[u]$ is a monic polynomial with $Z_k(0)=1$ in which case analogous restrictions as above must be imposed, even when considering mutations restricted to $L^\times_\cX=\CC_\times^n$ or $L^\times_\cA=\CC_\times^m$.
@@ -1476,26 +1476,8 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
   \end{align}
 \end{proposition}
 \begin{proof}
-  This is immediate from Lemma~\ref{le:tropical groupoid transformations} and Corollary~\ref{cor:groupoid hamiltonian flows}.
+  This is immediate from Corollary~\ref{cor:groupoid hamiltonian flows} and Lemma~\ref{le:tropical groupoid transformations}.
 \end{proof}
-\begin{remark}
-  \label{rem:boundaries}
-  Observe that the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
-  However, these maps are continuous when appropriate values are assigned.
-  Indeed, for $j\ne k$ and $x_j=0$ we set
-  \begin{align*}
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)
-    &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
-    &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
-    &=\begin{cases} 
-      p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
-      p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
-      p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
-    \end{cases}
-  \end{align*}
-  Observe that the map above is not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
-  Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{-,\bfr}^{k,\varepsilon}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$ and thus the gluing of fibers is not attempted over these loci. 
-\end{remark}
 
 The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summarized in the following commutative diagram. The groupoid morphisms are represented by solid arrows and the groupoid comorphisms are represented by dotted arrows.
 \begin{equation} 
@@ -1511,7 +1493,28 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
     }
 \end{equation}
 \begin{remark}
-  While the formulae for the groupoid mutations were defined when $L^\times_{\cX,\bfr}\cong\RR_\times^n$ and $L^\times_{\cA,\bfr}\cong\RR_\times^m$, the formulae for the time-$1$ flows on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ can be applied equally well in the settings $L^\times_{\cX,\bfr}\cong(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^\times_{\cA,\bfr}\cong(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
+  \label{rem:extended groupoid charts}
+  While the formulae for the groupoid mutations were only defined over the orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$, they can also be used to glue the various groupoids over all of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ as in Remark~\ref{rem:extended cluster charts}.
+  However, certain additional subtleties must be overcome in the groupoid case.
+  
+  Indeed, observe that the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
+  However, these maps are continuous when appropriate values are assigned.
+  Indeed, for $j\ne k$ and $x_j=0$ we set
+  \begin{align*}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)
+    &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
+    &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
+    &=\begin{cases} 
+      p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
+      p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
+      p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+    \end{cases}
+  \end{align*}
+  Observe that the map above is not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
+  Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{-,\bfr}^{k,\varepsilon}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$ and thus the gluing of fibers is not attempted over these loci. 
+  
+  
+  the formulae for the time-$1$ flows on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ can be applied equally well in the settings $L^\times_{\cX,\bfr}\cong(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^\times_{\cA,\bfr}\cong(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
   Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ are well-defined on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
   To see this, note that $\varphi_{\cX,\bfr}^1$ and $\varphi_{\cA,\bfr}^1$ are groupoid morphisms and hence must carry the identity image to the identity image.
   This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ at the origin of each source fiber.
