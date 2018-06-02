@@ -133,6 +133,7 @@ Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in th
 In this paper, we take the first step towards the groupoid quantization for both cluster $\cA$-varieties and cluster $\cX$-varieties by describing their symplectic groupoids.
 The construction of each is detailed below as we discuss the organization of the paper.
 
+We being in Section~\ref{sec:Poisson generalities} with a general discussion of Poisson manifolds and their associated algebroids and groupoids.
 In Section~\ref{sec:local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure on a vector space $L$, these each possess important properties which justify their consideration.
 The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid.
 The definition of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{CM11, CMS17}.
@@ -183,16 +184,9 @@ Throughout the paper, we use the following notations.
 \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Symplectic groupoids of log-canonical Poisson structures}
-\label{sec:local}
-
-%In this section, we will use the idea of Poisson spray \cite{CM11} to construct the source-simply-connected sympletic groupoid of a log-canonical Poisson structure.
-%There is another construction of a source-connected symplectic groupoid, called the symplectic double \cite{FG09c}.
-%We give an explicit formula for the groupoid morphism from the source-simply-connected symplectic groupoid to the symplectic double.
-%We recall the natural Poisson map between two compatible log-canonical Poisson structures, which serve as the seeds for cluster $\cA$-varieties and $\cX$-varieties.
-
-\subsection{Poisson structures and symplectic groupoids}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Poisson structures and symplectic groupoids}
+\label{sec:Poisson generalities}
 We begin by recalling the equivalent notions of Poisson brackets and Poisson bi-vectors.
 \begin{definition} 
   \label{def: PoissonMfld}
@@ -321,18 +315,6 @@ Just like the infinitesimal object of a Poisson Lie group is a Lie bialgebra, th
 As a Poisson groupoid, the symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ integrates the Lie bialgebroid $(T^*_\pi M, TM)$.
 The integrability of Poisson manifolds, and more generally the integrability of Lie algebroids, is characterized in \cite{CF03, CF04}.
 
-%For the two extreme cases where the Poisson structure is either trivial or non-degenerate, we describe the symplectic groupoid below.
-%\begin{example}
-%	\begin{enumerate}
-%	\item Let $M$ be a smooth (or holomorphic) manifold with the trivial Poisson structure, i.e. every function $f\in \cO_M$ is a Casimir. The symplectic groupoid over $M$ is $T^*M$ with the standard symplectic structure, where $\alpha$ and $\beta$ are the bundle projections and the multiplication is the fiberwise addition.
-%	\item Let $(M, \omega)$ be a connected symplectic manifold. The pair groupoid $(M \times M, \omega \oplus -\omega)$ is a source-connected symplectic groupoid over $(M, \omega)$ where $\alpha(x,y) = x$, $\beta(x,y) = y$ and $m((x,y), (y,z))=(x,z)$. The fundamental groupoid $\Pi M$ consisting of homotopy paths is the source-simply-connected symplectic groupoid where $\alpha([\gamma]) = \gamma(0)$, $\beta([\gamma]) = \gamma(1)$, the multiplication is the concatenation of paths and with the symplectic structure $\alpha^*\omega - \beta^*\omega$.
-%	\end{enumerate}
-%\end{example}
-
-%\begin{remark}
-  %\label{rem:lifting}
-%\end{remark}
-
 In general, a Poisson map does not induce a Lie algebroid morphism and hence does not integrate to a bona fide symplectic groupoid map.
 Instead a Poisson map naturally induces a Lie algebroid comorphism.
 Following \cite{CDW13}, we outline the procedure to lift Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
@@ -382,7 +364,10 @@ For the Hamiltonian vector field $X_f \in \cT_M$ of $f \in \cO_M$, if $(\cG, \om
 Indeed, the function $F \in \cO_\cG$ is multiplicative since $F = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and the symplectic form $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_F = \iota_{dF}\omega^{-1}$ is multiplicative.
 It follows that $X_F$ preserves the symplectic groupoid structures of $(\cG,\omega)$; and the time-$t$ flow $\varphi^t_f: (M, \pi) \to (M, \pi)$ of $X_f$ is lifted to the time-$t$ flow $\varphi^t_F: (\cG, \omega) \to (\cG, \omega)$ of $X_F$.
 
-\subsection{Log-canonical Poisson structures}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Symplectic groupoids of log-canonical Poisson structures}
+\label{sec:local}
 We focus in this paper on the symplectic groupoids of log-canonical Poisson structures.
 \begin{definition} 
   \label{def: logPoisson}
@@ -739,8 +724,6 @@ We summarize the pros and cons of the three groupoids $\cG \rra L$, $\cB \rra L$
 The symplectic groupoid $\cG \rra L$ is source-simply-connected when the underlying field is $\CC$, the tradeoff is that its groupoid structure maps are transcendental.
 On the other hand, the multiplicative Poisson structure of $\cD \rra L$ has a simple expression and its groupoid structure maps are algebraic, but it is only symplectic when restricted to $L^\times$.
 Comparing to $\cG \rra L$, the symplectic groupoid $\cB \rra L$ has the added bonus that its groupoid structure maps are algebraic, but the tradeoff is that the expressions for its multiplicative Poisson structure and its groupoid structures are more complicated.
-
-%Both $\cG \rra L$ and $\cB \rra L$ are symplectic groupoids over $L$, and as we will see in \S\ref{sec:groupoid mutations}, this enables us to define the groupoid mutations for $\cG$ and $\cB$ over $\bar{L}^\times$ when the underlying field is $\RR$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
