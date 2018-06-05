@@ -1477,39 +1477,42 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
 \end{equation}
 \begin{remark}
   \label{rem:extended groupoid charts}
-  While the formulae for the groupoid mutations were only defined over the orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$, they can also be used to glue the various groupoids over all of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ as in Remark~\ref{rem:extended cluster charts}.
-  However, certain additional subtleties must be overcome in the groupoid case.
-  
-  Indeed, observe that the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
-  However, these maps are continuous when appropriate values are assigned.
-  Indeed, for $j\ne k$ and $x_j=0$ we observe that $[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)=0$ as follows:
-  \begin{itemize}
-    \item If $\varepsilon B_{jk}>0$, the first term above is clearly zero and $x_j$ appears in $\hat y_k^\varepsilon$ with a positive exponent.
-      It follows that the $\log$ term reduces to zero as well since $Z_k$ has nonzero constant term.
-    \item When $B_{jk}=0$ there is nothing no show.
-    \item If $\varepsilon B_{jk}<0$, the first term does not vanish but $x_j$ appears in $\hat y_k^\varepsilon$ with a negative exponent.
-      It f
-  \end{itemize}
-  \begin{align*}
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)
-    &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
-    &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
-    &=\begin{cases} 
-      p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
-      p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
-      p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
-    \end{cases}
-  \end{align*}
-  Observe that the map above is not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
-  Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{-,\bfr}^{k,\varepsilon}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$ and thus the gluing of fibers is not attempted over these loci. 
-  
-  
-  the formulae for the time-$1$ flows on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ can be applied equally well in the settings $L^\times_{\cX,\bfr}\cong(\CC^\times)^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^\times_{\cA,\bfr}\cong(\CC^\times)^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
-  Indeed, although $\log(-)$ is multivalued as a function on $\CC^\times$, the functions $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ are well-defined on $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
-  To see this, note that $\varphi_{\cX,\bfr}^1$ and $\varphi_{\cA,\bfr}^1$ are groupoid morphisms and hence must carry the identity image to the identity image.
-  This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\varphi_{\cX,\bfr}^1)^*(q_\ell y_\ell)$ and $(\varphi_{\cA,\bfr}^1)^*(p_jx_j)$ at the origin of each source fiber.
-  Thus, by simple-connectedness, we are able to fix the choice of branch cut when computing their values at arbitrary points of the source fibers. 
-  \footnote{What about the symplectic doubles?}
+  While the formulae for the groupoid mutations were only defined over the positive real orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$, they can often also be used to glue the various groupoids over larger (sometimes dense) subsets of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ as in Remark~\ref{rem:extended cluster charts}.
+  However, certain additional subtleties must be overcome in the groupoid case:
+  \begin{enumerate}
+    \item In the real case, the mutation rules for $q'_\ell$ and $p'_j$ can only be extended to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ since only the logarithms of positive real numbers are again real.
+      In the complex case, these mutation rules can be extended to open dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$, namely to the loci where $\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}$ and $\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}$ are defined and nonzero.
+      Indeed, although $\log(-)$ is multivalued as a function on $\CC_\times$, the functions $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ are well-defined on these dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
+      To see this, note that $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are groupoid morphisms and hence must carry the identity image to the identity image.
+      This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ at the origin of each source fiber.
+      Thus, by simple-connectedness, we are able to fix the choice of branch cut when computing their values at arbitrary points of the source fibers. 
+    \item Again in the real case, the existence of an even skew-symmetrizer $d_k$ similarly restricts the extendability of the mutation rules for $v'_\ell$, $t'_\ell$ and $u'_j$, $s'_j$ to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
+      In the complex case or when all skew-symmetrizers are odd, we must avoid the loci where $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$, and $\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$ are undefined or zero.
+      Away from these loci in the complex case, the identity image can again be used to define a splitting of the $d_k$-fold covering map from $\CC_\times$ to $\CC_\times$.
+    \item Finally, the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
+      However, these maps are actually continuous when appropriate values are assigned.
+      To see this, we first observe that $[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)=0$ for $j\ne k$ and $x_j=0$ as follows:
+      \begin{itemize}
+        \item If $\varepsilon B_{jk}>0$, the first term above is clearly zero and $x_j$ appears in $\hat y_k^\varepsilon$ with a positive exponent.
+          Using that $x_j=0$, it follows that the $\log$ term reduces to zero as well since $Z_k$ has nonzero constant term.
+        \item When $B_{jk}=0$ there is nothing no show.
+        \item If $\varepsilon B_{jk}<0$, the first term does not vanish but $x_j$ appears in $\hat y_k^\varepsilon$ with a negative exponent.
+          Using that $x_j=0$, the term inside the logarithm reduces to $e^{-\varepsilon r_kd_kp_kx_k}$ and thus we again get zero.
+      \end{itemize}
+      Therefore, we may take the limit as $x_j\to0$ in these formulas and set
+      \begin{align*}
+        (\mu_{\cA,\bfr}^{k,\varepsilon}|_{x_j=0})^*(p'_j)
+        &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
+        &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
+        &=\begin{cases} 
+          p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
+          p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
+          p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+        \end{cases}
+      \end{align*}
+      Observe that this restricted mutation map is again not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
+      Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L_{\cA',\bfr}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$, in particular the gluing of fibers will not be attempted over these loci. 
+  \end{enumerate}
 \end{remark}
 
 As in Section~\ref{sec:cluster mutations}, we record iterated mutations using the $n$-regular rooted tree $\TT_n$ with root vertex $t_0$.
