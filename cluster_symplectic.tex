@@ -94,7 +94,7 @@
   Extensions of these groupoids to the completions of the cluster varieties where cluster variables are allowed to vanish are also considered.  
 
   In the real case, we construct source-simply-connected groupoids for the cluster charts via the Poisson spray technique of Crainic and M\u{a}rcu\c{t}.
-  These charts and their analogues for the symplectic double and blow-up groupoids are glued by groupoid comorphisms lifting the cluster mutations whose formulae are motivated by the Hamiltonian perspective of cluster mutations introduced by Fock and Goncharov.
+  These groupoid charts and their analogues for the symplectic double and blow-up groupoids are glued by lifting the cluster mutations to groupoid comorphisms whose formulae are motivated by the Hamiltonian perspective of cluster mutations introduced by Fock and Goncharov.
 \end{abstract}
 \maketitle
 
@@ -137,7 +137,7 @@ An important note is that, although this provides the source-simply-connected gr
 
 One fix for this is an analogue of the symplectic double introduced by Fock and Goncharov \cite{FG09c}.
 This groupoid which we denote $\cD \rra L$ is a source-connected Poisson groupoid.
-Over an orthant $L^\times$ of $L$ the groupoid $\cD \rra L$ is actually symplectic and we denote its restiction by $\cD^\times \rra L^\times$, this is a covering of the symplectic groupoid considered by Fock and Goncharov in the case of $\cX$-varieties.
+Over an orthant $L^\times$ of $L$ the groupoid $\cD \rra L$ is actually symplectic and we denote its restiction by $\cD^\times \rra L^\times$, our construction gives a covering of the symplectic groupoid considered by Fock and Goncharov in the case of $\cX$-varieties.
 
 The linear degeneracy of the Poisson structure on $\cD$ over the coordinate hyperplanes is corrected via the blow-up construction introduced in works of the first author \cite{Li13, GL14}.
 This gives rise to the groupoid $\cB \rra L$ which is source-connected and symplectic.
@@ -153,7 +153,7 @@ We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the c
 In principle, a Poisson map induces a Lie algebroid comorphism \cite{HM90}, which is then lifted to the groupoid comorphisms \cite{Cat04, CDW13}.
 Indeed, the Poisson ensemble map $\rho: L_\cA \to L_\cX$ can be lifted only to a groupoid comorphism when the exchange matrix is not square.
 However, if a Poisson morphism is a diffeomorphism, then the dual bundle map of the induced Lie algebroid comorphism is a Lie algebroid morphism, which then lifts to an honest groupoid morphism.
-Since both the Hamiltonian map $\varphi^1$ and the transformation $\tau$ are diffeomorphisms on an open dense set, we may lift the cluster mutation $\mu = \tau \circ \varphi^1$ to cluster groupoid mutations.
+Since both the Hamiltonian flow $\varphi^1$ and the transformation $\tau$ are diffeomorphisms on an open dense set, we may lift the cluster mutation $\mu = \tau \circ \varphi^1$ to cluster groupoid mutations.
 \bigskip
 
 Throughout the paper, we use the following notations.
@@ -191,7 +191,7 @@ We begin by recalling the equivalent notions of Poisson brackets and Poisson bi-
     \item a \emph{Poisson bracket}
       $$\{\cdot, \cdot\}: \cO_M \times \cO_M \to \cO_M$$
       which is a Lie bracket satisfying the Leibniz rule
-      $$\{fg, h\} = f\{g,h\} + g\{f,h\};$$
+      $$\{f, gh\} = g\{f,h\} + h\{f,g\};$$
     \item a \emph{Poisson bi-vector} $\pi \in \cT^2_M$ such that $[\pi, \pi] = 0$, where $[\cdot, \cdot]$ is the Schouten-Nijenhuis bracket.
   \end{enumerate}
   We say $f \in \cO_M$ is a Casimir if $\{f, g\} = 0$ for every $g\in \cO_M$.
@@ -199,15 +199,15 @@ We begin by recalling the equivalent notions of Poisson brackets and Poisson bi-
 
 The two notions are related by the formula: $\{f, g\} = \pi (df \otimes dg)$ for $f, g\in \cO_M$.
 The pair $(M, \pi)$, or equivalently $(M, \{\cdot,\cdot\})$, is called a \emph{Poisson manifold}.
-The \emph{Hamiltonian vector field} of $f \in \cO_M$ is defined as the contraction $X_f = \iota_{df}\pi$.
+The \emph{Hamiltonian vector field} of $f \in \cO_M$ is defined as the contraction $X_f = \iota_{df}\pi$ or equivalently as the vector field naturally associated to the derivation $\{f,\cdot\}$.
 A Poisson map from $(M_1, \pi_1)$ to $(M_2, \pi_2)$ is a map $\varphi: M_1\to M_2$ such that $\varphi_*\pi_1 = \pi_2$ or equivalently $\{\varphi^*f, \varphi^*g\} = \varphi^*(\{f, g\})$ for $f, g \in \cO_{M_2}$.
-For $f \in \cO_{M_2}$, the pullback of a Hamiltonian vector field $X_f$ is $X_{\varphi^*f}$.
+For $f \in \cO_{M_2}$, the pullback of the Hamiltonian vector field $X_f$ is $X_{\varphi^*f}$.
 A Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ is \emph{complete} if the pullback of a complete Hamiltonian vector field is again a complete vector field.
 
 A bi-vector $\pi \in \cT^2_M$ is called \emph{non-degenerate} if the bundle map
 \[\pi^\flat: \Omega^1(M) \to \cT_M, \qquad \theta \mapsto \iota_\theta \pi\]
 is invertible.
-The inverse of the bundle map defines a non-degenerate 2-form $\omega \in \Omega^2(M)$.
+The inverse of this bundle map then defines a non-degenerate 2-form $\omega \in \Omega^2(M)$.
 That is, the bundle map
 \[\omega^\sharp: \cT_M \to \Omega^1(M), \qquad v \mapsto \iota_v \omega\]
 is the inverse of $\pi^\flat$.
@@ -232,7 +232,8 @@ Of particular importance among all the symplectic realizations is the symplectic
     \item $\alpha(\mathtt{1}_x) = \beta(\mathtt{1}_x) = x$;
     \item $\alpha(gh) = \alpha(h), \enskip \beta(gh) = \beta(g)$;
     \item $\alpha(g^{-1}) = \beta(g), \enskip \beta(g^{-1}) = \alpha(g)$;
-    \item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$.
+    \item $(\mathtt{1}_x)^{-1} = \mathtt{1}_x$;
+    \item $\mathtt{1}_{\beta(g)}g=g=g\mathtt{1}_{\alpha(g)}, \enskip g^{-1}g=\mathtt{1}_{\alpha(g)}, \enskip gg^{-1}=\mathtt{1}_{\beta(g)}$.
   \end{enumerate}
   A \emph{Lie groupoid} $\cG \rightrightarrows M$ has the following additional properties:
   \begin{enumerate}
@@ -289,7 +290,7 @@ Our main interest will be with Lie groupoids equipped with a multiplicative symp
 \end{definition}
 
 The source fibers of a symplectic groupoid are symplectic orthogonal to the target fibers.
-Some important examples of symplectic groupoids include: the Kostant-Kirillov-Souriau Poisson structures \cite{CDW87}, the Drinfeld doubles of Poisson Lie groups \cite{LW89}, the double Bruhat cells \cite{LuM16}, the blow-up groupoids of log-symplectic manifolds \cite{GL14}, and the symplectic doubles of the cluster $\cX$-varieties \cite{FG09c}.
+Some important examples of symplectic groupoids include: the Kostant-Kirillov-Souriau Poisson structures \cite{CDW87}, the Drinfeld doubles of Poisson Lie groups \cite{LW89}, the double Bruhat cells \cite{LuM16}, the blow-up groupoids of log-symplectic manifolds \cite{GL14}, and the symplectic doubles of (the positive part of) the cluster $\cX$-varieties \cite{FG09c}.
 We note that symplectic groupoids are a special case of Poisson groupoids.
 \begin{definition}
   A \emph{Poisson groupoid} is a Lie groupoid $\cG \rra M$ with a multiplicative Poisson structure $\sigma \in \cT^2_\cG$.
@@ -298,7 +299,7 @@ We note that symplectic groupoids are a special case of Poisson groupoids.
 
 A Poisson groupoid map from $(\cG_1, \sigma_1) \rra M_1$ to $(\cG_2, \sigma_2) \rra M_2$ is a Lie groupoid map $\varphi: \cG_1 \to \cG_2$ which is Poisson.
 For a Poisson groupoid $(\cG, \sigma) \rra M$, there is a natural Poisson structure $\pi$ on $M$ such that $\alpha: (\cG, \sigma) \to (M, \pi)$ and $\beta: (\cG, \sigma) \to (M, -\pi)$ are Poisson maps.
-For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ is a Poisson map.
+For a Poisson manifold $(M, \pi)$, one could ask if there is a symplectic groupoid $(\cG, \omega) \rra (M, \pi)$ such that $\alpha: (\cG, \omega) \to (M, \pi)$ and $\beta: (\cG, \omega) \to (M, -\pi)$ are Poisson maps.
 If the answer is yes, we say that the Poisson manifold $(M, \pi)$ is \emph{integrable}.
 The Lie algeboid of a symplectic groupoid $\cG \rra M$ is the cotangent bundle $T^*M$ \cite{Wei87} with the anchor map
 \[\pi^\flat: T^*M \to TM, \qquad \theta \mapsto \iota_\theta \pi,\]
@@ -315,7 +316,7 @@ Instead a Poisson map naturally induces a Lie algebroid comorphism.
 Following \cite{CDW13}, we outline the procedure to lift Lie algebroid morphisms and comorphisms to Lie groupoid morphisms and comorphisms.
 \begin{definition} 
   \cite{HM90, Mac05, CDW13}
- 	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps (see Definition~\ref{def:algeroid})
+ 	Let $A_1$ be a Lie algebroid over $M_1$ and $A_2$ be a Lie algebroid over $M_2$ with anchor maps
  	\[ \rho_1: A_1 \to TM_1, \qquad \rho_2: A_2 \to TM_2. \]
  	\begin{enumerate}
  		\item A Lie algebroid morphism is a bundle map $(\varphi, \Phi): (M_1, A_1) \to (M_2, A_2)$ such that the pullback of sections $\Phi^*: \Gamma(\wedge^\bullet A_2) \to \Gamma(\wedge^\bullet A_1)$ is a chain map of complexes.
@@ -325,14 +326,16 @@ Following \cite{CDW13}, we outline the procedure to lift Lie algebroid morphisms
  	\end{enumerate}
 \end{definition}
 In principle, the graph of a comorphism $(\varphi, \Psi)$ from $A_1$ to $A_2$ is a subset of $\varphi^! A_2 \times A_1 = \left(M_1 {\times_{M_2}} A_2 \right) \times A_1$, but we will interpret the graph of $\Psi$ as a subset of $A_2 \times A_1$. Hence for a diffeomorphism $\varphi: M_1 \to M_2$, we have that $(\varphi, \Phi)$ is a Lie algebroid morphism if and only if $(\varphi^{-1}, \Phi^\vee)$ is a Lie algebroid comorphism where $\Phi^\vee$ is the dual bundle map of $\Phi$.
-\begin{definition} \cite{Mac05, CDW13} \label{def:gpdcomor}
-	Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids. (see Definition~\ref{def:groupoid})
-	\begin{enumerate}
- 		\item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $(\varphi, \Phi): (M_1, \cG_1) \to (M_2, \cG_2)$ that is compatible with groupoid structures. 
- 		\item A Lie groupoid comorphism from $\cG_1$ to $\cG_2$ is a base map $\varphi: M_1 \to M_2$ together with a map
- 			\[ \Psi: M_1 {_\varphi \times_\alpha} \cG_2 \to \cG_1 \]
- 		that is compatible with groupoid structures. (For details, see p.5 of \cite{CDW13}.) 
- 	\end{enumerate}
+\begin{definition} 
+  \cite{Mac05, CDW13} 
+  \label{def:gpdcomor}
+  Let $\cG_1 \rra M_1$ and $\cG_2 \rra M_2$ be Lie groupoids.
+  \begin{enumerate}
+    \item A Lie groupoid morphism from $\cG_1$ to $\cG_2$ is a map $(\varphi, \Phi): (M_1, \cG_1) \to (M_2, \cG_2)$ that is compatible with groupoid structures. 
+    \item A Lie groupoid comorphism from $\cG_1$ to $\cG_2$ is a base map $\varphi: M_1 \to M_2$ together with a map
+      \[ \Psi: M_1 {_\varphi \times_\alpha} \cG_2 \to \cG_1 \]
+      that is compatible with groupoid structures (for details, see p.5 of \cite{CDW13}). 
+  \end{enumerate}
 \end{definition}
 Note the difference in convention: the source and target maps in Definition~\ref{def:gpdcomor} are switched comparing to the convention in \cite{CDW13}.
 As with the Lie algebroids, we will interpret the graph of a Lie groupoid comorphism $\Psi$ from $\cG_1$ to $\cG_2$ as a subset of $\cG_2 \times \cG_1$.
@@ -380,12 +383,12 @@ Using the results in \cite{CM11, CMS17}, we construct the source-simply-connecte
   \cite{CM11}
   For a Poisson manifold $(M, \pi)$, a \emph{Poisson spray} is a vector field $X \in \cT_{T^*M}$ such that
   \begin{enumerate}
-    \item for $(p,x) \in T^*M$ we have
-      \[\tau_* X|_{(p,x)} = \pi^\flat(p),\]
+    \item for $(x,p) \in T^*M$ we have
+      \[\tau_* X|_{(x,p)} = \pi^\flat(p),\]
       where $\tau: T^*M \to M$ is the bundle projection;
     \item $X$ is homogeneous of degree 1, i.e.
       \[(m_\lambda)_*(X) = \lambda X,\]
-      where $m_\lambda: T^*M \to T^*M, \enskip (p,x) \mapsto (\lambda p,x)$ is the fiberwise scaling map.
+      where $m_\lambda: T^*M \to T^*M, \enskip (x,p) \mapsto (x,\lambda p)$ is the fiberwise scaling map.
   \end{enumerate}
 \end{definition}
 
@@ -515,7 +518,7 @@ Motivated by \cite{FG09c}, we make the following definition of the symplectic do
   \cite{FG09c}
   For the log-canonical Poisson structure $\{x_i, x_j\} = \Omega_{ij} x_i x_j$ on $L$ (which is either $\RR^m$ or $\CC^m$), the \emph{symplectic double} $(\cD, \sigma_\cD) \rra (L, \pi)$ is a source-connected Poisson groupoid with the following structures:
   \begin{enumerate}
-    \item $\cD \cong L \times L^\times$ (where $L^\times$ is either $\RR_\times^m$ or $\CC_\times^m$) has the coordinates $(\bfx, \bfs) = (x_1, \ldots, x_m, s_1, \ldots, s_m)$;
+    \item $\cD \cong L \times L^\times$ has the coordinates $(\bfx, \bfs) = (x_1, \ldots, x_m, s_1, \ldots, s_m)$ (where $L^\times$ is respectively either $\RR_\times^m$ or $\CC_\times^m$);
     \item the source map is
       \[\alpha: L \times L^\times \to L, \qquad (\bfx, \bfs) \mapsto \bfx;\]
     \item the target map is
