@@ -740,6 +740,7 @@ Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is sk
 Such an $m\times n$ matrix $\tilde B$ with skew-symmetrizable principal submatrix $B$ is called an \emph{exchange matrix}.
 We fix a skew-symmetrizing matrix $D$ and refer to a skew-symmetric $m\times m$ matrix $\Omega=(\Omega_{ij})$ as \emph{$D$-compatible} with $\tilde B$ if $\tilde B^T\Omega=[D\ \boldsymbol{0}]$, where $\boldsymbol{0}$ denotes an $n\times(m-n)$ matrix with all zero entries.
 In this case, we call $(\tilde B,\Omega)$ a \emph{$D$-compatible pair} or simply a \emph{compatible pair} if the symmetrizing matrix $D$ is understood.
+Note that the existence of a matrix $\Omega$ comptible with $\tilde B$ implies $\tilde B$ has rank $n$, in other words the columns of $\tilde B$ are linearly independent.
 
 \subsection{Mutation of Cluster Charts}
 \label{sec:cluster mutations}
@@ -975,9 +976,9 @@ As above, we also introduce the Poisson spaces $L^\times_{\cX,\bfr;t}$ isomorphi
 
 \begin{definition}
   \label{def:cluster varieties}
-  Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is compatible with~$\tilde B_{t_0}$.
+  Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with~$\tilde B_{t_0}$.
   Let $\bfr=(r_1,\ldots,r_n)$ be a sequence of positive integers.
-  The \emph{(generalized) cluster varieties} $\cX_\bfr=\cX_\bfr(\tilde B_{t_0})$ and $\cA_\bfr=\cA_\bfr(\tilde B_{t_0})$ are obtained by gluing the cluster charts $L^\times_{\cX,\bfr;t}$, $L^\times_{\cX,\bfr;t'}$ and $L^\times_{\cA,\bfr;t}$, $L^\times_{\cA,\bfr;t'}$ respectively, for $t,t'\in\TT_n$ joined by an edge labeled $k$, along the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$, where $\varepsilon=\varepsilon_{\bfr,k;t}$.
+  The \emph{(generalized) cluster varieties} $\cX_\bfr=\cX_\bfr(\tilde B_{t_0},D)$ and $\cA_\bfr=\cA_\bfr(\tilde B_{t_0},\Omega_{t_0})$ are obtained by gluing the cluster charts $L^\times_{\cX,\bfr;t}$, $L^\times_{\cX,\bfr;t'}$ and $L^\times_{\cA,\bfr;t}$, $L^\times_{\cA,\bfr;t'}$ respectively, for $t,t'\in\TT_n$ joined by an edge labeled $k$, along the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$, where $\varepsilon=\varepsilon_{\bfr,k;t}$.
   That is, 
   \begin{equation}
     \label{eq:cluster varieties}
@@ -1059,8 +1060,41 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
 
 It is often the case that a sequence of cluster mutations is essentially an identity mapping, this is made precise as follows.
 \begin{definition}
-  A \emph{periodicity} of the cluster algebra $\cA_\bfr(\tilde B_{t_0},\Omega_{t_0})$ is
+  Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with~$\tilde B_{t_0}$.
+  Let $\bfr=(r_1,\ldots,r_n)$ be a sequence of positive integers.
+  A \emph{periodicity of cluster mutations} is a sequence of vertices $t_1,t_2,\ldots,t_w\in\TT_n$ with $t_i$ joined to $t_{i+1}$ by an edge labeled $k_i$ together with a permutation $\sigma$ of the set $\{1,\ldots,m\}$ fixing each of $n+1,\ldots,m$ so that the following equalities hold:
+  \begin{enumerate}
+    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ for $1\le j\le m$;
+    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(y_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(y_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
+    \item $\tilde B_{ij;t_1}=\tilde B_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$;
+    \item $\Omega_{ij;t_1}=\Omega_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$.
+  \end{enumerate}
 \end{definition}
+In other words, a periodicity of cluster mutations determines a gluing of cluster charts which is (up to a permutation) just an identity mapping.
+%A result of Gekhtman, Shapiro, and Vainshtein \cite[Theorem 7.4]{GSV10} shows that condition (1) implies all the others.
+We will need the following important consequence of the separation of additions formulae and the sign-coherence of $\bfc$-vectors.
+\begin{corollary}
+  A periodicity of cluster mutations gives the following equalities:
+  \begin{enumerate}
+    \item $C_{ij;t_1}=C_{i\sigma(j);t_w}$ for $1\le i,j\le m$;
+    \item $G_{ij;t_1}=G_{i\sigma(j);t_w}$ for $1\le i,j\le m$;
+    \item $F_{j,\bfr;t_1}=F_{\sigma(j),\bfr;t_w}$ for $1\le j\le m$.
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+  As in \cite[Proposition 5.6]{FZ07}, the sign-coherence of $\bfc$-vectors implies that all $F$-polynomials have constant term 1.
+  Since the columns of $\tilde B_{t_0}$ are linearly independent, the Newton polytope of each evaluation $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ has vertices in the positive cone of the $n$-dimensional lattice spanned by the columns of $\tilde B_{t_0}$.
+  Moreover, by the first observation, each of these Newton polytopes will contain the vertex of this cone.
+  
+  These observations immediately give (2) and (3).
+  Indeed, the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ together with the separation of additions formula \eqref{eq:separation of additions 2} shows that 
+  \[\frac{F_{j,\bfr;t_1}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{\sigma(j),\bfr;t_w}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}=\prod_{i=1}^m x_{i;t_0}^{G_{ij;t_1}-G_{i\sigma(j);t_w}}\]
+  is a single monomial.
+  But then the pointedness of their Newton polytopes implies this monomial must be 1, giving (2) and (3).
+
+  Finally, (3) immediately implies (1) by the separation of additions formula \eqref{eq:separation of additions 1} and condition (3) of a periodicity.
+\end{proof}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mutation of Groupoid Charts}
