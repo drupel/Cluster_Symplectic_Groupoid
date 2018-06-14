@@ -610,7 +610,7 @@ We denote the blow-up of $\cG$ along $\cH$ by $\mathrm{Bl}(\cG, \cH)$ with the b
   \cite{GL14}
   For a Lie groupoid $\cG \rra M$ and a Lie subgroupoid $\cH \rra N$ for some hypersurface $N\subset M$, there is a unique Lie groupoid structure $[\cG\!:\!\cH] \rra M$ such that the blow-down map $\nu: [\cG\!:\!\cH] \to \cG$ is a groupoid morphism.
   Moreover, blow-up of Lie groupoids corresponds to elementary modification of Lie algebroids.
-  That is,
+  More precisely, we have
   \[\Lie[\cG\!:\!\cH] = [\Lie\cG\!:\!\Lie\cH].\]
 \end{theorem}
 
@@ -715,7 +715,7 @@ Explicitly in coordinates, these maps are given by
 \end{align}
 
 \begin{remark}
-  If $L = \RR^m$, then $\cB \rra L$ is source-simply-connected and all three groupoid maps are groupoid isomorphisms when restricted the base to $L^\times = \RR_\times^m$, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
+  If $L = \RR^m$, then $\cB \rra L$ is source-simply-connected and all three groupoid maps are groupoid isomorphisms after restricting the base to $L^\times = \RR_\times^m$, but if $L = \CC^m$, then $\cB$ is not source-simply-connected and $\kappa: \cG \to \cB$ is a covering map for each source fiber.
 \end{remark}
 
 We summarize the pros and cons of the three groupoids $\cG \rra L$, $\cB \rra L$ and $\cD \rra L$.
@@ -752,7 +752,7 @@ Given a $D$-compatible pair of matrices $(\tilde B,\Omega)$, denote by $\{\cdot,
   \label{eq:brackets}
   \{y_k,y_\ell\}_\cX=d_kB_{k\ell}y_ky_\ell\qquad\text{and}\qquad\{x_i,x_j\}_\cA=\Omega_{ij}x_ix_j.
 \end{equation}
-An easy calculation shows that there is a Poisson map
+An easy calculation using the compatibility condition for the pair $(\tilde B,\Omega)$ shows that there is a Poisson map
 \begin{equation}\label{eq:ensemble}
 	\rho:L_\cA\to L_\cX,\qquad \rho^*(y_k)=\hat y_k:=\prod_{i=1}^m x_i^{B_{ik}}
 \end{equation}
@@ -782,7 +782,7 @@ Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $h
 \begin{remark}
   \label{rem:cluster case}
   Observe that when $r_k=1$, i.e.\ $Z_k(u)=1+u$, we have $h_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $h_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
-  We will refer to this as the ``cluster case'' since the mutations below reduce to the classical mutation rules for cluster algebras (c.f. Remark~\ref{rem:cluster case 2}).
+  We will refer to this as the ``cluster case'' since the mutation rules presented below reduce to the classical mutations for cluster algebras when $Z_k(u)=1+u$ (c.f. Remark~\ref{rem:cluster case 2}).
 \end{remark}
 
 Clearly, there is an equality $\rho^*(h_{\cX,\bfr}^{k,\varepsilon})=h_{\cA,\bfr}^{k,\varepsilon}$, where $\rho$ here denotes the restriction to $L^\times_{\cA,\bfr}$.
@@ -805,7 +805,7 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L^\times_{\cX,\bfr}}$ and $X_{\cA,\bf
 \end{proof}
 
 Since $B_{kk}=0$, it immediately follows that $y_k$ is a conserved quantity under the flow of $L^\times_{\cX,\bfr}$ by the vector field $X_{\cX,\bfr}^{k,\varepsilon}$.
-Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\hat y_k$ is a conserved quantity under the flow of $L^\times_{\cA,\bfr}$ by the vector field $X_{\cA,\bfr}^{k,\varepsilon}$.
+Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$ and $h_{\cA,\bfr}^{k,\varepsilon}=\rho^*(h_{\cX,\bfr}^{k,\varepsilon})$, we also see that $\hat y_k$ is a conserved quantity under the flow of $L^\times_{\cA,\bfr}$ by the vector field $X_{\cA,\bfr}^{k,\varepsilon}$.
 \begin{corollary}
   \label{cor:time-one flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_{\cX,\bfr}^t:L^\times_{\cX,\bfr}\to L^\times_{\cX,\bfr}$ of the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ is given on coordinates by
@@ -820,7 +820,7 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$, we also see that $\
 \end{proof}
 
 In what follows we use the notation $[b]_+:=\max\{b,0\}$.
-For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{\bfr,k,\varepsilon}(\tilde B,\Omega)=\big(\tilde B',\Omega'\big)$, where
+For $1\le k\le n$ and a sign $\varepsilon\in\{\pm1\}$, define the \emph{mutation of the compatible pair $(\tilde B,\Omega)$ in direction $k$} by $\mu_{\bfr,k,\varepsilon}(\tilde B,\Omega)=\big(\tilde B',\Omega'\big)$, where
 \begin{itemize}
   \item $\tilde B'=(B'_{ij})$ is given by
     \[B'_{ij}=\begin{cases}-B_{ij} & \text{if $i=k$ or $j=k$;}\\ B_{ij} + [-\varepsilon B_{ik}r_k]_+ B_{kj} + B_{ik} [\varepsilon r_kB_{kj}]_+ & \text{otherwise;}\end{cases}\]
@@ -832,16 +832,16 @@ It is an easy exercise to check that $\big(\tilde B',\Omega'\big)$ is again $D$-
 for any signs $\varepsilon,\varepsilon'\in\{\pm1\}$.
 In particular, the mutation $\mu_{\bfr,k,\varepsilon}$ acting on $D$-compatible pairs is independent of the sign $\varepsilon$ and we simply write $\mu_{\bfr,k}$ for this mutation when the choice of sign can be ignored.
 
-Let $L_{\cX'}=\RR^n$ and $L_{\cA'}=\RR^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively and corresponding orthants $L^\times_{\cX'}=\RR_\times^n$ and $L^\times_{\cA'}=\RR_\times^m$.
-For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_{\bfr,k}(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}'_\cX$ and $\{\cdot,\cdot\}'_\cA$ on $L'_\cX$ and $L'_\cA$ given by
+Let $L_{\cX'}=\RR^n$ and $L_{\cA'}=\RR^m$ with coordinates $\bfy'=(y'_1,\ldots,y'_n)$ and $\bfx'=(x'_1,\ldots,x'_m)$ respectively and with corresponding orthants $L^\times_{\cX'}=\RR_\times^n$ and $L^\times_{\cA'}=\RR_\times^m$.
+For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_{\bfr,k}(\tilde B,\Omega)$ and consider the log-canonical Poisson structures $\{\cdot,\cdot\}_{\cX'}$ and $\{\cdot,\cdot\}_{\cA'}$ on $L_{\cX'}$ and $L_{\cA'}$ given by
 \begin{equation}
   \label{eq:brackets2}
-  \{y'_k,y'_\ell\}'_\cX=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}'_\cA=\Omega'_{ij}x'_ix'_j.
+  \{y'_k,y'_\ell\}_{\cX'}=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}_{\cA'}=\Omega'_{ij}x'_ix'_j.
 \end{equation}
 Define $L_{\cX',\bfr}$ and $L_{\cA',\bfr}$ as above with corresponding orthants $L^\times_{\cX',\bfr}$ and $L^\times_{\cA',\bfr}$.
 \begin{lemma}
   \label{le:tropical cluster transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ which are each the identity map on the $L_\bfr$ component and are given on coordinates of $L^\times_\cX$ and $L^\times_\cA$ by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ which are each the identity map on the $L_\bfr^\times$ component and are given on coordinates of $L^\times_\cX$ and $L^\times_\cA$ by
   \begin{align}
     \label{eq:tropical X transformation}
     (\tau_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)
@@ -926,15 +926,15 @@ In particular, each vertex $t\in\TT_n$ is uniquely determined by a sequence of i
 
 Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}=(B_{ij;t_0})$ and assign exchange matrices $\tilde B_t=(B_{ij;t})$ to the vertices $t\in\TT_n$ so that $\tilde B_{t'}=\mu_{\bfr,k}\tilde B_t$ whenever $t$ and $t'$ are joined by an edge labeled by $k$.
 The collection $\{\tilde B_t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B_{t_0}$ and any two exchange matrices $\tilde B_t$, $\tilde B_{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
-Given a skew-symmetric $m\times m$ matrix $\Omega_{t_0}=(\Omega_{ij;t_0})$ compatible with $\tilde B_{t_0}$, we define matrices $\Omega_t=(\Omega_{ij;t})$ compatible with $\tilde B_t$ by iterating mutations as above.
+Given a skew-symmetric $m\times m$ matrix $\Omega_{t_0}=(\Omega_{ij;t_0})$ which is $D$-compatible with $\tilde B_{t_0}$, we define matrices $\Omega_t=(\Omega_{ij;t})$ compatible with $\tilde B_t$ by iterating mutations as above.
 
 As observed above, the inverse of a cluster mutation $\mu_{-,\bfr}^{k,\varepsilon}$ requires a change in the sign of $\varepsilon$.
 In general, it will be important to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations for the cluster charts $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$.
 To specify these signs, we observe that the mutation pattern gives rise to the following combinatorial construction.
 \begin{definition}
   \label{def:tropical signs}
-  Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B_{t_0}=\tilde B_{prin}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
-  Then, given $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$, the lower $n\times n$ submatrix $C_t:=(C_{ij;t})$ of $\tilde B_t$ transforms as follows when $t$ and $t'$ are joined by an edge labeled $k$:
+  Given an $n\times n$ skew-symmetrizable matrix $B$, let $\tilde B_{prin,t_0}$ denote the $2n\times n$ exchange matrix with principal submatrix $B$ and lower $n\times n$ submatrix given by the $n\times n$ identity matrix $I_n$.
+  Then, given $\tilde B_{prin,t}$ mutation equivalent to $\tilde B_{prin,t_0}$, the lower $n\times n$ submatrix $C_t:=(C_{ij;t})$ of $\tilde B_{prin,t}$ transforms as follows when $t$ and $t'$ are joined by an edge labeled $k$ (note that either choice of sign $\varepsilon$ below will produce the same result):
   \begin{equation}
     \label{eq:c-matrix mutation 1}
     C_{ij;t'}=
@@ -943,12 +943,13 @@ To specify these signs, we observe that the mutation pattern gives rise to the f
       C_{ij;t}+[-\varepsilon C_{ik;t} r_k]_+B_{kj;t}+C_{ik;t}[\varepsilon r_kB_{kj;t}]_+ & \text{if $j\ne k$.}
     \end{cases}
   \end{equation}
-  It is important to note that this is a piecewise linear map on the columns of $C_t$.
+  It is important to observe that this is a piecewise-linear map on the columns of $C_t$.
+
   The $C$-matrices admit the following remarkable \emph{sign-coherence} property (c.f.\ \cite{FZ07,NZ12,GHKK14,NR16}): 
   \begin{itemize}
     \item each column of $C_t$, known as a \emph{$\bfc$-vector}, has either all non-negative entries or all non-positive entries.
   \end{itemize}
-  Thus each exchange matrix $\tilde B_t$ mutation equivalent to $\tilde B_{t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{\bfr,k;t}\in\{\pm1\}$, where $\varepsilon_{\bfr,k;t}=1$ if the entries in the $k$-th column of $C_t$ are non-negative and $\varepsilon_{\bfr,k;t}=-1$ if the entries in the $k$-th column of $C_t$ are non-positive. 
+  Thus each exchange matrix $\tilde B_{prin,t}$ mutation equivalent to $\tilde B_{prin,t_0}$ admits a collection of \emph{tropical signs} $\varepsilon_{\bfr,k;t}\in\{\pm1\}$, where $\varepsilon_{\bfr,k;t}=1$ if the entries in the $k$-th column of $C_t$ are non-negative and $\varepsilon_{\bfr,k;t}=-1$ if the entries in the $k$-th column of $C_t$ are non-positive. 
   Taking the tropical sign in the mutation formula \eqref{eq:c-matrix mutation 1} for $\bfc$-vector the transformation gives the following simplified mutation rule:
   \begin{equation}
     \label{eq:c-matrix mutation 2}
@@ -958,10 +959,10 @@ To specify these signs, we observe that the mutation pattern gives rise to the f
       C_{ij;t}+C_{ik;t}[\varepsilon_{\bfr,k;t} r_kB_{kj;t}]_+ & \text{if $j\ne k$.}
     \end{cases}
   \end{equation}
-  Note that this gives a linear map on the columns of $C_t$.
+  Observe that the mutation rule has become an honestly linear map on the columns of $C_t$ once we choose to mutate according to the tropical sign.
 
-  Given an arbitrary exchange matrix $\tilde B$, we may construct a corresponding principalized exchange matrix $\tilde B_{prin}$ from the principal submatrix $B$ of $\tilde B$.
-  Then for each vertex $t\in\TT_n$, we associate the same tropical signs $\varepsilon_{\bfr,k;t}$ as above to the columns of $\tilde B_t$.
+  Given an arbitrary initial exchange matrix $\tilde B_{t_0}$, we may construct a corresponding principalized exchange matrix $\tilde B_{prin,t_0}$ from the principal submatrix $B$ of $\tilde B_{t_0}$.
+  Then for each vertex $t\in\TT_n$, we associate the same tropical signs $\varepsilon_{\bfr,k;t}$ as above to the columns of each exchange matrix $\tilde B_t$ mutation equivalent of $\tilde B_{t_0}$.
 \end{definition}
 
 We associate a Poisson space $L^\times_{\cX;t}$ isomorphic to either $\RR_\times^n$ or $\CC_\times^n$ and a Poisson space $L^\times_{\cA;t}$ isomorphic to either $\RR_\times^m$ or $\CC_\times^m$ to each vertex $t\in\TT_n$.
@@ -997,7 +998,7 @@ As above, we also introduce the Poisson spaces $L^\times_{\cX,\bfr;t}$ isomorphi
 For both the cluster $\cA$-varieties \cite{GSV10} and $\cX$-varieties \cite{FG09c}, a Poisson structure is \emph{compatible} with mutations if the coordinates of each cluster chart are log-canonical (c.f.\ equation \eqref{eq:brackets}).
 \begin{theorem}
   \cite{GSV10}
-  The Poisson structures on the cluster charts $L^\times_{\cX,\bfr;t}$ and $L^\times_{\cA,\bfr;t}$ determined by the $D$-compatible pairs $(\tilde B_t,\Omega_t)$ glue to give a global Poisson structure on the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ which is log-canonical over each cluster chart.
+  The Poisson structures on the cluster charts $L^\times_{\cX,\bfr;t}$ and $L^\times_{\cA,\bfr;t}$ determined by the $D$-compatible pairs $(\tilde B_t,\Omega_t)$ glue to give global Poisson structures on the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ which are log-canonical over each cluster chart.
   Moreover, the Poisson morphisms $\rho_t:L^\times_{\cA,\bfr;t}\to L^\times_{\cX,\bfr;t}$ glue to give a Poisson morphism $\rho:\cA_\bfr\to\cX_\bfr$.
 \end{theorem}
 
@@ -1014,7 +1015,7 @@ To understand these iterated mutations, we introduce the following combinatorial
 
 The \emph{$\bfg$-vector} of $x_{j;t}$ is the integer vector $(G_{ij;t})_{i=1}^m\in\ZZ^m$ defined recursively as follows.
 We begin with the identity matrix $G_{ij;t_0}=\delta_{ij}$.
-Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ we compute using the following recursion (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
+Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$, we compute using the following recursion (recall that we mutate according to the tropical sign $\varepsilon_{\bfr,k;t}$):
 \begin{equation}
   \label{eq:g-matrix mutation}
   G_{ij;t'}=
@@ -1027,7 +1028,7 @@ Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$ we comp
   Since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $G_{ij;t}=\delta_{ij}$ for $n+1\le j\le m$.
 \end{remark}
 Next we introduce the \emph{$F$-polynomials} $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$ of the cluster variables $x_{j;t}$.
-These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined by an edge labeled $k$ in $\TT_n$:
+These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined in $\TT_n$ by an edge labeled $k$:
 \begin{equation}
   \label{eq:F-polynomial mutation}
   F_{j,\bfr;t'}=
@@ -1039,19 +1040,27 @@ These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via th
 \begin{remark}
   Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{j,\bfr;t}=1$ for $n+1\le j\le m$.
 \end{remark}
-As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulae (c.f.\ \cite{FZ07,Nak15,NR16}):
-\begin{align}
-  \label{eq:separation of additions 1}
-  \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
-  \label{eq:separation of additions 2}
-  \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}}.
-\end{align}
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulae.
+\begin{theorem}
+  \cite{FZ07,Nak15,NR16}
+  For any vertex $t\in\TT_n$, we have
+  \begin{align}
+    \label{eq:separation of additions 1}
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
+    \label{eq:separation of additions 2}
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}}.
+  \end{align}
+\end{theorem}
 \begin{remark}
   The separation of additions formula for the cluster variables $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ usually has a denominator computed via a ``tropical evaluation'' of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$.
   We have bypassed this by using $\bfg$-vectors from $\ZZ^m$ rather than the standard convention with $\bfg$-vectors in $\ZZ^n$.
   It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our separation of additions formula reduces to the standard one in the case of geometric coefficients.
 \end{remark}
 
+It is often the case that a sequence of cluster mutations is essentially an identity mapping, this is made precise as follows.
+\begin{definition}
+  A \emph{periodicity} of the cluster algebra $\cA_\bfr(\tilde B_{t_0},\Omega_{t_0})$ is
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mutation of Groupoid Charts}
