@@ -94,7 +94,7 @@
   Extensions of these groupoids to the completions of the cluster varieties where cluster variables are allowed to vanish are also considered.  
 
   In the real case, we construct source-simply-connected groupoids for the cluster charts via the Poisson spray technique of Crainic and M\u{a}rcu\c{t}.
-  These groupoid charts and their analogues for the symplectic double and blow-up groupoids are glued by lifting the cluster mutations to groupoid comorphisms whose formulae are motivated by the Hamiltonian perspective of cluster mutations introduced by Fock and Goncharov.
+  These groupoid charts and their analogues for the symplectic double and blow-up groupoids are glued by lifting the cluster mutations to groupoid comorphisms whose formulas are motivated by the Hamiltonian perspective of cluster mutations introduced by Fock and Goncharov.
 \end{abstract}
 \maketitle
 
@@ -146,7 +146,7 @@ In this way, it seems likely that the groupoid $\cB$ will be most useful in the 
 Observe that both $\cB \rra L$ and $\cD \rra L$ receive maps from the source-simply-connected symplectic groupoid $\cG$.
 
 The groupoids of the cluster $\cA$-variety and cluster $\cX$-variety are not constructed globally but rather are glued from groupoid charts over each cluster chart.
-In Section~\ref{sec:mutations}, we give the explicit formulae for the cluster groupoid mutations $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$.
+In Section~\ref{sec:mutations}, we give the explicit formulas for the cluster groupoid mutations $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$.
 We begin in Section~\ref{sec:cluster mutations} in the setting of generalized cluster mutations $\mu: L \to L'$ which we decompose into two maps $\varphi^1$ and $\tau$ according to the Hamiltonian perspective of mutations \cite{FG09a, GNR17}.
 The first map $\varphi^1$ is the time-$1$ flow of a Hamiltonian vector field defined using the Euler dilogarithm function; the second map $\tau$ is a transformation of the log-canonical coordinates.
 We then lift $\varphi^1$ and $\tau$ to groupoid maps which compose to give the cluster groupoid mutations.
@@ -734,7 +734,7 @@ This perspective was first given in \cite{FG09c} and is the foundation for the m
 We demonstrate how the Hamiltonian perspective provides a canonical choice of mutations for groupoid charts which glue to give a symplectic groupoid integrating various log-canonical Poisson structures on cluster varieties.
 The standard combinatorics of $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials are then lifted to provide descriptions of iterations of the gluing maps for groupoid charts.
 
-While in Section~\ref{sec:local} it was most convenient to use covariant notation for all maps of groupoids, due to the algebraic nature of cluster mutations and also the piecewise nature of the formulae, in this section we use contravariant notation for describing all maps, i.e.\ we describe them via the pullback of coordinate functions.
+While in Section~\ref{sec:local} it was most convenient to use covariant notation for all maps of groupoids, due to the algebraic nature of cluster mutations and also the piecewise nature of the formulas, in this section we use contravariant notation for describing all maps, i.e.\ we describe them via the pullback of coordinate functions.
 
 Let $\tilde B=(B_{ij})$ be an $m\times n$ integer matrix with $m\ge n$.
 Write $B$ for the upper $n\times n$ submatrix of $\tilde B$ and assume $B$ is skew-symmetrizable, i.e.\ there exists a diagonal integer matrix $D=\diag(d_1,\ldots,d_n)$ with each $d_i>0$ so that $DB$ is skew-symmetric. 
@@ -1042,7 +1042,7 @@ These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via th
 \begin{remark}
   Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{j,\bfr;t}=1$ for $n+1\le j\le m$.
 \end{remark}
-As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulae.
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulas.
 \begin{theorem}
   \label{th:separation}
   \cite{FZ07,Nak15,NR16}
@@ -1075,7 +1075,7 @@ It is often the case that a sequence of cluster mutations is essentially an iden
 \end{definition}
 In other words, a periodicity of cluster mutations determines a gluing of cluster charts which is (up to a permutation) just an identity mapping.
 %A result of Gekhtman, Shapiro, and Vainshtein \cite[Theorem 7.4]{GSV10} shows that condition (1) implies all the others.
-We will need the following important consequence of the separation of additions formulae and the sign-coherence of $\bfc$-vectors.
+We will need the following important consequence of the separation of additions formulas and the sign-coherence of $\bfc$-vectors.
 \begin{corollary}
   \label{cor:periodicity}
   A periodicity of cluster mutations gives the following equalities:
@@ -1114,7 +1114,7 @@ Here is an outline for this section:
     We also show that the Lie functor maps the graphs of these groupoid morphisms to the graphs of the algebroid comorphisms naturally induced by the Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$.
   \item We lift the Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}$ in Lemma~\ref{le:tropical cluster transformations} to groupoid comorphisms and show that they can also be interpreted as groupoid morphisms.
   \item Combining the last two steps above, we obtain the mutation rule for groupoid charts analogous to the (generalized) cluster mutations in Corollary~\ref{cor:cluster mutation}.
-    Through analogues of the separation of additions formulae \eqref{eq:separation of additions 1} and \eqref{eq:separation of additions 2} (c.f.\ Theorem~\ref{th:groupoid separation of additions}), we show that any periodicity of cluster mutations lifts to a periodicity of groupoid mutations (assuming groupoid mutations are always performed according to the tropical signs of the corrseponding $\bfc$-vectors).
+    Through analogues of the separation of additions formulas \eqref{eq:separation of additions 1} and \eqref{eq:separation of additions 2} (c.f.\ Theorem~\ref{th:groupoid separation of additions}), we show that any periodicity of cluster mutations lifts to a periodicity of groupoid mutations (assuming groupoid mutations are always performed according to the tropical signs of the corrseponding $\bfc$-vectors).
     In particular, this shows that groupoid charts indeed glue to give symplectic groupoids over the cluster $\cA$- and $\cX$-varieties.
 \end{enumerate}
 
@@ -1171,7 +1171,7 @@ as the restrictions of the groupoids above to appropriate orthants in $L_{\cX,\b
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-  We prove \eqref{eq:ensembleG} over the positive orthants, the formulae for $\cB$ and $\cD$ follow easily using the diagram \eqref{eq:LGpdCD}.
+  We prove \eqref{eq:ensembleG} over the positive orthants, the formulas for $\cB$ and $\cD$ follow easily using the diagram \eqref{eq:LGpdCD}.
   Taking the derivative of $\rho:L^\times_\cA\to L^\times_\cX$, whose graph is given by the equation
   \[y_k = \prod_{i=1}^m x_i^{B_{ik}},\]
   we obtain the pullback map $\rho^*: \Omega^1(L^\times_\cX) \to \Omega^1(L^\times_\cA)$ given by
@@ -1183,7 +1183,8 @@ as the restrictions of the groupoids above to appropriate orthants in $L_{\cX,\b
   \[p_i = \frac{1}{x_i} \sum_{k=1}^n B_{ik} \hat{y}_k q_k, \qquad i = 1, \ldots, m.\]
   The graph of the Lie algebroid comorphism $\rho^*$ from $T^*_{\pi_\cA} L^\times_\cA$ to $T^*_{\pi_\cX} L^\times_\cX$ is defined by
   \[x_i p_i =  \sum_{k=1}^n B_{ik} y_k q_k, \qquad i = 1, \ldots, m.\]
-  By Lemma~\ref{lemma:PoisSp} and Corollary~\ref{cor:exp}, both $x_i p_i$ and $y_k q_k$ are invariant under the exponential map, so \eqref{eq:ensembleG} follows.
+  By Corollary~\ref{cor:exp}, both $x_i p_i$ and $y_k q_k$ are invariant under the exponential map to the Lie groupoids.
+  But Corollary~\ref{cor:exp} shows that the cotangent Lie algebroids $T^*_{\pi_\cA} L^\times_\cA$ and $T^*_{\pi_\cX} L^\times_\cX$ are diffeomorphic respectively to the groupoids $\cG_\cA$ and $\cG_\cX$, so the associated Lie groupoid comorphism is given by the equivalent formula \eqref{eq:ensembleG}.
 \end{proof}
 
 \begin{remark}
@@ -1198,69 +1199,11 @@ as the restrictions of the groupoids above to appropriate orthants in $L_{\cX,\b
   Indeed, a morphism of groupoids must take the identity image to the identity image and thus there is a unique choice of branch to take, in other words the maps $\rho:\cB_\cA\to\cB_\cX$ and $\rho:\cD_\cA\to\cD_\cX$ are actually well-defined covering maps on the fibers.
 
   The choice of coordinates used in \cite{FG09c} can be identified with our coordinates $t_\ell^{d_\ell}$, one may motivate such a choice by the desire to avoid the fractional exponents above, however as observed such considerations are unnecessary.
-  %When $L_\cX=\RR_\times^n$ and $L_\cA=\RR_\times^m$, the Poisson ensemble map $\rho:L_\cA\to L_\cX$ also lifts to a morphism of symplectic groupoids $\bar\rho:\cD_\cA\to\cD_\cX$ given on fiber coordinates by 
-  %\footnote{This might actually require $m=n$.}
-  %\[\bar\rho^*(t_\ell)=\prod\limits_{j=1}^m s_j^{-d_\ell^{-1}\Omega_{\ell j}}.\]
-  %Indeed, when $L_\cX=(\CC^\times)^n$ and $L_\cA=(\CC^\times)^m$, the symplectic double $\cD_\cA$ is not source-simply-connected and the Poisson map $\rho$ does not lift to a well-defined groupoid map $\bar\rho$.
 \end{remark}
 
-
-%To lift the Poisson maps $\mu_{\cX,\bfr}^{k,\varepsilon}:L_{\cX,\bfr}\to L'_{\cX,\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L'_{\cA,\bfr}$ to groupoid maps, we use their Hamiltonian nature.
-%In general, Poisson vector fields (in particular, Hamiltonian vector fields) are lifted to multiplicative Hamiltonian vector fields \cite{Fer07}.
-%More precisely, if $(\cG, \omega) \rra (M, \pi)$ is a symplectic groupoid and $X_f \in \cT_M$ is the Hamiltonian vector field of $f \in \cO_M$, then $X_f$ is lifted to the Hamiltonian vector field $X_{\tilde{f}} \in \cT_\cG$, where $\tilde{f} := \alpha^*f - \beta^*f$.
-%Indeed, $\tilde{f} \in \cO_\cG$ is multiplicative since $\tilde{f} = \partial f$, where $\partial$ is the groupoid coboundary operator \eqref{eq:gpdcob}, and $\omega$ is multiplicative by definition, so the Hamiltonian vector field $X_{\tilde{f}} = \iota_{d\tilde{f}}\omega^{-1}$ is multiplicative.
-%Consequently, the flow of $X_{\tilde{f}}$ preserves the symplectic groupoid structure on $(\cG,\omega)$.
-
-%As the first step, we explicitly compute the Poisson structures on the symplectic groupoids $\cG_\cX$, $\cD_\cX$, $\cG_\cA$, and $\cD_\cA$.
-%Note that on $T^*L_\bfr$ we have the canonical Poisson structure 
-%\begin{equation}
-%  \label{eq:canonical brackets}
-%  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
-%\end{equation}
-%\begin{lemma}
-%  \label{le:groupoid Poisson structures}
-%  \begin{align}
-%    \pi_{\cG_\cX}:=\omega_{\cG_\cX}^{-1}&=\sum_{k} \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_k} - \sum_{k, \ell} d_kB_{k\ell}q_k y_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial y_\ell}\\
-%    \nonumber &\quad+\sum_{\ell < k} d_kB_{k\ell}q_kq_\ell \frac{\partial}{\partial q_k} \wedge \frac{\partial}{\partial q_\ell}
-%+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-%    \pi_{\cD_\cX}:=\omega_{\cD_\cX}^{-1}&=\sum_{k} t_ky_k\frac{\partial}{\partial t_k} \wedge \frac{\partial}{\partial y_k}+\sum_{\ell < k} d_kB_{k\ell}y_ky_\ell \frac{\partial}{\partial y_k} \wedge \frac{\partial}{\partial y_\ell};\\
-%    \pi_{\cG_\cA}:=\omega_{\cG_\cA}^{-1}&=\sum_{i} \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_i} - \sum_{i, j} \Omega_{ij}p_i x_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial x_j}\\
-%    \nonumber &\quad+\sum_{j < i} \Omega_{ij}p_ip_j \frac{\partial}{\partial p_i} \wedge \frac{\partial}{\partial p_j}
-%		    +\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j};\\
-%    \pi_{\cD_\cA}:=\omega_{\cD_\cA}^{-1}&=\sum_{i} s_ix_i\frac{\partial}{\partial s_i} \wedge \frac{\partial}{\partial x_i}+\sum_{j < i} \Omega_{ij}x_ix_j \frac{\partial}{\partial x_i} \wedge \frac{\partial}{\partial x_j}.
-%  \end{align}
-%\end{lemma}
-%\begin{proof}
-%  We prove these statements only for the groupoids over $L_\cA$, the corresponding statements over $L_\cX$ follow by a simple change of notation.
-%
-%  Choosing the standard frames: $\{dx_i, dp_i\}_i$ for $T^*\cG_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial p_i}\right\}_i$ for $T\cG_\cA$, the bundle map $\pi_{\cG_\cA}^\flat: T^*\cG_\cA \to T\cG_\cA, \quad \alpha \mapsto \pi_{\cG_\cA}(\alpha, \cdot)$ is given by
-%  \begin{align*}
-%    \pi_{\cG_\cA}^\flat: &~ dx_i \mapsto -\frac{\partial}{\partial p_i} - \sum_{j} \Omega_{ij} x_i p_j \frac{\partial}{\partial p_j}+ \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
-%    &~ dp_i \mapsto \frac{\partial}{\partial x_i} - \sum_{j} \Omega_{ij} p_i x_j \frac{\partial}{\partial x_j}+ \sum_{j} \Omega_{ij} p_i p_j \frac{\partial}{\partial p_j},
-%  \end{align*}
-%  and for the symplectic structure $\omega_{\cG_\cA}$ as in \eqref{eq:2-formGA}, the bundle map $\omega_{\cG_\cA}^\sharp: T\cG_\cA \to T^*\cG_\cA, \quad v \mapsto \omega_{\cG_\cA}(v, \cdot)$ is given by
-%  \begin{align*}
-%    \omega_{\cG_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto dp_i + \sum_{j} \Omega_{ij} p_i x_j dp_j + \sum_{j} \Omega_{ij} p_i p_j dx_j, \\
-%    &~ \frac{\partial}{\partial p_i} \mapsto -dx_i + \sum_{j} \Omega_{ij} x_i p_j dx_j + \sum_{j} \Omega_{ij} x_i x_j dp_j.
-%  \end{align*}
-%
-%
-%Similarly, choosing the standard frames: $\{dx_i, ds_i\}_i$ for $T^*\cD_\cA$ and $\left\{\frac{\partial}{\partial x_i}, \frac{\partial}{\partial s_i}\right\}_i$ for $T\cD_\cA$, the bundle map $\pi_{\cD_\cA}^\flat: T^*\cD_\cA \to T\cD_\cA, \quad \alpha \mapsto \pi_{\cD_\cA}(\alpha, \cdot)$ is given by
-%  \begin{align*}
-%    \pi_{\cD_\cA}^\flat: &~ dx_i \mapsto -x_i s_i \frac{\partial}{\partial s_i} + \sum_{j} \Omega_{ij} x_i x_j \frac{\partial}{\partial x_j}, \\
-%    &~ ds_i \mapsto s_i x_i \frac{\partial}{\partial x_i},
-%  \end{align*}
-%  and for the symplectic structure $\omega_{\cD_\cA}$ as in \eqref{eq:2-formGX}, the bundle map $\omega_{\cD_\cA}^\sharp: T\cD_\cA \to T^*\cD_\cA, \quad v \mapsto \omega_{\cD_\cA}(v, \cdot)$ is given by
-%  \begin{align*}
-%    \omega_{\cD_\cA}^\sharp: &~ \frac{\partial}{\partial x_i} \mapsto \frac{1}{x_i s_i} ds_i, \\
-%    &~ \frac{\partial}{\partial s_i} \mapsto -\frac{1}{x_i s_i} dx_i + \sum_{j} \frac{\Omega_{ij}}{s_i s_j} ds_j.
-%  \end{align*}
-%
-%  We leave it to the reader to check that $\pi_{\cG_\cA}^\flat$ (resp.\ $\pi_{\cD_\cA}^\flat$) and $\omega_{\cG_\cA}^\sharp$ (resp.\ $\omega_{\cD_\cA}^\sharp$) are inverse to each other.
-%\end{proof}
-
-Next, we lift the Hamiltonian Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows}. Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cX,\bfr}^{k,\varepsilon}-\beta^* h_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^* h_{\cA,\bfr}^{k,\varepsilon}-\beta^* h_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$.
-More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians}:
+Next, we lift the Hamiltonian Poisson maps $\varphi_{\cX,\bfr}^t$ and $\varphi_{\cA,\bfr}^t$ in Corollary~\ref{cor:time-one flows}.
+Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\varepsilon}:=\alpha^*(h_{\cX,\bfr}^{k,\varepsilon})-\beta^*(h_{\cX,\bfr}^{k,\varepsilon})$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and functions $H_{\cA,\bfr}^{k,\varepsilon}:=\alpha^*(h_{\cA,\bfr}^{k,\varepsilon})-\beta^*(h_{\cA,\bfr}^{k,\varepsilon})$ on the groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$.
+More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians} using appropriate source and target maps:
 \begin{align}
   \label{eq:X hamiltonian}
   H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(Z_k(u)\big)}{u}du;\\
@@ -1302,19 +1245,19 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
 \end{proof}
 
-Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$.
+Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$.
 \begin{corollary}
   \label{cor:groupoid hamiltonian flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L^\times_{\cX,\bfr} \to L^\times_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG^\times_{\cX,\bfr} \to \cG^\times_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB^\times_{\cX,\bfr} \to \cB^\times_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD^\times_{\cX,\bfr} \to \cD^\times_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right),\\
-    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1)-1,\\
+    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right);\\
+    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell + 1)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1);\\
     (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
   and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L^\times_{\cA,\bfr} \to L^\times_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB^\times_{\cA,\bfr} \to \cB^\times_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD^\times_{\cA,\bfr} \to \cD^\times_{\cA,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right), \\
-    (\varphi_{\cA,\bfr}^t)^*(u_jx_j)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1)-1, \\
+    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right);\\
+    (\varphi_{\cA,\bfr}^t)^*(u_jx_j+1)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1);\\
     (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
   Each of the Hamiltonian flows above transform the coordinates $b_{\ell,j}$ on $T^*L^\times_\bfr$ according to
@@ -1327,16 +1270,16 @@ Consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector f
   To see this, it suffices to make the following observations:
   \begin{itemize}
     \item The quantities $y_k$, $e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}$, $\prod_{\ell'=1}^n (v_{\ell'}y_{\ell'}+1)^{\varepsilon d_{\ell'} B_{\ell' k}}$, and $\prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}$ are conserved under the flow of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$.
-      It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$.
-    \item The quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_kx_k+1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
-      It follows that $\frac{d}{dt}(p_jx_j)$ is a constant, $\frac{d}{dt}(u_j x_j)$ is a constant multiple of $u_j x_j+1$, and $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
+      It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell+1)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$.
+    \item The quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_k x_k + 1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
+      It follows that $\frac{d}{dt}(p_jx_j)$ is a constant, $\frac{d}{dt}(u_j x_j + 1)$ is a constant multiple of $u_j x_j+1$, and $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
   \end{itemize}
 \end{proof}
 
 For the groupoid morphism $\varphi_{\cA,\bfr}^1: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$ in Corollary~\ref{cor:groupoid hamiltonian flows}, we give an explicit verification that the corresponding Lie algebroid morphism is the dual bundle map of the Lie algebroid comorphism induced by the base Poisson map $\varphi_{\cA,\bfr}^1:L^\times_{\cA,\bfr}\to L^\times_{\cA,\bfr}$.
 A similar story exists for the other groupoid maps in Corollary~\ref{cor:groupoid hamiltonian flows}.
 
-To ease the notation, we drop the time parameter in the superscript, fix $\bfr$ and use Sans-serif font for the coordinates for the range, e.g.\ $\sfx$ for the range vs $x$ for the domain.
+To ease the notation, we drop the time parameter in the superscript, fix $\bfr$ and use Sans-serif font for the coordinates for the range, e.g.\ $\sfx$ for the range versus $x$ for the domain.
 To begin with, we apply the Lie functor, see \eqref{eq:Liefunctor} and the ensuing discussion.
 The source map of $\cG_\cA \rra L_\cA$ is 
 \[
@@ -1371,7 +1314,7 @@ we obtain the pullback map
 	(\varphi_{\cA,\bfr})^*: ~& \Omega^1(L_\cA) \to \Omega^1(L_\cA), \\
 	& d \sfx_j = dx_j, \qquad \text{if}~j\ne k, \\
 	& d \sfx_k = \frac{1}{Z_k(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{Z'_k(\hat{y}_k^\varepsilon)}{\left(Z_k(\hat{y}_k^\varepsilon)\right)^2} dx_j \\
-	& \quad \; \, = \frac{1}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{Z'_k(\hat{\sfy}_k^\varepsilon)}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_j
+	& \quad \; \, = \frac{1}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{Z'_k(\hat{\sfy}_k^\varepsilon)}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_j.
 \end{align*}
 If we identify $\Lie \left(\cG_\cA \right)$ and $T^*_{\pi_\cA} L_\cA$ via
 \[
@@ -1470,31 +1413,31 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
   \end{align*}
   defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi_{-,\bfr}^1$ given on coordinates by
   \begin{align}
-    \label{eq:GX mutation}
+    \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
       -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon r_k B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k + \frac{y_k}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
       q_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:BX mutation}
+    \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(v'_\ell)
     &=\begin{cases} 
       y_k \left[ (v_k y_k + 1)^{-1} \left(\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} +1)^{[\varepsilon r_k B_{k\ell'}]_+}\right)\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} - 1\right] & \text{if $\ell=k$;}\\ 
       v_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:DX mutation}
+    \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
       t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon r_k B_{k\ell'}]_+}\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
-    \label{eq:GA mutation}
+    \nonumber
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)&=
     \begin{cases} 
       -p_k x_k^2 \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
       p_j + [-\varepsilon B_{jk} r_k]_+ \frac{p_k x_k}{x_j} - \frac{B_{jk}}{d_k x_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
-    \label{eq:BA mutation}
+    \nonumber
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(u'_j)
     &=\begin{cases}
       x_k \left[ (u_k x_k +1)^{-1} -1\right] \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
@@ -1527,7 +1470,7 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
 \end{equation}
 \begin{remark}
   \label{rem:extended groupoid charts}
-  While the formulae for the groupoid mutations were only defined over the positive real orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$, they can often also be used to glue the various groupoids over larger (sometimes dense) subsets of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ as in Remark~\ref{rem:extended cluster charts}.
+  While the formulas for the groupoid mutations were only defined over the positive real orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$, they can often also be used to glue the various groupoids over larger (sometimes dense) subsets of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ as in Remark~\ref{rem:extended cluster charts}.
   However, certain additional subtleties must be overcome in the groupoid case:
   \begin{enumerate}
     \item In the real case, the mutation rules for $q'_\ell$ and $p'_j$ can only be extended to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ since only the logarithms of positive real numbers are again real.
@@ -1535,7 +1478,7 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
       Indeed, although $\log(-)$ is multivalued as a function on $\CC_\times$, the functions $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ are well-defined on these dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
       To see this, note that $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are groupoid morphisms and hence must carry the identity image to the identity image.
       This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ at the origin of each source fiber.
-      Thus, by simple-connectedness, we are able to fix the choice of branch cut when computing their values at arbitrary points of the source fibers. 
+      Thus, by simple-connectedness, we are able to fix the choice of branch cut to use when computing their values at arbitrary points of the source fibers. 
     \item Again in the real case, the existence of an even skew-symmetrizer $d_k$ similarly restricts the extendability of the mutation rules for $v'_\ell$, $t'_\ell$ and $u'_j$, $s'_j$ to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
       In the complex case or when all skew-symmetrizers are odd, we must avoid the loci where $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$, and $\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$ are undefined or zero.
       Away from these loci in the complex case, the identity image can again be used to define a splitting of the $d_k$-fold covering map from $\CC_\times$ to $\CC_\times$.
@@ -1557,11 +1500,23 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
         &=\begin{cases} 
           p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
           p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
-          p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+          p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$;}
         \end{cases}
       \end{align*}
+      where the last equality uses that $a Z_k'(a) Z_k(b) - b Z_k(a) Z_k'(b)$ has lowest degree term $z_{k,1}(a-b)$ and highest degree term $z_{k,r_k-1} a^n b^n (b^{-1}-a^{-1})$.
+
       Observe that this restricted mutation map is again not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
       Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L_{\cA',\bfr}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$, in particular the gluing of fibers will not be attempted over these loci. 
+
+      We leave it as an exercise for the reader to verify the following mutation rule for the coordinates $u'_j$ over the locus where $x_j=0$:
+      \begin{align*}
+        (\mu_{\cA,\bfr}^{k,\varepsilon}|_{x_j=0})^*(u'_j)
+        &=\begin{cases} 
+          u_j & \text{if $|B_{jk}| \ne 1$;}\\ 
+          u_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} ((u_k x_k+1)^{-\varepsilon d_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
+          u_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} ( (u_k x_k +1)^{\varepsilon d_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+        \end{cases}
+      \end{align*}
   \end{enumerate}
 \end{remark}
 
@@ -1572,9 +1527,9 @@ Our goal is to glue the various groupoid charts over the cluster charts to get g
 Given a pair of vertices $t,t'\in\TT_n$, we will define iterated mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ of the groupoid charts as we did for the cluster charts by composing the maps in Theorem~\ref{th:groupoid mutation} along the unique path from $t$ to $t'$ in $\TT_n$ (with mutations always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}).
 We have seen that certain sequences of cluster mutations essentially just give identity mappings between cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
 These identity mappings should lift to identity mappings on groupoid charts, but it is not obvious from the definitions that the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just identity mappings.
-To establish this, we introduce analogues of the separation of additions formulae from Theorem~\ref{th:separation}.
+To establish this, we introduce analogues of the separation of additions formulas from Theorem~\ref{th:separation}.
 
-As a first step in lifting the separation of additions formulae~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we introduce analogues of the $\bfc$-vectors and $\bfg$-vectors which describe iterations of the cluster mutations.
+As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we introduce analogues of the $\bfc$-vectors and $\bfg$-vectors which describe iterations of the cluster mutations.
 To begin let $C^\vee_{t_0}$ be an $m\times m$ identity matrix and let $G^\vee_{t_0}$ be an $n\times n$ identity matrix.
 We then assign matrices $C^\vee_t:=(C^\vee_{ij;t})$ and $G^\vee_t:=(G^\vee_{ij;t})$ to the vertices $t\in\TT_n$ by the following recursion.
 For vertices $t,t'\in\TT_n$ joined by an edge labeled $k$, the matrices $C^\vee_t$ and $C^\vee_{t'}$ are related by
@@ -1692,7 +1647,7 @@ Recall Definition~\ref{def:periodicity} describing periodicities of cluster muta
   \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
   which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
   Combining this with Corollary~\ref{cor:periodicity} and Lemma~\ref{le:dual vectors} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
-  The result then immediately follows from Lemma~\ref{le:dual vectors} part (3) together with the separation of additions formulae in Theorem~\ref{th:groupoid separation of additions}.
+  The result then immediately follows from Lemma~\ref{le:dual vectors} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
 \end{proof}
 
 In particular, we see from this that given a periodicity of cluster mutations $(t_1,\ldots,t_w;\sigma)$, each of the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just permutations of groupoid coordinates as we hoped for.
@@ -1706,16 +1661,6 @@ Thus it is reasonable to give the following definition.
   Ideally these Poisson sprays would be compatible with mutations and thus glue to give a global construction of the source-simply-connected symplectic groupoids over the varieties $\cX_\bfr$ and $\cA_\bfr$.
   Unfortunately, this is not the case and we must make due with the iterative construction presented above.
 \end{remark}
-
-
-%\begin{equation} 
-%	\xymatrix{
-%		& \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\varphi}_\cA} \ar@/^1.2pc/[rrrr]|-{\bar{\mu}_\cA} && \cD_\cA \ar[dd]|-(.65){\bar{\rho}} \ar[rr]|-{\bar{\tau}_\cA} && \cD'_\cA \ar[dd]|-{\bar{\rho}} \\
-%	\cG_\cA \ar[dd]|-{\tilde{\rho}} \ar[rr]|-(.65){\tilde{\varphi}_\cA} \ar[ur]|-{\kappa_\cA} \ar@/^1.2pc/[rrrr]|-{\tilde{\mu}_\cA} && \cG_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[rr]|-(.65){\tilde{\tau}_\cA} \ar[ur]|-{\kappa_\cA} && \cG'_\cA \ar[dd]|-(.3){\tilde{\rho}} \ar[ur]|-{\kappa_\cA} \\
-%		& \cD_\cX \ar[rr]|-(.35){\bar{\varphi}_\cX} \ar@/_1.2pc/[rrrr]|-{\bar{\mu}_\cX} && \cD_\cX \ar[rr]|-(.35){\bar{\tau}_\cX} && \cD'_\cX \\
-%	\cG_\cX \ar[rr]|-{\tilde{\varphi}_\cX} \ar[ur]|-{\kappa_\cX} \ar@/_1.2pc/[rrrr]|-{\tilde{\mu}_\cX} && \cG_\cX \ar[rr]|-{\tilde{\tau}_\cX} \ar[ur]|-{\kappa_\cX} && \cG'_\cX \ar[ur]|-{\kappa_\cX}
-%	}
-%\end{equation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
