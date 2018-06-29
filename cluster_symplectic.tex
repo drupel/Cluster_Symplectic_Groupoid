@@ -1143,10 +1143,10 @@ As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introd
   \cG_{\cX,\bfr}&=\cG_\cX\times T^*L_\bfr,& \cB_{\cX,\bfr}&=\cB_\cX\times T^*L_\bfr,& \cD_{\cX,\bfr}&=\cD_\cX\times T^*L_\bfr,\\
   \cG_{\cA,\bfr}&=\cG_\cA\times T^*L_\bfr,& \cB_{\cA,\bfr}&=\cB_\cA\times T^*L_\bfr,& \cD_{\cA,\bfr}&=\cD_\cA\times T^*L_\bfr,
 \end{align*}
-where each cotangent bundle $T^*L_\bfr$ is equipped with its canonical symplectic structure and we write $b_{\ell,j}$ for the cotangent coordinate associated to the coordinate $z_{\ell,j}$ of $L_\bfr$.
+where each cotangent bundle $T^*L_\bfr$ is equipped with its canonical symplectic structure and we write $a_{\ell,j}$ for the cotangent coordinate associated to the coordinate $z_{\ell,j}$ of $L_\bfr$.
 Translating this symplectic structure into a Poisson bracket on $T^*L_\bfr$, we have
 \begin{equation*}
-  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},b_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{b_{k,i},b_{\ell,j}\}_\bfr=0.
+  \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},a_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{a_{k,i},a_{\ell,j}\}_\bfr=0.
 \end{equation*}
 For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
@@ -1231,9 +1231,9 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
     \nonumber
     \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
-  The coordinates $b_{\ell,j}$ on $T^*L^\times_\bfr$ evolve according to
+  The coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ evolve according to
   \begin{equation*}
-    \dot b_{\ell,j}=\{H_{-,\bfr}^{k,\varepsilon},b_{\ell,j}\}_-=\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
+    \dot a_{\ell,j}=\{H_{-,\bfr}^{k,\varepsilon},a_{\ell,j}\}_-=\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
   \end{equation*}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{lemma}
@@ -1261,9 +1261,9 @@ Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the 
     (\varphi_{\cA,\bfr}^t)^*(u_jx_j+1)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1);\\
     (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
-  Each of the Hamiltonian flows above transform the coordinates $b_{\ell,j}$ on $T^*L^\times_\bfr$ according to
+  Each of the Hamiltonian flows above transform the coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ according to
   \begin{equation*}
-    (\varphi_{-,\bfr}^t)^*(b_{\ell,j})=b_{\ell,j}+\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
+    (\varphi_{-,\bfr}^t)^*(a_{\ell,j})=a_{\ell,j}+t\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
   \end{equation*}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{corollary}
@@ -1274,7 +1274,9 @@ Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the 
       It follows that $\frac{d}{dt}(q_\ell y_\ell)$ is a constant, $\frac{d}{dt}(v_\ell y_\ell+1)$ is a constant multiple of $v_\ell y_\ell+1$, and $\frac{d}{dt}(t_\ell)$ is a constant multiple of $t_\ell$.
     \item The quantities $\hat y_k$, $e^{-\varepsilon d_kp_kx_k}$, $(u_k x_k + 1)^{-\varepsilon d_k}$, and $s_k^{-\varepsilon d_k}$ are conserved under the flow of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{\cG_{\cA,\bfr}}$.
       It follows that $\frac{d}{dt}(p_jx_j)$ is a constant, $\frac{d}{dt}(u_j x_j + 1)$ is a constant multiple of $u_j x_j+1$, and $\frac{d}{dt}(s_j)$ is a constant multiple of $s_j$.
+    \item As a result, in the flow of any groupoid, $\frac{d}{dt}(a_{\ell,j})$ is constant.
   \end{itemize}
+  In each case, the resulting differential equation is easy to solve and we leave as an exercise for the reader to check the formulas given above.
 \end{proof}
 
 For the groupoid morphism $\varphi_{\cA,\bfr}^1: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$ in Corollary~\ref{cor:groupoid hamiltonian flows}, we give an explicit verification that the corresponding Lie algebroid morphism is the dual bundle map of the Lie algebroid comorphism induced by the base Poisson map $\varphi_{\cA,\bfr}^1:L^\times_{\cA,\bfr}\to L^\times_{\cA,\bfr}$.
@@ -1334,7 +1336,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     \tau_{\cA,\bfr}^{k,\varepsilon}&:\cG^\times_{\cA,\bfr}\to\cG^\times_{\cA',\bfr},& \tau_{\cA,\bfr}^{k,\varepsilon}&:\cB^\times_{\cA,\bfr}\to\cB^\times_{\cA',\bfr},& \tau_{\cA,\bfr}^{k,\varepsilon}&:\cD^\times_{\cA,\bfr}\to\cD^\times_{\cA',\bfr}
   \end{align*}
   lifting respectively the Poisson morphisms $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ of Lemma~\ref{le:tropical cluster transformations}.
-  These fix the coordinate functions $b_{\ell,j}$ on $T^*L^\times_\bfr$ and are given on the remaining fiber coordinates by
+  These fix the coordinate functions $a_{\ell,j}$ on $T^*L^\times_\bfr$ and are given on the remaining fiber coordinates by
   \begin{align}
     \nonumber
     (\tau_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
@@ -1412,7 +1414,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     \mu_{\cX,\bfr}^{k,\varepsilon}&:\cG^\times_{\cX,\bfr}\to\cG^\times_{\cX',\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cB^\times_{\cX,\bfr}\to\cB^\times_{\cX',\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cD^\times_{\cX,\bfr}\to\cD^\times_{\cX',\bfr}\\
     \mu_{\cA,\bfr}^{k,\varepsilon}&:\cG^\times_{\cA,\bfr}\to\cG^\times_{\cA',\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cB^\times_{\cA,\bfr}\to\cB^\times_{\cA',\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cD^\times_{\cA,\bfr}\to\cD^\times_{\cA',\bfr}
   \end{align*}
-  defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi_{-,\bfr}^1$ given on coordinates by
+  defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi_{-,\bfr}^1$ given on fiber coordinates by
   \begin{align}
     \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
@@ -1451,6 +1453,12 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
       s_j s_k^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
     \end{cases}
   \end{align}
+  The coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ transform according to
+  \begin{align*}
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})=a_{\ell,j}+\delta_{k\ell}\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{j-1}}{Z_k(u)}du;\\
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})=a_{\ell,j}+\delta_{k\ell}\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{j-1}}{Z_k(u)}du;
+  \end{align*}
+  where $\beta$ is the appropriate target map.
 \end{theorem}
 \begin{proof}
   This is immediate from Corollary~\ref{cor:groupoid hamiltonian flows} and Lemma~\ref{le:tropical groupoid transformations}.
