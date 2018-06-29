@@ -1535,8 +1535,39 @@ Our goal is to glue the various groupoid charts over the cluster charts to get g
 Given a pair of vertices $t,t'\in\TT_n$, we will define iterated mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ of the groupoid charts as we did for the cluster charts by composing the maps in Theorem~\ref{th:groupoid mutation} along the unique path from $t$ to $t'$ in $\TT_n$ (with mutations always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}).
 We have seen that certain sequences of cluster mutations essentially just give identity mappings between cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
 These identity mappings should lift to identity mappings on groupoid charts, but it is not obvious from the definitions that the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just identity mappings.
-To establish this, we introduce analogues of the separation of additions formulas from Theorem~\ref{th:separation}.
+\begin{corollary}
+  Given any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations, the following equalities hold:
+  \begin{enumerate}
+    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(q_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(q_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(t_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(t_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(v_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(v_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(p_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(p_{\sigma(j);t_w})$ for $1\le j\le m$;
+    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(s_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(s_{\sigma(j);t_w})$ for $1\le j\le m$;
+    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(u_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(u_{\sigma(j);t_w})$ for $1\le j\le m$.
+    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(a_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(a_{\sigma(j);t_w})$ for $1\le j\le m$.
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+  First observe that the first condition of a periodicity gives 
+  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
+  which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
+  Combining this with Lemma~\ref{le:dual vectors} and Corollary~\ref{cor:periodicity} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
+  The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
+\end{proof}
 
+In particular, we see from this that given a periodicity of cluster mutations $(t_1,\ldots,t_w;\sigma)$, each of the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just permutations of groupoid coordinates as we hoped for.
+Thus it is reasonable to give the following definition.
+\begin{definition}
+  Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with $\tilde B_{t_0}$.
+  Define groupoids $\cG_{\cX_\bfr}$, $\cB_{\cX_\bfr}$, $\cD_{\cX_\bfr}$ and $\cG_{\cA_\bfr}$, $\cB_{\cA_\bfr}$, $\cD_{\cA_\bfr}$ over the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ respectively by gluing the groupoid charts $\cG^\times_{\cX,\bfr;t}$, $\cB^\times_{\cX,\bfr;t}$, $\cD^\times_{\cX,\bfr;t}$ to $\cG^\times_{\cX,\bfr;t'}$, $\cB^\times_{\cX,\bfr;t'}$, $\cD^\times_{\cX,\bfr;t'}$ respectively and by gluing the groupoid charts $\cG^\times_{\cA,\bfr;t}$, $\cB^\times_{\cA,\bfr;t}$, $\cD^\times_{\cA,\bfr;t}$ to $\cG^\times_{\cA,\bfr;t'}$, $\cB^\times_{\cA,\bfr;t'}$, $\cD^\times_{\cA,\bfr;t'}$ respectively, for $t,t'\in\TT_n$, along the appropriate groupoid mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ (where mutations are always performed according to the tropical signs from Definition~\ref{def:tropical signs}).
+\end{definition}
+\begin{remark}
+  Recall that the symplectic groupoid charts $\cG_{\cX,\bfr;t}$ and $\cG_{\cA,\bfr;t}$ were constructed in Section~\ref{sec:local} using Poisson sprays.
+  Ideally these Poisson sprays would be compatible with mutations and thus glue to give a global construction of the source-simply-connected symplectic groupoids over the varieties $\cX_\bfr$ and $\cA_\bfr$.
+  Unfortunately, this is not the case and we must make due with the iterative construction presented above.
+\end{remark}
+
+To understand the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, we introduce analogues of the separation of additions formulas from Theorem~\ref{th:separation}.
 As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we introduce analogues of the $\bfc$-vectors and $\bfg$-vectors which describe iterations of the cluster mutations.
 To begin let $C^\vee_{t_0}$ be an $m\times m$ identity matrix and let $G^\vee_{t_0}$ be an $n\times n$ identity matrix.
 We then assign matrices $C^\vee_t:=(C^\vee_{ij;t})$ and $G^\vee_t:=(G^\vee_{ij;t})$ to the vertices $t\in\TT_n$ by the following recursion.
@@ -1636,38 +1667,6 @@ Using these we have the following analogues of the separation of additions formu
   \end{align*}
   But $B_{ik;t'}=-B_{ik;t}$ so that this final expression gives the desired $F$-polynomial part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
 \end{proof}
-
-Recall Definition~\ref{def:periodicity} describing periodicities of cluster mutations.
-\begin{corollary}
-  Given any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations, the following equalities hold:
-  \begin{enumerate}
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(q_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(q_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(t_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(t_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(v_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(v_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(p_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(p_{\sigma(j);t_w})$ for $1\le j\le m$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(s_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(s_{\sigma(j);t_w})$ for $1\le j\le m$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(u_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(u_{\sigma(j);t_w})$ for $1\le j\le m$.
-  \end{enumerate}
-\end{corollary}
-\begin{proof}
-  First observe that the first condition of a periodicity gives 
-  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
-  which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
-  Combining this with Lemma~\ref{le:dual vectors} and Corollary~\ref{cor:periodicity} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
-  The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
-\end{proof}
-
-In particular, we see from this that given a periodicity of cluster mutations $(t_1,\ldots,t_w;\sigma)$, each of the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just permutations of groupoid coordinates as we hoped for.
-Thus it is reasonable to give the following definition.
-\begin{definition}
-  Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with $\tilde B_{t_0}$.
-  Define groupoids $\cG_{\cX_\bfr}$, $\cB_{\cX_\bfr}$, $\cD_{\cX_\bfr}$ and $\cG_{\cA_\bfr}$, $\cB_{\cA_\bfr}$, $\cD_{\cA_\bfr}$ over the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ respectively by gluing the groupoid charts $\cG^\times_{\cX,\bfr;t}$, $\cB^\times_{\cX,\bfr;t}$, $\cD^\times_{\cX,\bfr;t}$ to $\cG^\times_{\cX,\bfr;t'}$, $\cB^\times_{\cX,\bfr;t'}$, $\cD^\times_{\cX,\bfr;t'}$ respectively and by gluing the groupoid charts $\cG^\times_{\cA,\bfr;t}$, $\cB^\times_{\cA,\bfr;t}$, $\cD^\times_{\cA,\bfr;t}$ to $\cG^\times_{\cA,\bfr;t'}$, $\cB^\times_{\cA,\bfr;t'}$, $\cD^\times_{\cA,\bfr;t'}$ respectively, for $t,t'\in\TT_n$, along the appropriate groupoid mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ (where mutations are always performed according to the tropical signs from Definition~\ref{def:tropical signs}).
-\end{definition}
-\begin{remark}
-  Recall that the symplectic groupoid charts $\cG_{\cX,\bfr;t}$ and $\cG_{\cA,\bfr;t}$ were constructed in Section~\ref{sec:local} using Poisson sprays.
-  Ideally these Poisson sprays would be compatible with mutations and thus glue to give a global construction of the source-simply-connected symplectic groupoids over the varieties $\cX_\bfr$ and $\cA_\bfr$.
-  Unfortunately, this is not the case and we must make due with the iterative construction presented above.
-\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
