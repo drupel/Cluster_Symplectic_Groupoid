@@ -870,7 +870,11 @@ Write $z'_{\ell,j}$ for coordinates on the $L_\bfr$ components.
       x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+} & \text{if $j=k$;}\\
       x_j & \text{if $j\ne k$;}
     \end{cases}\\
-    (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})&=z_{\ell,r_\ell-j}.
+    (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})
+    &=\begin{cases}
+      z_{k,r_k-j} & \text{if $\ell=k$;}\\
+      z_{\ell,j} & \text{if $\ell\ne k$.}
+    \end{cases}  
   \end{align*}
 \end{lemma}
 \begin{proof}
@@ -909,7 +913,11 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+} Z_k^\circ(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$;}\end{cases}\\
-    \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})&=z_{\ell,r_\ell-j}.
+    \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})
+    &=\begin{cases}
+      z_{k,r_k-j} & \text{if $\ell=k$;}\\
+      z_{\ell,j} & \text{if $\ell\ne k$.}
+    \end{cases}
   \end{align}
   Moreover, the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are involutions which do not depend on the choice of sign $\varepsilon$.
 \end{corollary}
@@ -1219,9 +1227,9 @@ Using appropriate source and target maps, define functions $H_{\cX,\bfr}^{k,\var
 More explicitly, these Hamiltonian functions are given by the following analogues of \eqref{eq:hamiltonians} using appropriate source and target maps:
 \begin{align}
   \label{eq:X hamiltonian}
-  H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(Z_k(u)\big)}{u}du;\\
+  H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(Z_k^\circ(u)\big)}{u}du;\\
   \label{eq:A hamiltonian}
-  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(Z_k(u)\big)}{u}du.
+  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(Z_k^\circ(u)\big)}{u}du.
 \end{align}
 Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used in their definition.
 
@@ -1229,32 +1237,35 @@ Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the 
 \begin{lemma}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ determine the following dynamics on the symplectic groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ respectively:
   \begin{align*}
-    \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(Z_k(y_k^\varepsilon)\big)q_\ell;\\
-    \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},v_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (1+v_{\ell'}y_{\ell'})^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)(v_ky_k+1)+B_{k\ell}\log\big(Z_k(y_k^\varepsilon)\big)v_\ell;\\
-    \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)t_k;
+    \dot q_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},q_\ell\}_{\cG_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k^\circ\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)+B_{k\ell}\log\big(Z_k^\circ(y_k^\varepsilon)\big)q_\ell;\\
+    \dot v_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},v_\ell\}_{\cB_\cX}=-\frac{\delta_{k\ell}}{d_ky_k}\log\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n (1+v_{\ell'}y_{\ell'})^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)(v_ky_k+1)+B_{k\ell}\log\big(Z_k^\circ(y_k^\varepsilon)\big)v_\ell;\\
+    \dot t_\ell&=\{H_{\cX,\bfr}^{k,\varepsilon},t_\ell\}_{\cD_\cX}=-\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^nt_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)t_k;
   \end{align*}
   and the Hamiltonian vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ determine the following dynamics on the symplectic groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$ respectively:
   \begin{align}
     \label{eq:p dot}
-    \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)p_k;\\
+    \dot p_j&=\{H_{\cA,\bfr}^{k,\varepsilon},p_j\}_{\cG_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)+\delta_{jk}\log\big(Z_k^\circ(\hat y_k^\varepsilon)\big)p_k;\\
     \nonumber
-    \dot u_j&=\{H_{\cA,\bfr}^{k,\varepsilon},u_j\}_{\cB_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon (1+u_kx_k)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)(u_jx_j+1)+\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)u_k\\
+    \dot u_j&=\{H_{\cA,\bfr}^{k,\varepsilon},u_j\}_{\cB_\cA}=-\frac{B_{jk}}{d_kx_j}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon (1+u_kx_k)^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)(u_jx_j+1)+\delta_{jk}\log\big(Z_k^\circ(\hat y_k^\varepsilon)\big)u_k\\
     \nonumber
-    \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)s_j.
+    \dot s_j&=\{H_{\cA,\bfr}^{k,\varepsilon},s_j\}_{\cD_\cA}=-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)s_j.
   \end{align}
   The coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ evolve according to
-  \begin{equation*}
-    \dot a_{\ell,j}=\{H_{-,\bfr}^{k,\varepsilon},a_{\ell,j}\}_-=\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
-  \end{equation*}
+  \begin{equation}
+    \label{eq:a dot}
+    \dot a_{\ell,j}=\{H_{-,\bfr}^{k,\varepsilon},a_{\ell,j}\}_-=\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{\varepsilon j-1}}{Z_k(u^\varepsilon)}du, 
+  \end{equation}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{lemma}
 \begin{proof}
-  We prove equation \eqref{eq:p dot}, leaving the others as an exercise for the reader.
+  We prove equation \eqref{eq:p dot}, leaving the other groupoid coordinates as an exercise for the reader.
   By Theorem~\ref{thm:PoiSpLogC}, we have $\{x_i,p_j\}_{\cG_\cA}=-\delta_{ij}-\Omega_{ij}x_ip_j$ and $\{p_i,p_j\}_{\cG_\cA}=\Omega_{ij}p_ip_j$ so that
   \[\{\hat y_k,p_j\}_{\cG_\cA}=\sum_{i=1}^m B_{ik}\frac{\hat y_k}{x_i}\{x_i,p_j\}_{\cG_\cA}=-B_{jk}\frac{\hat y_k}{x_j}-\delta_{jk}d_k\hat y_kp_k\]
   and
   \[\{e^{-d_kp_kx_k},p_j\}_{\cG_\cA}=\delta_{jk}d_kp_ke^{-d_kp_kx_k}.\]
   Now equation~\eqref{eq:p dot} follows by applying the chain rule for the derivation $\{\cdot,p_j\}_{\cG_\cA}$.
+
+  To see equation \eqref{eq:a dot}, we observe that $\frac{d\log(Z_k(u))}{dz_{\ell,j}}=\delta_{k\ell}\frac{u^j}{Z_k(u)}$ and $\frac{d\log(Z_k^*(u))}{dz_{\ell,j}}=\delta_{k\ell}\frac{u^{r_k-j}}{Z_k^*(u)}=\delta_{k\ell}\frac{u^{-j}}{Z_k(u^{-1})}$.
 \end{proof}
 
 Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and the time-$t$ flows, all denoted $\varphi_{\cA,\bfr}^t$, of the vector fields $X_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$.
@@ -1262,19 +1273,19 @@ Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the 
   \label{cor:groupoid hamiltonian flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the Hamiltonian flow $\varphi_{\cX,\bfr}^t: L^\times_{\cX,\bfr} \to L^\times_{\cX,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cX,\bfr}^t: \cG^\times_{\cX,\bfr} \to \cG^\times_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cB^\times_{\cX,\bfr} \to \cB^\times_{\cX,\bfr}$, $\varphi_{\cX,\bfr}^t: \cD^\times_{\cX,\bfr} \to \cD^\times_{\cX,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right);\\
-    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell + 1)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1);\\
-    (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
+    (\varphi_{\cX,\bfr}^t)^*(q_\ell y_\ell)&=q_\ell y_\ell-t\frac{\delta_{k\ell}}{d_k}\log\left(\frac{Z_k^\circ\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right);\\
+    (\varphi_{\cX,\bfr}^t)^*(v_\ell y_\ell + 1)&=\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)^{-t\frac{\delta_{k\ell}}{d_k}}(v_\ell y_\ell+1);\\
+    (\varphi_{\cX,\bfr}^t)^*(t_\ell)&=\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)^{-t\delta_{k\ell}/d_k}t_\ell;
   \end{align*}
   and the Hamiltonian flow $\varphi_{\cA,\bfr}^t: L^\times_{\cA,\bfr} \to L^\times_{\cA,\bfr}$ in Corollary~\ref{cor:time-one flows} is lifted to the multiplicative Hamiltonian flows $\varphi_{\cA,\bfr}^t: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cB^\times_{\cA,\bfr} \to \cB^\times_{\cA,\bfr}$, $\varphi_{\cA,\bfr}^t: \cD^\times_{\cA,\bfr} \to \cD^\times_{\cA,\bfr}$, given on coordinates by
   \begin{align*}
-    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right);\\
-    (\varphi_{\cA,\bfr}^t)^*(u_jx_j+1)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1);\\
-    (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
+    (\varphi_{\cA,\bfr}^t)^*(p_jx_j)&=p_jx_j-t\frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right);\\
+    (\varphi_{\cA,\bfr}^t)^*(u_jx_j+1)&=\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon (u_kx_k+1)^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)^{-t\frac{B_{jk}}{d_k}}(u_jx_j+1);\\
+    (\varphi_{\cA,\bfr}^t)^*(s_j)&=\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)^{-tB_{jk}/d_k}s_j.
   \end{align*}
   Each of the Hamiltonian flows above transform the coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ according to
   \begin{equation*}
-    (\varphi_{-,\bfr}^t)^*(a_{\ell,j})=a_{\ell,j}+t\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{j-1}}{Z_k(u)}du,
+    (\varphi_{-,\bfr}^t)^*(a_{\ell,j})=a_{\ell,j}+t\delta_{k\ell}\frac{\varepsilon}{d_k}\int_*^* \frac{u^{\varepsilon j-1}}{Z_k(u^\varepsilon)}du
   \end{equation*}
   where the bounds of integration are respectively those from equations \eqref{eq:X hamiltonian} or \eqref{eq:A hamiltonian}.
 \end{corollary}
@@ -1303,32 +1314,32 @@ so the kernel of $\alpha_*: T\cG_\cA \to TL_\cA$ is generated by $\frac{\partial
 Given the Hamiltonian groupoid morphism
 \begin{align*}
 	\varphi_{\cA,\bfr}: ~& \cG_\cA \to \cG_\cA, \\
-	& \sfx_j = \big(Z_k(\hat y_k^\varepsilon)\big)^{-\delta_{jk}}x_j, \\
-	& \sfp_j \sfx_j = p_jx_j-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right),
+	& \sfx_j = \big(Z_k^\circ(\hat y_k^\varepsilon)\big)^{-\delta_{jk}}x_j, \\
+	& \sfp_j \sfx_j = p_jx_j-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right),
 \end{align*}
 its pushfoward is
 \begin{align*}
 	\left(\varphi_{\cA,\bfr}\right)_*: ~& \ker(\alpha_*: T\cG_\cA \to TL_\cA) \to \ker(\alpha_*: T\cG_\cA \to TL_\cA),  \\
 	& \frac{\partial}{\partial p_j} 
-	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{ e^{-\varepsilon d_k p_k x_k} Z'_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)}{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)} \frac{\partial}{\partial p_k}, \qquad \text{if}~ j \ne k, \\
+	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{ e^{-\varepsilon d_k p_k x_k} (Z_k^\circ)'\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)}{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)} \frac{\partial}{\partial p_k}, \qquad \text{if}~ j \ne k, \\
 	& \frac{\partial}{\partial p_k}
-	= \frac{1}{Z_k(\hat y_k^\varepsilon)}\frac{\partial}{\partial \sfp_k}.
+	= \frac{1}{Z_k^\circ(\hat y_k^\varepsilon)}\frac{\partial}{\partial \sfp_k}.
 \end{align*}
 Restricting to the identity image, which is given by $p_j = 0, \> j = 1, \ldots, m$, we have
 \begin{align*}
 	\Lie \left(\varphi_{\cA,\bfr} \right): ~& \Lie \left(\cG_\cA \right) \to \Lie \left( \cG_\cA \right),  \\
 	& \frac{\partial}{\partial p_j}
-	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{Z'_k\left(\hat \sfy_k^\varepsilon \right)}{Z_k\left(\hat \sfy_k^\varepsilon \right)} \frac{\partial}{\partial \sfp_k}, \qquad \text{if}~ j \ne k, \\
+	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{(Z_k^\circ)'\left(\hat \sfy_k^\varepsilon \right)}{Z_k^\circ\left(\hat \sfy_k^\varepsilon \right)} \frac{\partial}{\partial \sfp_k}, \qquad \text{if}~ j \ne k, \\
 	& \frac{\partial}{\partial p_k} 
-	= \frac{1}{Z_k(\hat{\sfy}_k^\varepsilon)}\frac{\partial}{\partial \sfp_k}.
+	= \frac{1}{Z_k^\circ(\hat{\sfy}_k^\varepsilon)}\frac{\partial}{\partial \sfp_k}.
 \end{align*}
-On the other hand, taking derivatives of $\sfx_j = \big(Z_k(\hat{y}_k^\varepsilon)\big)^{-\delta_{jk}}x_j$,
+On the other hand, taking derivatives of $\sfx_j = \big(Z_k^\circ(\hat{y}_k^\varepsilon)\big)^{-\delta_{jk}}x_j$,
 we obtain the pullback map
 \begin{align*}
 	(\varphi_{\cA,\bfr})^*: ~& \Omega^1(L_\cA) \to \Omega^1(L_\cA), \\
 	& d \sfx_j = dx_j, \qquad \text{if}~j\ne k, \\
-	& d \sfx_k = \frac{1}{Z_k(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{Z'_k(\hat{y}_k^\varepsilon)}{\left(Z_k(\hat{y}_k^\varepsilon)\right)^2} dx_j \\
-	& \quad \; \, = \frac{1}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{Z'_k(\hat{\sfy}_k^\varepsilon)}{Z_k(\hat{\sfy}_k^\varepsilon)} dx_j.
+	& d \sfx_k = \frac{1}{Z_k^\circ(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{(Z_k^\circ)'(\hat{y}_k^\varepsilon)}{\left(Z_k^\circ(\hat{y}_k^\varepsilon)\right)^2} dx_j \\
+	& \quad \; \, = \frac{1}{Z_k^\circ(\hat{\sfy}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{(Z_k^\circ)'(\hat{\sfy}_k^\varepsilon)}{Z_k^\circ(\hat{\sfy}_k^\varepsilon)} dx_j.
 \end{align*}
 If we identify $\Lie \left(\cG_\cA \right)$ and $T^*_{\pi_\cA} L_\cA$ via
 \[
@@ -1347,7 +1358,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     \tau_{\cA,\bfr}^{k,\varepsilon}&:\cG^\times_{\cA,\bfr}\to\cG^\times_{\cA',\bfr},& \tau_{\cA,\bfr}^{k,\varepsilon}&:\cB^\times_{\cA,\bfr}\to\cB^\times_{\cA',\bfr},& \tau_{\cA,\bfr}^{k,\varepsilon}&:\cD^\times_{\cA,\bfr}\to\cD^\times_{\cA',\bfr}
   \end{align*}
   lifting respectively the Poisson morphisms $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ of Lemma~\ref{le:tropical cluster transformations}.
-  These fix the coordinate functions $a_{\ell,j}$ on $T^*L^\times_\bfr$ and are given on the remaining fiber coordinates by
+  These are given on fiber coordinates by
   \begin{align}
     \nonumber
     (\tau_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
@@ -1383,7 +1394,14 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     (\tau_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
-      s_j s_k^{[-\varepsilon B_{jk} r_k]_+} & \text{if $j\ne k$.}
+      s_j s_k^{[-\varepsilon B_{jk} r_k]_+} & \text{if $j\ne k$;}
+    \end{cases}\\
+    \nonumber
+    (\tau_{-,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
+    &=
+    \begin{cases}
+      a_{k,r_k-j} & \text{if $\ell=k$;}\\
+      a_{\ell,j} & \text{if $\ell\ne k$.}
     \end{cases}
   \end{align}
 \end{lemma}
@@ -1430,44 +1448,52 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
     &=\begin{cases} 
-      -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon r_k B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k + \frac{y_k}{d_k}\log\left(\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
-      q_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
+      -q_k y_k^2 + \sum\limits_{\ell'=1}^n [\varepsilon r_k B_{k\ell'}]_+ q_{\ell'} y_{\ell'} y_k + \frac{y_k}{d_k}\log\left(\frac{Z_k^\circ\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right) & \text{if $\ell=k$;}\\ 
+      q_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k^\circ(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
     \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(v'_\ell)
     &=\begin{cases} 
-      y_k \left[ (v_k y_k + 1)^{-1} \left(\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} +1)^{[\varepsilon r_k B_{k\ell'}]_+}\right)\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} - 1\right] & \text{if $\ell=k$;}\\ 
-      v_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
+      y_k \left[ (v_k y_k + 1)^{-1} \left(\prod\limits_{\ell'=1}^n (v_{\ell'} y_{\ell'} +1)^{[\varepsilon r_k B_{k\ell'}]_+}\right)\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)^{1/d_k} - 1\right] & \text{if $\ell=k$;}\\ 
+      v_\ell y_k^{-[\varepsilon r_k B_{k\ell}]_+} Z_k^\circ(y_k^\varepsilon)^{B_{k\ell}} & \text{if $\ell\ne k$;}
     \end{cases}\\
     \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(t'_\ell)
     &=\begin{cases} 
-      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon r_k B_{k\ell'}]_+}\left(\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
+      t_k^{-1}\prod\limits_{\ell'=1}^n t_{\ell'}^{[\varepsilon r_k B_{k\ell'}]_+}\left(\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}\right)^{1/d_k} & \text{if $\ell=k$;}\\
       t_\ell & \text{if $\ell\ne k$;}
     \end{cases}\\
     \nonumber
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)&=
     \begin{cases} 
-      -p_k x_k^2 \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
-      p_j + [-\varepsilon B_{jk} r_k]_+ \frac{p_k x_k}{x_j} - \frac{B_{jk}}{d_k x_j}\log\left(\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
+      -p_k x_k^2 \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k^\circ(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
+      p_j + [-\varepsilon B_{jk} r_k]_+ \frac{p_k x_k}{x_j} - \frac{B_{jk}}{d_k x_j}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right) & \text{if $j\ne k$;}
     \end{cases}\\
     \nonumber
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(u'_j)
     &=\begin{cases}
-      x_k \left[ (u_k x_k +1)^{-1} -1\right] \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
-      x_j^{-1} \left[ (u_j x_j + 1) (u_k x_k + 1)^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} - 1\right] & \text{if $j\ne k$;}
+      x_k \left[ (u_k x_k +1)^{-1} -1\right] \left(\prod_{i=1}^m x_i^{-[-\varepsilon B_{ik} r_k]_+}\right) Z_k^\circ(\hat y_k^\varepsilon)^{-1} & \text{if $j=k$;}\\ 
+      x_j^{-1} \left[ (u_j x_j + 1) (u_k x_k + 1)^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} - 1\right] & \text{if $j\ne k$;}
     \end{cases}\\
     \label{eq:DA mutation}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(s'_j)
     &=\begin{cases} 
       s_k^{-1} & \text{if $j=k$;}\\ 
-      s_j s_k^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
+      s_j s_k^{[-\varepsilon B_{jk} r_k]_+} \left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right)^{-B_{jk}/d_k} & \text{if $j\ne k$.}
     \end{cases}
   \end{align}
   The coordinates $a_{\ell,j}$ on $T^*L^\times_\bfr$ transform according to
   \begin{align*}
-    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})=a_{\ell,j}+\delta_{k\ell}\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{j-1}}{Z_k(u)}du;\\
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})=a_{\ell,j}+\delta_{k\ell}\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{j-1}}{Z_k(u)}du;
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
+    &=\begin{cases}
+      a_{k,r_k-j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a_{\ell,j} & \text{if $\ell\ne k$.}
+    \end{cases}\\
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
+    &=\begin{cases}
+      a_{k,r_k-j}+\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a_{\ell,j} & \text{if $\ell\ne k$.}
+    \end{cases}
   \end{align*}
   where $\beta$ is the appropriate target map.
 \end{theorem}
@@ -1493,23 +1519,23 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
   However, certain additional subtleties must be overcome in the groupoid case:
   \begin{enumerate}
     \item In the real case, the mutation rules for $q'_\ell$ and $p'_j$ can only be extended to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ since only the logarithms of positive real numbers are again real.
-      In the complex case, these mutation rules can be extended to open dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$, namely to the loci where $\frac{Z_k\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k(y_k^\varepsilon)}$ and $\frac{Z_k\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k(\hat y_k^\varepsilon)}$ are defined and nonzero.
+      In the complex case, these mutation rules can be extended to open dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$, namely to the loci where $\frac{Z_k^\circ\left(y_k^\varepsilon e^{\varepsilon\sum_{\ell'=1}^n d_{\ell'} B_{\ell' k}q_{\ell'} y_{\ell'}}\right)}{Z_k^\circ(y_k^\varepsilon)}$ and $\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}$ are defined and nonzero.
       Indeed, although $\log(-)$ is multivalued as a function on $\CC_\times$, the functions $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ are well-defined on these dense subsets of $\cG_{\cX,\bfr}$ and $\cG_{\cA,\bfr}$ respectively.
       To see this, note that $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are groupoid morphisms and hence must carry the identity image to the identity image.
       This in particular fixes the branch of $\log(-)$ to choose when computing the values of $(\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)$ and $(\mu_{\cA,\bfr}^{k,\varepsilon})^*(p'_j)$ at the origin of each source fiber.
       Thus, by simple-connectedness, we are able to fix the choice of branch cut to use when computing their values at arbitrary points of the source fibers. 
     \item Again in the real case, the existence of an even skew-symmetrizer $d_k$ similarly restricts the extendability of the mutation rules for $v'_\ell$, $t'_\ell$ and $u'_j$, $s'_j$ to the source fibers over the coordinate hyperplanes in $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
-      In the complex case or when all skew-symmetrizers are odd, we must avoid the loci where $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k(y_k^\varepsilon)}$, $\frac{Z_k\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$, and $\frac{Z_k\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k(\hat y_k^\varepsilon)}$ are undefined or zero.
+      In the complex case or when all skew-symmetrizers are odd, we must avoid the loci where $\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n (v_{\ell'} y_{\ell'} + 1)^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}$, $\frac{Z_k^\circ\left(y_k^\varepsilon \prod_{\ell'=1}^n t_{\ell'}^{\varepsilon d_{\ell'} B_{\ell' k}}\right)}{Z_k^\circ(y_k^\varepsilon)}$, $\frac{Z_k^\circ\left(\hat y_k^\varepsilon (u_k x_k +1)^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}$, and $\frac{Z_k^\circ\left(\hat y_k^\varepsilon s_k^{-\varepsilon d_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}$ are undefined or zero.
       Away from these loci in the complex case, the identity image can again be used to define a splitting of the $d_k$-fold covering map from $\CC_\times$ to $\CC_\times$.
     \item Finally, the mutations $\mu_{\cA,\bfr}^{k,\varepsilon}$ appear to be undefined on $p'_j$ and $u'_j$ for $j\ne k$ when $x_j=0$.
       However, this is a removable singularity and these maps are actually continuous when appropriate values are assigned.
-      To see this, we first observe that $[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)=0$ for $j\ne k$ and $x_j=0$ as follows:
+      To see this, we first observe that $[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k^\circ(\hat y_k^\varepsilon)}\right)=0$ for $j\ne k$ and $x_j=0$ as follows:
       \begin{itemize}
         \item If $\varepsilon B_{jk}>0$, the first term above is clearly zero and $x_j$ appears in $\hat y_k^\varepsilon$ with a positive exponent.
-          Using that $x_j=0$, it follows that the $\log$ term reduces to zero as well since $Z_k$ has nonzero constant term.
-        \item When $B_{jk}=0$ there is nothing no show.
+          Using that $x_j=0$, it follows that the $\log$ term reduces to zero as well since $Z_k^\circ$ has nonzero constant term.
+        \item When $B_{jk}=0$ there is nothing to show.
         \item If $\varepsilon B_{jk}<0$, the first term does not vanish but $x_j$ appears in $\hat y_k^\varepsilon$ with a negative exponent.
-          Using that $x_j=0$, the term inside the logarithm reduces to $e^{-\varepsilon r_kd_kp_kx_k}$ and thus we again get zero.
+          Using that $x_j=0$, the term inside the logarithm reduces to $e^{-\varepsilon d_k r_k p_k x_k}$ and thus we again get zero.
       \end{itemize}
       Therefore, we may take the limit as $x_j\to0$ in these formulas and set
       \begin{align*}
@@ -1518,22 +1544,22 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
         &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
         &=\begin{cases} 
           p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
-          p_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} (e^{-\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
-          p_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} (e^{\varepsilon d_kp_kx_k} - 1) & \text{if $\varepsilon B_{jk} = -1$;}
+          p_j - \frac{1}{d_k} \prod_{i\ne j} x_i^{B_{ik}} z_{k,1} (e^{-d_kp_kx_k} - 1) & \text{if $B_{jk} = 1$;}\\ 
+          p_j + \frac{1}{d_k} \prod_{i\ne j} x_i^{-B_{ik}} z_{k,r_k-1} (e^{d_kp_kx_k} - 1) & \text{if $B_{jk} = -1$;}
         \end{cases}
       \end{align*}
-      where the last equality uses that $a Z_k'(a) Z_k(b) - b Z_k(a) Z_k'(b)$ has lowest degree term $z_{k,1}(a-b)$ and highest degree term $z_{k,r_k-1} a^n b^n (b^{-1}-a^{-1})$.
+      where the last equality uses that $a Z_k'(a) Z_k(b) - b Z_k(a) Z_k'(b)$ has lowest degree term $z_{k,1}(a-b)$ and highest degree term $z_{k,r_k-1} a^n b^n (b^{-1}-a^{-1})$ while $a (Z_k^*)'(a) Z_k^*(b) - b Z_k^*(a) (Z_k^*)'(b)$ has lowest degree term $z_{k,r_k-1}(a-b)$ and highest degree term $z_{k,1} a^n b^n (b^{-1}-a^{-1})$.
 
-      Observe that this restricted mutation map is again not defined for $x_i=0$ when $\varepsilon B_{jk}=1$ and $\varepsilon B_{ik} < 0$ nor when $\varepsilon B_{jk} = -1$ and $\varepsilon B_{ik} > 0$.
-      Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L_{\cA',\bfr}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$, in particular the gluing of fibers will not be attempted over these loci. 
+      Observe that this restricted mutation map is again not defined for $x_i=0$ when $B_{jk}=1$ and $B_{ik} < 0$ nor when $B_{jk} = -1$ and $B_{ik} > 0$.
+      Following Remark~\ref{rem:extended cluster charts}, the gluing maps $\mu_{\cA,\bfr}^{k,\varepsilon}:L_{\cA,\bfr}\to L_{\cA',\bfr}$ are also not defined on these loci since the conditions imply $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon)=0$, in particular the gluing of fibers will not be attempted over these loci. 
 
       We leave it as an exercise for the reader to verify the following mutation rule for the coordinates $u'_j$ over the locus where $x_j=0$:
       \begin{align*}
         (\mu_{\cA,\bfr}^{k,\varepsilon}|_{x_j=0})^*(u'_j)
         &=\begin{cases} 
           u_j & \text{if $|B_{jk}| \ne 1$;}\\ 
-          u_j - \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{\varepsilon B_{ik}} z_{k,1} ((u_k x_k+1)^{-\varepsilon d_k} - 1) & \text{if $\varepsilon B_{jk} = 1$;}\\ 
-          u_j + \frac{\varepsilon}{d_k} \prod_{i\ne j} x_i^{-\varepsilon B_{ik}} z_{k,r_k-1} ( (u_k x_k +1)^{\varepsilon d_k} - 1) & \text{if $\varepsilon B_{jk} = -1$.}
+          u_j - \frac{1}{d_k} \prod_{i\ne j} x_i^{B_{ik}} z_{k,1} ((u_k x_k+1)^{-d_k} - 1) & \text{if $B_{jk} = 1$;}\\ 
+          u_j + \frac{1}{d_k} \prod_{i\ne j} x_i^{-B_{ik}} z_{k,r_k-1} ( (u_k x_k +1)^{d_k} - 1) & \text{if $B_{jk} = -1$.}
         \end{cases}
       \end{align*}
   \end{enumerate}
@@ -1544,22 +1570,23 @@ That is, over each cluster chart $L^\times_{\cX,\bfr;t}$ and $L^\times_{\cA,\bfr
 Our goal is to glue the various groupoid charts over the cluster charts to get groupoids over $\cX$ and $\cA$.
 
 Given a pair of vertices $t,t'\in\TT_n$, we will define iterated mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ of the groupoid charts as we did for the cluster charts by composing the maps in Theorem~\ref{th:groupoid mutation} along the unique path from $t$ to $t'$ in $\TT_n$ (with mutations always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}).
-We have seen that certain sequences of cluster mutations essentially just give identity mappings between cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
-These identity mappings lift to identity mappings on groupoid charts.
+We have seen that certain sequences of cluster mutations simply permute the coordinates of the corresponding cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
+These lift to simple permutations of the coordinates on the corresponding groupoid charts.
 \begin{proposition}\label{prop:gpd periodicity}
   Given any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations, the following equalities hold:
   \begin{enumerate}
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(q_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(q_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(t_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(t_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(v_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(v_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(p_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(p_{\sigma(j);t_w})$ for $1\le j\le m$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(s_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(s_{\sigma(j);t_w})$ for $1\le j\le m$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(u_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(u_{\sigma(j);t_w})$ for $1\le j\le m$.
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(a_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(a_{\sigma(j);t_w})$ for $1\le j\le m$.
+    \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(q_{\ell;t_w})=q_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(t_{\ell;t_w})=t_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(v_{\ell;t_w})=v_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
+    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(a_{\ell,j;t_w})=a_{\sigma(\ell),j;t_1}$ for $1\le\ell\le n$ and $1\le j\le r_\ell-1$.
+    \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(p_{j;t_w})=p_{\sigma(j);t_1}$ for $1\le j\le m$;
+    \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(s_{j;t_w})=s_{\sigma(j);t_1}$ for $1\le j\le m$;
+    \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(u_{j;t_w})=u_{\sigma(j);t_1}$ for $1\le j\le m$.
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid, cf. \ref{prop:gpd identity}, so parts (1) and (4) immediately follow. For parts (2), (3), (5) and (6)
+Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f.\ \ref{prop:gpd identity}) so parts (1) and (4) immediately follow.
+For parts (2), (3), (5) and (6)
 
 
   First observe that the first condition of a periodicity gives 
@@ -1569,7 +1596,6 @@ Recall that the identity map of a Poisson manifold lifts to the identity map of 
   The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
 \end{proof}
 
-In particular, we see from this that given a periodicity of cluster mutations $(t_1,\ldots,t_w;\sigma)$, each of the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just permutations of groupoid coordinates as we hoped for.
 Thus it is reasonable to give the following definition.
 \begin{definition}
   Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with $\tilde B_{t_0}$.
@@ -1632,7 +1658,7 @@ Using these we have the following analogues of the separation of additions formu
 \begin{proof}
   We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
   First consider when $t$ is joined to $t_0$ by an edge labeled $k$.
-  Then $F_{k,\bfr;t}=Z_k(u_k)$ and $F_{\ell,\bfr;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
+  Then $F_{k,\bfr;t}=Z_{k;t_0}^\circ(u_k)$ and $F_{\ell,\bfr;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
 
   Now suppose $t'$ and $t$ are joined by an edge labeled $k$ with $t$ lying on the unique shortest path from $t_0$ to $t'$.
   Then $\mu_{\cA,\bfr}^{t',t_0}=\mu_{\cA,\bfr}^{t',t}\circ\mu_{\cA,\bfr}^{t,t_0}$ so that
@@ -1648,7 +1674,7 @@ Using these we have the following analogues of the separation of additions formu
   \begin{align*}
     \big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})
     &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\circ\big(\mu_{\cA,\bfr}^{t',t}\big)^*(s_{i;t'})\\
-    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(s_{i;t} s_{k;t}^{[-\varepsilon B_{ik;t} r_k]_+} \left(\frac{Z_k\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_k(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}\right).
+    &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(s_{i;t} s_{k;t}^{[-\varepsilon B_{ik;t} r_k]_+} \left(\frac{Z_{k;t}^\circ\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_{k;t}^\circ(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}\right).
   \end{align*}
   We handle the ``$\bfc$-vector part'' of the above expression first.
   Applying \eqref{eq:groupoid separation of additions 2} to the first two terms above and recording only the $\bfc$-vector part gives
@@ -1674,7 +1700,7 @@ Using these we have the following analogues of the separation of additions formu
     &=\left(\prod_{\ell=1}^n (\hat y_{\ell;t_0} s_{\ell;t_0}^{-d_\ell})^{\varepsilon C_{\ell k;t}}\right) \prod_{\ell=1}^n \left(F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})\right)^{\varepsilon B_{\ell k;t}},
   \end{align*}
   where the last equality used Lemma~\ref{le:dual vectors}.
-  Thus combining the $F$-polynomial part above with the expression $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\frac{Z_k\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_k(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}$ and applying the $F$-polynomial recursion \eqref{eq:F-polynomial mutation} gives the total $F$-polynomial part
+  Thus combining the $F$-polynomial part above with the expression $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\frac{Z_{k;t}^\circ\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_{k;t}^\circ(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}$ and applying the $F$-polynomial recursion \eqref{eq:F-polynomial mutation} gives the total $F$-polynomial part
   \begin{align*}
     \prod_{\ell\ne k} \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell}
     \left(\frac{F_{k,\bfr;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{k,\bfr;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.
