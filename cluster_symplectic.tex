@@ -870,7 +870,7 @@ Write $z'_{\ell,j}$ for coordinates on the $L_\bfr$ components.
       x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+} & \text{if $j=k$;}\\
       x_j & \text{if $j\ne k$;}
     \end{cases}\\
-    (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})=z_{\ell,r_\ell-j}.
+    (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})&=z_{\ell,r_\ell-j}.
   \end{align*}
 \end{lemma}
 \begin{proof}
@@ -909,7 +909,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+} Z_k^\circ(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$;}\end{cases}\\
-    \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})=z_{\ell,r_\ell-j}.
+    \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})&=z_{\ell,r_\ell-j}.
   \end{align}
   Moreover, the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are involutions which do not depend on the choice of sign $\varepsilon$.
 \end{corollary}
@@ -988,7 +988,7 @@ That is, there is a system of coordinates $\bfy_t=(y_{1;t},\ldots,y_{n;t})$ on $
   \{y_{k;t},y_{\ell;t}\}_\cX=d_kB_{k\ell;t}y_{k;t}y_{\ell;t}\qquad\text{and}\qquad\{x_{i;t},x_{j;t}\}_\cA=\Omega_{ij;t}x_{i;t}x_{j;t}.
 \end{equation*}
 As above, we also introduce the Poisson spaces $L^\times_{\cX,\bfr;t}$ isomorphic to either $\RR_\times^n\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $\CC_\times^n\times\prod_{\ell=1}^n \CC^{r_\ell-1}$ and $L^\times_{\cA,\bfr;t}$ isomorphic to either $\RR_\times^m\times\prod_{\ell=1}^n \RR^{r_\ell-1}$ or to $\CC_\times^m\times\prod_{\ell=1}^n \CC^{r_\ell-1}$.
-
+Write $z_{\ell,j;t}$ for coordinates on the $L_\bfr$ components and $Z_{\ell;t}(u)$ for the associated exchange polynomials.
 \begin{definition}
   \label{def:cluster varieties}
   Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}$ and an initial skew-symmetric $m\times m$ matrix~$\Omega_{t_0}$ which is $D$-compatible with~$\tilde B_{t_0}$.
@@ -1082,7 +1082,7 @@ It is often the case that a sequence of cluster mutations is essentially an iden
   \begin{enumerate}
     \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(y_{\ell;t_w})=y_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
     \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(x_{j;t_w})=x_{\sigma(j);t_1}$ for $1\le j\le m$;
-    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(p_{\ell,j;t_w})=p_{\sigma(\ell),j;t_1}$ for $1\le j\le m$;
+    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(z_{\ell,j;t_w})=z_{\sigma(\ell),j;t_1}$ for $1\le j\le m$;
     \item $\tilde B_{ij;t_1}=\tilde B_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$;
     \item $\Omega_{ij;t_1}=\Omega_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$.
   \end{enumerate}
