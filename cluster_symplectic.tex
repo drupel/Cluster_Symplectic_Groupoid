@@ -775,6 +775,7 @@ Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and w
 Write $L^\times_\bfr=\prod_{\ell=1}^n \RR_\times^{r_\ell-1}$ for the orthant inside $L_\bfr$.
 We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $Z_\ell(u)\in\RR[u]$ with $Z_\ell(0)=1$ given by
 \[Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.\]
+Write $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ for the the polynomial with reversed coefficients.
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr\]
 with corresponding orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$.
@@ -784,31 +785,33 @@ Then the map $\rho:L_\cA\to L_\cX$ extends to a Poisson map $L_{\cA,\bfr}\to L_{
 Given a choice of sign $\varepsilon\in\{\pm1\}$, define Hamiltonian functions $h^{k,\varepsilon}_{\cX,\bfr}\in\cO_{L^\times_{\cX,\bfr}}$ and $h^{k,\varepsilon}_{\cA,\bfr}\in\cO_{L^\times_{\cA,\bfr}}$ for $1\le k\le n$ by
 \begin{equation}
   \label{eq:hamiltonians}
-  h_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(Z_k(u)\big)}{u}du\qquad\text{and}\qquad h_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(Z_k(u)\big)}{u}du.
+  h_{\cX,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{y_k^\varepsilon} \frac{\log\big(Z_k^\circ(u)\big)}{u}du\qquad\text{and}\qquad h_{\cA,\bfr}^{k,\varepsilon}:=-\frac{\varepsilon}{d_k}\int_0^{\hat y_k^\varepsilon} \frac{\log\big(Z_k^\circ(u)\big)}{u}du,
 \end{equation}
+where
+\[ Z_k^\circ(u)=\begin{cases} Z_k(u) & \text{if $\varepsilon=+1$;}\\ Z_k^*(u) & \text{if $\varepsilon=-1$.} \end{cases}\]
+Clearly, there is an equality $\rho^*(h_{\cX,\bfr}^{k,\varepsilon})=h_{\cA,\bfr}^{k,\varepsilon}$, where $\rho$ here denotes the restriction to $L^\times_{\cA,\bfr}$.
 \begin{remark}
   \label{rem:cluster case}
   Observe that when $r_k=1$, i.e.\ $Z_k(u)=1+u$, we have $h_{\cX,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-y_k^\varepsilon)$ and $h_{\cA,\bfr}^{k,\varepsilon}:=\frac{\varepsilon}{d_k}\Li_2(-\hat y_k^\varepsilon)$.
   We will refer to this as the ``cluster case'' since the mutation rules presented below reduce to the classical mutations for cluster algebras when $Z_k(u)=1+u$ (c.f. Remark~\ref{rem:cluster case 2}).
 \end{remark}
 
-Clearly, there is an equality $\rho^*(h_{\cX,\bfr}^{k,\varepsilon})=h_{\cA,\bfr}^{k,\varepsilon}$, where $\rho$ here denotes the restriction to $L^\times_{\cA,\bfr}$.
 Write $X_{\cX,\bfr}^{k,\varepsilon}\in\cT_{L^\times_{\cX,\bfr}}$ and $X_{\cA,\bfr}^{k,\varepsilon}\in\cT_{L^\times_{\cA,\bfr}}$ for the Hamiltonian vector fields associated to $h_{\cX,\bfr}^{k,\varepsilon}$ and $h_{\cA,\bfr}^{k,\varepsilon}$ respectively, i.e.\ the vector fields naturally associated to the derivations $\{h_{\cX,\bfr}^{k,\varepsilon},\cdot\}_\cX$ and $\{h_{\cA,\bfr}^{k,\varepsilon},\cdot\}_\cA$.
 \begin{lemma}
   \label{le:hamiltonian dynamics}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the vector fields $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ determine the following dynamics on $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$:
   \begin{align}
     \label{eq:X dynamics}
-    \dot y_\ell&:=\{h_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(Z_k(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
+    \dot y_\ell&:=\{h_{\cX,\bfr}^{k,\varepsilon},y_\ell\}_\cX=-B_{k\ell}\log\big(Z_k^\circ(y_k^\varepsilon)\big)y_\ell\quad\text{for}\quad 1\le\ell\le n;\\
     \label{eq:A dynamics}
-    \dot x_j&:=\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
+    \dot x_j&:=\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\delta_{jk}\log\big(Z_k^\circ(\hat y_k^\varepsilon)\big)x_k\quad\text{for}\quad 1\le j\le m.
   \end{align}
   Moreover, the points of $L^\times_\bfr$ are fixed by the Hamiltonian flows.
 \end{lemma}
 \begin{proof}
   Equation~\eqref{eq:X dynamics} was essentially proven in \cite{GNR17}.
   Since equation~\eqref{eq:A dynamics} seems to technically be new, we will indicate the key steps in the computation here:
-  \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(Z_k(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(Z_k(\hat y_k^\varepsilon)\big)x_j.\]
+  \[\{h_{\cA,\bfr}^{k,\varepsilon},x_j\}_\cA=-\frac{\log\big(Z_k^\circ(\hat y_k^\varepsilon)\big)}{d_k\hat y_k}\{\hat y_k,x_j\}=-\delta_{jk}\log\big(Z_k^\circ(\hat y_k^\varepsilon)\big)x_j.\]
 \end{proof}
 
 Since $B_{kk}=0$, it immediately follows that $y_k$ is a conserved quantity under the flow of $L^\times_{\cX,\bfr}$ by the vector field $X_{\cX,\bfr}^{k,\varepsilon}$.
@@ -816,9 +819,9 @@ Since the map $\rho$ is Poisson with $\hat y_k=\rho^*(y_k)$ and $h_{\cA,\bfr}^{k
 \begin{corollary}
   \label{cor:time-one flows}
   For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the time-$t$ flow $\varphi_{\cX,\bfr}^t:L^\times_{\cX,\bfr}\to L^\times_{\cX,\bfr}$ of the Hamiltonian vector field $X_{\cX,\bfr}^{k,\varepsilon}$ is given on coordinates by
-  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(Z_k(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\qquad (\varphi_{\cX,\bfr}^t)^*(z_{\ell,i})=z_{\ell,i},\]
+  \[(\varphi_{\cX,\bfr}^t)^*(y_\ell)=\big(Z_k^\circ(y_k^\varepsilon)\big)^{-tB_{k\ell}}y_\ell,\qquad (\varphi_{\cX,\bfr}^t)^*(z_{\ell,i})=z_{\ell,i},\]
   and the time-$t$ flow $\varphi_{\cA,\bfr}^t:L^\times_{\cA,\bfr}\to L^\times_{\cA,\bfr}$ of the Hamiltonian vector field $X_{\cA,\bfr}^{k,\varepsilon}$ is given on coordinates by
-  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(Z_k(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\qquad (\varphi_{\cA,\bfr}^t)^*(z_{\ell,i})=z_{\ell,i}.\]
+  \[(\varphi_{\cA,\bfr}^t)^*(x_j)=\big(Z_k^\circ(\hat y_k^\varepsilon)\big)^{-t\delta_{jk}}x_j,\qquad (\varphi_{\cA,\bfr}^t)^*(z_{\ell,i})=z_{\ell,i}.\]
   These maps preserve the respective Poisson structures.
 \end{corollary}
 \begin{proof}
@@ -852,9 +855,10 @@ For $1\le k\le n$, set $(\tilde B',\Omega')=\mu_{\bfr,k}(\tilde B,\Omega)$ and c
   \{y'_k,y'_\ell\}_{\cX'}=d_kB'_{k\ell}y'_ky'_\ell\qquad\text{and}\qquad\{x'_i,x'_j\}_{\cA'}=\Omega'_{ij}x'_ix'_j.
 \end{equation*}
 Define $L_{\cX',\bfr}$ and $L_{\cA',\bfr}$ as above with corresponding orthants $L^\times_{\cX',\bfr}$ and $L^\times_{\cA',\bfr}$.
+Write $z'_{\ell,j}$ for coordinates on the $L_\bfr$ components.
 \begin{lemma}
   \label{le:tropical cluster transformations}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ which are each the identity map on the $L_\bfr^\times$ component and are given on coordinates of $L^\times_\cX$ and $L^\times_\cA$ by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, there are Poisson maps $\tau_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\tau_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ given on coordinates by
   \begin{align*}
     (\tau_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)
     &=\begin{cases} 
@@ -864,12 +868,14 @@ Define $L_{\cX',\bfr}$ and $L_{\cA',\bfr}$ as above with corresponding orthants 
     (\tau_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)
     &=\begin{cases} 
       x_k^{-1}\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+} & \text{if $j=k$;}\\
-      x_j & \text{if $j\ne k$.}
-    \end{cases}
+      x_j & \text{if $j\ne k$;}
+    \end{cases}\\
+    (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})=z_{\ell,r_\ell-j}.
   \end{align*}
 \end{lemma}
 \begin{proof}
-  By skew-symmetry of the Poisson brackets, there are essentially only two cases to check and just one of these is non-trivial for each transformation.
+  Since the coordinates on $L_\bfr$ are Casimirs there is nothing to check for these coordinates.
+  By skew-symmetry of the Poisson brackets, there are essentially only two cases to check on $L_\cX$ and on $L_\cA$ but just one of these is non-trivial for each transformation.
   For $\ell,\ell'\ne k$, we have
   \begin{align*}
     \{(\tau_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell),(\tau_{\cX,\bfr}^{k,\varepsilon})^*(y'_{\ell'})\}_\cX
@@ -897,24 +903,25 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
 \[\mu_{\cX,\bfr}^{k,\varepsilon}:=\tau_{\cX,\bfr}^{k,\varepsilon}\circ\varphi_{\cX,\bfr}^1:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}\qquad\text{ and }\qquad\mu_{\cA,\bfr}^{k,\varepsilon}:=\tau_{\cA,\bfr}^{k,\varepsilon}\circ\varphi_{\cA,\bfr}^1:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}.\]
 \begin{corollary}
   \label{cor:cluster mutation}
-  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ which are the identity map on the $L^\times_\bfr$ components and are given on coordinates of $L^\times_\cX$ and $L^\times_\cA$ by
+  For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, the cluster mutations provide Poisson morphisms $\mu_{\cX,\bfr}^{k,\varepsilon}:L^\times_{\cX,\bfr}\to L^\times_{\cX',\bfr}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}:L^\times_{\cA,\bfr}\to L^\times_{\cA',\bfr}$ given on coordinates by
   \begin{align}
     \label{eq:X mutation}
-    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+} Z_k(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
+    (\mu_{\cX,\bfr}^{k,\varepsilon})^*(y'_\ell)&=\begin{cases} y_k^{-1} & \text{if $\ell=k$;}\\ y_\ell y_k^{[\varepsilon r_kB_{k\ell}]_+} Z_k^\circ(y_k^\varepsilon)^{-B_{k\ell}} & \text{if $\ell\ne k$;}\end{cases}\\
     \label{eq:A mutation}
-    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$.}\end{cases}
+    (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$;}\end{cases}\\
+    \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})=z_{\ell,r_\ell-j}.
   \end{align}
-  Moreover, the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}\mu_{\cX,\bfr}^{k,-\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}\mu_{\cA,\bfr}^{k,-\varepsilon}$ are identity maps on $L^\times_{\cX,\bfr}$ and on $L^\times_{\cA,\bfr}$ respectively for any choice of sign $\varepsilon$.
+  Moreover, the cluster mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and $\mu_{\cA,\bfr}^{k,\varepsilon}$ are involutions which do not depend on the choice of sign $\varepsilon$.
 \end{corollary}
 \begin{proof}
   The first claim immediately follows by combining Corollary~\ref{cor:time-one flows} and Lemma~\ref{le:tropical cluster transformations}.
-  The final claim is a consequence of the identities $B'_{k\ell}=-B_{k\ell}$ and $B'_{ik}=-B_{ik}$.
+  The final claim is a consequence of the identities $B'_{k\ell}=-B_{k\ell}$, $B'_{ik}=-B_{ik}$, and $B_{ik}=[B_{ik}]_+-[-B_{ik}]_+$.
 \end{proof}
 
 \begin{remark}
   \label{rem:extended cluster charts}
   While we have restricted to considering $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$ to motivate the Hamiltonian natures of the mutations $\mu_{\cX,\bfr}^{k,\varepsilon}$ and~$\mu_{\cA,\bfr}^{k,\varepsilon}$, the cluster mutations \eqref{eq:X mutation} and \eqref{eq:A mutation} are also well-defined on open dense subsets of $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$.
-  More precisely, the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ nor where $Z_k(y_k^\varepsilon)=0$ if $B_{k\ell}>0$ for some $\ell$ and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ nor where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k(\hat y_k^\varepsilon)=0$.
+  More precisely, the map $\mu_{\cX,\bfr}^{k,\varepsilon}$ is not defined on the locus where $y_k=0$ nor where $Z_k^\circ(y_k^\varepsilon)=0$ if $B_{k\ell}>0$ for some $\ell$ and that the map $\mu_{\cA,\bfr}^{k,\varepsilon}$ is not defined on the locus where $x_k=0$ nor where $\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon)=0$.
   This holds equally well for the \emph{automorphism parts} $\varphi_{\cX,\bfr}^1$, $\varphi_{\cA,\bfr}^1$ and the \emph{tropical parts} $\tau_{\cX,\bfr}^{k,\varepsilon}$, $\tau_{\cA,\bfr}^{k,\varepsilon}$ of the cluster mutations with similar restrictions on the domains of definition.
 
   Similar considerations can be made when $L_\cX=\CC^n$, $L_\cA=\CC^m$, and $Z_k(u)\in\CC[u]$ is a monic polynomial with $Z_k(0)=1$ in which case analogous restrictions as above must be imposed, even when considering mutations restricted to $L^\times_\cX=\CC_\times^n$ or $L^\times_\cA=\CC_\times^m$.
@@ -939,8 +946,7 @@ Fix an initial $m\times n$ exchange matrix $\tilde B_{t_0}=(B_{ij;t_0})$ and ass
 The collection $\{\tilde B_t\}_{t\in\TT_n}$ is called the \emph{mutation pattern} generated by $\tilde B_{t_0}$ and any two exchange matrices $\tilde B_t$, $\tilde B_{t'}$ for $t,t'\in\TT_n$ are said to be \emph{mutation equivalent}.
 Given a skew-symmetric $m\times m$ matrix $\Omega_{t_0}=(\Omega_{ij;t_0})$ which is $D$-compatible with $\tilde B_{t_0}$, we define matrices $\Omega_t=(\Omega_{ij;t})$ compatible with $\tilde B_t$ by iterating mutations as above.
 
-As observed above, the inverse of a cluster mutation $\mu_{-,\bfr}^{k,\varepsilon}$ requires a change in the sign of $\varepsilon$.
-In general, it will be important to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations for the cluster charts $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$.
+It will be convenient to make particular choices of the signs $\varepsilon$ as we perform sequences of mutations for the cluster charts $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$.
 To specify these signs, we observe that the mutation pattern gives rise to the following combinatorial construction.
 \begin{definition}
   \label{def:tropical signs}
@@ -999,10 +1005,6 @@ As above, we also introduce the Poisson spaces $L^\times_{\cX,\bfr;t}$ isomorphi
   When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties \cite{FZ02,FG09a}.
   This justifies Remark~\ref{rem:cluster case}.
 \end{remark}
-\begin{remark}
-  In a typical presentation of the theory of generalized cluster algebras (c.f.\ \cite{NR16, Rup13}) each mutation requires a reversal of the coefficients of the exchange polynomials $Z_k$.
-  These presentations ignore the role of the tropical sign which facilitates such a reordering of coefficients in our approach.
-\end{remark}
 
 For both the cluster $\cA$-varieties \cite{GSV10} and $\cX$-varieties \cite{FG09c}, a Poisson structure is \emph{compatible} with mutations if the coordinates of each cluster chart are log-canonical (c.f.\ equation \eqref{eq:brackets}).
 \begin{theorem}
@@ -1042,14 +1044,17 @@ These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via th
   \label{eq:F-polynomial mutation}
   F_{j,\bfr;t'}=
   \begin{cases}
-    F_{k,\bfr;t}^{-1}\cdot \left(\prod_{\ell=1}^m F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) \cdot Z_k\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
-    F_{j,\bfr;t} & \text{if $j\ne k$.}
+    F_{k,\bfr;t}^{-1}\cdot \left(\prod_{\ell=1}^m F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) \cdot Z_{k;t}^\circ\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
+    F_{j,\bfr;t} & \text{if $j\ne k$;}
   \end{cases}
 \end{equation}
+where $Z_{k;t}$ is the exchange polynomial associated to the $L_\bfr$ component of the chart $L_{\cA,\bfr;t}$ and
+\[ Z_{k;t}^\circ(u)=\begin{cases} Z_{k;t}(u) & \text{if $\varepsilon_{\bfr,k;t}=+1$;}\\ Z_{k;t}^*(u) & \text{if $\varepsilon_{\bfr,k;t}=-1$.} \end{cases}\]
+
 \begin{remark}
   Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{j,\bfr;t}=1$ for $n+1\le j\le m$.
 \end{remark}
-As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following \emph{separation of additions} formulas.
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following ``separation of additions'' formulas.
 \begin{theorem}
   \label{th:separation}
   \cite{FZ07,Nak15,NR16}
@@ -1062,9 +1067,10 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
   \end{align}
 \end{theorem}
 \begin{remark}
-  The separation of additions formula for the cluster variables $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ usually has a denominator computed via a ``tropical evaluation'' of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$.
+  The separation of additions formula for the cluster variables $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ usually has a denominator computed via a ``tropical evaluation'' of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition.
+
   We have bypassed this by using $\bfg$-vectors from $\ZZ^m$ rather than the standard convention with $\bfg$-vectors in $\ZZ^n$.
-  It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our separation of additions formula reduces to the standard one in the case of geometric coefficients.
+  It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our ``separation of additions'' formula reduces to the standard one in the case of geometric coefficients.
 \end{remark}
 
 It is often the case that a sequence of cluster mutations is essentially an identity mapping, this is made precise as follows.
@@ -1074,8 +1080,9 @@ It is often the case that a sequence of cluster mutations is essentially an iden
   Let $\bfr=(r_1,\ldots,r_n)$ be a sequence of positive integers.
   A \emph{periodicity of cluster mutations} $(t_1,\ldots,t_w;\sigma)$ is a sequence of vertices $t_1,t_2,\ldots,t_w\in\TT_n$ with $t_i$ joined to $t_{i+1}$ by an edge labeled $k_i$ together with a permutation $\sigma$ of the set $\{1,\ldots,m\}$ fixing each of $n+1,\ldots,m$ so that the following equalities hold:
   \begin{enumerate}
-    \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(y_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(y_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
-    \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ for $1\le j\le m$;
+    \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(y_{\ell;t_w})=y_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
+    \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(x_{j;t_w})=x_{\sigma(j);t_1}$ for $1\le j\le m$;
+    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(p_{\ell,j;t_w})=p_{\sigma(\ell),j;t_1}$ for $1\le j\le m$;
     \item $\tilde B_{ij;t_1}=\tilde B_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$;
     \item $\Omega_{ij;t_1}=\Omega_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$.
   \end{enumerate}
@@ -1098,7 +1105,7 @@ We will need the following important consequence of the separation of additions 
   Moreover, by the first observation, each of these Newton polytopes will contain the vertex of this cone.
   
   These observations immediately give (2) and (3).
-  Indeed, the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ together with the separation of additions formula \eqref{eq:separation of additions 2} shows that 
+  Indeed, the second condition of a periodicity is equivalent to the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ which, together with the separation of additions formula \eqref{eq:separation of additions 2}, shows that 
   \[\frac{F_{j,\bfr;t_1}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{\sigma(j),\bfr;t_w}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}=\prod_{i=1}^m x_{i;t_0}^{G_{i\sigma(j);t_w}-G_{ij;t_1}}\]
   is a single monomial.
   But then the pointedness of their Newton polytopes implies this monomial must be 1, giving (2) and (3).
