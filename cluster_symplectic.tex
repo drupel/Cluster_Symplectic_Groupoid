@@ -354,10 +354,14 @@ A Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ naturally induces the Lie
 	}
 \end{equation*}
 This comorphism $\varphi^*$ is complete if for a complete Hamiltonian vector field $X_f$ with $f \in \cO_{M_2}$, the pullback Hamiltonian vector field $X_{\varphi^*f}$ is also complete.
-That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete.
+That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a unique symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete.
 In fact, the graph of $\varphi$, which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$, integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{Cat04}.
 
-If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted either to a symplectic groupoid morphism or to a symplectic groupoid comorphism.
+If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted either to a symplectic groupoid morphism or to a symplectic groupoid comorphism. For the periodicity of groupoid mutations \ref{prop:gpd periodicity}, we single out the special case when the Poisson map is the identity.
+
+\begin{proposition} \label{prop:gpd identity}
+If $\cG \rra M$ is the source-simply-connected symplectic groupoid of $(M, \pi)$, then the identity map $\mathtt{1}: M\to M$ as a Poisson diffeomorphism lifts to the identity groupoid map $\mathtt{1}: \cG \to \cG$.
+\end{proposition}
 
 Following \cite{Fer07}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
 In general, Poisson vector fields are lifted to multiplicative Hamiltonian vector fields.
@@ -1534,8 +1538,8 @@ Our goal is to glue the various groupoid charts over the cluster charts to get g
 
 Given a pair of vertices $t,t'\in\TT_n$, we will define iterated mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ of the groupoid charts as we did for the cluster charts by composing the maps in Theorem~\ref{th:groupoid mutation} along the unique path from $t$ to $t'$ in $\TT_n$ (with mutations always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}).
 We have seen that certain sequences of cluster mutations essentially just give identity mappings between cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
-These identity mappings should lift to identity mappings on groupoid charts, but it is not obvious from the definitions that the groupoid maps $\mu_{\cX,\bfr}^{t_w,t_1}$ and $\mu_{\cA,\bfr}^{t_w,t_1}$ are just identity mappings.
-\begin{corollary}
+These identity mappings lift to identity mappings on groupoid charts.
+\begin{proposition}\label{prop:gpd periodicity}
   Given any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations, the following equalities hold:
   \begin{enumerate}
     \item $\big(\mu_{\cX,\bfr}^{t_1,t_0}\big)^*(q_{\ell;t_1})=\big(\mu_{\cX,\bfr}^{t_w,t_0}\big)^*(q_{\sigma(\ell);t_w})$ for $1\le\ell\le n$;
@@ -1546,8 +1550,11 @@ These identity mappings should lift to identity mappings on groupoid charts, but
     \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(u_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(u_{\sigma(j);t_w})$ for $1\le j\le m$.
     \item $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(a_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(a_{\sigma(j);t_w})$ for $1\le j\le m$.
   \end{enumerate}
-\end{corollary}
+\end{proposition}
 \begin{proof}
+Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid, cf. \ref{prop:gpd identity}, so parts (1) and (4) immediately follow. For parts (2), (3), (5) and (6)
+
+
   First observe that the first condition of a periodicity gives 
   \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
   which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
