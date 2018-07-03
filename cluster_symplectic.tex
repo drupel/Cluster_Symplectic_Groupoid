@@ -37,6 +37,7 @@
 \newcommand{\bfv}{{\boldsymbol{v}}}
 \newcommand{\bfx}{{\boldsymbol{x}}}
 \newcommand{\bfy}{{\boldsymbol{y}}}
+\newcommand{\bfz}{{\boldsymbol{z}}}
 \newcommand{\bfxi}{\boldsymbol{\xi}}
 \newcommand{\bfzero}{\mathbf{0}}
 
@@ -774,7 +775,9 @@ However, we will work in a slightly more general setting.
 Fix a collection of positive integers $\bfr=(r_1,\ldots,r_n)\in\ZZ_{>0}^n$ and write $L_\bfr=\prod_{\ell=1}^n \RR^{r_\ell-1}$ with coordinates $z_{\ell,j}$ for $1\le\ell\le n$, $1\le j\le r_\ell-1$.
 Write $L^\times_\bfr=\prod_{\ell=1}^n \RR_\times^{r_\ell-1}$ for the orthant inside $L_\bfr$.
 We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\ell$ monic polynomial $Z_\ell(u)\in\RR[u]$ with $Z_\ell(0)=1$ given by
-\[Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.\]
+\begin{equation} \label{eq:gen mut poly}
+Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.
+\end{equation}
 Write $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ for the the polynomial with reversed coefficients.
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr\]
@@ -1585,15 +1588,20 @@ These lift to simple permutations of the coordinates on the corresponding groupo
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f.\ \ref{prop:gpd identity}) so parts (1) and (4) immediately follow.
-For parts (2), (3), (5) and (6)
+Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f. Proposition~\ref{prop:gpd identity}) so parts (1) and (5) immediately follow.
+If we restrict to the case of $\RR_\times$, then both the blow-up groupoid $\cB$ and the symplectic double $\cD$ are also source-simply-connected and parts (2), (3), (6) and (7) follows from Proposition~\ref{prop:gpd identity}; the case of $\CC_\times$ follows when we complexify the mutations. 
 
+Now the periodicity of mutations depends only on the degree of $Z_k$; in other words. This means that if we fix the degree $r_l$ of $Z_l$ as in \eqref{eq:gen mut poly} and a periodicity $(t_1,\ldots,t_w;\sigma)$ for say $L_\cX$, then $\mu_\cX^{t_w,t_1}: L_{\cX} \to L_{\cX}$ is the identity for each choice of $(z_1, \ldots, z_{r_l-1}) \in \RR^{r_l - 1} \subset L_\bfr$, and therefore
+\[
+	\mu^{t_w,t_1}: L_\cX \times \RR^{r_l - 1} \to L_\cX \times \RR^{r_l - 1}
+\]
+is the identity map. By Proposition~\ref{prop:gpd identity}, $\mu^{t_w,t_1}$ lifts to the identity of the source-simply-connected symplectic groupoid and part (4) follows.
 
-  First observe that the first condition of a periodicity gives 
-  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
-  which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
-  Combining this with Lemma~\ref{le:dual vectors} and Corollary~\ref{cor:periodicity} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
-  The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
+%  First observe that the first condition of a periodicity gives 
+%  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
+%  which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
+%  Combining this with Lemma~\ref{le:dual vectors} and Corollary~\ref{cor:periodicity} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
+%  The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
 \end{proof}
 
 Thus it is reasonable to give the following definition.
