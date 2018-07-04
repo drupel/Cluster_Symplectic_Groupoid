@@ -358,10 +358,10 @@ This comorphism $\varphi^*$ is complete if for a complete Hamiltonian vector fie
 That is, a Poisson map $\varphi: (M_1, \pi_1) \to (M_2, \pi_2)$ lifts to a unique symplectic groupoid comorphism from $(\cG_1, \omega_1)$ to $(\cG_2, \omega_2)$ if $\cG_2$ is source-simply-connected and $\varphi$ is complete.
 In fact, the graph of $\varphi$, which is a coisotropic submanifold of $(M_1 \times M_2, \pi_1 \oplus -\pi_2)$, integrates to a Lagrangian subgroupoid of $(\cG_1 \times \cG_2, \omega_1 \oplus -\omega_2)$ \cite{Cat04}.
 
-If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted either to a symplectic groupoid morphism or to a symplectic groupoid comorphism. For the periodicity of groupoid mutations \ref{prop:gpd periodicity}, we single out the special case when the Poisson map is the identity.
+If the Poisson map $\varphi: (M, \pi) \to (M, \pi)$ is a diffeomorphism, then $\varphi$ induces both a Lie algebroid morphism and a Lie algebroid comorphism, which can be lifted either to a symplectic groupoid morphism or to a symplectic groupoid comorphism. For the periodicity of groupoid mutations Proposition~\ref{prop:gpd periodicity}, we single out the special case when the Poisson map is the identity.
 
 \begin{proposition} \label{prop:gpd identity}
-If $\cG \rra M$ is the source-simply-connected symplectic groupoid of $(M, \pi)$, then the identity map $\mathtt{1}: M\to M$ as a Poisson diffeomorphism lifts to the identity groupoid map $\mathtt{1}: \cG \to \cG$.
+If $\cG \rra M$ is the source-simply-connected symplectic groupoid of $(M, \pi)$, then the identity map $\mathtt{1}_M: M\to M$ as a Poisson diffeomorphism lifts to the identity groupoid map $\mathtt{1}_\cG: \cG \to \cG$.
 \end{proposition}
 
 Following \cite{Fer07}, we outline a method to lift the Hamiltonian Poisson maps to Hamiltonian symplectic groupoid morphisms.
@@ -1588,14 +1588,14 @@ These lift to simple permutations of the coordinates on the corresponding groupo
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f. Proposition~\ref{prop:gpd identity}) so parts (1) and (5) immediately follow.
-If we restrict to the case of $\RR_\times$, then both the blow-up groupoid $\cB$ and the symplectic double $\cD$ are also source-simply-connected and parts (2), (3), (6) and (7) follows from Proposition~\ref{prop:gpd identity}; the case of $\CC_\times$ follows when we complexify the mutations. 
+Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f. Proposition~\ref{prop:gpd identity}), so parts (1) and (5) immediately follow.
+If we restrict to the case of $\RR_\times$, then both the blow-up groupoid $\cB$ and the symplectic double $\cD$ are also source-simply-connected and parts (2), (3), (6) and (7) follow from Proposition~\ref{prop:gpd identity}; the case of $\CC_\times$ follows when we complexify the mutations. 
 
-Now the periodicity of mutations depends only on the degree of $Z_k$; in other words. This means that if we fix the degree $r_l$ of $Z_l$ as in \eqref{eq:gen mut poly} and a periodicity $(t_1,\ldots,t_w;\sigma)$ for say $L_\cX$, then $\mu_\cX^{t_w,t_1}: L_{\cX} \to L_{\cX}$ is the identity for each choice of $(z_1, \ldots, z_{r_l-1}) \in \RR^{r_l - 1} \subset L_\bfr$, and therefore
+Now the periodicity of mutations depends only on the degree of $Z_k$; in other words, this means that if we fix the degree $r_\ell$ of $Z_\ell$ as in \eqref{eq:gen mut poly} and a periodicity $(t_1,\ldots,t_w;\sigma)$ for say $L_\cX$, then $\mu_\cX^{t_w,t_1}: L_{\cX} \to L_{\cX}$ is the identity up to the permutation $\sigma$ for each choice of $(z_1, \ldots, z_{r_\ell-1}) \in \RR^{r_\ell - 1} \subset L_\bfr$, and therefore
 \[
-	\mu^{t_w,t_1}: L_\cX \times \RR^{r_l - 1} \to L_\cX \times \RR^{r_l - 1}
+	\mu_\cX^{t_w,t_1}: L_\cX \times \RR^{r_\ell - 1} \to L_\cX \times \RR^{r_\ell - 1}
 \]
-is the identity map. By Proposition~\ref{prop:gpd identity}, $\mu^{t_w,t_1}$ lifts to the identity of the source-simply-connected symplectic groupoid and part (4) follows.
+is the identity map up to the permutation $\sigma$. By Proposition~\ref{prop:gpd identity}, $\mu_\cX^{t_w,t_1}$ lifts to the identity map (up to permutation) of the source-simply-connected symplectic groupoid and part (4) follows.
 
 %  First observe that the first condition of a periodicity gives 
 %  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
