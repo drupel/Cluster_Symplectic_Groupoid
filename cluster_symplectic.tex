@@ -1050,21 +1050,21 @@ Then for vertices $t,t'\in\TT_n$ which are joined by an edge labeled $k$, we com
 \begin{remark}
   Since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $G_{ij;t}=\delta_{ij}$ for $n+1\le j\le m$.
 \end{remark}
-Next we introduce the \emph{$F$-polynomials} $F_{j,\bfr;t}\in\CC[u_1,\ldots,u_n]$ of the cluster variables $x_{j;t}$.
-These are defined recursively by $F_{j,\bfr;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined in $\TT_n$ by an edge labeled $k$:
+Next we introduce the \emph{$F$-polynomials} $F_{\bfr,j;t}\in\CC[u_1,\ldots,u_n]$ of the cluster variables $x_{j;t}$.
+These are defined recursively by $F_{\bfr,j;t_0}=1$ for $1\le j\le m$ and via the following recursion when $t$ and $t'$ are joined in $\TT_n$ by an edge labeled $k$:
 \begin{equation}
   \label{eq:F-polynomial mutation}
-  F_{j,\bfr;t'}=
+  F_{\bfr,j;t'}=
   \begin{cases}
-    F_{k,\bfr;t}^{-1}\cdot \left(\prod_{\ell=1}^m F_{\ell,\bfr;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) \cdot Z_{k;t}^\circ\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\ell,\bfr;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
-    F_{j,\bfr;t} & \text{if $j\ne k$;}
+    F_{\bfr,k;t}^{-1}\cdot \left(\prod_{\ell=1}^m F_{\bfr,\ell;t}^{[-\varepsilon_{\bfr,k;t} B_{\ell k;t} r_k]_+}\right) \cdot Z_{k;t}^\circ\left(\prod_{\ell=1}^n u_\ell^{\varepsilon_{\bfr,k;t} C_{\ell k;t}} F_{\bfr,\ell;t}^{\varepsilon_{\bfr,k;t} B_{\ell k;t}}\right) & \text{if $j=k$;}\\
+    F_{\bfr,j;t} & \text{if $j\ne k$;}
   \end{cases}
 \end{equation}
 where $Z_{k;t}$ is the exchange polynomial associated to the $L_\bfr$ component of the chart $L_{\cA,\bfr;t}$ and
 \[ Z_{k;t}^\circ(u)=\begin{cases} Z_{k;t}(u) & \text{if $\varepsilon_{\bfr,k;t}=+1$;}\\ Z_{k;t}^*(u) & \text{if $\varepsilon_{\bfr,k;t}=-1$.} \end{cases}\]
 
 \begin{remark}
-  Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{j,\bfr;t}=1$ for $n+1\le j\le m$.
+  Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{\bfr,j;t}=1$ for $n+1\le j\le m$.
 \end{remark}
 As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following formulas.
 \begin{theorem}
@@ -1073,14 +1073,15 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
   For any vertex $t\in\TT_n$, we have
   \begin{align}
     \label{eq:separation of additions 1}
-    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{\bfr,k;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
     \label{eq:separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}};
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(z_{\ell,j;t})&=z_{\ell,\iota_{j;t};t_0}
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(z_{\ell,j;t})&=z^\circ_{\ell,j;t_0},
   \end{align}
+  where $z^\circ_{\ell,j;t_0}=z_{\ell,j;t_0}$ if the mutation sequence from $t_0$ to $t$ has an even number of mutations in direction $\ell$ and $z^\circ_{\ell,j;t_0}=z_{\ell,r_\ell-j;t_0}$ if this mutation sequence has an odd number of mutations in direction $\ell$.
 \end{theorem}
 \begin{remark}
-  The separation of additions formula in \cite{FZ07} for the cluster variable $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ is usually presented with a denominator computed via a tropical evaluation of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition in the numerator.
+  The separation of additions formula in \cite{FZ07} for the cluster variable $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ is usually presented with a denominator computed via a tropical evaluation of the $F$-polynomial $F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition in the numerator.
 
   We have bypassed this by using $\bfg$-vectors from $\ZZ^m$ rather than the standard convention with $\bfg$-vectors in $\ZZ^n$.
   It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our ``separation of additions'' formula \eqref{eq:separation of additions 2} reduces to the standard one in the case of geometric coefficients.
@@ -1109,17 +1110,17 @@ We will need the following important consequence of the separation of additions 
   \begin{enumerate}
     \item $C_{ij;t_1}=C_{i\sigma(j);t_w}$ for $1\le i,j\le m$;
     \item $G_{ij;t_1}=G_{i\sigma(j);t_w}$ for $1\le i,j\le m$;
-    \item $F_{j,\bfr;t_1}=F_{\sigma(j),\bfr;t_w}$ for $1\le j\le m$.
+    \item $F_{\bfr,j;t_1}=F_{\bfr,\sigma(j);t_w}$ for $1\le j\le m$.
   \end{enumerate}
 \end{corollary}
 \begin{proof}
   As in \cite[Proposition 5.6]{FZ07}, the sign-coherence of $\bfc$-vectors implies that all $F$-polynomials have constant term 1.
-  Since the columns of $\tilde B_{t_0}$ are linearly independent, the Newton polytope of each evaluation $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ has vertices in the positive cone of the $n$-dimensional lattice spanned by the columns of $\tilde B_{t_0}$.
+  Since the columns of $\tilde B_{t_0}$ are linearly independent, the Newton polytope of each evaluation $F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$ has vertices in the positive cone of the $n$-dimensional lattice spanned by the columns of $\tilde B_{t_0}$.
   Moreover, by the first observation, each of these Newton polytopes will contain the vertex of this cone.
   
   These observations immediately give (2) and (3).
   Indeed, the second condition of a periodicity is equivalent to the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ which, together with the ``separation of additions'' formula \eqref{eq:separation of additions 2}, shows that 
-  \[\frac{F_{j,\bfr;t_1}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{\sigma(j),\bfr;t_w}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}=\prod_{i=1}^m x_{i;t_0}^{G_{i\sigma(j);t_w}-G_{ij;t_1}}\]
+  \[\frac{F_{\bfr,j;t_1}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{\bfr,\sigma(j);t_w}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}=\prod_{i=1}^m x_{i;t_0}^{G_{i\sigma(j);t_w}-G_{ij;t_1}}\]
   is a single monomial.
   But then the pointedness of their Newton polytopes implies this monomial must be 1, giving (2) and (3).
 
@@ -1656,13 +1657,13 @@ Using these we have the following analogues of the separation of additions formu
   \label{th:groupoid separation of additions}
   For any vertex $t\in\TT_n$, we have the following formulas for the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, where each $\beta$ below denotes the target map of the appropriate groupoid:
   \begin{align}
-    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(q_{k;t})&=\frac{ \sum_{\ell=1}^n G^\vee_{k\ell;t} y_{\ell;t_0} q_{\ell;t_0} +\frac{1}{d_k} \log\left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
-    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{k;t})&=\left(\prod_{\ell=1}^n t_{\ell;t_0}^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k};\\
-    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(v_{k;t})&=\frac{\left(\prod_{\ell=1}^n (y_{\ell;t_0} v_{\ell;t_0} + 1)^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{k,\bfr;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k} - 1}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\ell,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
-    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(p_{i;t})&=\frac{\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
+    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(q_{k;t})&=\frac{ \sum_{\ell=1}^n G^\vee_{k\ell;t} y_{\ell;t_0} q_{\ell;t_0} +\frac{1}{d_k} \log\left(\frac{\beta^*\left(F_{\bfr,k;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{\bfr,k;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\bfr,\ell;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
+    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(t_{k;t})&=\left(\prod_{\ell=1}^n t_{\ell;t_0}^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{\bfr,k;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{\bfr,k;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k};\\
+    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(v_{k;t})&=\frac{\left(\prod_{\ell=1}^n (y_{\ell;t_0} v_{\ell;t_0} + 1)^{G^\vee_{k\ell;t}}\right) \left(\frac{\beta^*\left(F_{\bfr,k;t}\big(y_{1;t_0},\ldots,y_{n;t_0}\big)\right)}{F_{\bfr,k;t}(y_{1;t_0},\ldots,y_{n;t_0})}\right)^{1/d_k} - 1}{\prod_{\ell=1}^n y_{\ell;t_0}^{C_{\ell k;t}} F_{\bfr,\ell;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{\ell k;t}}};\\
+    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(p_{i;t})&=\frac{\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
-    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
+    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
     \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} (r_\ell-j)-1}}{Z_\ell(u^{\varepsilon_{\bfr,\ell;t_i}})}du
   \end{align}
   where $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_{w-1}$ by mutations in directions $k_1,\ldots,k_w$.
@@ -1670,7 +1671,7 @@ Using these we have the following analogues of the separation of additions formu
 \begin{proof}
   We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
   First consider when $t$ is joined to $t_0$ by an edge labeled $k$.
-  Then $F_{k,\bfr;t}=Z_{k;t_0}^\circ(u_k)$ and $F_{\ell,\bfr;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
+  Then $F_{\bfr,k;t}=Z_{k;t_0}^\circ(u_k)$ and $F_{\bfr,\ell;t}=1$ for $\ell\ne k$ so that \eqref{eq:groupoid separation of additions 2} just becomes the mutation formula \eqref{eq:DA mutation}.
 
   Now suppose $t'$ and $t$ are joined by an edge labeled $k$ with $t$ lying on the unique shortest path from $t_0$ to $t'$.
   Then $\mu_{\cA,\bfr}^{t',t_0}=\mu_{\cA,\bfr}^{t',t}\circ\mu_{\cA,\bfr}^{t,t_0}$ so that
@@ -1678,8 +1679,8 @@ Using these we have the following analogues of the separation of additions formu
     \big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{k;t'})
     &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\circ\big(\mu_{\cA,\bfr}^{t',t}\big)^*(s_{k;t'})\\
     &=\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{k;t}^{-1})\\
-    &=\left(\prod_{j=1}^m s_{j;t_0}^{-C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{k\ell;t}/d_\ell}\\
-    &=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{kj;t'}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k\ell;t'}/d_\ell},
+    &=\left(\prod_{j=1}^m s_{j;t_0}^{-C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{k\ell;t}/d_\ell}\\
+    &=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{kj;t'}}\right) \prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{k\ell;t'}/d_\ell},
   \end{align*}
   where the last equality used that $\ell\ne k$ in the product since $B_{kk;t}=0$.
   On the other hand, writing $\varepsilon=\varepsilon_{\bfr,k;t}$ below, for $i\ne k$ we have
@@ -1698,24 +1699,24 @@ Using these we have the following analogues of the separation of additions formu
   which is the desired $\bfc$-vector part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
   Meanwhile the $F$-polynomial part of this is given by
   \begin{align*}
-    &\prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell}
-    \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{[-\varepsilon B_{ik;t} r_k]_+ B_{k\ell;t}/d_\ell}\\
-    & = \left(\frac{F_{k,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{k,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{ik;t}/d_k}
-    \prod_{\ell\ne k} \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell-B_{ik;t} [\varepsilon r_k B_{k\ell;t}]_+/d_\ell},
+    &\prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell}
+    \prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{[-\varepsilon B_{ik;t} r_k]_+ B_{k\ell;t}/d_\ell}\\
+    & = \left(\frac{F_{\bfr,k;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,k;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{ik;t}/d_k}
+    \prod_{\ell\ne k} \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell-B_{ik;t} [\varepsilon r_k B_{k\ell;t}]_+/d_\ell},
   \end{align*}
   where the final exponent above is given by \eqref{eq:matrix mutation} and by skew-symmetrizability this may be rewritten as $B_{i\ell;t'}/d_\ell-B_{ik;t} [-\varepsilon B_{\ell k;t} r_k]_+/d_k$.
   On the other hand, considering only $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)$ gives
   \begin{align*}
-    \nonumber &\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{j=1}^m s_{j;t_0}^{-\varepsilon d_k C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-\varepsilon d_k B_{k\ell;t}/d_\ell}\\
-    \nonumber &=\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{\ell=1}^n s_{\ell;t_0}^{-\varepsilon d_k C^\vee_{k\ell;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{\varepsilon B_{\ell k;t}}\\
+    \nonumber &\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{j=1}^m s_{j;t_0}^{-\varepsilon d_k C^\vee_{kj;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-\varepsilon d_k B_{k\ell;t}/d_\ell}\\
+    \nonumber &=\left(\prod_{\ell=1}^n \hat y_{\ell;t_0}^{\varepsilon C_{\ell k;t}} F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})^{\varepsilon B_{\ell k;t}}\right) \left(\prod_{\ell=1}^n s_{\ell;t_0}^{-\varepsilon d_k C^\vee_{k\ell;t}}\right) \prod_{\ell=1}^n \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{\varepsilon B_{\ell k;t}}\\
     %\label{eq:Z argument}
-    &=\left(\prod_{\ell=1}^n (\hat y_{\ell;t_0} s_{\ell;t_0}^{-d_\ell})^{\varepsilon C_{\ell k;t}}\right) \prod_{\ell=1}^n \left(F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})\right)^{\varepsilon B_{\ell k;t}},
+    &=\left(\prod_{\ell=1}^n (\hat y_{\ell;t_0} s_{\ell;t_0}^{-d_\ell})^{\varepsilon C_{\ell k;t}}\right) \prod_{\ell=1}^n \left(F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})\right)^{\varepsilon B_{\ell k;t}},
   \end{align*}
   where the last equality used Lemma~\ref{le:dual vectors}.
   Thus combining the $F$-polynomial part above with the expression $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\frac{Z_{k;t}^\circ\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_{k;t}^\circ(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}$ and applying the $F$-polynomial recursion \eqref{eq:F-polynomial mutation} gives the total $F$-polynomial part
   \begin{align*}
-    \prod_{\ell\ne k} \left(\frac{F_{\ell,\bfr;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell}
-    \left(\frac{F_{k,\bfr;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{k,\bfr;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.
+    \prod_{\ell\ne k} \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell}
+    \left(\frac{F_{\bfr,k;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,k;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.
   \end{align*}
   But $B_{ik;t'}=-B_{ik;t}$ so that this final expression gives the desired $F$-polynomial part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
 \end{proof}
