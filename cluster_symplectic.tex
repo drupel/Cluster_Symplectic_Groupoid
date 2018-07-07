@@ -779,6 +779,7 @@ We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\e
 Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.
 \end{equation}
 Write $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ for the the polynomial with reversed coefficients.
+
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr\]
 with corresponding orthants $L^\times_{\cX,\bfr}$ and $L^\times_{\cA,\bfr}$.
@@ -1065,7 +1066,7 @@ where $Z_{k;t}$ is the exchange polynomial associated to the $L_\bfr$ component 
 \begin{remark}
   Again, since we only perform mutations in directions $k$ with $1\le k\le n$, the definitions immediately imply $F_{j,\bfr;t}=1$ for $n+1\le j\le m$.
 \end{remark}
-As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following ``separation of additions'' formulas.
+As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely control the iterated mutations via the following formulas.
 \begin{theorem}
   \label{th:separation}
   \cite{FZ07,Nak15,NR16}
@@ -1074,14 +1075,15 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
     \label{eq:separation of additions 1}
     \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{k,\bfr;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
     \label{eq:separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}}.
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(z_{\ell,j;t})&=z_{\ell,\iota_{j;t};t_0}
   \end{align}
 \end{theorem}
 \begin{remark}
-  The separation of additions formula for the cluster variables $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ usually has a denominator computed via a ``tropical evaluation'' of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition.
+  The separation of additions formula in \cite{FZ07} for the cluster variable $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ is usually presented with a denominator computed via a tropical evaluation of the $F$-polynomial $F_{j,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition in the numerator.
 
   We have bypassed this by using $\bfg$-vectors from $\ZZ^m$ rather than the standard convention with $\bfg$-vectors in $\ZZ^n$.
-  It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our ``separation of additions'' formula reduces to the standard one in the case of geometric coefficients.
+  It is not hard to see by considering $x_{n+1;t_0}, \ldots, x_{m;t_0}$ simply as frozen cluster variables that our ``separation of additions'' formula \eqref{eq:separation of additions 2} reduces to the standard one in the case of geometric coefficients.
 \end{remark}
 
 It is often the case that a sequence of cluster mutations is essentially an identity mapping, this is made precise as follows.
@@ -1093,7 +1095,7 @@ It is often the case that a sequence of cluster mutations is essentially an iden
   \begin{enumerate}
     \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(y_{\ell;t_w})=y_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
     \item $\big(\mu_{\cA,\bfr}^{t_w,t_1}\big)^*(x_{j;t_w})=x_{\sigma(j);t_1}$ for $1\le j\le m$;
-    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(z_{\ell,j;t_w})=z_{\sigma(\ell),j;t_1}$ for $1\le j\le m$;
+    \item $\big(\mu_{-,\bfr}^{t_w,t_1}\big)^*(z_{\ell,j;t_w})=z_{\sigma(\ell),j;t_1}$ for $1\le\ell\le n$ and $1\le j\le r_\ell-1$;
     \item $\tilde B_{ij;t_1}=\tilde B_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$;
     \item $\Omega_{ij;t_1}=\Omega_{\sigma(i)\sigma(j);t_w}$ for $1\le i,j\le m$.
   \end{enumerate}
@@ -1116,12 +1118,12 @@ We will need the following important consequence of the separation of additions 
   Moreover, by the first observation, each of these Newton polytopes will contain the vertex of this cone.
   
   These observations immediately give (2) and (3).
-  Indeed, the second condition of a periodicity is equivalent to the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ which, together with the separation of additions formula \eqref{eq:separation of additions 2}, shows that 
+  Indeed, the second condition of a periodicity is equivalent to the equality $\big(\mu_{\cA,\bfr}^{t_1,t_0}\big)^*(x_{j;t_1})=\big(\mu_{\cA,\bfr}^{t_w,t_0}\big)^*(x_{\sigma(j);t_w})$ which, together with the ``separation of additions'' formula \eqref{eq:separation of additions 2}, shows that 
   \[\frac{F_{j,\bfr;t_1}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}{F_{\sigma(j),\bfr;t_w}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}=\prod_{i=1}^m x_{i;t_0}^{G_{i\sigma(j);t_w}-G_{ij;t_1}}\]
   is a single monomial.
   But then the pointedness of their Newton polytopes implies this monomial must be 1, giving (2) and (3).
 
-  Finally, (3) immediately implies (1) by the separation of additions formula \eqref{eq:separation of additions 1} and condition (3) of a periodicity of cluster mutations.
+  Finally, (3) immediately implies (1) by the ``separation of additions'' formula \eqref{eq:separation of additions 1} and condition (1) of a periodicity of cluster mutations.
 \end{proof}
 
 
@@ -1490,7 +1492,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
       a_{k,r_k-j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
-      a_{\ell,j} & \text{if $\ell\ne k$.}
+      a_{\ell,j} & \text{if $\ell\ne k$;}
     \end{cases}\\
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
@@ -1615,7 +1617,7 @@ Thus it is reasonable to give the following definition.
   Unfortunately, this is not the case and we must make due with the iterative construction presented above.
 \end{remark}
 
-To understand the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, we introduce analogues of the separation of additions formulas from Theorem~\ref{th:separation}.
+To understand the iterated mutations $\mu_{-,\bfr}^{t,t_0}$, we introduce analogues of the ``separation of additions'' formulas from Theorem~\ref{th:separation}.
 As a first step in lifting the separation of additions formulas~\eqref{eq:separation of additions 1} and~\eqref{eq:separation of additions 2} to the level of groupoids we introduce analogues of the $\bfc$-vectors and $\bfg$-vectors which describe iterations of the cluster mutations.
 To begin let $C^\vee_{t_0}$ be an $m\times m$ identity matrix and let $G^\vee_{t_0}$ be an $n\times n$ identity matrix.
 We then assign matrices $C^\vee_t:=(C^\vee_{ij;t})$ and $G^\vee_t:=(G^\vee_{ij;t})$ to the vertices $t\in\TT_n$ by the following recursion.
@@ -1660,8 +1662,10 @@ Using these we have the following analogues of the separation of additions formu
     \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(p_{i;t})&=\frac{\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
     \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
-    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}.
+    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\ell,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{i,\bfr;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
+    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} (r_\ell-j)-1}}{Z_\ell(u^{\varepsilon_{\bfr,\ell;t_i}})}du
   \end{align}
+  where $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_{w-1}$ by mutations in directions $k_1,\ldots,k_w$.
 \end{theorem}
 \begin{proof}
   We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
