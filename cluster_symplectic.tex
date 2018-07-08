@@ -778,7 +778,7 @@ We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\e
 \begin{equation} \label{eq:gen mut poly}
 Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.
 \end{equation}
-Write $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ for the the polynomial with reversed coefficients.
+There is a natural \emph{star involution} $z_{\ell,j}\mapsto z^*_{\ell,j}:=z_{\ell,r_\ell-j}$ on $L_\bfr$ and we write $Z^*_\ell(u)$ for the image of $Z_\ell(u)$ under this involution, more directly $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ is the the polynomial with reversed coefficients.
 
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr\]
@@ -876,7 +876,7 @@ Write $z'_{\ell,j}$ for coordinates on the $L_\bfr$ components.
     \end{cases}\\
     (\tau_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})
     &=\begin{cases}
-      z_{k,r_k-j} & \text{if $\ell=k$;}\\
+      z^*_{k,j} & \text{if $\ell=k$;}\\
       z_{\ell,j} & \text{if $\ell\ne k$.}
     \end{cases}  
   \end{align*}
@@ -919,7 +919,7 @@ For $1\le k\le n$ and $\varepsilon\in\{\pm1\}$, define the \emph{cluster mutatio
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(x'_j)&=\begin{cases} x_k^{-1}\left(\prod\limits_{i=1}^m x_i^{[-\varepsilon B_{ik}r_k]_+}\right)Z_k^\circ(\hat y_k^\varepsilon) & \text{if $j=k$;}\\ x_j & \text{if $j\ne k$;}\end{cases}\\
     \nonumber (\mu_{-,\bfr}^{k,\varepsilon})^*(z'_{\ell,j})
     &=\begin{cases}
-      z_{k,r_k-j} & \text{if $\ell=k$;}\\
+      z^*_{k,j} & \text{if $\ell=k$;}\\
       z_{\ell,j} & \text{if $\ell\ne k$.}
     \end{cases}
   \end{align}
@@ -1075,10 +1075,10 @@ As promised, the $\bfc$-vectors, $\bfg$-vectors, and $F$-polynomials completely 
     \label{eq:separation of additions 1}
     \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(y_{\ell;t})&=\prod_{k=1}^n \left( y_{k;t_0}^{C_{k\ell;t}} F_{\bfr,k;t}(y_{1;t_0},\ldots,y_{n;t_0})^{B_{k\ell;t}} \right);\\
     \label{eq:separation of additions 2}
-    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}};
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})&=\left(\prod_{i=1}^m x_{i;t_0}^{G_{ij;t}}\right) F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0}),\qquad \hat y_{k;t_0}=\prod_{i=1}^m x_{i;t_0}^{B_{ik;t_0}};\\
     \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(z_{\ell,j;t})&=z^\circ_{\ell,j;t_0},
   \end{align}
-  where $z^\circ_{\ell,j;t_0}=z_{\ell,j;t_0}$ if the mutation sequence from $t_0$ to $t$ has an even number of mutations in direction $\ell$ and $z^\circ_{\ell,j;t_0}=z_{\ell,r_\ell-j;t_0}$ if this mutation sequence has an odd number of mutations in direction $\ell$.
+  where $z^\circ_{\ell,j;t_0}=z_{\ell,j;t_0}$ if the mutation sequence from $t_0$ to $t$ has an even number of mutations in direction $\ell$ and $z^\circ_{\ell,j;t_0}=z^*_{\ell,j;t_0}$ if this mutation sequence has an odd number of mutations in direction $\ell$.
 \end{theorem}
 \begin{remark}
   The separation of additions formula in \cite{FZ07} for the cluster variable $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(x_{j;t})$ is usually presented with a denominator computed via a tropical evaluation of the $F$-polynomial $F_{\bfr,j;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})$, this is the auxiliary addition that is usually being ``separated'' from the ordinary addition in the numerator.
@@ -1162,6 +1162,7 @@ We introduce coordinates on these groupoids given as follows:
 \end{itemize}
 The symplectic groupoid structure on $\cG_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:PoiSpLogC}, while the symplectic groupoid structure on $\cD_\cA \rra L_\cA$ is the same as in Theorem~\ref{thm:SymDBLoc}, and the symplectic groupoid structure on $\cB_\cA \rra L_\cA$ is the same as in Theorem~\ref{th:blowup groupoid}.
 The symplectic groupoid structures over $L_\cX$ mimic the structures in the theorems above by replacing $x_i$, $x_j$ with $y_k$, $y_\ell$ and $\Omega_{ij}$ with $d_kB_{k\ell}$ together with the corresponding replacements of coordinates $p_j$ with $q_\ell$, $u_j$ with $v_\ell$, and $s_j$ with $t_\ell$.
+For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
 
 As above, for a sequence $\bfr=(r_1,\ldots,r_n)$ of positive integers, we introduce the symplectic groupoids 
 \begin{align*}
@@ -1173,7 +1174,7 @@ Translating this symplectic structure into a Poisson bracket on $T^*L_\bfr$, we 
 \begin{equation*}
   \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},a_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{a_{k,i},a_{\ell,j}\}_\bfr=0.
 \end{equation*}
-For simplicity of notation, we will write $\alpha$ and $\beta$ for the source and target maps of all groupoids; this slight abuse of notation should not lead to any confusion.
+We extend the star-involution on $L_\bfr$ to $T^*L_\bfr$ via $a_{\ell,j}\mapsto a^*_{\ell,j}:=a_{\ell,r_\ell-j}$.
 
 Define the groupoids 
 \begin{align*}
@@ -1307,7 +1308,7 @@ Next we consider the time-$t$ flows, all denoted $\varphi_{\cX,\bfr}^t$, of the 
   In each case, the resulting differential equation is easy to solve and we leave as an exercise for the reader to check the formulas given above.
 \end{proof}
 
-For the groupoid morphism $\varphi_{\cA,\bfr}^1: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$ in Corollary~\ref{cor:groupoid hamiltonian flows}, we give an explicit verification that the corresponding Lie algebroid morphism is the dual bundle map of the Lie algebroid comorphism induced by the base Poisson map $\varphi_{\cA,\bfr}^1:L^\times_{\cA,\bfr}\to L^\times_{\cA,\bfr}$.
+For the groupoid morphism $\varphi^1_{\cA,\bfr}: \cG^\times_{\cA,\bfr} \to \cG^\times_{\cA,\bfr}$ in Corollary~\ref{cor:groupoid hamiltonian flows}, we give an explicit verification that the corresponding Lie algebroid morphism is the dual bundle map of the Lie algebroid comorphism induced by the base Poisson map $\varphi^1_{\cA,\bfr}:L^\times_{\cA,\bfr}\to L^\times_{\cA,\bfr}$.
 A similar story exists for the other groupoid maps in Corollary~\ref{cor:groupoid hamiltonian flows}.
 
 To ease the notation, we drop the time parameter in the superscript, fix $\bfr$ and use Sans-serif font for the coordinates for the range, e.g.\ $\sfx$ for the range versus $x$ for the domain.
@@ -1319,13 +1320,13 @@ The source map of $\cG_\cA \rra L_\cA$ is
 so the kernel of $\alpha_*: T\cG_\cA \to TL_\cA$ is generated by $\frac{\partial}{\partial p_j}, \> j = 1, \ldots, m$.
 Given the Hamiltonian groupoid morphism
 \begin{align*}
-	\varphi_{\cA,\bfr}: ~& \cG_\cA \to \cG_\cA, \\
+	\varphi^1_{\cA,\bfr}: ~& \cG_\cA \to \cG_\cA, \\
 	& \sfx_j = \big(Z_k^\circ(\hat y_k^\varepsilon)\big)^{-\delta_{jk}}x_j, \\
 	& \sfp_j \sfx_j = p_jx_j-\frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}\right)}{Z_k^\circ(\hat y_k^\varepsilon)}\right),
 \end{align*}
 its pushfoward is
 \begin{align*}
-	\left(\varphi_{\cA,\bfr}\right)_*: ~& \ker(\alpha_*: T\cG_\cA \to TL_\cA) \to \ker(\alpha_*: T\cG_\cA \to TL_\cA),  \\
+	\left(\varphi^1_{\cA,\bfr}\right)_*: ~& \ker(\alpha_*: T\cG_\cA \to TL_\cA) \to \ker(\alpha_*: T\cG_\cA \to TL_\cA),  \\
 	& \frac{\partial}{\partial p_j} 
 	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{ e^{-\varepsilon d_k p_k x_k} (Z_k^\circ)'\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)}{Z_k^\circ\left(\hat y_k^\varepsilon e^{-\varepsilon d_k p_k x_k}\right)} \frac{\partial}{\partial p_k}, \qquad \text{if}~ j \ne k, \\
 	& \frac{\partial}{\partial p_k}
@@ -1333,7 +1334,7 @@ its pushfoward is
 \end{align*}
 Restricting to the identity image, which is given by $p_j = 0, \> j = 1, \ldots, m$, we have
 \begin{align*}
-	\Lie \left(\varphi_{\cA,\bfr} \right): ~& \Lie \left(\cG_\cA \right) \to \Lie \left( \cG_\cA \right),  \\
+	\Lie \left(\varphi^1_{\cA,\bfr} \right): ~& \Lie \left(\cG_\cA \right) \to \Lie \left( \cG_\cA \right),  \\
 	& \frac{\partial}{\partial p_j}
 	= \frac{\partial}{\partial \sfp_j} + \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{(Z_k^\circ)'\left(\hat \sfy_k^\varepsilon \right)}{Z_k^\circ\left(\hat \sfy_k^\varepsilon \right)} \frac{\partial}{\partial \sfp_k}, \qquad \text{if}~ j \ne k, \\
 	& \frac{\partial}{\partial p_k} 
@@ -1342,7 +1343,7 @@ Restricting to the identity image, which is given by $p_j = 0, \> j = 1, \ldots,
 On the other hand, taking derivatives of $\sfx_j = \big(Z_k^\circ(\hat{y}_k^\varepsilon)\big)^{-\delta_{jk}}x_j$,
 we obtain the pullback map
 \begin{align*}
-	(\varphi_{\cA,\bfr})^*: ~& \Omega^1(L_\cA) \to \Omega^1(L_\cA), \\
+	(\varphi^1_{\cA,\bfr})^*: ~& \Omega^1(L_\cA) \to \Omega^1(L_\cA), \\
 	& d \sfx_j = dx_j, \qquad \text{if}~j\ne k, \\
 	& d \sfx_k = \frac{1}{Z_k^\circ(\hat{y}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon x_k \hat{y}_k^\varepsilon B_{jk}}{x_j} \frac{(Z_k^\circ)'(\hat{y}_k^\varepsilon)}{\left(Z_k^\circ(\hat{y}_k^\varepsilon)\right)^2} dx_j \\
 	& \quad \; \, = \frac{1}{Z_k^\circ(\hat{\sfy}_k^\varepsilon)} dx_k + \sum\limits_{j\ne k} \frac{\varepsilon \sfx_k \hat{\sfy}_k^\varepsilon B_{jk}}{\sfx_j} \frac{(Z_k^\circ)'(\hat{\sfy}_k^\varepsilon)}{Z_k^\circ(\hat{\sfy}_k^\varepsilon)} dx_j.
@@ -1351,9 +1352,9 @@ If we identify $\Lie \left(\cG_\cA \right)$ and $T^*_{\pi_\cA} L_\cA$ via
 \[
 	\frac{\partial}{\partial p_j} = dx_j, \> j =1, \ldots, m,
 \]
-then $(\varphi_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi_{\cA,\bfr} \right)$.
-That is, $(\varphi_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is a Lie algebroid comorphism and its corresponding Lie algebroid morphism is $\Lie \left(\varphi_{\cA,\bfr} \right)$, see the discussion preceding Definition~\ref{def:gpdcomor}.
-It follows that $(\varphi_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of $\varphi_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
+then $(\varphi^1_{\cA,\bfr})^*$ is the dual bundle map of $\Lie \left(\varphi^1_{\cA,\bfr} \right)$.
+That is, $(\varphi^1_{\cA,\bfr})^*: T^*_{\pi_\cA} L_\cA \to T^*_{\pi_\cA} L_\cA$ is a Lie algebroid comorphism and its corresponding Lie algebroid morphism is $\Lie \left(\varphi^1_{\cA,\bfr} \right)$, see the discussion preceding Definition~\ref{def:gpdcomor}.
+It follows that $(\varphi^1_{\cA,\bfr})^*$ integrates to a groupoid comorphism whose graph coincides with the graph of $\varphi^1_{\cA,\bfr}: \cG_\cA \to \cG_\cA$.
 
 Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bfr}$, $\cB_{\cA',\bfr}$, $\cD_{\cA',\bfr}$ for the analogous groupoids over the cluster charts $L_{\cX',\bfr}$ and $L_{\cA',\bfr}$ with Poisson structures related to those on $L_{\cX,\bfr}$ and $L_{\cA,\bfr}$ by mutation in direction $k$.
 \begin{lemma}
@@ -1406,7 +1407,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     (\tau_{-,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=
     \begin{cases}
-      a_{k,r_k-j} & \text{if $\ell=k$;}\\
+      a^*_{k,j} & \text{if $\ell=k$;}\\
       a_{\ell,j} & \text{if $\ell\ne k$.}
     \end{cases}
   \end{align}
@@ -1449,7 +1450,7 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
     \mu_{\cX,\bfr}^{k,\varepsilon}&:\cG^\times_{\cX,\bfr}\to\cG^\times_{\cX',\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cB^\times_{\cX,\bfr}\to\cB^\times_{\cX',\bfr},& \mu_{\cX,\bfr}^{k,\varepsilon}&:\cD^\times_{\cX,\bfr}\to\cD^\times_{\cX',\bfr}\\
     \mu_{\cA,\bfr}^{k,\varepsilon}&:\cG^\times_{\cA,\bfr}\to\cG^\times_{\cA',\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cB^\times_{\cA,\bfr}\to\cB^\times_{\cA',\bfr},& \mu_{\cA,\bfr}^{k,\varepsilon}&:\cD^\times_{\cA,\bfr}\to\cD^\times_{\cA',\bfr}
   \end{align*}
-  defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi_{-,\bfr}^1$ given on fiber coordinates by
+  defined as the compositions $\tau_{-,\bfr}^{k,\varepsilon}\circ\varphi^1_{-,\bfr}$ given on fiber coordinates by
   \begin{align}
     \nonumber
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(q'_\ell)
@@ -1492,13 +1493,13 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
   \begin{align*}
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
-      a_{k,r_k-j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
       a_{\ell,j} & \text{if $\ell\ne k$;}
     \end{cases}\\
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
-      a_{k,r_k-j}+\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
-      a_{\ell,j} & \text{if $\ell\ne k$.}
+      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a_{\ell,j} & \text{if $\ell\ne k$;}
     \end{cases}
   \end{align*}
   where $\beta$ is the appropriate target map.
@@ -1546,8 +1547,8 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
       Therefore, we may take the limit as $x_j\to0$ in these formulas and set
       \begin{align*}
         (\mu_{\cA,\bfr}^{k,\varepsilon}|_{x_j=0})^*(p'_j)
-        &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
-        &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} Z'_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z'_k(\hat y_k^\varepsilon) }{ x_j Z_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k(\hat y_k^\varepsilon) }\\
+        &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z^\circ_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
+        &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} (Z^\circ_k)'(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z^\circ_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) (Z^\circ_k)'(\hat y_k^\varepsilon) }{ x_j Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z^\circ_k(\hat y_k^\varepsilon) }\\
         &=\begin{cases} 
           p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
           p_j - \frac{1}{d_k} \prod_{i\ne j} x_i^{B_{ik}} z_{k,1} (e^{-d_kp_kx_k} - 1) & \text{if $B_{jk} = 1$;}\\ 
@@ -1565,7 +1566,7 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
         &=\begin{cases} 
           u_j & \text{if $|B_{jk}| \ne 1$;}\\ 
           u_j - \frac{1}{d_k} \prod_{i\ne j} x_i^{B_{ik}} z_{k,1} ((u_k x_k+1)^{-d_k} - 1) & \text{if $B_{jk} = 1$;}\\ 
-          u_j + \frac{1}{d_k} \prod_{i\ne j} x_i^{-B_{ik}} z_{k,r_k-1} ( (u_k x_k +1)^{d_k} - 1) & \text{if $B_{jk} = -1$.}
+          u_j + \frac{1}{d_k} \prod_{i\ne j} x_i^{-B_{ik}} z_{k,r_k-1} ((u_k x_k +1)^{d_k} - 1) & \text{if $B_{jk} = -1$.}
         \end{cases}
       \end{align*}
   \end{enumerate}
@@ -1664,9 +1665,9 @@ Using these we have the following analogues of the separation of additions formu
     \label{eq:groupoid separation of additions 2}
     \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
     \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
-    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} (r_\ell-j)-1}}{Z_\ell(u^{\varepsilon_{\bfr,\ell;t_i}})}du
+    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} (r_\ell-j)-1}}{Z_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du;
   \end{align}
-  where $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_{w-1}$ by mutations in directions $k_1,\ldots,k_w$.
+  where $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_{w-1}$ by mutations in directions $k_1,\ldots,k_w$ and $a^\circ_{\ell,j;t_0}=a_{\ell,j;t_0}$ if there are an even number of $i$ so that $k_i=\ell$ while $a^\circ_{\ell,j;t_0}=a^*_{\ell,j;t_0}$ if there are an odd number of $i$ so that $k_i=\ell$.
 \end{theorem}
 \begin{proof}
   We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
