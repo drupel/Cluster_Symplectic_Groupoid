@@ -1673,7 +1673,7 @@ Using these we have the following analogues of the separation of additions formu
   \end{align}
   The coordinates $a_{\ell,j;t}$ on $T^*L_\bfr$ transform according to
   \begin{equation}
-    \label{eq:catangent mutations}
+    \label{eq:cotangent mutations}
     \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z^\circ_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du,
   \end{equation}
   where 
@@ -1735,12 +1735,9 @@ Using these we have the following analogues of the separation of additions formu
 \end{proof}
 
 \begin{remark}
-  Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula \eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain the following identity for $1\le\ell\le n$ and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations with $t_i$ joined to $t_{i+1}$ by an edge labeled $k_i$:
-  \begin{equation}
-    \sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z^\circ_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du=0,
-  \end{equation}
-  where...
-  Such considerations should explain the role of the constancy condition \cite[Theorem 4.5]{Nak17} necessary for dilogarithm identities.
+  Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula~\eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain a collection of identities, one for each $1\le\ell\le n$, each choice of $1\le j\le r_\ell$, and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations.
+  Taken together these identities roughly imply that the left-hand side of the Roger's dilogarithm identity \cite[Equation (4.28)]{Nak16} is independent of the choice of exchange polynomial coefficients $z_{\ell,j}$.
+  It would be interesting to make this statement precise.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
