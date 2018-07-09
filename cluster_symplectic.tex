@@ -1734,9 +1734,21 @@ Using these we have the following analogues of the separation of additions formu
 \end{proof}
 
 \begin{remark}
-  Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula~\eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain a collection of identities, one for each $1\le\ell\le n$, each choice of $1\le j\le r_\ell$, and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations.
-  Taken together these identities roughly imply that the left-hand side of the Roger's dilogarithm identity \cite[Equation (4.28)]{Nak16} is independent of the choice of exchange polynomial coefficients $z_{\ell,j}$.
-  It would be interesting to make this statement precise.
+  Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula~\eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain the following collection of identities, one for each $1\le\ell\le n$, each choice of $1\le j\le r_\ell$, and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations in which $t_i$ is related to $t_{i+1}$ by mutation in direction $k_i$:
+  \begin{equation}
+    \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_i})}^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0,
+  \end{equation}
+  where $j^\circ=j$ if there are an even number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ while $j^\circ=j^*$ if there is an odd number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ and $\varepsilon_i$ denotes the tropical sign in the mutation from $t_i$ to $t_{i+1}$ in the unique mutation sequence from $t_1$ to $t_w$.
+
+  Similar considerations using charts of the form $L_-\times T^* L_\bfr$ yield the analogous identities
+  \begin{equation}
+    \label{eq:dilogarithm derivatives}
+    \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_0^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0.
+  \end{equation}
+  These identities are closely related to the connection between periodicities of cluster mutations and Roger's dilogarithm identities.
+  More precisely, taking the derivative with respect to $z_{\ell,j}$ on the left-hand side of the Roger's dilogarithm identity \cite[Equation (4.28)]{Nak16} results in a number of integral terms coming from tkaing these derivatives in the Euler dilogarithm terms (c.f.\ \cite[Equation (3.5)]{Nak16}) present in \cite[Equation (4.28)]{Nak16}.
+  Equation~\eqref{eq:dilogarithm derivatives} states that the sum of these terms is equal to zero, the remaining collection of logarithm terms also being zero by \cite[Equation (4.28)]{Nak16}.
+  The vanishing of these logarithm terms seems closely related to the constancy condition \cite[Theorem 4.4]{Nak16}, it would be interesting to make this connection precise.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
