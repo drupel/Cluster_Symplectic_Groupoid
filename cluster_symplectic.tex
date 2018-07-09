@@ -778,7 +778,9 @@ We identify the $\ell$-th component of a point in $L_\bfr$ with the degree $r_\e
 \begin{equation} \label{eq:gen mut poly}
 Z_\ell(u)=1+z_{\ell,1}u+\cdots+z_{\ell,r_\ell-1}u^{r_\ell-1}+u^{r_\ell}.
 \end{equation}
-There is a natural \emph{star involution} $z_{\ell,j}\mapsto z^*_{\ell,j}:=z_{\ell,r_\ell-j}$ on $L_\bfr$ and we write $Z^*_\ell(u)$ for the image of $Z_\ell(u)$ under this involution, more directly $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ is the the polynomial with reversed coefficients.
+There is a natural \emph{star-involution} $z_{\ell,j}\mapsto z^*_{\ell,j}:=z_{\ell,r_\ell-j}$ on $L_\bfr$ and we write $Z^*_\ell(u)$ for the image of $Z_\ell(u)$ under this involution, more directly $Z^*_\ell(u)=u^{r_\ell} Z_\ell(u^{-1})$ is the the polynomial with reversed coefficients.
+It will be convenient to introduce the notation $j^*=r_\ell-j$ so that $z^*_{\ell,j}=z_{\ell,j^*}$.
+Although $j^*$ depends on $\ell$, we suppress it from the notation.
 
 Set 
 \[L_{\cX,\bfr}:=L_\cX\times L_\bfr\qquad\text{ and }\qquad L_{\cA,\bfr}:=L_\cA\times L_\bfr\]
@@ -1174,7 +1176,7 @@ Translating this symplectic structure into a Poisson bracket on $T^*L_\bfr$, we 
 \begin{equation*}
   \{z_{k,i},z_{\ell,j}\}_\bfr=0,\qquad\{z_{k,i},a_{\ell,j}\}_\bfr=\delta_{k\ell}\delta_{ij},\qquad\{a_{k,i},a_{\ell,j}\}_\bfr=0.
 \end{equation*}
-We extend the star-involution on $L_\bfr$ to $T^*L_\bfr$ via $a_{\ell,j}\mapsto a^*_{\ell,j}:=a_{\ell,r_\ell-j}$.
+We extend the star-involution on $L_\bfr$ to $T^*L_\bfr$ via $a_{\ell,j}\mapsto a^*_{\ell,j}:=a_{\ell,r_\ell-j}=a_{\ell,j^*}$.
 
 Define the groupoids 
 \begin{align*}
@@ -1236,8 +1238,10 @@ More explicitly, these Hamiltonian functions are given by the following analogue
   \label{eq:X hamiltonian}
   H_{\cX,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(y_k^\varepsilon)}^{\beta^*(y_k^\varepsilon)} \frac{\log\big(Z_k^\circ(u)\big)}{u}du;\\
   \label{eq:A hamiltonian}
-  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(Z_k^\circ(u)\big)}{u}du.
+  H_{\cA,\bfr}^{k,\varepsilon}&:=\frac{\varepsilon}{d_k}\int_{\alpha^*(\hat y_k^\varepsilon)}^{\beta^*(\hat y_k^\varepsilon)} \frac{\log\big(Z_k^\circ(u)\big)}{u}du;
 \end{align}
+where
+\[ Z_k^\circ(u)=\begin{cases} Z_k(u) & \text{if $\varepsilon=+1$;}\\ Z_k^*(u) & \text{if $\varepsilon=-1$.} \end{cases}\]
 Note that, although we use the same symbols for the Hamiltonian functions on each groupoid, it will be clear from context which source and target map should be used in their definition.
 
 Write $X_{\cX,\bfr}^{k,\varepsilon}$ and $X_{\cA,\bfr}^{k,\varepsilon}$ for the Hamiltonian vector fields associated to the functions $H_{\cX,\bfr}^{k,\varepsilon}$ and $H_{\cA,\bfr}^{k,\varepsilon}$ on the groupoids $\cG^\times_{\cX,\bfr}$, $\cB^\times_{\cX,\bfr}$, $\cD^\times_{\cX,\bfr}$ and $\cG^\times_{\cA,\bfr}$, $\cB^\times_{\cA,\bfr}$, $\cD^\times_{\cA,\bfr}$ respectively, i.e.\ they are the vector fields naturally associated to the derivations $\{H_{\cX,\bfr}^{k,\varepsilon},\cdot\}$ and $\{H_{\cA,\bfr}^{k,\varepsilon},\cdot\}$ on the appropriate groupoids.
@@ -1493,16 +1497,16 @@ Write $\cG_{\cX',\bfr}$, $\cB_{\cX',\bfr}$, $\cD_{\cX',\bfr}$ and $\cG_{\cA',\bf
   \begin{align*}
     (\mu_{\cX,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
-      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{y_k^\varepsilon}^{\beta^*(y_k^\varepsilon)} \frac{u^{\varepsilon j^*-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
       a_{\ell,j} & \text{if $\ell\ne k$;}
     \end{cases}\\
     (\mu_{\cA,\bfr}^{k,\varepsilon})^*(a'_{\ell,j})
     &=\begin{cases}
-      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{\varepsilon (r_k-j)-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
+      a^*_{k,j}+\frac{\varepsilon}{d_k}\int_{\hat y_k^\varepsilon}^{\beta^*(\hat y_k^\varepsilon)} \frac{u^{\varepsilon j^*-1}}{Z_k(u^\varepsilon)}du & \text{if $\ell=k$;}\\
       a_{\ell,j} & \text{if $\ell\ne k$;}
     \end{cases}
   \end{align*}
-  where $\beta$ is the appropriate target map.
+  where $\beta$ is the appropriate target map and $j^*=r_k-j$.
 \end{theorem}
 \begin{proof}
   This is immediate from Corollary~\ref{cor:groupoid hamiltonian flows} and Lemma~\ref{le:tropical groupoid transformations}.
@@ -1547,8 +1551,8 @@ The various groupoid maps lifting the Poisson maps in \eqref{eq:PoisCD} are summ
       Therefore, we may take the limit as $x_j\to0$ in these formulas and set
       \begin{align*}
         (\mu_{\cA,\bfr}^{k,\varepsilon}|_{x_j=0})^*(p'_j)
-        &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z^\circ_k(\hat y_k^\varepsilon)}\right)}{x_j}\\
-        &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} (Z^\circ_k)'(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z^\circ_k(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) (Z^\circ_k)'(\hat y_k^\varepsilon) }{ x_j Z^\circ_k(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z^\circ_k(\hat y_k^\varepsilon) }\\
+        &=p_j+\lim_{x_j \to 0}\frac{[-\varepsilon B_{jk} r_k]_+ p_k x_k - \frac{B_{jk}}{d_k}\log\left(\frac{Z_k^\circ(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k})}{Z_k^\circ(\hat y_k^\varepsilon)}\right)}{x_j}\\
+        &=p_j-\frac{\varepsilon B_{jk}^2}{d_k} \lim_{x_j\to 0} \frac{ \hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k} (Z_k^\circ)'(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k^\circ(\hat y_k^\varepsilon) - \hat y_k^\varepsilon Z_k^\circ(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) (Z_k^\circ)'(\hat y_k^\varepsilon) }{ x_j Z_k^\circ(\hat y_k^\varepsilon e^{-\varepsilon d_kp_kx_k}) Z_k^\circ(\hat y_k^\varepsilon) }\\
         &=\begin{cases} 
           p_j & \text{if $|B_{jk}| \ne 1$;}\\ 
           p_j - \frac{1}{d_k} \prod_{i\ne j} x_i^{B_{ik}} z_{k,1} (e^{-d_kp_kx_k} - 1) & \text{if $B_{jk} = 1$;}\\ 
@@ -1579,7 +1583,8 @@ Our goal is to glue the various groupoid charts over the cluster charts to get g
 Given a pair of vertices $t,t'\in\TT_n$, we will define iterated mutations $\mu_{\cX,\bfr}^{t',t}$ and $\mu_{\cA,\bfr}^{t',t}$ of the groupoid charts as we did for the cluster charts by composing the maps in Theorem~\ref{th:groupoid mutation} along the unique path from $t$ to $t'$ in $\TT_n$ (with mutations always taken with respect to the tropical sign from Definition~\ref{def:tropical signs}).
 We have seen that certain sequences of cluster mutations simply permute the coordinates of the corresponding cluster charts (c.f.\ Definition~\ref{def:periodicity}), let $(t_1,\ldots,t_w;\sigma)$ be such a periodicity of cluster mutations.
 These lift to simple permutations of the coordinates on the corresponding groupoid charts.
-\begin{proposition}\label{prop:gpd periodicity}
+\begin{proposition}
+  \label{prop:gpd periodicity}
   Given any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations, the following equalities hold:
   \begin{enumerate}
     \item $\big(\mu_{\cX,\bfr}^{t_w,t_1}\big)^*(q_{\ell;t_w})=q_{\sigma(\ell);t_1}$ for $1\le\ell\le n$;
@@ -1664,10 +1669,20 @@ Using these we have the following analogues of the separation of additions formu
     \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(p_{i;t})&=\frac{\left(\sum_{j=1}^m C^\vee_{ij;t} x_{j;t_0} p_{j;t_0}\right) + \sum_{\ell=1}^n \frac{B_{i\ell;t}}{d_\ell}\log\left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
     \label{eq:groupoid separation of additions 2}
     \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(s_{i;t})&=\left(\prod_{j=1}^m s_{j;t_0}^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell};\\
-    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})};\\
-    \nonumber \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} (r_\ell-j)-1}}{Z_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du;
+    \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}.
   \end{align}
-  where $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_{w-1}$ by mutations in directions $k_1,\ldots,k_w$ and $a^\circ_{\ell,j;t_0}=a_{\ell,j;t_0}$ if there are an even number of $i$ so that $k_i=\ell$ while $a^\circ_{\ell,j;t_0}=a^*_{\ell,j;t_0}$ if there are an odd number of $i$ so that $k_i=\ell$.
+  The coordinates $a_{\ell,j;t}$ on $T^*L_\bfr$ transform according to
+  \begin{equation}
+    \label{eq:catangent mutations}
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z^\circ_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du,
+  \end{equation}
+  where 
+  \begin{itemize}
+    \item $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_w$ by mutations in directions $k_0,k_1,\ldots,k_w$;
+    \item we set $a^\circ_{\ell,j;t_0}=a_{\ell,j;t_0}$ if there are an even number of $i$ so that $k_i=\ell$ while we take $a^\circ_{\ell,j;t_0}=a^*_{\ell,j;t_0}$ if there is an odd number of $i$ so that $k_i=\ell$;
+    \item we set $j^\circ=j$ if there are an even number of $i'$ with $i\le i'\le w$ so that $k_{i'}=\ell$ while $j^\circ=j^*$ if there is an odd number of $i'$ with $i\le i'\le w$ so that $k_{i'}=\ell$;
+    \item we set $Z^\circ_{\ell;t_i}=Z_{\ell;t_i}$ if there are an even number of $i'$ with $0\le i'\le i-1$ so that $k_{i'}=\ell$ while $Z^\circ_{\ell;t_i}=Z^*_{\ell;t_i}$ if there is an odd number of $i'$ with $0\le i'\le i-1$ so that $k_{i'}=\ell$.
+  \end{itemize}
 \end{theorem}
 \begin{proof}
   We prove only equation~\eqref{eq:groupoid separation of additions 2}, working by induction on the distance from $t_0$ to $t$ inside $\TT_n$ in this case.
@@ -1715,13 +1730,18 @@ Using these we have the following analogues of the separation of additions formu
   \end{align*}
   where the last equality used Lemma~\ref{le:dual vectors}.
   Thus combining the $F$-polynomial part above with the expression $\big(\mu_{\cA,\bfr}^{t,t_0}\big)^*\left(\frac{Z_{k;t}^\circ\left(\hat y_{k;t}^\varepsilon s_{k;t}^{-\varepsilon d_k}\right)}{Z_{k;t}^\circ(\hat y_{k;t}^\varepsilon)}\right)^{-B_{ik;t}/d_k}$ and applying the $F$-polynomial recursion \eqref{eq:F-polynomial mutation} gives the total $F$-polynomial part
-  \begin{align*}
-    \prod_{\ell\ne k} \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell}
-    \left(\frac{F_{\bfr,k;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,k;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.
-  \end{align*}
+  \[\prod_{\ell\ne k} \left(\frac{F_{\bfr,\ell;t}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t'}/d_\ell} \left(\frac{F_{\bfr,k;t'}(\hat y_{1;t_0} s_{1;t_0}^{-d_1},\ldots,\hat y_{n;t_0} s_{n;t_0}^{-d_n})}{F_{\bfr,k;t'}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{-B_{ik;t}/d_k}.\]
   But $B_{ik;t'}=-B_{ik;t}$ so that this final expression gives the desired $F$-polynomial part of $\big(\mu_{\cA,\bfr}^{t',t_0}\big)^*(s_{i;t'})$.
 \end{proof}
 
+\begin{remark}
+  Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula \eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain the following identity for $1\le\ell\le n$ and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations with $t_i$ joined to $t_{i+1}$ by an edge labeled $k_i$:
+  \begin{equation}
+    \sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z^\circ_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du=0,
+  \end{equation}
+  where...
+  Such considerations should explain the role of the constancy condition \cite[Theorem 4.5]{Nak17} necessary for dilogarithm identities.
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Totally Positive Cluster Manifolds}
