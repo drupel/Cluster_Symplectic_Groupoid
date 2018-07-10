@@ -1597,20 +1597,9 @@ These lift to simple permutations of the coordinates on the corresponding groupo
   \end{enumerate}
 \end{proposition}
 \begin{proof}
-Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f. Proposition~\ref{prop:gpd identity}), so parts (1) and (5) immediately follow.
-If we restrict to the case of $\RR_\times$, then both the blow-up groupoid $\cB$ and the symplectic double $\cD$ are also source-simply-connected and parts (2), (3), (6) and (7) follow from Proposition~\ref{prop:gpd identity}; the case of $\CC_\times$ follows when we complexify the mutations. 
-
-Now the periodicity of mutations depends only on the degree of $Z_k$; in other words, this means that if we fix the degree $r_\ell$ of $Z_\ell$ as in \eqref{eq:gen mut poly} and a periodicity $(t_1,\ldots,t_w;\sigma)$ for say $L_\cX$, then $\mu_\cX^{t_w,t_1}: L_{\cX} \to L_{\cX}$ is the identity up to the permutation $\sigma$ for each choice of $(z_1, \ldots, z_{r_\ell-1}) \in \RR^{r_\ell - 1} \subset L_\bfr$, and therefore
-\[
-	\mu_\cX^{t_w,t_1}: L_\cX \times \RR^{r_\ell - 1} \to L_\cX \times \RR^{r_\ell - 1}
-\]
-is the identity map up to the permutation $\sigma$. By Proposition~\ref{prop:gpd identity}, $\mu_\cX^{t_w,t_1}$ lifts to the identity map (up to permutation) of the source-simply-connected symplectic groupoid and part (4) follows.
-
-%  First observe that the first condition of a periodicity gives 
-%  \[d_k B_{k\ell;t_1}=\{y_{k;t_1},y_{\ell;t_1}\}_\cX=\{y_{\sigma(k);t_w},y_{\sigma(\ell);t_w}\}_\cX=d_{\sigma(k)} B_{\sigma(k)\sigma(\ell);t_w},\]
-%  which, by the third condition of periodicity, implies $d_k=d_{\sigma(k)}$ for $1\le k\le n$.
-%  Combining this with Lemma~\ref{le:dual vectors} and Corollary~\ref{cor:periodicity} parts (1) and (2), we see that the periodicity gives rise to the equalities $C^\vee_{ij;t_1}=C^\vee_{\sigma(i)j;t_w}$ and $G^\vee_{k\ell;t_1}=G^\vee_{\sigma(k)\ell;t_w}$.
-%  The result then immediately follows from Corollary~\ref{cor:periodicity} part (3) together with the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
+  Recall that the identity map of a Poisson manifold lifts to the identity map of its source-simply-connected symplectic groupoid (c.f. Proposition~\ref{prop:gpd identity}), so parts (1) and (5) immediately follow together with part (4) for the mutations on $\cG_{\cX_\bfr}$ and $\cG_{\cA_\bfr}$.
+  If we restrict to the case of $\RR_\times$, then the blow-up groupoid $\cB$ and the symplectic double $\cD$ are both source-simply-connected also.
+  Thus parts (2), (3), (6), (7) and (4) follow from Proposition~\ref{prop:gpd identity}; the case of $\CC_\times$ follows when we complexify the mutations. 
 \end{proof}
 
 Thus it is reasonable to give the following definition.
@@ -1672,10 +1661,11 @@ Using these we have the following analogues of the separation of additions formu
     \nonumber \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(u_{i;t})&=\frac{\left(\prod_{j=1}^m (x_{j;t_0} u_{j;t_0} + 1)^{C^\vee_{ij;t}}\right) \prod_{\ell=1}^n \left(\frac{\beta^*\left(F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})\right)}{F_{\bfr,\ell;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}\right)^{B_{i\ell;t}/d_\ell} - 1}{\left(\prod_{j=1}^m x_{j;t_0}^{G_{ji;t}}\right) F_{\bfr,i;t}(\hat y_{1;t_0},\ldots,\hat y_{n;t_0})}.
   \end{align}
   The coordinates $a_{\ell,j;t}$ on $T^*L_\bfr$ transform according to
-  \begin{equation}
+  \begin{align}
     \label{eq:cotangent mutations}
-    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du,
-  \end{equation}
+    \big(\mu_{\cX,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cX,\bfr}^{t_i,t_0}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du;\\
+    \big(\mu_{\cA,\bfr}^{t,t_0}\big)^*(a_{\ell,j;t})&=a^\circ_{\ell,j;t_0}+\sum_{i:k_i=\ell} \frac{\varepsilon_{\bfr,\ell;t_i}}{d_\ell} \int_{\big(\mu_{\cA,\bfr}^{t_i,t_0}\big)^*(\hat y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})}^{\big(\mu_{\cA,\bfr}^{t_i,t_0}\big)^*\beta^*(\hat y_{\ell;t_i}^{\varepsilon_{\bfr,\ell;t_i}})} \frac{u^{\varepsilon_{\bfr,\ell;t_i} j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_{\bfr,\ell;t_i}})}du;
+  \end{align}
   where 
   \begin{itemize}
     \item $t_0$ and $t$ are connected through vertices $t_1,\ldots,t_w$ by mutations in directions $k_0,k_1,\ldots,k_w$;
@@ -1735,19 +1725,20 @@ Using these we have the following analogues of the separation of additions formu
 
 \begin{remark}
   Combining the periodicity result from Proposition~\ref{prop:gpd periodicity} and the iterated mutation formula~\eqref{eq:cotangent mutations} for $T^* L_\bfr$, we obtain the following collection of identities, one for each $1\le\ell\le n$, each choice of $1\le j\le r_\ell$, and any periodicity $(t_1,\ldots,t_w;\sigma)$ of cluster mutations in which $t_i$ is related to $t_{i+1}$ by mutation in direction $k_i$:
-  \begin{equation}
-    \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_i})}^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0,
-  \end{equation}
-  where $j^\circ=j$ if there are an even number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ while $j^\circ=j^*$ if there is an odd number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ and $\varepsilon_i$ denotes the tropical sign in the mutation from $t_i$ to $t_{i+1}$ in the unique mutation sequence from $t_1$ to $t_w$.
+  \begin{align}
+    \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_i})}^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*\beta^*(y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0;\\
+    \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_{\big(\mu_{\cA,\bfr}^{t_i,t_1}\big)^*(\hat y_{\ell;t_i}^{\varepsilon_i})}^{\big(\mu_{\cA,\bfr}^{t_i,t_1}\big)^*\beta^*(\hat y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0;
+  \end{align}
+  where $j^\circ=j$ if there are an even number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ while $j^\circ=j^*$ if there is an odd number of $i'$ with $1\le i'\le i-1$ so that $k_{i'}=\ell$ and $\varepsilon_i$ denotes the tropical sign in the mutation from $t_i$ to $t_{i+1}$ along the unique mutation sequence from $t_1$ to $t_w$.
 
-  Similar considerations using charts of the form $L_-\times T^* L_\bfr$ yield the analogous identities
+  Similar considerations using charts of the form $L_\cX\times T^* L_\bfr$ yield the analogous identities:
   \begin{equation}
     \label{eq:dilogarithm derivatives}
     \sum_{i:k_i=\ell} \frac{\varepsilon_i}{d_\ell} \int_0^{\big(\mu_{\cX,\bfr}^{t_i,t_1}\big)^*(y_{\ell;t_i}^{\varepsilon_i})} \frac{u^{\varepsilon_i j^\circ-1}}{Z_{\ell;t_i}(u^{\varepsilon_i})}du=0.
   \end{equation}
   These identities are closely related to the connection between periodicities of cluster mutations and Roger's dilogarithm identities.
-  More precisely, taking the derivative with respect to $z_{\ell,j}$ on the left-hand side of the Roger's dilogarithm identity \cite[Equation (4.28)]{Nak16} results in a number of integral terms coming from tkaing these derivatives in the Euler dilogarithm terms (c.f.\ \cite[Equation (3.5)]{Nak16}) present in \cite[Equation (4.28)]{Nak16}.
-  Equation~\eqref{eq:dilogarithm derivatives} states that the sum of these terms is equal to zero, the remaining collection of logarithm terms also being zero by \cite[Equation (4.28)]{Nak16}.
+  More precisely, taking the derivative with respect to $z_{\ell,j}$ on the left-hand side of the Roger's dilogarithm identity \cite[Equation (4.28)]{Nak16} results in a number of integral terms coming from taking these derivatives in the Euler dilogarithm terms (c.f.\ \cite[Equation (3.5)]{Nak16}) present in \cite[Equation (4.28)]{Nak16}.
+  Equation~\eqref{eq:dilogarithm derivatives} states that the sum of these terms is equal to zero, the remaining collection of logarithm terms also summing to zero by \cite[Equation (4.28)]{Nak16}.
   The vanishing of these logarithm terms seems closely related to the constancy condition \cite[Theorem 4.4]{Nak16}, it would be interesting to make this connection precise.
 \end{remark}
 
