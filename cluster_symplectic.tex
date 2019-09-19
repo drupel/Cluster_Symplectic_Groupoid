@@ -129,7 +129,7 @@ Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in th
 In this paper, we take the first step towards the groupoid quantization for both cluster $\cA$-varieties and cluster $\cX$-varieties by describing their symplectic groupoids.
 The construction of each is detailed below as we discuss the organization of the paper.
 
-We being in Section~\ref{sec:Poisson generalities} with a general discussion of Poisson manifolds and their associated algebroids and groupoids.
+We begin in Section~\ref{sec:Poisson generalities} with a general discussion of Poisson manifolds and their associated algebroids and groupoids.
 In Section~\ref{sec:local}, we construct three groupoids $\cG$, $\cB$ and $\cD$ for a log-canonical Poisson structure on a vector space $L$, these each possess important properties which justify their consideration.
 The groupoid $\cG \rra L$ is the source-simply-connected symplectic groupoid.
 The definition of $\cG \rra L$ utilizes the construction of local symplectic groupoids by Poisson sprays \cite{CM11, CMS17}.
@@ -269,8 +269,9 @@ As a vector bundle, we have
 \begin{equation} \label{eq:Liefunctor}
 	A = \ker \left(\alpha_*: T\cG|_{\mathtt{1}_M} \to TM \right).
 \end{equation}
-The Lie bracket is the bracket of left-invariant vector fields and the anchor map is the restriction of the target map $\beta_*: T\cG \to TM$ to $A$.
-In this case, we say the Lie groupoid $\cG$ \emph{integrates} the Lie algebroid $A$.
+Since $A$ is a subbundle of $T\cG|_{\mathtt{1}_M}$,  a section of $A$ can be thought as a section of $T\cG$ supported on $\mathtt{1}_M$, which can be left translated along the source fibers of  $\cG \rightrightarrows M$ to yield a left-invariant vector field on $\cG$. Similar to Lie groups, the left-invariant vector fields of a Lie groupoid is closed under the Lie bracket of vector fields, and so we have a Lie bracket on $\Gamma(M, A)$.
+On the other hand, the anchor map is the restriction of the target map $\beta_*: T\cG \to TM$ to $A$.
+If $A \cong \Lie \cG$, we say the Lie groupoid $\cG$ \emph{integrates} the Lie algebroid $A$.
 
 Given a Lie groupoid $\cG \rra M$, its \emph{$k$-nerve},
 \[\cG^{(k)} := \{(g_1, g_2, \ldots, g_k) \in \cG^k ~|~ \beta(g_{i+1}) = \alpha(g_i)\},\]
