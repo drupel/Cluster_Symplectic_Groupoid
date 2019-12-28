@@ -125,7 +125,7 @@ In the case of cluster algebras, the quantum $\cA$-varieties \cite{BZ05} and the
 In fact, the $q$-quantization of log-canonical variables can be realized simply as the exponential version of the standard Weyl quantization for canonical variables \cite{FG09c}.
 Geometric quantization for symplectic manifolds takes one step further by constructing a Hilbert space on which the quantized algebra acts, however note that this requires the cohomology class of the symplectic 2-form to be integral (see e.g.\ \cite{BW97}).
 The notion of symplectic groupoids was introduced by Weinstein \cite{Wei87}, Karas\"{e}v \cite{Kar89} and Zakrzewski \cite{Zak90a, Zak90b}.
-Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{Wei91}, which has only been successfully implemented for a handful of examples \cite{Tan06, Haw08, BCST12}.
+Weinstein's motivation was to find a geometric quantization schema for Poisson manifolds \cite{Wei91}, which has since only been successfully implemented for a handful of examples \cite{Tan06, Haw08, BCST12}.
 The concrete nature of cluster coordinates provides an ideal testing ground for groupoid quantization.
 Indeed, this was implicitly implemented by Fock and Goncharov \cite{FG09c} in the case of $\cX$-varieties.
 
@@ -148,7 +148,7 @@ The linear degeneracy of the Poisson structure on $\cD$ over the coordinate hype
 This gives rise to the groupoid $\cB \rra L$ which is source-connected and symplectic.
 Comparing to $\cG \rra L$, the main advantage of $\cB \rra L$ is that the source and the target maps of $\cB \rra L$ are rational.
 In this way, it seems likely that the groupoid $\cB$ will be most useful in the theory of cluster algebras.
-Observe that both $\cB \rra L$ and $\cD \rra L$ naturally receive maps from the source-simply-connected symplectic groupoid $\cG \rra L$.
+Observe that both $\cB \rra L$ and $\cD \rra L$ naturally receive maps from the source-simply-connected symplectic groupoid $\cG \rra L$ (c.f.\ \eqref{eq:LGpdCD}).
 
 Analogous to the construction of cluster varieties by gluing cluster charts along birational isomorphisms, the groupoids of the cluster $\cA$-variety and cluster $\cX$-variety are not constructed globally but rather are glued from groupoid charts over each cluster chart.
 In Section~\ref{sec:mutations}, we give the explicit formulas for the cluster groupoid mutations $\mu: \cG \to \cG'$, $\mu: \cB \to \cB'$ and $\mu: \cD \to \cD'$.
@@ -172,7 +172,7 @@ Throughout the paper, we use the following notations.
 		L = \RR^m \text{ or } \CC^m, \quad L^\times = \RR_\times^m \text{ or } \CC_\times^m, \quad \bar L^\times = \bar\RR_\times^m.
 	$$
 	\item We denote vectors by boldface, e.g. $\bfx = (x_1, \ldots, x_m)$.
-        \item The \emph{Hadamard product} of two vectors $\bfx$ and $\bfy$ is given by $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
+        \item The \emph{Hadamard product} of two vectors $\bfx$ and $\bfy$ is given by the \emph{vector} $\bfx \circ \bfy = (x_1y_1, \ldots, x_my_m)$.
 	\item For a vector $\bfx$ and a real number $t$, we set $\bfx^t := (x_1^t, \ldots, x_m^t)$.
 %	\item For a vector $\bfx$, we denote the diagonal matrix for which the diagonal entries is $\bfx$ by $I_\bfx$, i.e. 
 %	\[
@@ -180,8 +180,8 @@ Throughout the paper, we use the following notations.
 %	\]
 	\item For a smooth (resp.\ complex) manifold $M$, we denote the space of smooth (resp.\ holomorphic) functions by $\cO_M$.
 	\item For a vector bundle $E$ over $M$, we denote the space of sections by $\Gamma(M, E)$.
-          In particular, we denote the space of vector fields by $\cT_M = \Gamma(M, TM)$ and the space of multi-vector fields by $\cT^k_M = \Gamma(M, \wedge^k TM)$.
-          To follow the conventional notation, we denote the space of differential $k$-forms by $\Omega^k(M) = \Gamma(M, \wedge^k T^*M)$.
+          In particular, we denote the space of vector fields by $\cT_M := \Gamma(M, TM)$ and denote the space of multi-vector fields by $\cT^k_M := \Gamma(M, \wedge^k TM)$.
+          To follow the conventional notation, we denote the space of differential $k$-forms by $\Omega^k(M) := \Gamma(M, \wedge^k T^*M)$.
 	%\item for two vector $\bfx$ and $\bfa$, $\bfx^\bfa = \prod_{i=1}^m x_i^{a_i}$;
 	%\item for a matrix $B = (B_{ij})$, $B_{[k]}$ denotes the kth column vector of $B$.
 \end{itemize}
@@ -235,7 +235,7 @@ Of particular importance among all the symplectic realizations is the symplectic
     \item a surjective \emph{source map} $\alpha: \cG \to M$ and a surjective \emph{target map} $\beta: \cG \to M$;
     \item an injective identity map $\mathtt{1}: M \to \cG, \enskip x \mapsto \mathtt{1}_x$;
     \item an associative multiplication map $m: \cG {_\alpha \times_\beta} \cG \to \cG, \enskip (g, h) \mapsto gh$;
-    \item and an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$;
+    \item an involutive inversion map $\iota: \cG \to \cG, \enskip g \mapsto g^{-1}$;
   \end{enumerate}
   which satisfy the following properties:
   \begin{enumerate}
@@ -290,7 +290,7 @@ The \emph{nerve} of a Lie groupoid is naturally a simplicial manifold that carri
 The first two operators are given as below:
 \begin{align} 
   \label{eq:gpdcob}
-  & \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad \mu \mapsto \alpha^*(\mu) - \beta^*(\mu); \\
+  & \partial: \Omega^\bullet(M) \to \Omega^\bullet(\cG), \qquad\ \ \mu \mapsto \alpha^*(\mu) - \beta^*(\mu); \\
   \nonumber
   & \partial: \Omega^\bullet(\cG) \to \Omega^\bullet(\cG^{(2)}), \qquad \mu \mapsto \mathrm{pr}_1^*(\mu) - m^*(\mu) + \mathrm{pr}_2^*(\mu);
 \end{align}
@@ -397,6 +397,7 @@ We focus in this paper on the symplectic groupoids of log-canonical Poisson stru
 \begin{example}
   \label{ex:running 1}
   We initiate here a running example with $m=2$ and $\{x_1,x_2\}=x_1x_2$, i.e.\ $\pi=x_1x_2\frac{\partial}{\partial x_1} \wedge \frac{\partial}{\partial x_2}$.
+  In this case, we have $\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]$.
 \end{example}
 
 Using the results in \cite{CM11, CMS17}, we construct the source-simply-connected symplectic groupoid of a log-canonical Poisson structure by choosing an appropriate Poisson spray. 
@@ -723,7 +724,7 @@ Using the blow-up coordinates $u_i = \frac{s_i-1}{x_i}$, we have the following s
 
 \begin{remark}
   Recall that the infinitesimal object of a Poisson groupoid is a Lie bialgebroid \cite{MX94}.
-  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $\big(A_\cD, TL(-\log D)\big)$, where $TL(-\log D)$ is the log-tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_k$ \cite{GL14}.
+  The Lie bialgebroid of the Poisson groupoid $\cD \rra L$ is isomorphic to $\big(A_\cD, TL(-\log D)\big)$, where $TL(-\log D)$ is the log-tangent bundle with respect to the normal crossing divisor $D = L_1 + L_2 + \ldots + L_m$ \cite{GL14}.
   That is,
   \[TL(-\log D) = [\ldots[[TL\!:\!TL_1]\!:\!TL_2] \ldots \!:\!TL_m],\]
   or equivalently the sections of $TL(-\log D)$ are the vector fields on $L$ tangent to $L_k$ for $k = 1, \ldots, m$.
@@ -780,6 +781,11 @@ Such an $m\times n$ matrix $\tilde B$ with skew-symmetrizable principal submatri
 We fix a skew-symmetrizing matrix $D$ and refer to a skew-symmetric $m\times m$ matrix $\Omega=(\Omega_{ij})$ as \emph{$D$-compatible} with $\tilde B$ if $\tilde B^T\Omega=[D\ \boldsymbol{0}]$, where $\boldsymbol{0}$ denotes an $n\times(m-n)$ matrix with all zero entries.
 In this case, we call $(\tilde B,\Omega)$ a \emph{$D$-compatible pair} or simply a \emph{compatible pair} if the symmetrizing matrix $D$ is understood.
 Note that the existence of a matrix $\Omega$ compatible with $\tilde B$ implies $\tilde B$ has rank $n$, in other words the columns of $\tilde B$ are linearly independent.
+
+\begin{example}
+  \label{ex:running 2}
+  The skew-symmetric matrix $\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]$ from Example~\ref{ex:running 1} is compatible (up to a sign) with any $2\times 2$ skew-symmetrizable matrix $\tilde B$ where $D$ is determined directly by the off-diagonal entries of $\tilde B$.
+\end{example}
 
 \subsection{Mutation of Cluster Charts}
 \label{sec:cluster mutations}
@@ -1048,11 +1054,10 @@ Write $z_{\ell,j;t}$ for coordinates on the $L_\bfr$ components and $Z_{\ell;t}(
 \end{definition}
 \begin{remark}
   \label{rem:cluster case 2}
-  When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties \cite{FZ02,FG09a}.
-  This justifies Remark~\ref{rem:cluster case}.
+  When $r_\ell=1$ for all $\ell$, the construction above gives rise to the ordinary cluster varieties $\cX$ and $\cA$ \cite{FZ02,FG09a} (c.f.\ Remark~\ref{rem:cluster case}).
 \end{remark}
 
-For both the cluster $\cA$-varieties \cite{GSV10} and $\cX$-varieties \cite{FG09c}, a Poisson structure is \emph{compatible} with mutations if the coordinates of each cluster chart are log-canonical (c.f.\ equation \eqref{eq:brackets}).
+For both the cluster $\cA$-varieties \cite{GSV10} and cluster $\cX$-varieties \cite{FG09c}, a Poisson structure is \emph{compatible} with mutations if the coordinates of each cluster chart are log-canonical (c.f.\ equation \eqref{eq:brackets}).
 \begin{theorem}
   \cite{GSV10}
   The Poisson structures on the cluster charts $L^\times_{\cX,\bfr;t}$ and $L^\times_{\cA,\bfr;t}$ determined by the $D$-compatible pairs $(\tilde B_t,\Omega_t)$ glue to give global Poisson structures on the cluster varieties $\cX_\bfr$ and $\cA_\bfr$ which are log-canonical over each cluster chart.
@@ -1162,8 +1167,8 @@ We will need the following important consequence of the separation of additions 
 \end{proof}
 
 \begin{example}
-  \label{ex:running 2}
-  As in Example~\ref{ex:running 1}, we take 
+  \label{ex:running 3}
+  As in Example~\ref{ex:running 2}, we take 
   \[\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]\qquad\text{and}\qquad \tilde B=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right],\]
   which are $D$-compatible for $D=\diag(1,1)$.
   In this small dimension, mutation of $D$-compatible pairs as in \eqref{eq:matrix mutation} is just given by negation of matrices.
@@ -1814,8 +1819,8 @@ Using these we have the following analogues of the separation of additions formu
 \end{proof}
 
 \begin{example}
-  Continuing from Example~\ref{ex:running 2}, we see from Lemma~\ref{le:dual vectors} that $C_t^\vee=C_t^T$ and $G_t^\vee=G_t^T$ for $t\in\TT_n$, where $(-)^T$ denotes the transpose of a matrix.
-  The iterated groupoid mutations can thus be computed from the data given in Example~\ref{ex:running 2} using the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
+  Continuing from Example~\ref{ex:running 3}, we see from Lemma~\ref{le:dual vectors} that $C_t^\vee=C_t^T$ and $G_t^\vee=G_t^T$ for $t\in\TT_n$, where $(-)^T$ denotes the transpose of a matrix.
+  The iterated groupoid mutations can thus be computed from the data given in Example~\ref{ex:running 3} using the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
   For example, the cluster groupoid variable $t_{1;t_3}$ is given by
   \begin{align*}
     t_{1;t_3}
