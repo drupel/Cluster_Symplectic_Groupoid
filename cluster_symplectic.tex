@@ -105,6 +105,7 @@
 \section{Introduction}
 Weinstein introduced symplectic groupoids as a tool for quantizing Poisson manifolds in the spirit of the geometric quantization of symplectic manifolds.
 In this construction, the prequantum line bundle typically associated to a symplectic manifold (which does not exist for Poisson manifolds) is replaced by a prequantum line bundle on the symplectic groupoid of the Poisson manifold. 
+Then geometric quantization is carried out in this setting and pushed down to the Poisson manifold using the source or target map of the symplectic groupoid.
 This is the first of a series of papers whose aim is to implement the Weinstein program of geometric quantization for Poisson manifolds \cite{Wei91} in the case of Poisson structures compatible with a cluster structure.
 In this paper, we construct the symplectic groupoids for both the cluster $\cX$-varieties and the cluster $\cA$-varieties which admit a Poisson structure compatible with the cluster structure. 
 
@@ -784,7 +785,7 @@ Note that the existence of a matrix $\Omega$ compatible with $\tilde B$ implies 
 
 \begin{example}
   \label{ex:running 2}
-  The skew-symmetric matrix $\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]$ from Example~\ref{ex:running 1} is compatible (up to a sign) with any $2\times 2$ skew-symmetrizable matrix $\tilde B$ where $D$ is determined directly by the off-diagonal entries of $\tilde B$.
+  The skew-symmetric matrix $\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]$ from Example~\ref{ex:running 1} is $D$-compatible with a skew-symmetrizable matrix $\tilde B=\left[\begin{array}{cc} 0 & c\\ -b & 0\end{array}\right]$ with $b,c>0$ for $D=\diag(b,c)=\left[\begin{array}{cc} b & 0\\ 0 & c\end{array}\right]$.
 \end{example}
 
 \subsection{Mutation of Cluster Charts}
@@ -1168,12 +1169,34 @@ We will need the following important consequence of the separation of additions 
 
 \begin{example}
   \label{ex:running 3}
-  As in Example~\ref{ex:running 2}, we take 
+  In Example~\ref{ex:running 2}, we take $b=c=1$ so that
   \[\Omega=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right]\qquad\text{and}\qquad \tilde B=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right],\]
   which are $D$-compatible for $D=\diag(1,1)$.
   In this small dimension, mutation of $D$-compatible pairs as in \eqref{eq:matrix mutation} is just given by negation of matrices.
 
-  Taking $\bfr=(1,3)$, we get $Z_1(u)=1+u$ and $Z_2(u)=1+z_1u+z_2u^2+u^3$, where we write $z_j$ instead of $z_{2,j}$ for $j=1,2$.
+  In the cluster case $\bfr=(1,1)$, we have $Z_1(u)=1+u=Z_2(u)$.
+  This example exhibits a 5-fold periodicity in the sense of Definition~\ref{def:periodicity} with $\sigma$ the non-identity permutation of the set $\{1,2\}$.
+  In particular, to compute all the $x_{j;t}$ and $y_{\ell;t}$ it suffices to consider a portion of the exchange tree $\TT_n$ as below:
+  \[t_0 \stackrel{1}{\longleftrightarrow} t_1 \stackrel{2}{\longleftrightarrow} t_2 \stackrel{1}{\longleftrightarrow} t_3 \stackrel{2}{\longleftrightarrow} t_4 \stackrel{1}{\longleftrightarrow} t_5,\]
+  here $t_5$ can be identified with $t_0$ via $\sigma$ by periodicity.
+  The $C$-matrices and $G$-matrices can be computed as:
+  \begin{align*}
+    C_{t_0}=\left[\begin{array}{cc} 1 & 0\\ 0 & 1\end{array}\right] &&
+    C_{t_1}=\left[\begin{array}{cc} -1 & 1\\ 0 & 1\end{array}\right] &&
+    C_{t_2}=\left[\begin{array}{cc} 0 & -1\\ 1 & -1\end{array}\right] &&
+    C_{t_3}=\left[\begin{array}{cc} 0 & -1\\ -1 & 0\end{array}\right] &&
+    C_{t_4}=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right] \\
+    G_{t_0}=\left[\begin{array}{cc} 1 & 0\\ 0 & 1\end{array}\right] &&
+    G_{t_1}=\left[\begin{array}{cc} -1 & 0\\ 1 & 1\end{array}\right] &&
+    G_{t_2}=\left[\begin{array}{cc} -1 & -1\\ 1 & 0\end{array}\right] &&
+    G_{t_3}=\left[\begin{array}{cc} 0 & -1\\ -1 & 0\end{array}\right] &&
+    G_{t_4}=\left[\begin{array}{cc} 0 & 1\\ -1 & 0\end{array}\right] 
+  \end{align*}
+  The cluster variables can then be computed from the separation of additions formulas \eqref{eq:separation of additions 1} and \eqref{eq:separation of additions 2} using the $F$-polynomials below (the permutation $\sigma$ can be observed in the first equality):
+  \[ F_{\bfr,2;t_4}=F_{\bfr,1;t_0}=1 \hspace{1in} F_{\bfr,2;t_0}=F_{\bfr,2;t_1}=1 \]
+  \[ F_{\bfr,1;t_3}=F_{\bfr,1;t_4}=1+u_2 \hspace{0.9in} F_{\bfr,2;t_2}=F_{\bfr,2;t_3}=1+u_1+u_2 \hspace{0.9in} F_{\bfr,1;t_1}=F_{\bfr,1;t_2}=1+u_1.\]
+
+  Alternatively, taking $\bfr=(1,3)$, we get $Z_1(u)=1+u$ and $Z_2(u)=1+z_1u+z_2u^2+u^3$, where we write $z_j$ instead of $z_{2,j}$ for $j=1,2$.
   This example exhibits an 8-fold periodicity in the sense of Definition~\ref{def:periodicity} with $\sigma$ the identity permutation of the set $\{1,2\}$.
   In particular, to compute all the $x_{j;t}$ and $y_{\ell;t}$ it suffices to consider a portion of the exchange tree $\TT_n$ as below:
   \[t_0 \stackrel{1}{\longleftrightarrow} t_1 \stackrel{2}{\longleftrightarrow} t_2 \stackrel{1}{\longleftrightarrow} t_3 \stackrel{2}{\longleftrightarrow} t_4 \stackrel{1}{\longleftrightarrow} t_5 \stackrel{2}{\longleftrightarrow} t_6 \stackrel{1}{\longleftrightarrow} t_7 \stackrel{2}{\longleftrightarrow} t_8,\]
@@ -1208,13 +1231,21 @@ We will need the following important consequence of the separation of additions 
     &\quad+z_1^2u_1^3u_2^2+2z_2u_1^3u_2^2+3u_1^2u_2^3+z_1z_2u_1^2u_2^3+2u_1^3u_2^3+2z_1z_2u_1^3u_2^3+z_1u_1^2u_2^4+2z_1u_1^3u_2^4\\
     &\quad+z_2^2u_1^3u_2^4+2z_2u_1^3u_2^5+u_1^3u_2^6\\
     F_{\bfr,1;t_5}=F_{\bfr,1;t_6}&=1+u_1+z_1u_1u_2+z_2u_1u_2^2+u_1u_2^3\\
-    F_{\bfr,2;t_6}=F_{\bfr,2;t_7}&=1+z_1u_2+z_2u_2^2+u_2^3.
+    F_{\bfr,2;t_6}=F_{\bfr,2;t_7}&=1+z_1u_2+z_2u_2^2+u_2^3.\\
   \end{align*}
-  For example, the cluster variables $x_{1;t_3}$ and $x_{2;t_3}$ are given by
+  For example, the type-$\cX$ cluster variables $y_{1;t_3}$ and $y_{2;t_3}$ are given by
+  \begin{align*}
+    y_{1;t_3}
+    &=y_{1;t_0}^{-2}y_{2;t_0}^{-3}\big(1+3y_{1;t_0}+3y_{1;t_0}^2+y_{1;t_0}^3+z_1y_{1;t_0}y_{2;t_0}+2z_1y_{1;t_0}^2y_{2;t_0}\\
+    &\hspace{1in}+z_1y_{1;t_0}^3y_{2;t_0}+z_2y_{1;t_0}^2y_{2;t_0}^2+z_2y_{1;t_0}^3y_{2;t_0}^2+y_{1;t_0}^3y_{2;t_0}^3\big)\\
+    y_{2;t_3}
+    &=y_{1;t_0}y_{2;t_0}^2\big(1+2y_{1;t_0}+y_{1;t_0}^2+z_1y_{1;t_0}y_{2;t_0}+z_1y_{1;t_0}^2y_{2;t_0}+z_2y_{1;t_0}^2y_{2;t_0}^2+y_{1;t_0}^2y_{2;t_0}^3\big)^{-1}
+  \end{align*}
+  while, using that $\hat y_{1;t_0}=x_{2;t_0}^{-1}$ and $\hat y_{2;t_0}=x_{1;t_0}$, the type-$\cA$ cluster variables $x_{1;t_3}$ and $x_{2;t_3}$ are given by
   \begin{align*}
     x_{1;t_3}
     &=x_{1;t_0}^{-2}x_{2;t_0}\big(1+2x_{2;t_0}^{-1}+x_{2;t_0}^{-2}+z_1x_{2;t_0}^{-1}x_{1;t_0}+z_1x_{2;t_0}^{-2}x_{1;t_0}+z_2x_{2;t_0}^{-2}x_{1;t_0}^2+x_{2;t_0}^{-2}x_{1;t_0}^3\big)\\
-    &=x_{1;t_0}^{-2}x_{2;t_0}^{-1}\big(x_{2;t_0}^2+2x_{2;t_0}+1+z_1x_{1;t_0}x_{2;t_0}+z_1x_{1;t_0}+z_2x_{1;t_0}^2+x_{1;t_0}^3\big);\\
+    &=x_{1;t_0}^{-2}x_{2;t_0}^{-1}\big(x_{2;t_0}^2+2x_{2;t_0}+1+z_1x_{1;t_0}x_{2;t_0}+z_1x_{1;t_0}+z_2x_{1;t_0}^2+x_{1;t_0}^3\big)\\
     x_{2;t_3}
     &=x_{1;t_0}^{-3}x_{2;t_0}^2\big(1+3x_{2;t_0}^{-1}+3x_{2;t_0}^{-2}+x_{2;t_0}^{-3}+z_1x_{2;t_0}^{-1}x_{1;t_0}+2z_1x_{2;t_0}^{-2}x_{1;t_0}\\
     &\hspace{1in}+z_1x_{2;t_0}^{-3}x_{1;t_0}+z_2x_{2;t_0}^{-2}x_{1;t_0}^2+z_2x_{2;t_0}^{-3}x_{1;t_0}^2+x_{2;t_0}^{-3}x_{1;t_0}^3\big)\\
@@ -1819,7 +1850,7 @@ Using these we have the following analogues of the separation of additions formu
 \end{proof}
 
 \begin{example}
-  Continuing from Example~\ref{ex:running 3}, we see from Lemma~\ref{le:dual vectors} that $C_t^\vee=C_t^T$ and $G_t^\vee=G_t^T$ for $t\in\TT_n$, where $(-)^T$ denotes the transpose of a matrix.
+  Continuing from Example~\ref{ex:running 3} in the case $\bfr=(1,3)$, we see from Lemma~\ref{le:dual vectors} that $C_t^\vee=C_t^T$ and $G_t^\vee=G_t^T$ for $t\in\TT_n$, where $(-)^T$ denotes the transpose of a matrix.
   The iterated groupoid mutations can thus be computed from the data given in Example~\ref{ex:running 3} using the separation of additions formulas in Theorem~\ref{th:groupoid separation of additions}.
   For example, the cluster groupoid variable $t_{1;t_3}$ is given by
   \begin{align*}
